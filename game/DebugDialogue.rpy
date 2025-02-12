@@ -125,6 +125,28 @@ label DebugTest:
 
     l "Here I am!!!!! I'm The Player Character! "
 
+
+
+    show lucy at TintShader
+
+    l "Here's the tinttest"
+
+    show lucy at NormalTint
+
+    l "Normalizign tint"
+
+    show lucy at HueShader
+
+    l "Here's the huetest"
+
+    show lucy at BrightnessShader
+
+    l "Here's the brighttest"
+
+    show lucy at NormalBrightness
+
+    l "Normalizign brightness"
+
     show speen at AnchorHalfBottom
     show speen at center
 

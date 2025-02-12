@@ -262,3 +262,20 @@ transform slightUp:
     ypos 0.4
 
 #endregion
+
+transform TintShader:
+    matrixcolor TintMatrix("#434343")
+
+transform NormalTint:
+    matrixcolor TintMatrix("#ffffff")
+
+transform HueShader:
+    matrixcolor HueMatrix(-150)
+
+transform BrightnessShader:
+    matrixcolor BrightnessMatrix(-0.25)
+
+
+    
+transform NormalBrightness:
+    matrixcolor BrightnessMatrix(0.0)
