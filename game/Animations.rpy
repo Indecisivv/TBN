@@ -117,6 +117,8 @@ transform exitRight:
 #EXIT
 
 
+
+
 #Smaller number = faster easing
 #Larger number = slower easing
 define jumpRate = 0.2
