@@ -10,7 +10,7 @@ label GenderQuestion:
             jump Boy
         "Girl":
             jump Girl
-        "Toek Me To The Debug":
+        "Take Me To The Debug":
             hide sylvie green
             jump DebugTest
     label Boy:
@@ -22,8 +22,7 @@ label GenderQuestion:
                 $ p.SetGender("male")
                 $ p.SetName("Lucy")
                 $ p.SetCharacter(Character("Lucy"))
-                $ p.SetImage("lucy ")
-                $ pronouns = "he/him"
+                $ p.SetImage("lucy ")              
                 jump GenderTest
             "No.":
                 jump GenderQuestion
@@ -37,10 +36,50 @@ label GenderQuestion:
                 $ p.SetName("Sylvie")
                 $ p.SetCharacter(Character("Sylvie"))
                 $ p.SetImage("sylvie green ")
-                $ pronouns = "she/her"
                 jump GenderTest
             "No.":
                 jump GenderQuestion
+
+label PronounQuestion:
+    "Select Your Pronouns:"
+
+    menu: 
+        "Feminine":
+            $ pronouns = "she/her"
+            jump PronounCheck
+
+        "Masculine":
+            $ pronouns = "he/him"
+            jump PronounCheck
+
+        "Neutral":
+            $ pronouns = "they/them"
+            jump PronounCheck
+
+    label PronounCheck:
+        "Are you Sure?"
+        menu:
+            "Yes":
+                jump NameQuestion
+            "No":
+                jump PronounQuestion
+
+    
+
+label NameQuestion:
+
+
+    $ p.SetName(renpy.input("What's your name?"))
+
+
+label FinalCheck:
+    "Are you sure about all your decisions?"
+    menu: 
+        "Yes":
+            jump DebugIntro
+        "No":
+            jump GenderQuestion
+
 
 
 define they = Pronoun("they", "he", "she")

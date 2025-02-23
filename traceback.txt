@@ -1,26 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\yoshi\\Documents\\RenpyGames\\TBN\\game\\saves\\persistent.1739330740.tmp'
+  File "game/DebugDialogue.rpy", line 137, in script
+    syvl "Cutting Out"
+Exception: Sayer 'syvl' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Program Files (x86)\renpy-8.3.4-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Program Files (x86)\renpy-8.3.4-sdk\renpy\main.py", line 666, in main
-    renpy.persistent.update(True)
-  File "C:\Program Files (x86)\renpy-8.3.4-sdk\renpy\persistent.py", line 434, in update
-    save()
-  File "C:\Program Files (x86)\renpy-8.3.4-sdk\renpy\persistent.py", line 456, in save
-    renpy.loadsave.location.save_persistent(compressed)
-  File "C:\Program Files (x86)\renpy-8.3.4-sdk\renpy\savelocation.py", line 622, in save_persistent
-    l.save_persistent(data)
-  File "C:\Program Files (x86)\renpy-8.3.4-sdk\renpy\savelocation.py", line 426, in save_persistent
-    with open(fn_tmp, "wb") as f:
-FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\yoshi\\Documents\\RenpyGames\\TBN\\game\\saves\\persistent.1739330740.tmp'
+  File "game/DebugDialogue.rpy", line 137, in script
+    syvl "Cutting Out"
+  File "C:\Program Files (x86)\renpy-8.3.4-sdk\renpy\ast.py", line 2579, in execute
+    Say.execute(self)
+  File "C:\Program Files (x86)\renpy-8.3.4-sdk\renpy\ast.py", line 581, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Program Files (x86)\renpy-8.3.4-sdk\renpy\ast.py", line 470, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'syvl' is not defined.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.4.24120703
 TBN 1.0
-Tue Feb 11 21:23:08 2025
+Sat Feb 22 20:36:03 2025

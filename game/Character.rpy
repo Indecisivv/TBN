@@ -26,7 +26,6 @@ init python:
 
         def SetGender(self, g):
             gender = g
-            pronouns = "she/her"
 
         def SetCharacter(self, character):
             self.c = character

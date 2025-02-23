@@ -123,9 +123,18 @@ label DebugTest:
     show lucy happy at AnchorHalfBottom
     show lucy happy at zoomInLeft behind eileen
 
-    l "Here I am!!!!! I'm The Player Character! "
+    l "Here I am!!!!!"
 
+    show eileen behind lucy
 
+    show sylvie blue normal at CutIn
+
+    s "Cutting In"
+
+    
+    show sylvie blue normal at CutOut
+
+    s "Cutting Out"
 
     show lucy at TintShader
 

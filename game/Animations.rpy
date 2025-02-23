@@ -74,6 +74,15 @@ transform MoveToMiddle:
 #endregion
 #MOVERS
 
+define cutInrate = 0.5
+
+transform CutIn:
+    yalign 0.8 xalign 0.5 alpha 0.5
+    easein cutInrate yalign 0.5 alpha 1.0
+
+transform CutOut:
+    easein cutInrate yalign 0.2 alpha 0.0
+
 #PROXIMITY
 #region Proximity
 transform Close:
@@ -266,6 +275,13 @@ transform slightUp:
 #endregion
 
 
+
+
+
+
+
+#region Shaders
+
 transform TintShader:
     matrixcolor TintMatrix("#434343")
 
@@ -282,3 +298,5 @@ transform BrightnessShader:
     
 transform NormalBrightness:
     matrixcolor BrightnessMatrix(0.0)
+
+#endregion
