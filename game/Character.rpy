@@ -24,6 +24,7 @@ init python:
             self.gender = gender
             self.i = imagename
 
+        #this might not be necessary, if we just set male/female as part of the image name below  
         def SetGender(self, g):
             gender = g
 
@@ -36,10 +37,15 @@ init python:
         def SetName(self, name):
             self.name = name
 
-        def ShowPlayer(self, emotion, position):
-            renpy.show(str(p.imagename) + emotion, at_list=[position])
+        #Set Position and Portrait
+        def ShowPlayer(self, portrait, position):
+            renpy.show(str(p.imagename) + portrait, at_list=[position])
 
-        #Same as Show but if you don't want to change the emotion
+        #Same as ShowPlayer but if you don't want to change the position
+        def EmotePlayer(self, portrait):
+            renpy.show(str(p.imagename) + portrait)
+
+        #Same as ShowPlayer but if you don't want to change the portrait
         def MovePlayer(self, position):
             renpy.show(str(p.imagename), at_list=[position])
 
@@ -47,3 +53,4 @@ init python:
             return self.name
 
     
+default p = Player(Character("Sylvia"))

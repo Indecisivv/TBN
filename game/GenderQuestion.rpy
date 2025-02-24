@@ -10,9 +10,6 @@ label GenderQuestion:
             jump Boy
         "Feminine":
             jump Girl
-        "Take Me To The Debug":
-            hide sylvie green
-            jump DebugTest
     label Boy:
         hide sylvie green
         show lucy at MoveToMiddle

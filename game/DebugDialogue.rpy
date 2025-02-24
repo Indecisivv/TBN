@@ -83,6 +83,11 @@ image speen:
 define slowdissolve = Dissolve(1.0)
  
 
+
+
+
+
+
 label DebugIntro:
     $ menu_flag = False
     $ menu_what = False
@@ -90,7 +95,6 @@ label DebugIntro:
 
 
 
-    $ p = Player(Character("Sylvia"));
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -107,10 +111,57 @@ label DebugIntro:
     show eileen happy
     with dissolve
 
-    e "You've created a new Ren'Py game."
+    e "Where would you like to go?"
 
-    jump GenderQuestion
 
+    menu:
+        "Generic Debug":
+            jump DebugTest
+        "Item Test":
+            jump DebugItemCheck
+        "Gender Test":
+            jump GenderQuestion
+
+
+    
+#Use Default to define items, not Define, since items can change
+default Guitar = item("Guitar", "A Stringed Instrument", 2, 1, 50, "R")
+default Biscuit = item("Biscuit", "A Hearty Pastry", 1, 1, 1, "R")
+default Pizza = item("Pizza", "A Savory, Foreign Cuisine", 2, 2, 8, "R")
+
+default TestBool = True
+
+label DebugItemCheck:
+    $ the_inventory.add_item(Guitar, 0, 0)
+    #$ the_inventory.add_item(Pizza, 0, 0)
+
+    #Test to ensure objects of size greater than 1x1 take up their proper places
+    if the_inventory.add_item(Biscuit, 0, 1):
+        "Added a Biscuit!"
+    else:
+        "Failed To Add a Biscuit! That Space is already Occuppied"
+
+    if TestBool:
+        "This is true"
+    else:
+        "This is False"
+
+    menu:
+        "You have a Guitar" if the_inventory.has_item(Guitar) == True:
+            "You do indeed have a Guitar"
+
+        "You have a Biscuit" if the_inventory.has_item(Biscuit) == True:
+            "You do indeed have a Biscuit"
+
+
+        "You DON'T have a Guitar" if the_inventory.has_item(Guitar) == False:
+            "I don't have a Guitar, sorry"   
+
+        "You DON'T have a Pizza" if the_inventory.has_item(Pizza) == False:
+            "I don't have a Pizza, sorry"   
+
+        "IDK What to Do":
+            "Gosh if only you had a Guitar"
 
 
 label DebugTest:
