@@ -3,12 +3,12 @@ label GenderQuestion:
     show lucy happy at AnchorHalfBottom
     show lucy happy at HalfLeft
     show sylvie green normal at HalfRight
-    e "Are you a boy? Or are you a girl?"
+    e "Select your portrait"
     
     menu:
-        "Boy":
+        "Masculine":
             jump Boy
-        "Girl":
+        "Feminine":
             jump Girl
         "Take Me To The Debug":
             hide sylvie green
@@ -19,11 +19,9 @@ label GenderQuestion:
         "Are you sure?"
         menu:
             "Yes.":
-                $ p.SetGender("male")
-                $ p.SetName("Lucy")
-                $ p.SetCharacter(Character("Lucy"))
-                $ p.SetImage("lucy ")              
-                jump GenderTest
+                $ p.SetGender("male") #We might not actually need this, if we just set male/female as part of the image name below  
+                $ p.SetImage("lucy ") #Change this when final portraits are in
+                jump PronounQuestion
             "No.":
                 jump GenderQuestion
     label Girl:
@@ -32,29 +30,27 @@ label GenderQuestion:
         "Are you sure?"
         menu:
             "Yes.":
-                $ p.SetGender("female")
-                $ p.SetName("Sylvie")
-                $ p.SetCharacter(Character("Sylvie"))
-                $ p.SetImage("sylvie green ")
-                jump GenderTest
+                $ p.SetGender("female") #We might not actually need this, if we just set male/female as part of the image name below  
+                $ p.SetImage("sylvie green ") #Change this when final portraits are in
+                jump PronounQuestion
             "No.":
                 jump GenderQuestion
 
 label PronounQuestion:
-    "Select Your Pronouns:"
+    "Select Pronouns"
 
     menu: 
-        "Feminine":
-            $ pronouns = "she/her"
-            jump PronounCheck
+        "She/Her":
+            $ pronouns = "She/Her"
+            jump NameQuestion
 
-        "Masculine":
-            $ pronouns = "he/him"
-            jump PronounCheck
+        "He/Him":
+            $ pronouns = "He/Him"
+            jump NameQuestion
 
-        "Neutral":
-            $ pronouns = "they/them"
-            jump PronounCheck
+        "They/Them":
+            $ pronouns = "They/Them"
+            jump NameQuestion
 
     label PronounCheck:
         "Are you Sure?"
@@ -69,20 +65,28 @@ label PronounQuestion:
 label NameQuestion:
 
 
-    $ p.SetName(renpy.input("What's your name?"))
+    $ p.SetName(renpy.input("What's Their Name?", default = "Iris"))
+
+    $ p.SetCharacter(Character(p.name))
 
 
 label FinalCheck:
-    "Are you sure about all your decisions?"
+    $ p.c("My name is " + (p.name) + " and my pronouns are " + (pronouns))
+
+    "Are you sure about all that?"
     menu: 
         "Yes":
-            jump DebugIntro
+            jump GenderTest
         "No":
             jump GenderQuestion
 
 
 
 define they = Pronoun("they", "he", "she")
+
+define theyre = Pronoun("they're", "he's", "she's")
+
+define Theyre = Pronoun("They're", "He's", "She's")
 
 define They = Pronoun("They", "He", "She")
 
@@ -97,7 +101,7 @@ label GenderTest:
     $ p.c("My name is " + (p.name))
 
 
-    e "[They] is a [attractive] [sex]."
+    e "[Theyre] a [attractive] [sex]."
 
     $ p.MovePlayer(confuseFacingRight)
 

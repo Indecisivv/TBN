@@ -8,11 +8,11 @@ init python:
             self.feminine = feminine
         def __str__(self):
             global pronouns
-            if pronouns == "she/her":
+            if pronouns == "She/Her":
                 return self.feminine
-            elif pronouns == "he/him":
+            elif pronouns == "He/Him":
                 return self.masculine
-            elif pronouns == "they/them":
+            elif pronouns == "They/Them":
                 return self.neutral
             else:
                 return self.neutral
