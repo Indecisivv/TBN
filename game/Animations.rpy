@@ -225,6 +225,11 @@ transform FastStraighten:
 
 #region Positions
 
+
+transform TopLeft:
+    xpos 0.0
+    ypos 0.0
+
 transform LeftSide:
     xpos 0.1
     ypos 1.0
@@ -253,7 +258,11 @@ transform RightSide:
     xpos 0.9
     ypos 1.0
 
-transform center:
+transform Quarter:
+    xpos 0.25
+    ypos 0.25
+
+transform Center:
     xpos 0.5
     ypos 0.5
 

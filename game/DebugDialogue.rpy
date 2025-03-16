@@ -124,27 +124,79 @@ label DebugIntro:
 
 
     
-#Use Default to define items, not Define, since items can change
-default Guitar = item("Guitar", "A Stringed Instrument", 2, 1, 50, "R")
-default Biscuit = item("Biscuit", "A Hearty Pastry", 1, 1, 1, "R")
-default Pizza = item("Pizza", "A Savory, Foreign Cuisine", 2, 2, 8, "R")
+
+
 
 default TestBool = True
 
+
+ 
+
+
+
+
+
+
 label DebugItemCheck:
-    $ the_inventory.add_item(Guitar, 0, 0)
+    #Index 1 represents row, index 2 represents column
+    #$ the_inventory.add_item(Biscuit, 0, 0)
     #$ the_inventory.add_item(Pizza, 0, 0)
 
     #Test to ensure objects of size greater than 1x1 take up their proper places
-    if the_inventory.add_item(Biscuit, 0, 1):
-        "Added a Biscuit!"
-    else:
-        "Failed To Add a Biscuit! That Space is already Occuppied"
+    
+    #if the_inventory.add_item(Flute, 0, 0):
+    #    "Added a Flute at 0-0"
+    #else:
+    #    "Failed To Add a Flute! That Space is already Occuppied"
+    
+    #if the_inventory.add_item(Guitar, 0, 0):
+    #    "Added a Guitar at 0-0"
+    #else:
+    #    "Failed To Add a Guitar! That Space is already Occuppied"
+
+    #if the_inventory.add_item(Biscuit, 0, 1):
+    #    "Added a Biscuit!"
+    #else:
+    #    "Failed To Add a Biscuit! That Space is already Occuppied"
+
+    #$ the_inventory.remove_item(Guitar)
+
+    #"Removed the Guitar!"
+
+    #if the_inventory.add_item(Biscuit, 0, 1):
+    #    "Added a Biscuit!"
+    #else:
+    #    "Failed To Add a Biscuit! That Space is already Occuppied"
+
+    
 
     if TestBool:
         "This is true"
     else:
         "This is False"
+
+
+
+    #show screen inventory_button
+
+    "Here's the button"
+
+    call screen Inventory_Screen
+ 
+
+    "Here's the inventory"
+
+
+    show ninepatch paper tiled at Quarter:
+        size (840, 600)
+
+    "Here's a Paper"
+
+
+
+
+
+
 
     menu:
         "You have a Guitar" if the_inventory.has_item(Guitar) == True:
@@ -162,6 +214,14 @@ label DebugItemCheck:
 
         "IDK What to Do":
             "Gosh if only you had a Guitar"
+
+
+
+
+
+    
+
+ 
 
 
 label DebugTest:
