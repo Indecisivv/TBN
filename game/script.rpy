@@ -76,7 +76,9 @@ label start:
     
     """
     Deep within a vast cave system,{cps=4} {/cps}warmed by the geothermal currents of an underground aquifer,{cps=4} {/cps}lies your camp.
-
+    """
+    scene cave with Dissolve(1.5)
+    """
     The ever-present humidity and dirt clings to your skin. 
     
     Stalactites loom overhead,{cps=4} {/cps}glistening with mineral-rich condensation.
@@ -93,7 +95,7 @@ label start:
     """
     #TODO: maybe like a step sfx here
 
-    scene bg bg2 with Dissolve(1.5)
+    scene tent with Dissolve(1.5)
 
     #TODO: pan around captains chambers
 
@@ -275,7 +277,7 @@ label start:
     Despite the subterranean shelter,{cps=4} {/cps}exhaustion clings to your bones like the damp air itself.
     """ 
 
-    scene bg bg3 with Dissolve(1.5)
+    scene tent with Dissolve(1.5)
 
     #TODO: pan around the tent bg
     """
@@ -357,7 +359,7 @@ label start:
 ################################################################################
     label day1:
     
-    scene bg black with Dissolve(1.5)
+    scene black with Dissolve(1.5)
     
     centered "Day 1"
     
@@ -367,7 +369,7 @@ label start:
     Soldiers move about groggily,{cps=4} {/cps}some returning from night patrols,{cps=4} {/cps}others preparing for the day ahead.
 
     """
-    scene bg cave with Dissolve(1.5)
+    scene cave with Dissolve(1.5)
 
     """
     Your small party gathers near the supply tent,{cps=4} {/cps}where a wooden carriage,{cps=4} {/cps}tied to a sturdy draft horse,{cps=4} {/cps}stands ready.
@@ -479,7 +481,7 @@ label start:
 
     menu:
         "Sit inside":
-            Iris "Yes,{cps=4} {/cps}Let's head in then."
+            Iris "Yes,{cps=4} {/cps}let's head in then."
             $ quinn_points += 5
             $ darcey_points += 5
             jump InsideCarriage
@@ -498,7 +500,7 @@ label start:
 ###################### 
     label InsideCarriage:
 
-    scene bg InsideCarriage with Dissolve(1.5)
+    scene carriage with Dissolve(1.5)
 
     """
     You climb into the carriage,{cps=4} {/cps}settling into the slightly worn wooden seat.
@@ -609,6 +611,8 @@ label start:
 
     "You,{cps=4} {/cps}Quinn,{cps=4} {/cps}and Darcey quickly make your way out of the carriage."
 
+    scene forest with Dissolve(1.5)
+
     Quinn "Plo,{cps=4} {/cps}are you alright?"
 
     Plo "I am,{cps=4} {/cps}but I can't say the same for the carriage."
@@ -621,7 +625,7 @@ label start:
 ###################### 
     label OutsideCarriage:
 
-    scene bg OutsideCarriage with Dissolve(1.5)
+    scene forest with Dissolve(1.5)
     ##TODO: rain effect here
     """
     The steady patter of rain against the canopy above mingles with the sound of the horse's hooves stomping through the wet mud path.
@@ -656,7 +660,7 @@ label start:
             Iris "Did you pack everything you needed for the mission last night?"
             Plo "Barely had any time to get this prepared,{cps=4} {/cps}so I just packed the essentials."
             ##the joke is that his inventory is filled with junk, ill make a graphic for this
-            show ploinventory
+            show jokeinventory
             Iris "Essentials?" 
             menu:
                 "Praise his packing skills":
