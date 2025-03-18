@@ -79,17 +79,15 @@ label start:
     """
     scene cave with Dissolve(1.5)
     """
-    The ever-present humidity and dirt clings to your skin. 
-    
-    Stalactites loom overhead,{cps=4} {/cps}glistening with mineral-rich condensation.
+    Humidity and dirt clings to your skin as stalactites loom overhead{cps=4} {/cps}with mineral-rich condensation.
 
-    You are called urgently to the captain's chamber.{cps=2} {/cps}An unusual call this late.{cps=2} {/cps}It sets a nervous edge to your steps.
+    You are called urgently to the Captain's Chamber.{cps=2} {/cps}At this hour in the night? Strange.{cps=2} {/cps}Nervousness creeps into your steps.
 
-    You make your way through the winding tunnels,{cps=4} {/cps}the torchlight casting restless shadows against the jagged walls. 
+    Through winding tunnels, you follow the jagged walls with your torchlight{cps=4} {/cps}. 
     
-    Heated water hisses through the fissures above.
+    Heated water hisses from the fissures above.
     
-    When you finally reach the chamber,{cps=4} {/cps}the air is thick with the scent of damp rock.
+    Outside the Captain's Chamber,{cps=4} {/cps}the air is thick with the scent of damp rock.
 
     You step in.
     """
@@ -100,13 +98,13 @@ label start:
     #TODO: pan around captains chambers
 
     """
-    The captain's chamber is spacious compared to the cramped alcove you just left.
+    The Captain's Chamber flaunts its roominess compared to the path it takes to get there.{cps=4} {/cps}Space must be made for the parchments.
 
-    The warm air moves slightly here,{cps=4} {/cps}carrying with it the scent of burning oil lamps and damp parchment.
+    The scent of ink,{cps=4} {/cps}sweat,{cps=4} {/cps}and something vaguely metallic catch your nose immediately. 
+
+    You warm up from the burning oil lamps around,{cps=4} {/cps}and walk forward to the sturdy wooden desk.
     
-    A sturdy wooden desk dominates the space,{cps=4} {/cps}littered with maps and smudged reports. 
-    
-    The scent of ink,{cps=4} {/cps}sweat,{cps=4} {/cps}and something vaguely metallic lingers in the air. 
+    Maps and smudged reports scatter in front of the tired man hunched over, staring down at them.{cps=4} {/cps}The Captain. 
     """
 
     show iris happy at left
@@ -114,46 +112,45 @@ label start:
     with Dissolve(1.5)
 
     """
-    The captain himself looks worn,{cps=4} {/cps}dark circles under his eyes betraying the long hours spent hunched over paperwork. 
+    On closer inspection, you notice the Captain's dark circles under his bloodshot eyes.{cps=4} {/cps}Who knows when he last moved.
     
-    He barely glances up as you enter.
+    He barely reacted to your approach.
 
     You give him a quick salute and announce your presence.
     """
 
     Iris "Captain."
 
-    Captain "[player_name],{cps=4} {/cps}wait there for a moment,{cps=4} {/cps}I have more people on their way."
+    Captain "[player_name],{cps=4} {/cps}wait there,{cps=4} {/cps}I have more people on their way."
 
     
-    "It doesn't take long before they show."
 
     show plo happy with Dissolve(1.5)
     #TODO: pan around character image
 
     """
 
-    The torchlight barely reaches the tent flap as a massive figure ducks beneath it,{cps=4} {/cps}his broad shell scraping the fabric's edge. 
+    You barely notice a torchlight reach the tent flap when a massive figure ducks beneath it.{cps=4} {/cps}His broad shell scraps the fabric on entrance. 
     
-    A figure steps inside,{cps=4} {/cps}his weathered green skin illuminated by the dim glow,{cps=4} {/cps}deep grooves and ridges marking the passage of time across his form.
+    The figure's weathered brown skin was hardened by time.{cps=4} {/cps}The oil lamps revealed its deep grooves and ridges.
     """
     Plo "{i}Can't let this old man get his sleep after a hard days work?{/i}"
 
     """
-    His heavy-lidded eyes scan the room with the slow deliberation of a veteran who's seen more than his fair share of orders. 
+    His heavy-lidded eyes scan the room as if routine then approaches. 
     
-    With a sigh he straightens his thick frame gives the captain a curt salute.
+    He straightens his thick frame and gives the captain a curt salute.
     """
 
     Plo "Captain."
 
-    Captain "At ease Plo,{cps=4} {/cps}I wouldn't drag a grumpy old tortle like you this late without good reason."
+    Captain "At ease Plo,{cps=4} {/cps}I wouldn't drag you out this late without a good reason."
 
     $ plo_name = "Plo"
 
-    Plo "{i}Suuure{/i} you wouldn't."
-
     "Plo gives a sarcastic snort."
+
+    Plo "{i}Right{/i}."
 
     "Only a second passes before the tent door flutters open once more."
 
@@ -163,11 +160,11 @@ label start:
     #TODO: pan around character image
 
     """
-    A short,{cps=4} {/cps}red-skinned tiefling strides in next,{cps=4} {/cps}her presence like a blade—sharp,{cps=4} {/cps}poised,{cps=4} {/cps}and unwavering.
+    A short,{cps=4} {/cps}red-skinned tiefling strides in next.{cps=4} {/cps}You swore you feel the air stop at her presence, afraid to move disrespectfully.{cps=4} {/cps}She approached the desk poised and unwavering.
 
-    She stands with military discipline.
+    She stands at attention.
     
-    Her dark eyes flick over the assembled group,{cps=4} {/cps}assessing,{cps=4} {/cps}calculating,{cps=4} {/cps}before settling on the captain with a crisp salute.
+    Her dark eyes flick over the assembled group,{cps=4} {/cps}assessing,{cps=4} {/cps}before settling on the captain with a crisp salute.
 
     """
 
@@ -179,35 +176,37 @@ label start:
     show quinn happy with Dissolve(1.5) 
  
     """
-    A moment later,{cps=4} {/cps}the final arrival slips inside with quiet efficiency,{cps=4} {/cps}moving like a shadow against the flickering torchlight.
+    The final arrival slips inside quickly after.{cps=4} {/cps}The extra shadow against the torchlight is what made you notice.
 
-    A lean dark skinned elf,{cps=4} {/cps}his dark cloak still dusted from the cave's passage.
+    He's a lean dark skinned elf whose dark cloak is still dusted from the cave's passage.
 
-    His eyes glancing between the others,{cps=4} {/cps}pausing briefly on the tiefling with a nod of acknowledgment,{cps=4} {/cps}before locking onto the captain.
+    Glancing between the others,{cps=4} {/cps}he only pauses on the tiefling with a nod of acknowledgment{cps=4} {/cps}before facing the captain.
 
-    He straightens and offers a salute,{cps=4} {/cps}his voice calm but edged with curiosity.
+    He offers a salute before speaking.
     """
 
     Quinn "Captain. Something urgent,{cps=4} {/cps}I assume?"
 
     Captain "Darcey, Quinn."
 
-    $ quinn_name = "Quinn"
     $ darcey_name = "Darcey"
+    $ quinn_name = "Quinn"
+
+    Captain "Plo, [player_name]"
 
     """
-    The captain straightens in his seat,{cps=4} {/cps}pushing aside a pile of papers and pulling out a letter.
+    The Captain relaxes then pushes aside papers and pulls out a white letter sealed by a striking red wax stamp.
 
     A pause.
 
-    Then,{cps=4} {/cps}a rare grin.
+    He grins,{cps=4} {/cps}a rare grin.
     """
 
-    Captain "I have a very important message that needs to be delivered.{cps=2} {/cps}You four will be the ones delivering it."
+    Captain "This is a very important message that I need delivered.{cps=2} {/cps}You four will be the ones delivering it."
 
     show plo happy at jumpAnim
     
-    Plo "Hah,{cps=4} {/cps}'bout time I get to be hauling something a little less explosive!"
+    Plo "Hah!{cps=4} {/cps}'bout time I get to hauling something a little less explosive!"
 
     menu:
         "What kind of message?":
@@ -218,9 +217,9 @@ label start:
             #TODO: character image changes
             Captain "Plo,{cps=4} {/cps}the best carriage driver we've got.{cps=2} {/cps}He knows how to handle rough terrain—and rougher company."
             Captain "Quinn,{cps=4} {/cps}a skilled navigator.{cps=2} {/cps}If there's a way through,{cps=4} {/cps}he'll find it."
-            Captain "Darcey,{cps=4} {/cps}a fighter through and through.{cps=2} {/cps}Intelligent and deadly." 
+            Captain "Darcey,{cps=4} {/cps}a fighter through and through.{cps=2} {/cps}Deadly for fights you want to pick and intelligent for fights you don't." 
             Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star messenger.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on their feet."
-            Captain "All excellent soldiers in your own rights."
+            Captain "All excellent in your own rights."
             Captain "You four are the perfect team for this mission because{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
             jump continue1
         
@@ -231,7 +230,7 @@ label start:
     
     label continue1:
     
-    "He turns the letter,{cps=4} {/cps}letting the group view it." 
+    "He displays the letter to the group." 
     
     Captain "The enemy sent us this letter of surrender at sundown."
 
@@ -243,7 +242,7 @@ label start:
 
     Quinn "At long last{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
 
-    Captain "There's still work to be done here,{cps=4} {/cps}but we need to send word to the capital immediately"
+    Captain "There's still work to be done here,{cps=4} {/cps}but what matters now is to send word to the capital. Immediately"
 
     Captain "That is why im entrusting this mission to you,{cps=4} {/cps}Sergeant [player_name]."
 
@@ -253,7 +252,7 @@ label start:
             jump continue2
         
         "Stay Quiet":
-            Captain "Alright?{cps=2} {/cps}Alright!{cps=2} {/cps}Get going then,{cps=4} {/cps}I want you guys out of here before morning."
+            Captain "......{cps=4} {/cps}Well, get going then!{cps=4} {/cps}I want you all out of here before morning."
             jump continue2
     
     label continue2:
@@ -261,20 +260,17 @@ label start:
     Iris "Understood,{cps=4} {/cps}captain."
 
     """
-    Before leaving,{cps=4} {/cps}you glance at your new team.
+    You turn to your new team, who stare at you with anticipation.
 
-    They are watching you,{cps=4} {/cps}waiting with eyes filled with anticipation.
     """
     Iris "Let's meet at the camp entrance in 5 hours."
 
     scene black with dissolve
 
     """
-    You make your way back to your assigned tent.
+    You make your way back to your home tent.
     
-    The air here is warmer,{cps=4} {/cps}the proximity to the aquifer making it thick with humidity and body heat.
-
-    Despite the subterranean shelter,{cps=4} {/cps}exhaustion clings to your bones like the damp air itself.
+    It's an uncomfortable warmth that you've gotten used to. Thick with humidity. Exhaustion seems to stick to you in the same way as you walk.
     """ 
 
     scene tent with Dissolve(1.5)
@@ -282,13 +278,13 @@ label start:
     #TODO: pan around the tent bg
     """
     
-    The stifling air inside the soldier's tent is thick with sweat and dirt,{cps=4} {/cps}clinging to your skin like a second layer of grime. 
-    
-    The canvas walls do little to shield you from the humid night,{cps=4} {/cps}the smell of damp straw body odor pressing in from all sides of the tent. 
-    
+    Inside the soldier's tent, a thick layer of grime made up of sweat and dirt sticks to the occupants.
+
     Half a dozen exhausted soldiers lay cramped like sardines in haphazardly built bunk beds.
     
-    A single lantern,{cps=4} {/cps}its flame weak and flickering,{cps=4} {/cps}casts shifting shadows along the tent's sagging ceiling.
+    The canvas walls do little to shield you from the environment outside. 
+    
+    A single lantern,{cps=4} {/cps}its flame weak and flickering,{cps=4} {/cps}casts shadows along the tent's sagging ceiling.
 
     This was the life of a conscripted solider.
     
@@ -297,49 +293,48 @@ label start:
 
     Bunkmate "What was that about? You get in trouble?"
 
-    "Your bunkmate above you shifts,{cps=4} {/cps}eyes filled with concern."
+    "Your bunkmate above you shifts to eye you inquisitively."
 
     menu:
         "Be honest":
             Iris "Actually,{cps=4} {/cps}I have great news!"
             "You lean in,{cps=4} {/cps}lowering your voice so as not to wake anyone."
             Iris "The Captain will announce the end of the war in the morning."
-            Bunkmate "NO WAY!!"
             "They nearly shout before clapping both hands over their mouth."
-            Iris "Shh,{cps=4} {/cps}I have to pack{cps=4}—{/cps}I'm leaving on a mission this morning"
-            Bunkmate "This is so huge{cps=4} {/cps}I'm not going to be able to sleep tonight!{cps=2} {/cps}Good luck [player_name]!"
+            Iris "Shh,{cps=4} {/cps}I have to pack{cps=4}—{/cps}I'm leaving before sunrise"
+            Bunkmate "I can't believe it will be over; THIS will be over.{cps=4} {/cps}I'm not going to be able to sleep tonight."
             jump continue3
 
         "Joke around":
-            Iris "Yep,{cps=4} {/cps}3 days laundry duty for me."
-            Bunkmate "Really?!"
+            Iris "3 days night shift duty for me."
+            Bunkmate "Man, that sucks."
             "You chuckle."
-            Iris "No,{cps=4} {/cps}not really."
-            Iris "I got assigned a mission,{cps=4} {/cps}you will hear about it in the morning~"
-            Bunkmate "Dang{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} that sucks."
+            Iris "Joking."
+            Iris "It was about a mission.{cps=4} {/cps}You will hear about it in the morning~"
+            Bunkmate "Hmph{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}Guess I'll wait."
             jump continue3
         
         "Be evasive":
-            Iris "No,{cps=4} {/cps}I got assigned a mission.{cps=2} {/cps} I leave before sunrise."
-            Bunkmate "Dang{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} that sucks."
+            Iris "I got assigned a mission.{cps=2} {/cps} I leave before sunrise."
+            Bunkmate "Hmph{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}Guess I'll wait."
             jump continue3
     
     label continue3:
 
     """
     
-    You take a moment to look at the map the Captain entrusted to you.
+    After checking that no one is spying, You take a moment to look at the map the Captain entrusted to you.
 
     """
     ##TODO: show map!!! ##
 
     """
 
-    A trip to the capital wouldn't take too long if you cut through the mountain path.
+    The ideal trip to the capital would be to cut through the mountain path.
 
     Three days,{cps=4} {/cps}maybe less if you're quick.
 
-    It would be best to pack enough food and supplies for at least twice that.
+    We'd need to pack enough food and supplies for at least twice that. For four people.
 
     Quietly you reach under the bunk to pull out your stuff.
 
@@ -348,7 +343,7 @@ label start:
     ##TODO: show inventory packing here!!! ##
 
     """
-    You decide to get what little rest you still can.
+    You decide to sleep, getting what little rest you still can.
     """
 
 
