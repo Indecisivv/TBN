@@ -359,19 +359,19 @@ label start:
     centered "Day 1"
     
     """
-    It's still early in the morning as you make your way to the designated meeting spot.
+    Sunrise hasn't hit yet as you make your way to the designated meeting spot.
 
-    Soldiers move about groggily,{cps=4} {/cps}some returning from night patrols,{cps=4} {/cps}others preparing for the day ahead.
+    Soldiers move about groggily. The night shift returns for some needed sleep as{cps=4} {/cps}the day shift gets ready to work.
 
     """
     scene cave with Dissolve(1.5)
 
     """
-    Your small party gathers near the supply tent,{cps=4} {/cps}where a wooden carriage,{cps=4} {/cps}tied to a sturdy draft horse,{cps=4} {/cps}stands ready.
+    You meet your party near the supply tent{cps=4} {/cps}where a wooden carriage{cps=4} {/cps}tied to a sturdy draft horse{cps=4} {/cps}stands ready.
 
-    The cold chill blows into the cave{cps=4} {/cps}the smell of rain and mud wafts in.
+    A cold chill blows into the cave,{cps=4} {/cps}bringing the smell of rain and mud. You wish nature was more merciful.
 
-    Plo is already there and securing the last of the crates onto the back of the carriage.
+    Plo secures the last of the crates onto the back of the carriage.
     """
 
     show plo happy
@@ -384,17 +384,17 @@ label start:
 
     show quinn sad
 
-    Quinn "At this rate our journey might be hindered by the mud."
+    Quinn "At this rate, our journey might be hindered by the mud."
 
     show plo happy at jumpAnim
 
     Plo "A little rain won't bother me."
 
-    Plo "Rain or shine you can trust that I {i}will{/i} be driving that carriage."
+    Plo "I'll be driving that carriage even if it's blizzardin'."
 
     "Darcey approaches,{cps=4} {/cps} a bag in hand and a dignified smirk on her face."
 
-    Darcey "Yeah,{cps=4} {/cps} just try not to get us stuck in a ditch,{cps=4} {/cps}alright?"
+    Darcey "Try not to get us stuck in a ditch,{cps=4} {/cps}alright?"
 
     show plo angry
 
@@ -431,12 +431,12 @@ label start:
             show darcey angry
             show plo neutral
             show quinn neutral
-            Iris "This mission holds the lives of many people in our hands."
+            Iris "The lives of many people rely on this letter being delivered."
             show darcey sad
             Darcey "Apologies,{cps=4} {/cps}[player_name]."
-            "Darcey looks apologetic,{cps=4} {/cps}embarrassed of her unknightly behavior."
+            "Darcey looks embarrassed of her unknightly behavior."
             $ quinn_points += 3
-            "Plo awkwardly shuffles towards the carriage to get away."
+            "Plo awkwardly shuffles towards the carriage to get some air."
             ##TODO: ANImaTion here!!! ##
             $ plo_points -= 3
             $ get_serious = True
@@ -450,41 +450,41 @@ label start:
 
 
     """
-    The conversation trails off as the sound of rain tapping against the cave mouth grows louder.
+    The conversation dies off as the sound of rain tapping against the heavy stone of the cave grows louder.
 
-    Quinn's eyes narrow slightly as he glances toward the road ahead.
+    Quinn's eyes narrow slightly at the sight of the road ahead.
     """
 
     Quinn "We shouldn't waste any more time."
 
-    Quinn "The longer we wait the worst it will be."
+    Quinn "The weather will only get worse."
 
-    Plo "Alright,{cps=4} {/cps}alright.{cps=2} {/cps}Let's get this thing on the road."
+    Plo "Alright,{cps=4} {/cps}everybody.{cps=2} {/cps}Let's get this letter on the road."
 
     "Plo packs the final crate and secures the latch on the carriage."
 
-    Iris "Let's not waste any more time.{cps=2} {/cps}Mount up."
+    Iris "Mount up."
 
     """
     Darcey and Quinn enter the carriage.
 
-    As Quinn steps in,{cps=4} {/cps}he turns around and glances at you with the door propped open.
+    Quinn props the door open and faces you with respect.
     
     """
     
-    Quinn "Getting in,{cps=4} {/cps}[player_name]?"
+    Quinn "After you,{cps=4} {/cps}[player_name]."
 
     menu:
         "Sit inside":
-            Iris "Yes,{cps=4} {/cps}let's head in then."
+            Iris "Thank you, Quinn."
             $ quinn_points += 5
             $ darcey_points += 5
             jump InsideCarriage
 
         "Guard outside":
-            Iris "You two head in,{cps=4} {/cps}I'll help guard outside alongside Plo."
-            Plo "Not afraid of the rain?"
-            Plo "Well,{cps=4} {/cps}let's get a move on then."
+            "[player_name] waves their hand at Quinn."
+            Iris "No need,{cps=4} {/cps}I'll help guard outside alongside Plo."
+            Plo "Hmph, at least someone else isn't afraid of water."
             Quinn "As you wish."
             "Quinn shuts the door behind them."
             $ plo_points += 5
@@ -498,28 +498,28 @@ label start:
     scene carriage with Dissolve(1.5)
 
     """
-    You climb into the carriage,{cps=4} {/cps}settling into the slightly worn wooden seat.
+    You climb into the carriage,{cps=4} {/cps}settling on the slightly worn wooden seat.
 
-    The inside of the carriage is dim,{cps=4} {/cps}the patter of rain muffled by the canvas roof.
+    The inside is dim without the presence of an oil lamp.{cps=4} {/cps}You can hear the muffled voice of rain hitting the canvas roof.
     """
 
     show quinn neutral at left
     show darcey happy at right
 
-    Darcey "So,{cps=4} {/cps}Major [player_name]... you're the one in charge now. Got any words of wisdom before we roll out?"
+    Darcey "So,{cps=4} {/cps}Seargent [player_name]... Got any words of wisdom before we roll out?"
     menu:
         "Keep it lighthearted":
-            Iris "Just try not to kill each other before we get there,{cps=4} {/cps}alright?"  
+            Iris "Try not to kill each other before we get there."  
             "Darcey laughs,{cps=4} {/cps}while Quinn gives a small,{cps=4} {/cps}knowing smile."  
             Darcey "I'll be on my best behavior." 
-            Quinn "How encouraging of you." 
+            Quinn "I bet so." 
             $ darcey_points += 5
             $ quinn_points += 3
 
         "Be serious":
-            Iris "This mission is too important for any distractions. Stay focused."  
+            Iris "Stay focused. Stay alert. Distractions can't delay us."  
             """
-            Darcey's smile fades slightly. 
+            Darcey agrees, but her smile slightly fades. 
             
             Quinn gives a small nod of approval.
             """
@@ -528,7 +528,7 @@ label start:
             $ quinn_points += 5
 
     """
-    Time passes in silence,{cps=4} {/cps}the rain not letting up.
+    Time passes in silence. {cps=4} {/cps}The rain doesn't let up.
     """
 
     menu:
@@ -536,16 +536,16 @@ label start:
             label path:
             $ quinn_points += 5
             Iris "What's the terrain like ahead?"
-            Quinn "Rough. Mud at first,{cps=4} {/cps}then gravel. It'll get better once we hit the main road."  
+            Quinn "Rough. Once we're out of the mud, we'll hit gravel. It'll even out once we hit the main road."  
             "Darcey sighs."
-            Darcey "Let's hope Plo's steering is as good as his bragging." 
+            Darcey "Let's hope Plo is as skilled as he brags he is." 
             jump continue5
 
         "Ask about Darcey and Plo":
             Iris "What's the deal between you and Plo?"
             "Darcey sighs,{cps=4} {/cps}lowering her voice to a whisper."
-            Darcey "Let's just say he does not exactly act like a model soldier,{cps=4} {/cps}he's not the kind of person who cares about being on someone's bad side."
-            "Quinn hits her softly with his elbow scoldingly."
+            Darcey "Let's just say you'd be wrong to expect him to be a model soldier.{cps=4} {/cps}Plo's not the kind of person who thinks of the consequences before he acts."
+            "Quinn hits her softly with his elbow."
             Quinn "He has a good heart when it matters." 
             jump continue5
 
@@ -555,7 +555,7 @@ label start:
 
             Quinn's eyes remain half-lidded as Darcey hums softly under her breath.
 
-            The rhythmic sway of the carriage mixed with the patter of rain creates a drowsy sort of calm.
+            The rhythmic sway of the carriage mixes with the patter of rain to create a drowsy sort of calm.
             """
             Quinn "Something on your mind,{cps=4} {/cps}[player_name]?"
             menu:
@@ -571,8 +571,8 @@ label start:
                         menu:
                             "I'm not much of a talker.":
                                 Iris "I'm more of a listener."  
-                                Darcey "That's not a bad thing." 
-                                "Darcey's gaze lingers on you for a moment longer before she looks toward the window." 
+                                Darcey "Listeners are valuable too." 
+                                "Darcey's gaze moves toward the window." 
                                 Darcey "Sometimes quiet company is better."   
                                 $ darcey_points += 5 
                                 jump continue5 
@@ -589,13 +589,13 @@ label start:
                     jump continue5
     label continue5:
 
-    "The conversation fades into a comfortable silence as the carriage rocks gently beneath you."
+    "A comfortable silence dawns on you and your party as the carriage rocks gently beneath you."
 
     Darcey "So,{cps=4} {/cps}what do you think about-" 
     #TODO: shake screen
 
     """
-    You feel the carriage lurch forward,{cps=4} {/cps}almost knocking you out of the seat before stopping just as quickly.
+    The carriage lurches forward,{cps=4} {/cps}almost knocking you out of the seat before stopping just as quickly.
 
     You hear a horse's annoyed neigh from outside.
     """
@@ -604,7 +604,7 @@ label start:
     
     Iris "That does not sound good..."
 
-    "You,{cps=4} {/cps}Quinn,{cps=4} {/cps}and Darcey quickly make your way out of the carriage."
+    "You,{cps=4} {/cps}Quinn,{cps=4} {/cps}and Darcey make your way out of the carriage."
 
     scene forest with Dissolve(1.5)
 
@@ -612,7 +612,7 @@ label start:
 
     Plo "I am,{cps=4} {/cps}but I can't say the same for the carriage."
 
-    Plo "One of the wheels got stuck in the mud..."
+    "One of the carriage's wheels was stuck in the mud."
 
     jump continue6
 ######################
@@ -623,40 +623,42 @@ label start:
     scene forest with Dissolve(1.5)
     ##TODO: rain effect here
     """
-    The steady patter of rain against the canopy above mingles with the sound of the horse's hooves stomping through the wet mud path.
+    The steady patter of rain against the carriage's canopy mingles with the sound of the horse's hooves stomping through the wet mud.
 
-    The air is thick with moisture,{cps=4} {/cps}and the occasional gust of wind sends moisture sliding down your collar.
+    Moisture from the air sticks to you; the rain helping it drip down your collar.
 
-    "Plo sits at the front,{cps=4} {/cps}reins loose in his hands,{cps=4} {/cps}eyes half-lidded as he watches the road ahead."
+    "Plo sits at the front,{cps=4} {/cps}reins loose in his hands and{cps=4} {/cps}eyes half-lidded as he watches the road ahead."
 
-    You sit side by side in peaceful silence as you make your way through the thick forest.
+    You sit next to him in peaceful silence as the party makes its way through the thick forest.
     """
 
-    Plo "Rain's picking up…" 
+    Plo "Rain's picking up." 
 
     menu:
         "Make small talk.":
             $ plo_points += 5
-            Iris "Lovely weather today,{cps=4} {/cps}huh?"
+            Iris "The weather only gets better for us."
             Plo "Haha!" 
-            Plo "It is actually quite nice for tortle folk like myself." 
+            Plo "It is actually quite nice for turtle folk like myself." 
             Plo "Keeps the shell from drying out."
             Iris "Is that so?"  
-            Plo "Yes,{cps=4} {/cps}nothing worse than an itchy shell."  
+            "Plo grunts in approval."
+            Plo "Nothing worse than an itchy shell."  
             "Plo flashes you a smile before focusing back on the road."  
-            Iris "And here I thought you were just happy to see the sun gone."  
-            Plo "Eh. The sun's not so bad. It's the heat that's the problem."  
+            Iris "And here I thought you were going to be miserable out here."  
+            Plo "Eh, only if it were sunny. It's the heat that's the problem."  
+            "A second of silence passes before Plo's face scrunches."
             Plo "That... and sand."  
-            Iris "You don't like sand?"  
+            Iris "Sand?"  
             Plo "It gets {i}everywhere{/i}."  
             jump continue8
 
         "Talk about the mission.":
             Iris "Did you pack everything you needed for the mission last night?"
-            Plo "Barely had any time to get this prepared,{cps=4} {/cps}so I just packed the essentials."
+            "Plo makes an annoyed grunt. He can't hide his grumble."
+            Plo "Barely had any time,{cps=4} {/cps}so I just packed the essentials."
             ##the joke is that his inventory is filled with junk, ill make a graphic for this
-            show jokeinventory
-            Iris "Essentials?" 
+            show jokeinventory 
             menu:
                 "Praise his packing skills":
                     Iris "You... really thought of everything I guess."
@@ -667,14 +669,15 @@ label start:
                     jump continue8
 
                 "Question his choices":
+                    Iris "I'm not sure a lot of that is necessary..."
                     Plo "Hmph."
-                    Plo "What would a human know about packing,{cps=4} {/cps}anyway."
+                    Plo "What would a human know about packing{cps=4} {/cps}anyway."
                     $ plo_points -= 3
                     jump continue8
 
     label continue8:
 
-    "Plo's eyes remain sharp,{cps=4} {/cps}scanning the muddy road ahead."
+    "Plo's eyes remain scanning the muddy road ahead."
 
     "The road begins to narrow as the mud deepens beneath the horse's hooves."   
 
@@ -682,12 +685,12 @@ label start:
     #TODO: shake screen
 
     """
-    You feel the carriage lurch forward,{cps=4} {/cps}almost knocking you out of the seat before stopping just as quickly.
+    The carriage lurches forward,{cps=4} {/cps}almost knocking you out of the seat before stopping just as quickly.
 
-    The horse strapped to the vehicle lets out an annoyed whine and stomps its feet.
+    The horse strapped to the vehicle lets out an annoyed whine while stomping its feet.
     """
 
-    Plo "Get stuck in the mud..."
+    Plo "Get stuck in the mud."
 
     show plo angry
 
@@ -700,7 +703,7 @@ label start:
     """
     Plo groans,{cps=4} {/cps}jumping down and already stepping toward the wheel.
     
-    Quinn and Darcey quickly emerge from the carriage,{cps=4} {/cps}worry written on both their faces.
+    Quinn and Darcey quickly emerge from the carriage,{cps=4} {/cps}the former worried and the latter annoyed.
     """ 
 
     Quinn "[player_name],{cps=4} {/cps}Plo,{cps=4} {/cps}are you alright?"
