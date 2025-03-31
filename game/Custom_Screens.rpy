@@ -16,11 +16,11 @@ image ninepatch paper tiled = Frame("ninepatch paper", 40, 40, 40, 40, tile=True
 
 #Use Default to define items, not Define, since items can change
 #Should probably move all this to its own file
-default Guitar = item("Guitar", "A Stringed Instrument", 3, 1, 1, "R")
+default Guitar = item("Guitar", "A Stringed Instrument", 3, 1, 20, "R")
 default Flute = item("Flute", "A Wind Instrument", 1, 3, 1, "R")
 default Biscuit = item("Biscuit", "A Hearty Pastry", 1, 1, 1, "R")
-default Pizza = item("Pizza", "A Savory, Foreign Cuisine", 2, 2, 1, "R")
-default Cake = item("Cake", "A Hearty Pastry", 1, 1, 1, "R")
+default Pizza = item("Pizza", "A Savory, Foreign Cuisine", 2, 2, 5, "R")
+default Cake = item("Cake", "A Hearty Pastry", 1, 1, 5, "R")
 
 
 #Every Item in the game MUST be added to this list
@@ -132,7 +132,7 @@ init python:
             if (ItemList[i].name == dragged_items[0].drag_name):       
                 print("FOUND MATCHING ITEM IN ITEM LIST")
                 if (the_inventory.has_item(ItemList[i])):
-                    the_inventory.remove_item(ItemList[i])
+                    the_inventory.move_item(ItemList[i])
                     print("REMOVED ITEM")
                     return
                 else:
@@ -165,12 +165,16 @@ screen Inventory_Screen:
 #Main button to display inventory
 screen inventory_button():
     frame:
-        xalign 0.5 ypos 50
+        xalign 0.05 yalign 0.05
         vbox:
-            textbutton "Show Inventory" action [Show("Inventory_Screen"), Hide("inventory_button")]
+            textbutton "Show Inventory" action [Show("Inventory_Screen"), Hide("inventory_button"), Show("close_inventory_button")]
 
 
-
+screen close_inventory_button():
+    frame:
+        xalign 0.05 yalign 0.05
+        vbox:
+            textbutton "Hide Inventory" action [Hide("Inventory_Screen"), Show("inventory_button"), Hide("close_inventory_button")]
 
 
 

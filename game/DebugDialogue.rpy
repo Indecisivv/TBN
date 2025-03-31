@@ -177,11 +177,12 @@ label DebugItemCheck:
 
 
 
-    #show screen inventory_button
 
     "Here's the button"
 
-    call screen Inventory_Screen
+    show screen inventory_button
+
+    #call screen Inventory_Screen
  
 
     "Here's the inventory"

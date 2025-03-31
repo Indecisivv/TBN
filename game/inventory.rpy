@@ -68,6 +68,22 @@ init python:
                         return False
             return True
 
+        ## remomoveve item ####################################################################
+        ## searches entire matrix for item, remove it from the matrix so it can be
+        ## 
+        ##
+        ## Args:
+        ##  item: item to remove
+        ## Returns:
+        ##  void
+        ##################################################################################
+        def move_item(self, item):
+            for i in range(self.height):
+                for j in range(self.width):
+                    if self.items_matrix[i][j] == item:
+                        self.items_matrix[i][j] = None
+
+
         ## Check Neighbors ################################################################
         ## Check the matrix starting from top right given coordinate[row][col], 
         ## check if the neighbors are empty give the size and item shape type
