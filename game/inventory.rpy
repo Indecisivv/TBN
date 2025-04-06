@@ -146,5 +146,7 @@ init python:
                     return True
             return False
 
+
+
 # Initialization - Do not delete
 default the_inventory = inventory(4, 3, [])

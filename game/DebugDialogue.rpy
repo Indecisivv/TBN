@@ -168,7 +168,7 @@ label DebugItemCheck:
     #else:
     #    "Failed To Add a Biscuit! That Space is already Occuppied"
 
-    
+    show screen inventory_button
 
     if TestBool:
         "This is true"
@@ -180,12 +180,22 @@ label DebugItemCheck:
 
     "Here's the button"
 
-    show screen inventory_button
+    
 
     #call screen Inventory_Screen
  
 
     "Here's the inventory"
+
+    "1"
+
+    "2"
+
+    "3"
+
+    "4"
+
+    "5"
 
 
     show ninepatch paper tiled at Quarter:
