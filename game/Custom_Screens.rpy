@@ -18,35 +18,34 @@ image ninepatch paper tiled = Frame("ninepatch paper", 40, 40, 40, 40, tile=True
 #Should probably move all this to its own file
 default Guitar = item("Guitar", "A Stringed Instrument", 3, 1, 20, "R")
 default Flute = item("Flute", "A Wind Instrument", 1, 3, 1, "R")
-default Biscuit = item("Biscuit", "A Hearty Pastry", 1, 1, 1, "R")
+default Biscuit = item("Biscuit", "A Hearty Pastry", 1, 1, 3, "R")
 default Pizza = item("Pizza", "A Savory, Foreign Cuisine", 2, 2, 5, "R")
 default Cake = item("Cake", "A Hearty Pastry", 1, 1, 5, "R")
 
 
-#Every Item in the game MUST be added to this list
-#This way it can be found when attempting to add it to the inventory via drag/drop
-default ItemList = [Cake, Biscuit, Pizza, Guitar, Flute]
 
 
 #Drag objects with names that correspond to a specific item
-#The name MUST match the desired item
-#I would've liked to make a custom class or something,
-#but I couldn't get an alternate method/class that linked drag objects with item data to work
-#so this will have to do
-default biscuit = Drag(d = Solid("#10f609", xysize=(200, 200)), drag_name = "Biscuit", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.5, 0.5))
-default pizza = Drag(d = Solid("#ff9811", xysize = (400, 400)), drag_name = "Pizza", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.0, 0.8))
+default biscuit = Drag(d = Solid("#10f609", xysize=(200, 200)), drag_name = "Biscuit", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.2))
+default pizza = Drag(d = Solid("#ff9811", xysize = (400, 400)), drag_name = "Pizza", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.6, 0.5))
 default guitar = Drag(d = Solid("#522801", xysize = (600, 200)), drag_name = "Guitar", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.8))
-default flute = Drag(d = Solid("#ffdec0", xysize = (200, 600)), drag_name = "Flute", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.0, 0.0))
+default flute = Drag(d = Solid("#ffdec0", xysize = (200, 600)), drag_name = "Flute", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.9, 0.0))
 
+default testList = [biscuit, pizza, guitar, flute]
 
-
+default ItemDictionary = {
+    biscuit: Biscuit,
+    pizza: Pizza,
+    guitar: Guitar,
+    flute: Flute
+    }
 
 #All these numbers are subject to change
 #Distance between columns
 default ColumnParity = 0.125
 
 #At what vertical alignment does the inventory start?
-default ColumnStartPoint = 0.3
+default ColumnStartPoint = 0.1
 
 #Distance between rows
 default RowParity = 0.2
@@ -87,6 +86,9 @@ default Space12 = Drag(d = "blank.png", drag_name = "2.3", draggable = False, an
 #Add All spaces and drag objects
 #drag objects must be in this list as well, 
 #otherwise they won't interact with the empty spaces in the way we want
+
+
+#Create a loop that starts from index 12, if not in the inventory, hide it
 default InventoryGroup = DragGroup(Space1, Space2, Space3, Space4,
 Space5, Space6, Space7, Space8,
 Space9, Space10, Space11, Space12,
@@ -109,35 +111,33 @@ init python:
             print("Nothing There!")
             return
 
-        
-        for i in range(len(ItemList)):
-            #Search the array for the desired item whos name matches the drop object  
-            if (ItemList[i].name == dragged_items[0].drag_name):       
-                #If item is successfully added to inventory on drop, snap 
-                if (the_inventory.add_item(ItemList[i], int(float(dropped_on.drag_name[0])), int(float(dropped_on.drag_name[2])))): 
-                    dragged_items[0].snap((dropped_on.x / config.screen_width) - (ColumnParity  * (ItemList[i].width - 1)), (dropped_on.y / config.screen_height))
-                    return
-                else:
-                    print("SPACE IS OCCUPPIED")
-                    print("X: " + dropped_on.drag_name[0])
-                    print("Y: " + dropped_on.drag_name[2])
-                    return
+         
+        #If item is successfully added to inventory on drop, snap 
+        if (the_inventory.add_item(ItemDictionary[dragged_items[0]], int(float(dropped_on.drag_name[0])), int(float(dropped_on.drag_name[2])))): 
+            dragged_items[0].snap((dropped_on.x / config.screen_width) - (ColumnParity  * (ItemDictionary[dragged_items[0]].width - 1)), (dropped_on.y / config.screen_height))
+            return
+        else:
+            print("SPACE IS OCCUPPIED")
+            print("X: " + dropped_on.drag_name[0])
+            print("Y: " + dropped_on.drag_name[2])
+            return
 
     #Overload left clicked
     #Remove item from the inventory when clicked if in the inventory
     def OnActivate(dragged_items):
         print("Activated!")
-        for i in range(len(ItemList)):
-            #Search the array for the desired item whos name matches the drop object  
-            if (ItemList[i].name == dragged_items[0].drag_name):       
-                print("FOUND MATCHING ITEM IN ITEM LIST")
-                if (the_inventory.has_item(ItemList[i])):
-                    the_inventory.move_item(ItemList[i])
-                    print("REMOVED ITEM")
-                    return
-                else:
-                    print("FAILED TO REMOVE")
-                    return
+        if (the_inventory.has_item(ItemDictionary[dragged_items[0]])):
+            the_inventory.move_item(ItemDictionary[dragged_items[0]])
+
+            #dragged_items[0].set_child(Null())
+            #InventoryGroup[12].set_child(Null())
+            #testList[1].set_child(biscuit)            
+            #dragged_items[0].draggable = False
+
+        else:
+            print("FAILED TO REMOVE")
+            return
+
 
 
 
@@ -147,11 +147,33 @@ init python:
     def OnRightClick():
         print("Screen Height: " + str(config.screen_height))
         print("Screen Width: " + str(config.screen_width))
+        HideAllNonInventoryItems()
+
+
+
+    
+    #Cycle through all the draggables and hide the ones not in the inventory
+    def HideAllNonInventoryItems():
+        #Cycle through all the item draggables
+        for x in ItemDictionary:
+            if (the_inventory.has_item(ItemDictionary[x]) == False):
+                x.set_child(Null())
+                x.draggable = False
+
+    
+
+
+
+
+
+
 
 
 
 screen Inventory_Screen:
     modal True   
+
+    
     add InventoryGroup
 
         #image Frame("ninepatch paper", 40, 40, 40, 40, tile=True):
