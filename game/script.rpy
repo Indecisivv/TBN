@@ -639,7 +639,7 @@ label start:
             $ plo_points += 5
             Iris "The weather only gets better for us."
             Plo "Haha!" 
-            Plo "It is actually quite nice for turtle folk like myself." 
+            Plo "It is actually quite nice for tortle folk like myself." 
             Plo "Keeps the shell from drying out."
             Iris "Is that so?"  
             "Plo grunts in approval."
