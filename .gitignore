@@ -3,6 +3,7 @@
 ########################################
 cache/
 saves/
+renpy-ActionEditor3-master/
 
 
 # Compiled source #
@@ -38,3 +39,4 @@ files.txt
 
 # Built Visual Studio Code Extensions
 *.vsix
+.vscode/settings.json
