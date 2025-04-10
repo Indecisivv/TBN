@@ -288,10 +288,15 @@ screen navigation():
 
     vbox:
         style_prefix "navigation"
+        
+        if renpy.get_screen("main_menu"):
+            xalign 0.5
+            yalign 0.85
 
-        xpos gui.navigation_xpos
-        yalign 0.5
-
+        else: 
+            xoffset 60
+            yalign 0.5
+        
         spacing gui.navigation_spacing
 
         if main_menu:
@@ -306,7 +311,7 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Settings") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -339,7 +344,9 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
-
+    outlines [(absolute(1),"#000000", absolute(0), absolute(0))]
+    xalign 0.5
+    
 
 ## Main Menu screen ############################################################
 ##
@@ -352,26 +359,30 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
+    style_prefix "main_menu"
+
     add gui.main_menu_background
+    add Fixed(SnowBlossom("gui/particle1.png", count=100, xspeed=(100, 70), yspeed=(100, 100), start=200))
+
 
     ## This empty frame darkens the main menu.
     frame:
-        style "main_menu_frame"
+        pass
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
+    #if gui.show_name:
 
-        vbox:
-            style "main_menu_vbox"
+        #vbox:
+            #style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            #text "[config.name!t]":
+                #style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            #text "[config.version]":
+                #style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -521,7 +532,7 @@ style game_menu_side:
     spacing 15
 
 style game_menu_label:
-    xpos 75
+    xpos 50
     ysize 180
 
 style game_menu_label_text:
@@ -652,6 +663,10 @@ screen file_slots(title):
             vbox:
                 style_prefix "page"
 
+                
+                add "gui/frame2.png" yoffset 130
+
+
                 xalign 0.5
                 yalign 1.0
 
@@ -670,7 +685,7 @@ screen file_slots(title):
                         textbutton _("{#quick_page}Q") action FilePage("quick")
 
                     ## range(1, 10) gives the numbers from 1 to 9.
-                    for page in range(1, 10):
+                    for page in range(1, 4):
                         textbutton "[page]" action FilePage(page)
 
                     textbutton _(">") action FilePageNext()
@@ -730,7 +745,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Settings"), scroll="viewport"):
 
         vbox:
 
