@@ -60,6 +60,12 @@ transform AnchorOne:
 transform MoveToLeft:
     easein zoomRate LeftSide
 
+transform MoveToHalfLeft:
+    easein zoomRate HalfLeft
+
+transform MoveToSlightLeft:
+    easein zoomRate SlightLeft
+
 transform MoveToRight:
     easein zoomRate RightSide
 
@@ -87,11 +93,11 @@ transform CutOut:
 #region Proximity
 transform Close:
     zoom 2.0
-    offset (0, 400)
+    offset (0, 250)
 
 transform VeryClose:
     zoom 3.0
-    offset (0, 1100)
+    offset (0, 100)
 #endregion
 #PROXIMITY
 
@@ -232,31 +238,31 @@ transform TopLeft:
 
 transform LeftSide:
     xpos 0.1
-    ypos 1.0
+    ypos 0.0
 
 transform SlightLeft:
     xpos 0.15
-    ypos 1.0
+    ypos 0.0
 
 transform HalfLeft:
     xpos 0.25
-    ypos 1.0
+    ypos 0.0
 
 transform MiddleLeft:
     xpos 0.4
-    ypos 1.0
+    ypos 0.0
 
 transform SlightLeftMore:
     xpos 0.3
-    ypos 1.0
+    ypos 0.0
 
 transform HalfRight:
     xpos 0.75
-    ypos 1.0
+    ypos 0.0
 
 transform RightSide:
     xpos 0.9
-    ypos 1.0
+    ypos 0.0
 
 transform Quarter:
     xpos 0.25
@@ -272,11 +278,11 @@ transform topmiddle:
 
 transform MiddleRight:
     xpos 0.6
-    ypos 1.0
+    ypos 0.0
 
 transform middle:
     xpos 0.5
-    ypos 1.0
+    ypos 0.0
 
 transform slightUp:
     ypos 0.4
