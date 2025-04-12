@@ -253,9 +253,10 @@ screen quick_menu():
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Load") action ShowMenu('load')
+            #textbutton _("Q.Save") action QuickSave()
+            #textbutton _("Q.Load") action QuickLoad()
+            textbutton _("Settings") action ShowMenu('settings')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -311,7 +312,9 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Settings") action ShowMenu("preferences")
+        textbutton _("Settings") action ShowMenu("settings")
+
+        textbutton _("Achievements") action ShowMenu("bobcachievements")
 
         if _in_replay:
 
@@ -347,6 +350,51 @@ style navigation_button_text:
     outlines [(absolute(1),"#000000", absolute(0), absolute(0))]
     xalign 0.5
     
+
+
+## Achievements ########################################################
+##
+## Used to display the main menu when Ren'Py starts.
+##
+## https://www.renpy.org/doc/html/screen_special.html#main-menu
+
+define BOBCACHIVEMENTS_SPACING = 20
+define BOBCACHIVEMENTS_HIDDEN_ACHIEVEMENT_TEXT = _("???")
+define BOBCACHIEVEMENTS_SPACING_CHAR = _("-")
+define BOBCACHIEVEMENTS_GRANTED_COLOR = gui.text_color
+define BOBCACHIEVEMENTS_UNGRANTED_COLOR = gui.insensitive_color
+
+# Additional available achievement-related variables for screen customization:
+# - BOBCACHIEVEMENTS_NUMACHIEVEMENTS : integer number of total achievements registered in the framework
+# - BOBCACHIEVEMENTS_MAP : map of {reference_id:str : (title:str, description:str, is_hidden:boolean)}
+screen bobcachievements():
+    tag menu
+    default numachievements = len(persistent._achievements)
+    use game_menu(_("Achievements"), scroll="viewport"):
+        style_prefix "about"
+        vbox:
+            text _("[numachievements] / [BOBCACHIEVEMENTS_NUMACHIEVEMENTS] achievements unlocked") size gui.label_text_size
+            null height BOBCACHIVEMENTS_SPACING
+            for achievement_id in BOBCACHIEVEMENTS_MAP:
+                hbox:
+                    spacing BOBCACHIVEMENTS_SPACING
+                    if achievement.has(achievement_id):
+                        # We have the achievement, so show its name and description
+                        text BOBCACHIEVEMENTS_MAP[achievement_id][0] color BOBCACHIEVEMENTS_GRANTED_COLOR
+                        text BOBCACHIEVEMENTS_SPACING_CHAR color BOBCACHIEVEMENTS_GRANTED_COLOR
+                        text BOBCACHIEVEMENTS_MAP[achievement_id][1] color BOBCACHIEVEMENTS_GRANTED_COLOR
+                    elif BOBCACHIEVEMENTS_MAP[achievement_id][2]:
+                        # The achievement has not been achieved, and it is marked as
+                        # hidden, so don't show a description
+                        text BOBCACHIVEMENTS_HIDDEN_ACHIEVEMENT_TEXT color BOBCACHIEVEMENTS_UNGRANTED_COLOR
+                    else:
+                        # The achievement has not been achieved but it is not hidden
+                        # so just show its name
+                        text BOBCACHIEVEMENTS_MAP[achievement_id][0] color BOBCACHIEVEMENTS_UNGRANTED_COLOR
+                        text BOBCACHIEVEMENTS_SPACING_CHAR color BOBCACHIEVEMENTS_UNGRANTED_COLOR
+                        text BOBCACHIVEMENTS_HIDDEN_ACHIEVEMENT_TEXT color BOBCACHIEVEMENTS_UNGRANTED_COLOR
+
+
 
 ## Main Menu screen ############################################################
 ##
@@ -566,6 +614,19 @@ screen about():
 
         vbox:
 
+            label "Credits"
+            text _("Art {a=https://revierr.itch.io/}Revierr{/a}")
+            text _("Sound Designer {a=https://andrewshirey10.wixsite.com/wavesxandrew/portfolio}Andrew Shirey{/a}")
+            text _("Composer {a=https://a-sett.itch.io/}a_sett{/a}")
+            text _("Lead Programmer {a=https://william-rockwell.itch.io/}William Rockwell{/a}")
+            text _("Editor {a=https://khaosphoenix.itch.io/}khaosphoenix{/a}")
+            text _("Lead Writer {a=https://revierr.itch.io/}indecisiv{/a}\n")
+
+            label "Special Thanks"
+            text _("Cut-in Art {a=https://arimiadev.com/}Arimia{/a}")
+            text _("Achievement System {a=bobcgames.com}bobcgames{/a}\n")
+            
+
             label "[config.name!t]"
             text _("Version [config.version!t]\n")
 
@@ -734,14 +795,14 @@ style slot_button_text:
     properties gui.text_properties("slot_button")
 
 
-## Preferences screen ##########################################################
+## Settings screen ##########################################################
 ##
-## The preferences screen allows the player to configure the game to better suit
+## The Settings screen allows the player to configure the game to better suit
 ## themselves.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
-screen preferences():
+screen settings():
 
     tag menu
 
@@ -766,6 +827,19 @@ screen preferences():
                     textbutton _("Unseen Text") action Preference("skip", "toggle")
                     textbutton _("After Choices") action Preference("after choices", "toggle")
                     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+
+                # vbox:
+                #     style_prefix "check"
+                #     label _("Font")
+                #     textbutton _("Default") action [ gui.SetPreference("font_1", "gui/JMH_TYPEWRITER.otf"), gui.SetPreference("font_2", "gui/IMFellDWPicaSC.ttf"), gui.SetPreference("font_3", "gui/JMH_TYPEWRITER.otf")]
+                #     #textbutton _("OpenDyslexic") action [ gui.text_font("OpenDyslexic.otf"), gui.name_text_font("OpenDyslexic.otf"), gui.interface_text_font("OpenDyslexic.otf")]
+                #     textbutton _("Atkinson Hyperlegible") action [ gui.SetPreference("font_1", "AtkinsonHyperlegible.ttf"), gui.SetPreference("font_2", "AtkinsonHyperlegible.ttf"), gui.SetPreference("font_3", "AtkinsonHyperlegible.ttf")]
+                    
+                # vbox:
+                #     style_prefix "check"
+                #     label _("Screen Shake")
+                #     textbutton "Disabled" action ToggleField(persistent,"screen_shake",true_value=True,false_value=False)
+                #     textbutton "Enabled" action ToggleField(persistent,"screen_shake",true_value=False,false_value=True)
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
