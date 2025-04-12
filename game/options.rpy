@@ -4,6 +4,11 @@
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
 ## may want to uncomment them when appropriate.
 
+## CUSTOM ######################################################################
+
+#Can we shake the screen/display shaking images?
+default persistent.screenshake = True
+
 
 ## Basics ######################################################################
 
@@ -12,7 +17,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("TBN")
+define config.name = _("Don't Shoot the Messenger")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -37,7 +42,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "TBN"
+define build.name = "DontShootTheMessenger"
 
 
 ## Sounds and music ############################################################
@@ -62,7 +67,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+#define config.main_menu_music = "main-menu-theme.ogg"
 
 
 ## Transitions #################################################################
@@ -143,7 +148,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "TBN-1738442027"
+define config.save_directory = "DontShootTheMessenger-Saves"
 
 
 ## Icon ########################################################################
