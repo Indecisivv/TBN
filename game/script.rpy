@@ -989,7 +989,7 @@ label start:
     The steady patter of rain against the carriage's canopy mingles with the sound of the horse's hooves stomping through the wet mud.
 
 
-    Moisture from the air sticks to you; the rain helping it drip down your collar.
+    Moisture from the air sticks to you; the rain helps it drip down your collar.
     """
 
     show plo neutral at left:
@@ -1047,7 +1047,7 @@ label start:
             hide jokeinventory
             menu:
                 "Praise his packing skills":
-                    Iris "You... really thought of everything I guess."
+                    Iris "You... really thought of everything."
                     Iris "How did you even get all that to fit in there?"  
                     show plo blush
                     Plo "The amount of supply runs i've gone on you pick up some things."
@@ -1087,7 +1087,7 @@ label start:
 
 
     """
-    The carriage lurches forward,{cps=4} {/cps}almost knocking you out of the seat before stopping just as quickly.
+    The carriage lurches forward, almost knocking you out of the seat before stopping just as quickly.
 
 
     The horse strapped to the vehicle lets out an annoyed whine while stomping its feet.
@@ -1161,10 +1161,10 @@ label start:
 
     """
 
-    The rain continues to patter against the leaves as the carriage trudges along the muddy path.
+    The rain continues to patter against the leaves as the carriage is stuck on the muddy path.
 
 
-    The road winds precariously close to a steep drop.
+    The party finds themselves past a winding road, precariously close to a steep drop.
     """
 
 
@@ -1172,7 +1172,7 @@ label start:
     show quinn neutral
 
 
-    Darcey "Hah,{cps=4} {/cps}figures."
+    Darcey "Figures."
 
     show plo angry
 
@@ -1181,46 +1181,53 @@ label start:
     Iris "Plo,{cps=4} {/cps}how long will this take to fix?"
 
     show plo neutral
-    Plo "Nothing I can't fix,{cps=4} {/cps}just give me a minute I got just the thing."
+
+    "Plo waves away the concern."
+
+    Plo "Nothing I can't fix,{cps=4} {/cps}just give me a min' I got just the thing."
 
 
 
     if get_serious == False:
         show darcey angry
-        Darcey "If you were so competent then why did it get stuck in the first place?"
+        Darcey "If you had things under control, it wouldn't have gotten stuck!"
         show plo angry
-        Plo "I don't control the weather!"
+        Plo "I didn't magick us to leave in the deludge!"
         show darcey neutral
-        Darcey "Yeah, but you could have at least avoided the deepest part of the mud."
+        Darcey "You could have planned to keep us on the road!"
         show plo neutral:
             jumpAnim
-        Plo "What am I gonna do, fly over it?{cps=4} {/cps}I'm a turtle not a bird!"
+        Plo "Excuse me if the storm makes it hard for comfort. I'm a turtle not a rain bug!"
         show plo angry
-        Plo "If you don't be quiet we are really going to see what its like to take a ride down a ravine."
+        "Plo points at the cliffs edge without losing Darcey's eye contact."
+        Plo "If you had the reins, we'd be down the ravine!"
         show iris shocked:
             jumpAnim
-        Iris "Guys,{cps=4} {/cps}don't fight{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
+        Iris "Guys,{cps=4} {/cps}enough{cps=4}!"
         show iris happy
-        Iris "Just think of it as a scenic stop."
+        Iris "This situation isn't ideal, but arguing and placing blame won't unstick the wheel. Besides, think of this as a chance to bond."
         show quinn happy
-        show plo angry
-        Plo "If you got time to enjoy the view why don't you go and help push."
+        show plo neutral
+        Plo "Bond, eh?"
+        "Plo looks back at Darcey."
+        show plo happy
+        "You should go push the stuck wheel out from the mud. It'll help our bond."
         show darcey happy
-        Darcey "We wouldn't want to take away your moment of glory."
-        show iris happy
-        Iris "Darcey, let's get behind and help push."
+        Darcey "Sure, we wouldn't want the senior to pull something."
+        show iris neutral
+        "Iris calls for Darcey from behind the carriage."
         show quinn neutral
+        show darcey neutral
+        Darcey "As you wish,{cps=4} {/cps}[player_name]."
         show darcey angry
-        Darcey "As you command,{cps=4} {/cps}[player_name]."
-        show darcey angry
-        "As she turns to move she gives Plo one last dirty look."
+        "As Darcey turns to go, she gives Plo one last dirty look. He's too busy grinning."
         show darcey neutral
     else:
         Iris "Darcey, let's get behind and help push."
-        show darcey neutral
-        Darcey "As you command,{cps=4} {/cps}[player_name]."
         show darcey angry
-        "As she turns to move she gives Plo one last dirty look."
+        "Darcey's anger, though strong, only appears for a brief second before being subdued."
+        show darcey neutral
+        Darcey "As you wish,{cps=4} {/cps}[player_name]."
         show darcey neutral
 
 
@@ -1243,7 +1250,7 @@ label start:
     show darcey angry:
         xpos 1.08 
     window auto show
-    Quinn "Iris,{cps=4} {/cps}a moment of your time."
+    Quinn "Iris,{cps=4} {/cps}a moment please."
     show quinn sad
 
 
@@ -1251,8 +1258,11 @@ label start:
         "Stay and help Plo.":
             $ plo_points += 5
             show iris neutral
-            Iris "Can it wait?{cps=4} {/cps}We have pressing matters here."
-            Plo "We are fine,{cps=4} {/cps}[player_name]."
+            Iris "I'm sorry, Quinn, but we have pressing matters here."
+            Quinn "I understand."
+            "Quinn nods then heads off towards the forest line."
+            "Iris approaches Plo ready to help in the front. Plo's hand stops her."
+            Plo "We are fine,{cps=4} {/cps}[player_name]. Go see what the kid needs."
             show plo happy
             Plo "Darcey and I have this handled."
             
@@ -1263,16 +1273,16 @@ label start:
             with Pause(0.40)
             show plo angry:
                 xpos 1.47 
-            "With Plo's reassurance you make your way over to the forest line where Quinn leads."
+            "With Plo's reassurance, you make your way over to the forest where Quinn waits."
             jump continue9
 
 
         "Go and see what Quinn wants at the perimeter.":
             $ quinn_points += 3
-            "The look on Quinn's face worries you."
-            Iris "Plo, work on getting this carriage unstuck while I check the perimeter."
+            "Concern distorted Quinn's face to your worry."
+            Iris "Plo, Darcey, work on getting this carriage free while Quinn and I check the perimeter."
             show plo happy
-            Plo "We can handle this here,{cps=4} {/cps}go ahead [player_name]."
+            Plo "Roger, Sergeant."
             show plo neutral:
                 subpixel True 
                 xpos 1.0 
@@ -1282,9 +1292,9 @@ label start:
                 xpos 1.47 
             show iris happy
             Iris "No fighting."
-            "You give them one last instruction before making your way to the forest line where Quinn leads."
+            "Quinn leds you to the forest line."
             show iris neutral
-            Iris "What's up?"
+            Iris "What's the matter?"
             jump continue9
            
            
@@ -1310,38 +1320,33 @@ label start:
     window auto show
 
     show quinn neutral
-    Quinn "As I was securing the area I found these."
+    Quinn "As I was securing the area, I found these."
     show quinn sad
     
-    "Quinn points and you take a look at the mud below."
+    "Quinn points at the mud below."
     #i will make this graphic too :D -perry
     show footprints
     """
-    A series of deep footprints are pressed into the mud,{cps=4} {/cps}partially washed out by the rain but still distinct.
+    A series of deep footprints press into the mud. They remain distinct despite the rain.
    
-    They are uneven,{cps=4} {/cps}as if whoever made them was moving quickly.
+    They're unevenness suggests that the owner of the prints was moving quickly.
     """
 
-    Quinn "Fresh footprints. This pattern is not like any I have seen from our camp."
+    Quinn "Fresh. I have never seen any footprint pattern like this from our camp."
     hide footprints
 
 
-    "You hear Darcey and Plo still bickering in the background,{cps=4} {/cps}muffled by the rain."
+    "You take a sharp breath. Plo and Darcey's distant bickering muffles in the rain."
 
 
     show iris worried
-    Iris "This is concerning{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
-    show iris neutral
-    Iris "We are still so close to main base,{cps=4} {/cps}nothing should be out here for hours."
+    Iris "This can't be right... Nothing should be out here for miles. We're still close to the base."
 
 
     menu:
         "We should investigate.":
             show iris worried
-            Iris "Something like this warrants an investigation,{cps=4} {/cps}enemy soldiers have never been this close to base before."
-            show iris neutral
-            Iris "Especially after the surrender{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
-            show iris worried
+            Iris "We need to investigate. Enemy soldiers have never been this close to base before."
             Iris "Something isn't right."
             $ quinn_points += 10
             jump Investigate
@@ -1351,9 +1356,8 @@ label start:
             show iris worried
             Iris "It is concerning but..."
             show iris neutral
-            Iris "We have an important task and can't afford a distraction."
-            show iris worried
-            Iris "We've already lost time getting the carriage out of the mud."
+            Iris "We don't know how far the enemy went or what direction. Getting the letter to the castle is more important than a wild goose chase."
+            Iris "Right now, we need to get the carriage back on the road."
             jump DontInvestigate
 
 
