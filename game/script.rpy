@@ -1109,7 +1109,7 @@ label start:
 
 
     
-    "Plo groans,{cps=4} {/cps}jumping down and already stepping toward the wheel."
+    "Plo groans,{cps=4} {/cps}jumping down and already stepping toward the wheels."
     show plo neutral at jumpAnim
 
     scene forest 
@@ -1148,7 +1148,7 @@ label start:
     show quinn neutral
     show iris sad
 
-    Iris "We are fine,{cps=4} {/cps}a wheel got stuck in the mud."
+    Iris "We are fine,{cps=4} {/cps}its wheels got stuck in the mud."
 
     jump WheelInMud
 
@@ -1368,29 +1368,29 @@ label start:
 
 
     show quinn sad
-    Quinn "If someone passed through here recently,{cps=4} {/cps}they might still be nearby."
+    Quinn "Since these footprints are fresh,{cps=4} {/cps}they is a good chance they are still nearby."
    
     menu:
-        "They could be up to no good.":
+        "They could be hostile.":
             show iris sad
-            Iris "We should find them quickly, no good comes from them sneaking around the camp."
+            Iris "We should find them quickly. Last thing we need is more trouble."
             show iris neutral
             jump continue11
 
 
         "They could be in trouble.":
             show iris sad
-            Iris "The war has ended, what if they need our help?"
+            Iris "We should see if they need our help. The war hasn't officially ended yet."
             show iris neutral
             show quinn worried
-            Quinn "Either way, we need to be careful.{cps=4} {/cps}If these tracks belong to an enemy scout we can't afford to ignore them."
+            Quinn "Okay, be we need to be careful.{cps=4} {/cps}If these tracks belong to an enemy scout, we can't afford to be ambushed."
             show quinn neutral
             jump continue11
 
 
     label continue11:
 
-    "You head back over to the carriage,{cps=4} {/cps}seeing darcey and plo working together to free the wheels."
+    "You and Quinn head back to the carriage.{cps=4} {/cps}To your surprise, Plo and Darcey are working together to free the wheels."
 
     
     window auto hide
@@ -1431,29 +1431,32 @@ label start:
     with Pause(0.18)
     with hpunch
 
-    "The carriage jolts forward,{cps=4} {/cps}freeing it from the mud."
+    "The carriage lurches forward with the last coordinated thrust,{cps=4} {/cps}freeing it from the mud."
 
     
 
-    "The sudden momentum nearly sends Darcey stumbling forward,{cps=4} {/cps}but she steadies herself with a muttered curse."
+    "The sudden momentum sends Darcey stumbling forward with a muttered curse,{cps=4} {/cps}but she manages to steady herself."
 
+
+    show iris happy
+    Iris "See? Teamwork."
 
     show darcey angry
-    Darcey "Finally.{cps=4} {/cps}Couldn't have been {i}any{/i} gentler?"
+    Darcey "You couldn't have been gentler, Plo?"
 
     show plo happy
-    Plo "We were getting it unstuck, not giving it a massage."
+    Plo "Bah, gentle ."
 
     show quinn sad
-    "Despite the small victory,{cps=4} {/cps}Quinn remains still,{cps=4} {/cps}his sharp gaze lingering on the treeline.{cps=4} {/cps}He doesn't look at the freed carriage—only at the shadows shifting between the trees."
+    "Quinn is the only one distracted from the small victory. His sharp gaze lingers on the treeline, where shadows shift amongst the trees."
 
 
     show iris neutral
-    "Iris follows his line of sight, frowning."
+    "Iris follows his line of sight."
 
 
     show iris worried
-    Iris "We found a set of footprints I want us to go inspect."
+    Iris "We found a set of footprints on the forest's edge."
 
     show darcey worried:
         unflip
@@ -1461,9 +1464,9 @@ label start:
         xpos 0.98 
         linear 0.30 xpos 0.86 
     with Pause(0.40)
-    "Darcey glances at Quinn,{cps=4} {/cps}then at the darkened forest,{cps=4} {/cps}her expression shifting from irritation to something more serious."
+    "Darcey's expression shifted to stoic seriousness. Her eyes follow Quinn's to the darkened forest."
 
-    Darcey "Footprints?{cps=4} {/cps}Out here?{cps=4} {/cps}Thought we were the only ones stupid enough to take this route."
+    Darcey "Footprints?{cps=4} {/cps}Out here?{cps=4} {/cps}We're supposed to be the only ones stupid enough to take this route."
 
     show plo worried:
         flip
@@ -1472,7 +1475,7 @@ label start:
     show quinn neutral
     Quinn "Fresh enough.{cps=4} {/cps}And not from our camp."
 
-    "A quiet moment passes as the rain patters against the leaves,{cps=4} {/cps}the wind making them sway.{cps=4} {/cps}The weight of the unknown settles over the group."
+    "A quiet moment passes, leaving the sound of the rain pattering against leaves. {cps=4} {/cps}They listen. {cps=4} {/cps}Nothing unusual presents itself."
 
     show plo worried
     Plo "I don't like this."
@@ -1487,7 +1490,7 @@ label start:
     Iris "Right.{cps=4} {/cps}Everyone stay alert."
 
     show plo 
-    Plo "I'll stay back then, someone has to keep watch of all the supplies."
+    Plo "I'll stay back, someone has to keep watch of all our stuff."
 
     Iris "Alright, stay safe [plo_name]."
 
