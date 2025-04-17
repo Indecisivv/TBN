@@ -97,15 +97,15 @@ label start:
     """
     scene cave with Dissolve(1.5)
     """
-    Humidity and dirt clings to your skin as stalactites loom overhead{cps=4} {/cps}with mineral-rich condensation.
+    Humidity and dirt clings to your skin as stalactites loom overhead with mineral-rich condensation.
 
-    You are called urgently to the Captain's Chamber.{cps=2} {/cps}At this hour in the night? Strange.{cps=2} {/cps}Nervousness creeps into your steps.
+    You are called urgently to the Captain's Chamber, a large tent, by a fellow soldier.{cps=2} {/cps}At this hour in the night? Strange. {cps=2} {/cps}Nervousness creeps into your quick steps.
 
-    Through winding tunnels,{cps=4} {/cps}you follow the jagged walls with your torchlight.
+    Through winding tunnels, you follow the jagged walls with your torchlight.
     
     Heated water hisses from the fissures above.
     
-    Outside the Captain's Chamber,{cps=4} {/cps}the air is thick with the scent of damp rock.
+    The air is thickest outside the Captain's Chamber. It carries the scent of damp rock.
 
     You step in.
     """
@@ -116,11 +116,11 @@ label start:
     #TODO: pan around captains chambers
 
     """
-    The Captain's Chamber flaunts its roominess compared to the path it takes to get there.{cps=4} {/cps}Space must be made for the parchments.
+    The Captain's Chamber flaunts its roominess compared to the path it takes to get there. {cps=4} {/cps}Space must be made for the parchments.
 
-    The scent of ink,{cps=4} {/cps}sweat,{cps=4} {/cps}and something vaguely metallic catch your nose immediately. 
+    The scent of ink,{cps=4} {/cps}sweat,{cps=4} {/cps}and something vaguely metallic immediately catches your nose. 
 
-    You warm up from the burning oil lamps around,{cps=4} {/cps}and walk forward to the sturdy wooden desk.
+    You warm up from the burning oil lamps around, and walk forward to the sturdy wooden desk.
     
     Maps and smudged reports scatter in front of the tired man hunched over, staring down at them.{cps=4} {/cps}The Captain. 
     """
@@ -171,7 +171,7 @@ label start:
     with Pause(0.40)
     camera:
         pos (1404, 63) 
-    "The figure's weathered brown skin was hardened by time.{cps=4} {/cps}The oil lamps revealed its deep grooves and ridges."
+    "The figure's weathered brown skin was hardened by time. The oil lamps revealed its deep grooves and ridges."
     camera:
         subpixel True 
         pos (1404, 63) zoom 2.24 
@@ -192,7 +192,7 @@ label start:
     show plo neutral
     Plo "Captain."
 
-    Captain "At ease Plo,{cps=4} {/cps}I wouldn't drag you out this late without a good reason."
+    Captain "At ease,{cps=4} {/cps}I wouldn't drag you out this late without a good reason."  ##Removed Plo since the player hasn't named him yet.
 
     $ plo_name = "Plo"
 
@@ -290,11 +290,11 @@ label start:
     show quinn shocked
     Quinn "Captain. Something urgent,{cps=4} {/cps}I assume?"
 
-    Captain "Darcey,{cps=4} {/cps}Quinn,{cps=4} {/cps}Plo.{cps=4} {/cps}Come in,{cps=4} {/cps}Come in."
-
     $ darcey_name = "Darcey"
     $ quinn_name = "Quinn"
     show quinn neutral behind darcey at Position (xpos = 0.12) 
+
+     Captain "[darcey_name],{cps=4} {/cps}[quinn_name],{cps=4} {/cps}[plo_name].{cps=4} {/cps}Come in,{cps=4} {/cps}Come in."
 
 
     """
@@ -319,11 +319,11 @@ label start:
 
         "Why choose us?":
             #TODO: character image changes
-            Captain "Plo,{cps=4} {/cps}the best carriage driver we've got.{cps=2} {/cps}He knows how to handle rough terrain—and rougher company."
+            Captain "[plo_name],{cps=4} {/cps}the best carriage driver we've got.{cps=2} {/cps}He knows how to handle rough terrain—and rougher company."
             show plo happy
-            Captain "Quinn,{cps=4} {/cps}a skilled navigator.{cps=2} {/cps}If there's a way through,{cps=4} {/cps}he'll find it."
+            Captain "[quinn_name],{cps=4} {/cps}a skilled navigator.{cps=2} {/cps}If there's a way through,{cps=4} {/cps}he'll find it."
             show quinn happy
-            Captain "Darcey,{cps=4} {/cps}a fighter through and through.{cps=2} {/cps}Deadly for fights you want to pick and intelligent for fights you don't." 
+            Captain "[darcey_name],{cps=4} {/cps}a fighter through and through.{cps=2} {/cps}Deadly for fights you want to pick and intelligent for fights you don't." 
             show darcey happy
             Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star messenger.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on their feet."
             show iris happy
@@ -527,7 +527,7 @@ label start:
     A cold chill blows into the cave,{cps=4} {/cps}bringing the smell of rain and mud. You wish nature was more merciful.
 
 
-    Plo secures the last of the crates onto the back of the carriage.
+    [plo_name] secures the last of the crates onto the back of the carriage.
     """
 
 
@@ -565,7 +565,7 @@ label start:
         xpos 2.0
         linear 1.50 xpos 0.49
 
-    "Darcey approaches,{cps=4} {/cps}a bag in hand and a dignified smirk on her face."
+    "[darcey_name] approaches,{cps=4} {/cps}a bag in hand and a dignified smirk on her face."
 
     show quinn happy
     show darcey happy
@@ -605,13 +605,13 @@ label start:
             show plo shocked
             show darcey worried
             show quinn happy
-            "Plo blinks. Darcey groans. Quinn hides a smirk."
+            "[plo_name] blinks. [darcey_name] groans. [quinn_name] hides a smirk."
             show darcey worried
             Darcey "That was terrible."
             Iris "You're just jealous you didn't think of it first."
             show plo neutral
             show darcey neutral
-            Plo "Guess we better roll out before Iris hits us with another one."
+            Plo "Guess we better roll out before [player_name] hits us with another one."
             show plo neutral:
                 flip
                 subpixel True 
@@ -636,7 +636,7 @@ label start:
             Iris "The lives of many people rely on this letter being delivered."
             show darcey sad
             Darcey "Apologies,{cps=4} {/cps}[player_name]."
-            "Darcey looks embarrassed of her unknightly behavior."
+            "[darcey_name] looks embarrassed of her unknightly behavior."
             show plo worried
             Plo "I'm just going to finish packing then..."
             show plo worried at flip
@@ -676,7 +676,7 @@ label start:
     The conversation dies off as the sound of rain tapping against the heavy stone of the cave grows louder.
 
 
-    Quinn's eyes narrow slightly at the sight of the road ahead.
+    [quinn_name]'s eyes narrow slightly at the sight of the road ahead.
     """
 
 
@@ -694,9 +694,9 @@ label start:
 
 
     """
-    Plo packs the final crate and secures the latch on the carriage.
+    [plo_name] packs the final crate and secures the latch on the carriage.
 
-    Darcey and Quinn enter the carriage.
+    [darcey_name] and [quinn_name] enter the carriage.
     """
 
     show darcey neutral:
@@ -713,7 +713,7 @@ label start:
     """
 
 
-    Quinn props the door open and faces you with respect.
+    [quinn_name] props the door open and faces you with respect.
    
     """
    
@@ -722,7 +722,7 @@ label start:
 
     menu:
         "Sit inside":
-            Iris "Thank you, Quinn."
+            Iris "Thank you, [quinn_name]."
             window auto hide
             show iris happy:
                 subpixel True 
@@ -743,14 +743,14 @@ label start:
 
 
         "Guard outside":
-            "[player_name] waves their hand at Quinn."
-            Iris "No need,{cps=4} {/cps}I'll help guard outside alongside Plo."
+            "[player_name] waves their hand at [quinn_name]."
+            Iris "No need,{cps=4} {/cps}I'll help guard outside alongside [plo_name]."
             Quinn "As you wish."
             show quinn neutral:
                 flip
                 subpixel True 
                 linear 0.30 xpos -0.47 
-            "Quinn shuts the door behind them."
+            "[quinn_name] shuts the door behind them."
             $ inside_carriage = False
             $ plo_points += 5
             jump OutsideCarriage
@@ -788,7 +788,7 @@ label start:
             Iris "Try not to kill each other before we get there."  
             show darcey happy
             show quinn happy
-            "Darcey laughs,{cps=4} {/cps}while Quinn gives a small,{cps=4} {/cps}knowing smile."
+            "[darcey_name] laughs,{cps=4} {/cps}while [quinn_name] gives a small,{cps=4} {/cps}knowing smile."
             show darcey blush  
             Darcey "I'll be on my best behavior from here on out."
             Quinn "I bet so."
@@ -799,9 +799,9 @@ label start:
         "Be serious":
             Iris "Stay focused.{cps=4} {/cps}Stay alert.{cps=4} {/cps}Distractions can't delay us."  
             """
-            Darcey smiles,{cps=4} {/cps}appreciating the knowledgeable advice.
+            [darcey_name] smiles,{cps=4} {/cps}appreciating the knowledgeable advice.
            
-            Quinn gives a small nod of approval.
+            [quinn_name] gives a small nod of approval.
             """
             show quinn happy
             Quinn "Understood."  
@@ -818,7 +818,7 @@ label start:
 
 
     menu:
-        "Ask Quinn about the path ahead":  
+        "Ask [quinn_name] about the path ahead":  
             label path:
             $ quinn_points += 5
             show darcey happy
@@ -826,22 +826,22 @@ label start:
             show quinn neutral
             Quinn "Rough.{cps=4} {/cps}Once we're out of the mud,{cps=4} {/cps}we'll hit gravel.{cps=4} {/cps}It'll even out once we hit the main road."  
             show darcey neutral
-            "Darcey sighs."
-            Darcey "Let's hope Plo is as skilled as he brags he is."
+            "[darcey_name] sighs."
+            Darcey "Let's hope [plo_name] is as skilled as he brags he is."
             jump continue5
 
 
-        "Ask about Darcey and Plo":
-            Iris "What's the deal between you and Plo?"
+        "Ask about [darcey_name] and [plo_name]":
+            Iris "What's the deal between you and [plo_name]?"
             show quinn neutral
             show darcey neutral
-            "Darcey sighs,{cps=4} {/cps}lowering her voice to a whisper."
+            "[darcey_name] sighs,{cps=4} {/cps}lowering her voice to a whisper."
             show darcey angry
             Darcey "Let's just say you'd be wrong to expect him to be a model soldier."
             show darcey neutral
-            Darcey "Plo's not the kind of person who thinks of the consequences before he acts."
+            Darcey "[plo_name]'s not the kind of person who thinks of the consequences before he acts."
             show quinn angry
-            "Quinn hits her softly with his elbow."
+            "[quinn_name] hits her softly with his elbow."
             Quinn "He has a good heart when it matters."
             show darcey blush
             show quinn neutral
@@ -855,7 +855,7 @@ label start:
             "You settle back,{cps=4} {/cps}listening to the sound of the rain."
             pause(1.5)
 
-            "Quinn's eyes remain half-lidded as Darcey hums softly under her breath."
+            "[quinn_name]'s eyes remain half-lidded as [darcey_name] hums softly under her breath."
             pause(1.5)
 
             "The rhythmic sway of the carriage mixes with the patter of rain to create a drowsy sort of calm."
@@ -873,7 +873,7 @@ label start:
 
                     if quiet >= 2:
                         show darcey neutral
-                        "Darcey studies you for a moment,{cps=4} {/cps}her gaze steady but not probing." 
+                        "[darcey_name] studies you for a moment,{cps=4} {/cps}her gaze steady but not probing." 
                         Darcey "You don't talk much,{cps=4} {/cps}do you?"
                         menu:
                             "I'm not much of a talker.":
@@ -881,7 +881,7 @@ label start:
                                 show darcey happy
                                 Darcey "Listeners are valuable too."
                                 show darcey neutral
-                                "Darcey's gaze moves toward the window."
+                                "[darcey_name]'s gaze moves toward the window."
                                 $ darcey_points += 5
                                 jump continue5
 
@@ -895,7 +895,7 @@ label start:
                     else:
                         show quinn neutral
                         Quinn "Alright."
-                        "Quinn studies you for a moment,{cps=4} {/cps}his gaze steady but not probing."
+                        "[quinn_name] studies you for a moment,{cps=4} {/cps}his gaze steady but not probing."
                         jump continue5
                     jump continue5
     label continue5:
@@ -928,7 +928,7 @@ label start:
     Iris "That does not sound good..."
 
 
-    "You,{cps=4} {/cps}Quinn,{cps=4} {/cps}and Darcey make your way out of the carriage."
+    "You,{cps=4} {/cps}[quinn_name],{cps=4} {/cps}and [darcey_name] make your way out of the carriage."
 
 
     scene forest 
@@ -962,7 +962,7 @@ label start:
     window auto show
 
 
-    Iris "Plo,{cps=4} {/cps}are you alright?"
+    Iris "[plo_name],{cps=4} {/cps}are you alright?"
 
     show plo angry
 
@@ -997,7 +997,7 @@ label start:
 
 
 
-    "Plo sits at the front,{cps=4} {/cps}reins loose in his hands and{cps=4} {/cps}eyes half-lidded as he watches the road ahead."
+    "[plo_name] sits at the front,{cps=4} {/cps}reins loose in his hands and{cps=4} {/cps}eyes half-lidded as he watches the road ahead."
 
 
     "You sit next to him in peaceful silence as the party makes its way through the thick forest."
@@ -1018,10 +1018,10 @@ label start:
             Plo "Keeps the shell from drying out."
             Iris "Is that so?"  
             show plo neutral
-            "Plo grunts in approval."
+            "[plo_name] grunts in approval."
             Plo "Nothing worse than an itchy shell."  
             show plo happy
-            "Plo flashes you a smile before focusing back on the road."  
+            "[plo_name] flashes you a smile before focusing back on the road."  
             Iris "And here I thought you were going to be miserable out here."  
             show plo neutral
             Plo "Eh, only if it were sunny. It's the heat that's the problem."  
@@ -1070,7 +1070,7 @@ label start:
     label continue8:
 
 
-    "Plo's eyes remain scanning the muddy road ahead."
+    "[plo_name]'s eyes remain scanning the muddy road ahead."
     pause(1.5)
 
     "A comfortable silence dawns on you and your party as the carriage rocks gently beneath you."
@@ -1109,7 +1109,7 @@ label start:
 
 
     
-    "Plo groans,{cps=4} {/cps}jumping down and already stepping toward the wheels."
+    "[plo_name] groans,{cps=4} {/cps}jumping down and already stepping toward the wheels."
     show plo neutral at jumpAnim
 
     scene forest 
@@ -1142,9 +1142,9 @@ label start:
         xpos -0.03 
     window auto show
    
-    "Quinn and Darcey quickly emerge from the carriage,{cps=4} {/cps}the former worried and the latter annoyed."
+    "[quinn_name] and [darcey_name] quickly emerge from the carriage,{cps=4} {/cps}the former worried and the latter annoyed."
 
-    Quinn "[player_name],{cps=4} {/cps}Plo,{cps=4} {/cps}are you alright?"
+    Quinn "[player_name],{cps=4} {/cps}[plo_name],{cps=4} {/cps}are you alright?"
     show quinn neutral
     show iris sad
 
@@ -1178,11 +1178,11 @@ label start:
 
     show iris neutral
        
-    Iris "Plo,{cps=4} {/cps}how long will this take to fix?"
+    Iris "[plo_name],{cps=4} {/cps}how long will this take to fix?"
 
     show plo neutral
 
-    "Plo waves away the concern."
+    "[plo_name] waves away the concern."
 
     Plo "Nothing I can't fix,{cps=4} {/cps}just give me a min' I got just the thing."
 
@@ -1199,7 +1199,7 @@ label start:
             jumpAnim
         Plo "Excuse me if the storm makes it hard for comfort. I'm a turtle not a rain bug!"
         show plo angry
-        "Plo points at the cliffs edge without losing Darcey's eye contact."
+        "[plo_name] points at the cliffs edge without losing [darcey_name]'s eye contact."
         Plo "If you had the reins, we'd be down the ravine!"
         show iris shocked:
             jumpAnim
@@ -1209,23 +1209,23 @@ label start:
         show quinn happy
         show plo neutral
         Plo "Bond, eh?"
-        "Plo looks back at Darcey."
+        "[plo_name] looks back at [darcey_name]."
         show plo happy
         "You should go push the stuck wheel out from the mud. It'll help our bond."
         show darcey happy
         Darcey "Sure, we wouldn't want the senior to pull something."
         show iris neutral
-        "Iris calls for Darcey from behind the carriage."
+        "[player_name] calls for [darcey_name] from behind the carriage."
         show quinn neutral
         show darcey neutral
         Darcey "As you wish,{cps=4} {/cps}[player_name]."
         show darcey angry
-        "As Darcey turns to go, she gives Plo one last dirty look. He's too busy grinning."
+        "As [darcey_name] turns to go, she gives [plo_name] one last dirty look. He's too busy grinning."
         show darcey neutral
     else:
-        Iris "Darcey, let's get behind and help push."
+        Iris "[darcey_name], let's get behind and help push."
         show darcey angry
-        "Darcey's anger, though strong, only appears for a brief second before being subdued."
+        "[darcey_name]'s anger, though strong, only appears for a brief second before being subdued."
         show darcey neutral
         Darcey "As you wish,{cps=4} {/cps}[player_name]."
         show darcey neutral
@@ -1250,21 +1250,21 @@ label start:
     show darcey angry:
         xpos 1.08 
     window auto show
-    Quinn "Iris,{cps=4} {/cps}a moment please."
+    Quinn "[player_name],{cps=4} {/cps}a moment please."
     show quinn sad
 
 
     menu:
-        "Stay and help Plo.":
+        "Stay and help [plo_name].":
             $ plo_points += 5
             show iris neutral
-            Iris "I'm sorry, Quinn, but we have pressing matters here."
+            Iris "I'm sorry, [quinn_name], but we have pressing matters here."
             Quinn "I understand."
-            "Quinn nods then heads off towards the forest line."
-            "Iris approaches Plo ready to help in the front. Plo's hand stops her."
+            "[quinn_name] nods then heads off towards the forest line."
+            "[player_name] approaches [plo_name] ready to help in the front. [plo_name]'s hand stops her."
             Plo "We are fine,{cps=4} {/cps}[player_name]. Go see what the kid needs."
             show plo happy
-            Plo "Darcey and I have this handled."
+            Plo "[darcey_name] and I have this handled."
             
             show plo neutral:
                 subpixel True 
@@ -1273,16 +1273,16 @@ label start:
             with Pause(0.40)
             show plo angry:
                 xpos 1.47 
-            "With Plo's reassurance, you make your way over to the forest where Quinn waits."
+            "With [plo_name]'s reassurance, you make your way over to the forest where [quinn_name] waits."
             jump continue9
 
 
-        "Go and see what Quinn wants at the perimeter.":
+        "Go and see what [quinn_name] wants at the perimeter.":
             $ quinn_points += 3
-            "Concern distorted Quinn's face to your worry."
-            Iris "Plo, Darcey, work on getting this carriage free while Quinn and I check the perimeter."
+            "The look on [quinn_name]'s face worries you."
+            Iris "[plo_name], [darcey_name], work on getting this carriage free while [quinn_name] and I check the perimeter."
             show plo happy
-            Plo "Roger, Sergeant."
+            Plo "Roger, [player_name]."
             show plo neutral:
                 subpixel True 
                 xpos 1.0 
@@ -1292,7 +1292,7 @@ label start:
                 xpos 1.47 
             show iris happy
             Iris "No fighting."
-            "Quinn leds you to the forest line."
+            "[quinn_name] leds you to the forest line."
             show iris neutral
             Iris "What's the matter?"
             jump continue9
@@ -1323,20 +1323,20 @@ label start:
     Quinn "As I was securing the area, I found these."
     show quinn sad
     
-    "Quinn points at the mud below."
+    "[quinn_name] points at the mud below."
     #i will make this graphic too :D -perry
     show footprints
     """
     A series of deep footprints press into the mud. They remain distinct despite the rain.
    
-    They're unevenness suggests that the owner of the prints was moving quickly.
+    Their unevenness suggests that the owner of the prints was moving quickly.
     """
 
     Quinn "Fresh. I have never seen any footprint pattern like this from our camp."
     hide footprints
 
 
-    "You take a sharp breath. Plo and Darcey's distant bickering muffles in the rain."
+    "You take a sharp breath. [plo_name] and [darcey_name]'s distant bickering muffles in the rain."
 
 
     show iris worried
@@ -1368,7 +1368,7 @@ label start:
 
 
     show quinn sad
-    Quinn "Since these footprints are fresh,{cps=4} {/cps}they is a good chance they are still nearby."
+    Quinn "Since these footprints are fresh,{cps=4} {/cps}there is a good chance they are still nearby."
    
     menu:
         "They could be hostile.":
@@ -1380,7 +1380,7 @@ label start:
 
         "They could be in trouble.":
             show iris sad
-            Iris "We should see if they need our help. The war hasn't officially ended yet."
+            Iris "We should see if they need our help. It would be shameful not to consider that."
             show iris neutral
             show quinn worried
             Quinn "Okay, be we need to be careful.{cps=4} {/cps}If these tracks belong to an enemy scout, we can't afford to be ambushed."
@@ -1390,7 +1390,7 @@ label start:
 
     label continue11:
 
-    "You and Quinn head back to the carriage.{cps=4} {/cps}To your surprise, Plo and Darcey are working together to free the wheels."
+    "You and [quinn_name] head back to the carriage.{cps=4} {/cps}To your surprise, [plo_name] and [darcey_name] are working together to free the wheels."
 
     
     window auto hide
@@ -1435,24 +1435,24 @@ label start:
 
     
 
-    "The sudden momentum sends Darcey stumbling forward with a muttered curse,{cps=4} {/cps}but she manages to steady herself."
+    "The sudden momentum sends [darcey_name] stumbling forward with a muttered curse,{cps=4} {/cps}but she manages to steady herself."
 
 
     show iris happy
     Iris "See? Teamwork."
 
     show darcey angry
-    Darcey "You couldn't have been gentler, Plo?"
+    Darcey "You couldn't have been gentler, [plo_name]?"
 
     show plo happy
-    Plo "Bah, gentle ."
+    Plo "Bah. Gentle, schmentle."
 
     show quinn sad
-    "Quinn is the only one distracted from the small victory. His sharp gaze lingers on the treeline, where shadows shift amongst the trees."
+    "[quinn_name] is the only one distracted from the small victory. His sharp gaze lingers on the treeline, where shadows shift amongst the trees."
 
 
     show iris neutral
-    "Iris follows his line of sight."
+    "[player_name] follows his line of sight."
 
 
     show iris worried
@@ -1464,7 +1464,7 @@ label start:
         xpos 0.98 
         linear 0.30 xpos 0.86 
     with Pause(0.40)
-    "Darcey's expression shifted to stoic seriousness. Her eyes follow Quinn's to the darkened forest."
+    "[darcey_name]'s expression shifted to stoic seriousness. Her eyes follow [quinn_name]'s to the darkened forest."
 
     Darcey "Footprints?{cps=4} {/cps}Out here?{cps=4} {/cps}We're supposed to be the only ones stupid enough to take this route."
 
@@ -1490,7 +1490,7 @@ label start:
     Iris "Right.{cps=4} {/cps}Everyone stay alert."
 
     show plo 
-    Plo "I'll stay back, someone has to keep watch of all our stuff."
+    Plo "I'll stay back. Someone has to keep watch of all our stuff."
 
     Iris "Alright, stay safe [plo_name]."
 
@@ -1520,9 +1520,9 @@ label start:
     show rain2fast zorder 0
     with Dissolve(1.5)
 
-    "The forest is thick with mist,{cps=4} {/cps}the scent of damp wood clinging to the air." 
-    "The footprints weave between the trees,{cps=4} {/cps}leading deeper off the main road."
-    "The air feels heavier and the silence is broken only by distant rustlings of rain drops."
+    "The forest is thick with mist with only the scent of damp wood in the air." 
+    "You, [darcey_name], and [quinn_name] follow the footprints between trees, further from the main road."
+    "The air gets heavier with every step. The group proceeds in silence."
 
     show darcey neutral at right 
     show quinn neutral at left
@@ -1530,86 +1530,87 @@ label start:
         subpixel True xpos 0.73 
     with Dissolve(1.5)
 
+    "The footprint tracks gradually turned from ordered to scattered. You and your team stop."
+
     show darcey worried
-    Darcey "Something doesn't feel right{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} These tracks are too scattered."
+    Darcey "Something doesn't feel right... These tracks have changed."
 
     show quinn sad
-    Quinn "It appears that whoever the tracks belong to was running."
+    Quinn "It appears that whoever we're tracking started running without direction."
 
 
     show iris worried
-    Iris "Injured,{cps=4} {/cps}maybe?{cps=4} {/cps}Or running from something."
+    Iris "Injured? Or maybe running from something?"
 
-    "You continue onward."
+    "Your team continues onward."
     
-    "A sudden gust of wind sends raindrops falling from the leaves above,{cps=4} {/cps}making the underbrush shudder.{cps=4} {/cps}Up ahead,{cps=4} {/cps}the path opens into a small clearing."
+    "A wind gust traveling through the forest hits them off guard. You manage to keep on your feet until it passes, arms crossed in front of you as a shield. You turn to check on everyone else. [darcey_name] keeps her ground. [quinn_name] is knocked over but not hurt."
+    "You notice somethig else. An underbrush shuddered, revealing nothing behind it. The path through opens into a small clearing."
 
-    "A broken-down carriage sits in the middle."
+    "In the middle is a broken-down carriage."
 
-    "The wooden frame is cracked,{cps=4} {/cps}as if something struck it with force."
-
-    "Pieces of torn cloth and scattered supplies litter the ground."
+    "Its wooden frame is cracked as if it was struck with force. Pieces of torn cloth and scattered supplies litter the ground."
 
 
     show iris shocked
     show darcey shocked
-    Iris "Well,{cps=4} {/cps}that's not a good sign."
+    Iris "That's not a good sign."
 
 
-    "Quinn approaches the carriage."
+    "[quinn_name] approaches the carriage to search for clues."
 
 
     show quinn neutral
     show darcey neutral
-    Quinn "Nothing left. Someone was here recently."
+    Quinn "Nothing left, but someone was here recently."
 
 
-    "You crouch near the carriage,{cps=4} {/cps}running your fingers along a deep gash in the wood.{cps=4} {/cps}Not just weather damage—this was cut."
+    "You crouch next to a deep gash made in the carriage's wood, running your fingers along it.{cps=4} {/cps}This wasn't made by weather damage; this was cut."
     show iris neutral
     menu:
         "Check inside the carriage.":
-            "Carefully,{cps=4} {/cps}you step onto the cracked wooden frame,{cps=4} {/cps}peering inside."
+            "Carefully,{cps=4} {/cps}you step onto the cracked wooden frame to peer inside."
 
-            "The seats are torn,{cps=4} {/cps}papers and bags left in disarray.{cps=4} {/cps}A faint smear of blood stains the side of the door."
+            "You see torn seats and papers and bags left in disarray.{cps=4} {/cps}A faint smear of blood stains the inside of the far door."
 
             show darcey neutral
-            Darcey "How did they manage to get a carriage this far off the path anyway?"
+            Darcey "How did they manage to get a carriage this far off the path?"
 
             jump inspect
 
 
-        "Search the scattered supplies.":
-            "You kneel,{cps=4} {/cps}sifting through the debris."
-            "A torn bag reveals rations,{cps=4} {/cps}a broken lantern,{cps=4} {/cps}and a necklace with a strange emblem carved into its gem."
+        "Search the scattered supplies outside.":
+            "Carefully, you kneel next to the debris,{cps=4} {/cps}sifting through them."
+            "You inspect a torn bag that's spilling rations,{cps=4} {/cps}a broken lantern,{cps=4} {/cps}and a necklace with a strange emblem carved into its gem."
 
 
             show iris shocked
-            Iris "This symbol{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} Quinn, does this look familiar?"
+            Iris "This symbol...{cps=4}{/cps} [quinn_name], does this look familiar?"
 
 
             show quinn shocked
-            Quinn "It does.{cps=4} {/cps}It confirms our suspicions."
+            Quinn "It does."
             show quinn neutral
             show iris neutral
-            Quinn "This carriage belonged to the enemy soldiers."
+            Quinn "This carriage belonges to the enemy."
 
             menu:
                 "Pick up the necklace":
                     "Maybe this could be of use if I have room in my bag."
                     #TODO: something here to get the item
                 "Leave the necklace":
-                    "What use is an enemy necklace anyway."
+                    "It's best not to steal from them. The war is ending."
             jump inspect
    
     label inspect:
 
-    "You go off to inspect the surrounding area for more clues."
+    "You expand your inspection of the surrounding area for more clues, but keep [darcey_name] and [quinn_name] in sight."
 
     show quinn worried
 
-    Quinn "Something is off.{cps=4} {/cps}I don't recognize this foliage."
+    Quinn "That's strange.{cps=4} {/cps}I don't recognize this foliage."
 
-    "Darcey approaches,{cps=4} {/cps}poking around with her spear."
+    "[darcey_name] approaches."
     show iris neutral behind darcey:
         flip
     show darcey shocked:
@@ -1620,13 +1621,13 @@ label start:
 
     show darcey worried
 
-    Darcey "Strange,{cps=4} {/cps}thought there wasn't a single blade of grass you couldn't identify this side of the mountain."
+    Darcey "I thought there wasn't a single blade of grass you couldn't identify this side of the mountain."
 
     show darcey neutral
-    "She stabs through the leaf with her spear."
+    "She pokes around it then, feeling dread growing inside her, stabs through one of its leaves with her spear."
 
 
-    "A rustling sound echoes through the trees,{cps=4} {/cps}followed by a sudden sharp {i}snap{/i}."
+    "Rustling sounds echo but not from the trees. In union, it grows louder and louder {cps=4} {/cps}followed by a sudden sharp {i}snap{/i}."
 
     show darcey shocked
     Darcey "What the—?!"
@@ -1670,7 +1671,7 @@ label start:
 
 
 
-    "Before anyone can react,{cps=4} {/cps}thick,{cps=4} {/cps}gnarled vines burst from the underbrush,{cps=4} {/cps}wrapping around Darcey's leg and yanking her off her feet."
+    "Before anyone can react, thick, gnarled vines burst from the underbrush you entered through and wrapped around [darcey_name]'s leg. She is yanked off her feet within seconds."
 
 
  
@@ -1679,14 +1680,14 @@ label start:
     Darcey "Get this thing off me!"
 
 
-    "The vine tightens,{cps=4} {/cps}dragging her toward the dark mass of writhing roots deeper in the clearing.{cps=4} {/cps}The ground shifts—something huge is moving beneath the mud."
+    "The vine tightens as she protests, dragging her toward the dark mass of writhing roots forming.{cps=4} {/cps}The ground shifts. Something huge is moving beneath the mud."
 
 
     show quinn sad at jumpAnim
-    Quinn "Damnit!{cps=4} {/cps}It's a hydra vine!"
+    Quinn "[darcey_name]! {cps=4} {/cps}It's a Hydra Vine!"
 
     show iris angry
-    Iris "Hold on,{cps=4} {/cps}Darcey!"
+    Iris "Hold on, {cps=4} {/cps}[darcey_name]!"
     show quinn angry
     show arrow1 at CutIn
     with vpunch
@@ -1701,7 +1702,7 @@ label start:
     show vine1 at CutOut
     pause(0.25)
     hide vine1
-    "Quinn shoots his bow,{cps=4} {/cps}the plant flings the arrow away."
+    "[quinn_name] shoots his bow,{cps=4} {/cps} but the plant flings the arrow away."
 
     show sword1 at CutIn
     with vpunch
@@ -1727,7 +1728,7 @@ label start:
             linear 0.10 rotate -180.0 
     with Pause(0.40)
 
-    "Darcey struggles,{cps=4} {/cps}hacking at the vine with her knife,{cps=4} {/cps}but the blade barely cuts through the thick pulsing roots.{cps=4} {/cps}The more she fights,{cps=4} {/cps}the tighter it coils."
+    "[darcey_name] struggles to hack the vine with her knife. Her blade barely cuts through the thick, pulsing roots. {cps=4} {/cps}Its coils tighten."
 
     show iris worried
     Iris "I have to do something!"
@@ -1735,7 +1736,7 @@ label start:
 
     menu:
         "Use the dagger to cut her free.":
-            "You lunge forward,{cps=4} {/cps}grabbing the nearest sharp object—a dagger, a shard of wood, anything—and hack at the vine gripping her leg."
+            "You lunge forward,{cps=4} {/cps}grabbing the nearest sharp object--a dagger made out of a shard of wood--to stab at the vine gripping [darcey_name]'s leg. You are desperate."
 
             show sword1 at CutIn
             with vpunch
@@ -1744,7 +1745,7 @@ label start:
             pause(0.25)
             hide sword1
 
-            "The plant lets out a horrible,{cps=4} {/cps}guttural {i}groan{/i} as sap sprays from the wound,{cps=4} {/cps}but the vine doesn't loosen."
+            "The plant lets out a horrible, guttural {i}scream{/i} as sap sprays from the wound. {cps=4} {/cps}But the vine doesn't loosen."
 
             show vine2 at CutIn
             with vpunch
@@ -1752,11 +1753,11 @@ label start:
             show vine2 at CutOut
             pause(0.25)
             hide vine2
-            "Instead where the plant was cut two more vine-like appendages emerge."
+            "Where the plant was cut sprouted two more vine-like appendages."
 
             menu:
                 "Keep cutting anyway.":
-                    "You grit your teeth and keep hacking as the vines writhe,{cps=4} {/cps}one of them wrapping around your wrist."
+                    "You grit your teeth and keep hacking as the vines writhe. One of them wraps around your wrist."
 
                     show sword2 at CutIn
                     with vpunch
@@ -1765,23 +1766,23 @@ label start:
                     pause(0.25)
                     hide sword2
 
-                    "It burns where it touches—acidic sap touches your skin."
+                    "Acidic sap oozes onto your skin. A scream couldn't encapsulate the pain you jolt in."
 
-                    "Darcey screams as she's yanked deeper,{cps=4} {/cps}halfway inside the plant's writhing mass."
+                    "[darcey_name] screams as she's yanked deeper, {cps=4} {/cps}halfway inside the plant's writhing mass."
 
                     show iris shocked
-                    Iris "No—no no no!"
+                    "You try to focus on her. The mission. [quinn_name] and [plo_name]. Anything. Your vision fades."
 
-                    "Quinn rushes in,{cps=4} {/cps}but it's too late.{cps=4} {/cps}The vines constrict with a sickening {i}snap{/i}."
+                    "[quinn_name] is too late rushing in as the vines constrict with a sickening {i}snap{/i}."
 
                     jump bad_ending
 
                 "Call for help instead.":
-                    "You back off,{cps=4} {/cps}shouting for Quinn."
+                    "You back off then shout for [quinn_name]."
 
                     Iris "It keeps regenerating!"
 
-                    "Quinn fires another arrow,{cps=4} {/cps}but the creature adapts its vines twist midair,{cps=4} {/cps}using Darcey as a shield."
+                    "[quinn_name]'s second arrow is already flying through the air at that shout. The vines twist in midair in coordinated response to use [darcey_name] as a shield."
 
                     show arrow1 at CutIn
                     with vpunch
@@ -1808,18 +1809,18 @@ label start:
                             linear 0.10 rotate -180.0 
                     with Pause(0.40)
 
-                    Quinn "I can't get a good angle on it."
+                    "[quinn_name] steps back to clear his head. He yells toward [player_name]."
 
-                    Quinn "Fire!{cps=4} {/cps}It's weak to fire!"
+                    Quinn "Since we can't pierce the vines, our only option is fire!"
 
                     #if
                     #you have fire starter good 
 
-                    "You remember packing a fire starter in your bag earlier,{cps=4} {/cps}you take it out and toss it to Quinn."
+                    "You remember packing a fire starter in your bag when you set off,{cps=4} {/cps}you take it out and toss it to [quinn_name]."
 
-                    Iris "Quinn,{cps=4} {/cps}use this!"
+                    Iris "[quinn_name]!"
 
-                    "Quinn quickly strikes the fire starter and lights on of his arrows aflame."
+                    "[quinn_name] catches it masterfully then quickly strikes his ready arrows aflame. Each one launches at the vine hydra in succession."
 
                     show fire at CutIn
                     with vpunch
@@ -1829,7 +1830,7 @@ label start:
                     hide fire
                     pause(0.25)
 
-                    "The plant withers in pain,{cps=4} {/cps}dropping Darcey in the process."
+                    "The plant withers in pain as they hit. A horrifying screech echoes throughout the forest. [darcey_name] gets dropped in the process."
 
                     
                     window auto hide
@@ -1843,9 +1844,9 @@ label start:
                     window auto show
 
 
-                    "Darcey drops to the ground with a gasp,{cps=4} {/cps}coughing."
+                    "[darcey_name] drops to the ground with a gasp,{cps=4} {/cps}coughing."
 
-                    Darcey "Ouch{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
+                    Darcey "Ouch..."
 
                     show arrow1 at CutIn
                     with vpunch
@@ -1855,7 +1856,7 @@ label start:
                     hide arrow1
                     pause(0.25)
 
-                    "Quinn shoots one last shot at the dead plant before running to Darcey."
+                    "[quinn_name]'s last shot fells the viny creature, dead. He runs to Darcey."
 
                     
                     window auto hide
@@ -1867,17 +1868,17 @@ label start:
                     show quinn angry:
                         xpos 0.47 
 
-                    $ darcey_tired = True
+                    $ darcey_tired = True             ##Carly stop editting here for halfway point
 
                     jump aftermath
 
                     #Else
-                    "Darcey screams as she's yanked deeper,{cps=4} {/cps}halfway inside the plant's writhing mass."
+                    "[darcey_name] screams as she's yanked deeper,{cps=4} {/cps}halfway inside the plant's writhing mass."
 
                     show iris shocked
                     Iris "No no no no!"
 
-                    "Quinn rushes in,{cps=4} {/cps}but it's too late.{cps=4} {/cps}The vines constrict with a sickening {i}snap{/i}."
+                    "[quinn_name] rushes in,{cps=4} {/cps}but it's too late.{cps=4} {/cps}The vines constrict with a sickening {i}snap{/i}."
 
                     jump bad_ending
         #TODO: locked choice ONLY IF U HAVE FLUTE!
