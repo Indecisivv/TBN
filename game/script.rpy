@@ -28,7 +28,6 @@ define player_name =  ""
 
 #ending values
 
-
 ################################################################################
 ##  ████  █   █  ███  ████   ███   ████ █████ █████ ████  █████ 
 ##  █     █   █ █   █ █   █ █   █ █       █   █     █   █ █     
@@ -91,6 +90,10 @@ label start:
 ################################################################################
     label intro:
     
+    $ renpy.music.play("audio/music/01 Captains Tent Strings.ogg", channel='music1', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/01 Captains Tent Brass.ogg", channel='music2', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.set_volume(0, delay=0, channel='music1')
+    $ renpy.music.set_volume(0, delay=0, channel='music2')
     
     """
     Deep within a vast cave system,{cps=4} {/cps}warmed by the geothermal currents of an underground aquifer,{cps=4} {/cps}lies your camp.
@@ -110,6 +113,8 @@ label start:
     You step in.
     """
     #TODO: maybe like a step sfx here
+    
+    $ renpy.music.set_volume(0.3, delay=8, channel='music1')
 
     scene tent with Dissolve(1.5)
 
@@ -124,7 +129,7 @@ label start:
     
     Maps and smudged reports scatter in front of the tired man hunched over, staring down at them.{cps=4} {/cps}The Captain. 
     """
-
+    
     show iris worried at right
     show iris at flip
     show captain
@@ -180,6 +185,8 @@ label start:
     camera:
         pos (0, 0) zoom 1.0 
 
+    $ renpy.music.set_volume(0.6, delay=4, channel='music1')
+    
     show plo angry at jumpAnim
     Plo "{i}Can't let this old man get his sleep after a hard days work?{/i}"
 
@@ -243,7 +250,7 @@ label start:
     camera:
         pos (0, 0) zoom 1.0 
 
-
+    $ renpy.music.set_volume(1, delay=4, channel='music1')
 
     Darcey "Captain."
 
@@ -287,15 +294,16 @@ label start:
     camera:
         pos (0, 0) zoom 1.0 
 
+    $ renpy.music.set_volume(1, delay=8, channel='music2')
+
     show quinn shocked
     Quinn "Captain. Something urgent,{cps=4} {/cps}I assume?"
 
     $ darcey_name = "Darcey"
     $ quinn_name = "Quinn"
-    show quinn neutral behind darcey at Position (xpos = 0.12) 
+    show quinn neutral behind darcey at Position (xpos = 0.12)
 
-     Captain "[darcey_name],{cps=4} {/cps}[quinn_name],{cps=4} {/cps}[plo_name].{cps=4} {/cps}Come in,{cps=4} {/cps}Come in."
-
+     # Captain "[darcey_name],{cps=4} {/cps}[quinn_name],{cps=4} {/cps}[plo_name].{cps=4} {/cps}Come in,{cps=4} {/cps}Come in."
 
     """
     The Captain relaxes then pushes aside papers and pulls out a white letter sealed by a striking red wax stamp.
@@ -341,6 +349,8 @@ label start:
     
     "He displays the letter to the group." 
     
+    $ renpy.music.set_volume(1, delay=4, channel='music2')
+
     Captain "The enemy sent us this letter of surrender at sundown."
 
     show darcey shocked 
@@ -404,6 +414,7 @@ label start:
     
     It's an uncomfortable warmth that you've gotten used to. Thick with humidity. Exhaustion seems to stick to you in the same way as you walk.
     """ 
+    $ renpy.music.set_volume(0, delay=8, channel='music2')
 
     scene tent with Dissolve(1.5)
 
@@ -422,6 +433,7 @@ label start:
     
     The few still awake glance up as you return.
     """
+    $ renpy.music.set_volume(0.5, delay=8, channel='music1')
 
     show iris neutral at Close
 
@@ -490,6 +502,9 @@ label start:
     """
     You decide to sleep, getting what little rest you still can.
     """
+
+    $ renpy.music.stop(channel='music1', fadeout=8)
+    $ renpy.music.stop(channel='music2', fadeout=None)
     
 ################################################################################
 ## █▀▄ ▄▀▄ ▀▄▀   █▀█ █▄ █ █▀▀
@@ -596,6 +611,14 @@ label start:
     show quinn neutral
     Darcey "You're supposed to have {i}my{/i} back here."
 
+    $ renpy.music.play("audio/music/02 Journey Harp.ogg", channel='music1', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Accomp.ogg", channel='music2', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Tamb.ogg", channel='music3', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Clar.ogg", channel='music4', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.set_volume(0, 0, channel='music1')
+    $ renpy.music.set_volume(0, 0, channel='music2')
+    $ renpy.music.set_volume(0, 0, channel='music3')
+    $ renpy.music.set_volume(0, 0, channel='music4')
 
     menu:
         "Joke around":
@@ -605,6 +628,10 @@ label start:
             show plo shocked
             show darcey worried
             show quinn happy
+
+            $ renpy.music.set_volume(0.7, 1, channel='music1')
+            $ renpy.music.set_volume(0.2, 1, channel='music3')
+
             "[plo_name] blinks. [darcey_name] groans. [quinn_name] hides a smirk."
             show darcey worried
             Darcey "That was terrible."
@@ -687,6 +714,8 @@ label start:
     show iris neutral
     Quinn "We shouldn't waste any more time."
 
+    $ renpy.music.set_volume(1, 1, channel='music1')
+
     show iris happy
     Iris "Alright,{cps=4} {/cps}everybody.{cps=2} {/cps}Let's get this letter on the road."
 
@@ -763,6 +792,7 @@ label start:
 
     scene carriage with Dissolve(1.5)
 
+    $ renpy.music.set_volume(0.5, 2, channel='music3')  
 
     """
     You climb into the carriage,{cps=4} {/cps}settling on the slightly worn wooden seat.
@@ -771,6 +801,9 @@ label start:
     The inside is dim without the presence of an oil lamp.{cps=4} {/cps}You can hear the muffled voice of rain hitting the canvas roof.
     """
 
+    $ renpy.music.set_volume(0.8, 6, 'music2')
+    $ renpy.music.set_volume(1, 6, 'music4')
+    
 
     show quinn neutral:
         left
@@ -781,6 +814,8 @@ label start:
         Close
         subpixel True pos (1.0, 1.58) 
     with Dissolve(1.5)
+
+     
 
     Darcey "So,{cps=4} {/cps}[player_name]{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} Got any words of wisdom before we roll out?"
     menu:
@@ -809,13 +844,11 @@ label start:
             Darcey "I'll be on my best behavior from here on out."
             $ darcey_points += 2
             $ quinn_points += 5
-
+    
     pause(1.5)
     "Time passes in silence."
     pause(1.5)
     "You feel the carriage jolt around softly as you depart."
-
-
 
     menu:
         "Ask [quinn_name] about the path ahead":  
@@ -913,6 +946,10 @@ label start:
         subpixel True pos (-0.2, 1.54) 
     with vpunch
 
+    $ renpy.music.stop(channel='music1', fadeout=1)
+    $ renpy.music.stop(channel='music2', fadeout=1)
+    $ renpy.music.stop(channel='music3', fadeout=1)
+    $ renpy.music.stop(channel='music4', fadeout=1)
 
     """
     The carriage lurches forward,{cps=4} {/cps}almost knocking you out of the seat before stopping just as quickly.
@@ -985,6 +1022,8 @@ label start:
     show rain1fast zorder 1
     show rain2fast zorder 0
 
+    $ renpy.music.set_volume(0.5, 5, 'music3')
+
     """
     The steady patter of rain against the carriage's canopy mingles with the sound of the horse's hooves stomping through the wet mud.
 
@@ -1003,6 +1042,9 @@ label start:
     "You sit next to him in peaceful silence as the party makes its way through the thick forest."
 
     show plo angry
+
+    $ renpy.music.set_volume(0.7, 7, 'music2')
+    $ renpy.music.set_volume(1, 6, 'music4')
 
     Plo "Rain's picking up."
 
@@ -1085,6 +1127,10 @@ label start:
     show plo shocked
     with vpunch
 
+    $ renpy.music.stop(channel='music1', fadeout=1)
+    $ renpy.music.stop(channel='music2', fadeout=1)
+    $ renpy.music.stop(channel='music3', fadeout=1)
+    $ renpy.music.stop(channel='music4', fadeout=1)
 
     """
     The carriage lurches forward, almost knocking you out of the seat before stopping just as quickly.
@@ -2226,6 +2272,22 @@ label start:
 ## don't investigate
 ######################  
     label DontInvestigate:
+
+    $ renpy.music.play("audio/music/02 Journey Harp.ogg", channel='music1', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Clar.ogg", channel='music2', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Accomp.ogg", channel='music3', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Celli.ogg", channel='music4', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Tamb.ogg", channel='music5', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Bodhran.ogg", channel='music6', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Vln.ogg", channel='music7', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.set_volume(0, 0, channel='music1')
+    $ renpy.music.set_volume(0, 0, channel='music2')
+    $ renpy.music.set_volume(0, 0, channel='music3')
+    $ renpy.music.set_volume(0, 0, channel='music4')
+    $ renpy.music.set_volume(0, 0, channel='music5')
+    $ renpy.music.set_volume(0, 0, channel='music6')
+    $ renpy.music.set_volume(0, 0, channel='music7')
+    
     Quinn "Of course, apologies Iris."
 
     "You head back over to the carriage,{cps=4} {/cps}seeing darcey and plo working together to free the wheels."
@@ -2267,6 +2329,9 @@ label start:
     with Pause(0.18)
     with hpunch
 
+    $ renpy.music.set_volume(0.5, 0.1, 'music5')
+    $ renpy.music.set_volume(0.2, 0.1, 'music6')
+
     "The carriage jolts forward,{cps=4} {/cps}freeing it from the mud."
 
     "The sudden momentum nearly sends Darcey stumbling forward,{cps=4} {/cps}but she steadies herself with a muttered curse."
@@ -2294,6 +2359,10 @@ label start:
         linear 0.60 xpos 1.03 
     with Pause(0.70)
 
+    $ renpy.music.set_volume(1, 3, 'music2')
+    $ renpy.music.set_volume(0.8, 3, 'music3')
+    $ renpy.music.set_volume(0, 6, 'music6')
+
     if inside_carriage == True:
         show plo neutral:
             flip
@@ -2319,7 +2388,8 @@ label start:
     with Dissolve(1.5)
     pause(2.0)
 
-
+    $ renpy.music.set_volume(0.6, 4, 'music5')
+    $ renpy.music.set_volume(0.7, 0.2, 'music1')
 
     "You settle into the carriage,{cps=4} {/cps}rain drips from your wet sleeve."
 
@@ -2344,6 +2414,14 @@ label start:
     "The forest outside thins somewhat,{cps=4} {/cps}replaced by rocky outcrops and mud slick ridges."
 
     "Suddenly,{cps=4} {/cps}the carriage jolts."
+
+    $ renpy.music.set_volume(0, 1, 'music1')
+    $ renpy.music.set_volume(0, 1, 'music2')
+    $ renpy.music.set_volume(0, 1, 'music3')
+    $ renpy.music.set_volume(0.8, 0.2, 'music4')
+    $ renpy.music.set_volume(0.5, 4, 'music5')
+    $ renpy.music.set_volume(0.8, 0.2, 'music6')
+
     with hpunch
     show quinn shocked
     show darcey shocked
@@ -2381,10 +2459,15 @@ label start:
 
     "From outside,{cps=4} {/cps}Plo yells."
 
+    $ renpy.music.set_volume(1, 1, 'music2')
+
     Plo "I KNOW!"
 
     Plo "Everyone {i}lean right!{/i}{cps=4} {/cps}NOW!"
     with hpunch
+
+    $ renpy.music.set_volume(1, 1, 'music7')
+    $ renpy.music.set_volume(1, 1, 'music3')
 
     "You and the others throw your weight to the right side of the carriage.{cps=4} {/cps}The horses whinny in panic as Plo wrestles with the reins."
 
@@ -2401,6 +2484,10 @@ label start:
         linear 0.79 pos (1.0, 1.58) 
     with Pause(0.89)
 
+    $ renpy.music.set_volume(0.5, 4, 'music4')
+    $ renpy.music.set_volume(0.2, 4, 'music6')
+    $ renpy.music.set_volume(0.7, 4, 'music7')
+    
     "A long silence follows."
 
     show darcey neutral
@@ -2408,8 +2495,10 @@ label start:
 
     show quinn neutral
     Quinn "Technically, we didn't {cps=4}fall{/cps}."
-
+    
     Iris "Let's not test the odds on a second try."
+
+    $ renpy.music.set_volume(0.2, 4, 'music4')
 
     show quinn happy
     show darcey happy
@@ -2418,10 +2507,20 @@ label start:
 
     "Outside,{cps=4} {/cps}the rain begins to ease.{cps=4} {/cps}The trees thin further as the road evens out,{cps=4} {/cps}trading mud for coarse,{cps=4} {/cps}sandy ground."
 
+    $ renpy.music.set_volume(0.8, 0.2, 'music1')
+    $ renpy.music.set_volume(0.7, 4, 'music3')
+    $ renpy.music.set_volume(0, 8, 'music4')
+    $ renpy.music.set_volume(0, 8, 'music6')
+
     menu:
         "Ask Darcey about her worst travel day.":
             $ darcey_points += 5
             Iris "Darcey.{cps=4} {/cps}What's the worst travel day you've ever had?"
+
+            $ renpy.music.set_volume(0.7, 1, 'music2')
+            $ renpy.music.set_volume(0, 4, 'music3')
+            $ renpy.music.set_volume(0, 8, 'music7')
+            $ renpy.music.set_volume(0.3, 4, 'music5')
 
             show darcey happy
             Darcey "Oooh, good question. Not including today{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
@@ -2439,6 +2538,11 @@ label start:
             $ quinn_points += 5
             Iris "Quinn,{cps=4} {/cps}you're incredibly precise with that bow.{cps=4} {/cps}How did you get so skilled?"
 
+            $ renpy.music.set_volume(0.7, 1, 'music2')
+            $ renpy.music.set_volume(0, 4, 'music3')
+            $ renpy.music.set_volume(0, 8, 'music7')
+            $ renpy.music.set_volume(0.3, 4, 'music5')
+
             show quinn neutral
             Quinn "Being half-elf has its advantages.{cps=4} {/cps} But precision with a bow comes from years of practice."
             
@@ -2447,6 +2551,10 @@ label start:
         "Stay quiet and listen to the rain.":
             $ quiet += 1
 
+            $ renpy.music.set_volume(0.7, 1, 'music2')
+            $ renpy.music.set_volume(0.4, 8, 'music3')
+            $ renpy.music.set_volume(0, 10, 'music5')
+            
             "You settle into the quiet moment,{cps=4} {/cps}letting the sound of soft rainfall and creaking wood lull your nerves."
 
             "Darcey rests her head back,{cps=4} {/cps}staring up at the ceiling of the carriage."
@@ -2458,6 +2566,10 @@ label start:
 
             "The silence is broken only by the occasional sound of Darcey or Quinn shifting, and the faint hum of the carriage over uneven ground."
 
+            $ renpy.music.set_volume(0, 8, 'music2')
+            $ renpy.music.set_volume(0, 8, 'music3')
+            $ renpy.music.set_volume(0, 8, 'music7')
+
             "As you listen to the rain,{cps=4} {/cps}a memory rises in your mind—one you haven't thought of in years."
 
             show black with Dissolve(1.5)
@@ -2468,6 +2580,7 @@ label start:
 
             hide black with Dissolve(1.5)
 
+    $ renpy.music.set_volume(0.7, 1, 'music2')
 
     "A small jolt reminds you you're still on a rough road."
     with hpunch
@@ -2504,6 +2617,14 @@ label start:
     label Uphill:
     #TODO: rain stops
     #enviroment turns more hot and mixed with sand
+
+    $ renpy.music.stop(channel='music1', fadeout=10)
+    $ renpy.music.stop(channel='music2', fadeout=10)
+    $ renpy.music.stop(channel='music3', fadeout=10)
+    $ renpy.music.stop(channel='music4', fadeout=10)
+    $ renpy.music.stop(channel='music5', fadeout=10)
+    $ renpy.music.stop(channel='music6', fadeout=10)
+    $ renpy.music.stop(channel='music7', fadeout=10)
     
     Plo "Not too long and we will be on the main merchant path."
 
