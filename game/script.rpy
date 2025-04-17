@@ -299,11 +299,13 @@ label start:
     show quinn shocked
     Quinn "Captain. Something urgent,{cps=4} {/cps}I assume?"
 
+    "The captain waves the three guests forward."
+    Captain "Come in,{cps=4} {/cps}Come in."
+
     $ darcey_name = "Darcey"
     $ quinn_name = "Quinn"
     show quinn neutral behind darcey at Position (xpos = 0.12)
 
-     # Captain "[darcey_name],{cps=4} {/cps}[quinn_name],{cps=4} {/cps}[plo_name].{cps=4} {/cps}Come in,{cps=4} {/cps}Come in."
 
     """
     The Captain relaxes then pushes aside papers and pulls out a white letter sealed by a striking red wax stamp.
