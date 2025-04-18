@@ -222,7 +222,7 @@ label FinalCheck:
     show plo neutral
     Plo "Captain."
 
-    Captain "At ease,{cps=4} {/cps}I wouldn't drag you out this late without a good reason."  ##Removed Plo since the player hasn't named him yet.
+    Captain "At ease,{cps=4} {/cps}I wouldn't drag you out this late without a good reason."  ##Removed "Plo" since the player hasn't named him yet.
 
     $ plo_name = "Plo"
 
@@ -379,7 +379,7 @@ label FinalCheck:
             Captain "[quinn_name],{cps=4} {/cps}a skilled navigator.{cps=2} {/cps}If there's a way through,{cps=4} {/cps}he'll find it."
             show quinn happy
             Captain "[darcey_name],{cps=4} {/cps}a fighter through and through.{cps=2} {/cps}Deadly for fights you want to pick and intelligent for fights you don't." 
-            show darcey happy
+            show darcey happy ##Pronoun Below
             Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star messenger.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on their feet."
             show iris happy
             Captain "All excellent in your own rights."
@@ -504,7 +504,7 @@ label FinalCheck:
             show iris happy at VeryClose
             Iris "The Captain will announce the end of the war in the morning."
             "They nearly shout before clapping both hands over their mouth."
-            Iris "Shh,{cps=4} {/cps}I have to pack{cps=4}—{/cps}I'm leaving before sunrise"
+            Iris "Shh,{cps=4} {/cps}I have to pack.{cps=4} {/cps}I'm leaving before sunrise"
             show iris blush at Close
             Bunkmate "I can't believe it will be over; THIS will be over.{cps=4} {/cps}I'm not going to be able to sleep tonight."
             jump continue3
@@ -1998,7 +1998,7 @@ label FinalCheck:
                     show quinn angry:
                         xpos 0.47 
 
-                    $ darcey_tired = True             ##Carly stop editting here for halfway point
+                    $ darcey_tired = True             
 
                     jump aftermath
 
@@ -2006,20 +2006,20 @@ label FinalCheck:
                     "[darcey_name] screams as she's yanked deeper,{cps=4} {/cps}halfway inside the plant's writhing mass."
 
                     show iris shocked
-                    Iris "No no no no!"
+                    Iris "No, no, no!"
 
-                    "[quinn_name] rushes in,{cps=4} {/cps}but it's too late.{cps=4} {/cps}The vines constrict with a sickening {i}snap{/i}."
+                    "[quinn_name] is too late rushing in as the vines constrict with a sickening {i}snap{/i}."
 
                     jump bad_ending
         #TODO: locked choice ONLY IF U HAVE FLUTE!
         "Try to use magic.": 
             $ magic_score += 1
             
-            "You reach into your pack,{cps=4} {/cps}hands trembling,{cps=4} {/cps}and pull out the carved flute."
+            "You reach into your pack,{cps=4} {/cps}hands trembling,{cps=4} {/cps}and pull out your carved flute."
 
             show iris worried
 
-            "The melody trembles at first,{cps=4} {/cps}shaky with adrenaline.{cps=4} {/cps}But soon it steadies,{cps=4} {/cps}notes cutting through the fog like silver thread."
+            "The melody trembles at first in shaky adrenaline.{cps=4} {/cps}But it swiftly finds its tune, notes cutting through the fog like silver thread."
 
             show magic1 at CutIn
             with hpunch
@@ -2029,7 +2029,7 @@ label FinalCheck:
             hide magic1
 
             "Magic stirs around you,{cps=4} {/cps}drawn to the song."
-            "The plant senses the energy and coils tighter."
+            "The plant coils tighter at the sight."
 
             show darcey angry:
                 subpixel True 
@@ -2054,7 +2054,7 @@ label FinalCheck:
 
             menu:
                 "Aim carefully and cast what you have.":
-                    "With your flute in hand you steady your breath and focus—"
+                    "With your flute in hand, you steady your breath to focus."
 
                     #TODO: music quick tune here
 
@@ -2065,9 +2065,9 @@ label FinalCheck:
                     pause(0.25)
                     hide magic2
 
-                    "The magic surges,{cps=4} {/cps}wild and hot,{cps=4} {/cps}but this time it finds its mark."
+                    "The magic surges ferociously,{cps=4} {/cps}but, this time, it finds its mark."
 
-                    "The vines shrivel up and shriek where struck,{cps=4} {/cps}burning to ash."
+                    "The vines shriek and shrivel when struck. The burning parts turn to ash right before your eyes."
 
                     window auto hide
                     show darcey angry:
@@ -2079,9 +2079,9 @@ label FinalCheck:
                         pos (1.14, 1.46) rotate -90.0 
                     window auto show
 
-                    "Darcey drops to the ground with a gasp,{cps=4} {/cps}coughing."
+                    "[darcey_name] drops to the ground with a gasp,{cps=4} {/cps}coughing."
 
-                    Darcey "Ouch{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
+                    Darcey "Ouch..."
 
                     show arrow1 at CutIn
                     with vpunch
@@ -2091,7 +2091,7 @@ label FinalCheck:
                     hide arrow1
                     pause(0.25)
 
-                    "Quinn shoots one last shot at the dead plant before running to Darcey."
+                    "[quinn_name] takes one last shot before running to Darcey."
 
                     
                     window auto hide
@@ -2109,9 +2109,9 @@ label FinalCheck:
 
                 "Push more power into the spell.":
                     show iris 
-                    "You shove all your fear and desperation into the spell,{cps=4} {/cps}eyes shut."
+                    "You shut your eyes. All your fear and desperation swell into the spell. It's unmanageable."
 
-                    "It explodes outward."
+                    "It explodes from you."
                     show iris shocked
                     show quinn shocked
                     show darcey shocked
@@ -2127,11 +2127,13 @@ label FinalCheck:
                     with vpunch
                     with hpunch
 
-                    "The vines disintegrate,{cps=4} {/cps}but so does the surrounding trees."
+                    "It isn't just the vines that disintegrates. The trees, nature, enemy's carriage. It's all gone to soot."
 
-                    "A surge of raw mana detonates at your feet,{cps=4} {/cps}throwing you and Darcey back."
+                    "[quinn_name] and [darcey_name] are displaced. They lay unconscious meters from where they once were."
 
-                    "You hear nothing but rain."
+                    "Your last surge of raw mana detonates at your feet, hurling you hard to the ground. Everything starts to go black."
+
+                    "The last thing you hear is rain."
 
                     jump bad_ending
 
@@ -2161,30 +2163,30 @@ label FinalCheck:
 
 
 
-    "Darcey dusts herself off,{cps=4} {/cps}wincing as she rolls her ankle that was red and sore from the vines."
+    "[darcey_name] carefully dusts herself off. She winces when she rolls her red and sore ankle.{cps=4} {/cps}It still had the imprint of the vines."
 
     show darcey sad
-    Darcey "Okay.{cps=4} {/cps}Next time,{cps=4} {/cps}let's not follow the creepy footprints {i}directly into a monster's mouth{/i},{cps=4} {/cps}yeah?"
+    Darcey "Next time,{cps=4} {/cps}let's not follow the creepy footprints {i}directly into a monster's trap{/i}."
 
-    "Quinn sighs,{cps=4} {/cps}not entertained by Darcey's attempt to lighten the mood."
+    "[quinn_name] sighs in relief and ignores [darcey_name]'s quip."
 
     show quinn sad
     show iris neutral
-    Quinn "As long as you are okay thats all that matters right now."
+    Quinn "What matters right now is that you're okay."
 
-    "A shiver runs down your spine as you glance back at the abandoned carriage."
+    "The adrenaline still shivers down your spine as you glance back at the abandoned enemy carriage. You shack your head."
 
     show iris angry
-    Iris "No matter what happened here before,{cps=4} {/cps}it's not as important as getting back to the carriage now."
+    Iris "We need to get back to our carriage now, back on our mission."
 
-    "No one says much after that.{cps=4} {/cps}The forest feels heavier somehow,{cps=4} {/cps}like something is still watching."
+    "No one says anything after that.{cps=4} {/cps}You notice that the forest feels heavier {cps=4} {/cps}like something is still watching."
     show iris neutral
     show darcey neutral
 
-    "You help Darcey limp through the underbrush,{cps=4} {/cps}careful not to slip on the slick ground." 
+    "[darcey_name] leans on you for support as she limps forward. You carefully help her navigate the drenched ground." 
 
 
-    "Quinn trails close behind,{cps=4} {/cps}his bow still in hand,{cps=4} {/cps}just in case."
+    "[quinn_name] trails close behind with bow ready."
 
     window auto hide
     show iris neutral:
@@ -2226,7 +2228,9 @@ label FinalCheck:
         flip
     with Dissolve(1.5)
 
-    "The carriage comes back into view,{cps=4} {/cps}its form comforting after the chaos.{cps=4} {/cps}Rain continues to patter softly against the canvas roof."
+    "The carriage comes back into view,{cps=4} {/cps}comforting your team after the chaos."
+    
+    "[plo_name] got it back on the road. The sound of freefall rain combines with the sound of it pattering on the carriage's canvas roof."
 
     
     window auto hide
@@ -2250,25 +2254,25 @@ label FinalCheck:
     show quinn sad:
         xpos -0.12 
     show plo shocked 
-    "Plo's easygoing expression falters the moment he sees Darcey limping beside you."
+    "[plo_name]'s easygoing expression falters the moment he sees [darcey_name] limping beside you."
 
     Plo "What happened out there?"
 
     show darcey sad
-    Darcey "Got into a tangle with something that really didn't want to let go."
+    Darcey "Just encountered a clingy plant..."
 
-    "She tries to play it off,{cps=4} {/cps}but the exhaustion in her voice is clear."
+    "The exhaustion in [darcey_name]'s voice is clear as it trails off."
 
     show plo sad
     Plo "You alright?"
 
     show darcey neutral
-    Darcey "I'll live.{cps=4} {/cps}Just want to get out of here now"
+    Darcey "I'll live."
 
-    "Plo nods,{cps=4} {/cps}his usual grin replaced by something more serious.{cps=4} {/cps}He steps forward and steadies her by the arm, {cps=4} {/cps}uiding her toward the carriage with an unspoken gentleness."
+    "[plo_name] nods; his grin becoming forced.{cps=4} {/cps}He steps forward and guides her toward the carriage with an unspoken gentleness."
 
     show plo neutral
-    Plo "Up you go,{cps=4} {/cps}then.{cps=4} {/cps}No arguments."
+    Plo "Up you go then.{cps=4} {/cps}No arguments."
 
     show darcey neutral:
         subpixel True 
@@ -2285,11 +2289,11 @@ label FinalCheck:
         xpos 1.07 
 
     if inside_carriage == True:
-        Plo "Alright,{cps=4} {/cps}everyone in.{cps=4} {/cps}You can tell me about it later,{cps=4} {/cps}let's get moving before the road throws us another surprise."
+        Plo "Come on,{cps=4} {/cps}everyone in.{cps=4} {/cps}Storytime will have to wait until we're free from this place's surprise."
     else:
-        Plo "[player_name],{cps=4} {/cps}appreciate the company but you should ride inside this time."
+        Plo "[player_name],{cps=4} {/cps}appreciate the company, but you should ride inside this time."
         Plo "Humans and rain don't mix too well,{cps=4} {/cps}last I checked."
-        "With a softer voice he leans down."
+        "With a softer voice, he leans down."
         show plo neutral:
             subpixel True 
             pos (1.0, 1.18) xrotate 0.0 rotate 0.0 
@@ -2299,9 +2303,9 @@ label FinalCheck:
             pos (0.99, 1.16) xrotate 0.0 rotate -9.0 
 
 
-        Plo "{i}And to keep a eye on Darcey,{cps=4} {/cps}she looks shaken up.{/i}"
+        Plo "Keep an eye on [darcey_name], will ya?{cps=4} {/cps}She looks shaken up."
 
-    Iris "Let's get a move on."
+    Iris "Let's get out of here."
 
     scene carriage 
     show quinn sad:
@@ -2315,23 +2319,23 @@ label FinalCheck:
     with Dissolve(1.5)
     pause(2.0)
 
-    Iris "Darcey{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} are you sure you're okay?"
+    Iris "[darcey_name]...{cps=4} {/cps} Are you sure you're okay?"
 
     show darcey sad
-    Darcey "Yeah.{cps=4} {/cps}Just sore.{cps=4} {/cps}I've had worse.{cps=4} {/cps}Probably."
+    Darcey "Yeah, just sore.{cps=4} {/cps}I've had worse.{cps=4} {/cps}Probably."
 
     menu:
         "Crack a joke to lighten the mood.":
-            Iris "So{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} man-eating vines.{cps=4} {/cps}Real warm welcome from the local flora."
+            Iris "Personally, I don't think man-eating vines were the best welcome from the local flora."
             show darcey happy
-            Darcey "Do all enchanted forests offer complimentary strangling,{cps=4} {/cps}or did we just get lucky?"
+            Darcey "Who knows, this could be top service from enchanted forests. I'm flattered."
             show quinn happy
-            Quinn "Remind me to write a strongly worded letter to the forest when we are done."
+            Quinn "...I'll write a strongly-worded letter."
             $ quinn_points += 10
             $ darcey_points += 5
 
-        "Offer to keep an eye on Darcey.":
-            Iris "Let me help keep watch while you rest.{cps=4} {/cps}You've done enough today."
+        "Offer to keep an eye on [darcey_name].":
+            Iris "Rest. I'll keep watch until you're recovered.{cps=4} {/cps}You've done enough today."
             $ quinn_points += 10
             $ darcey_points += 5
             show darcey happy
@@ -2339,17 +2343,17 @@ label FinalCheck:
             Darcey "Thanks.{cps=4} {/cps}I'll try not to fall asleep on your shoulder."
 
         "Stay quiet, but keep close.":
-            "You don't say anything,{cps=4} {/cps}just offer Darcey your arm again as she climbs in."
+            "You keep quiet,{cps=4} {/cps}only offering [darcey_name] your arm as she climbs in."
             show darcey neutral
-            "She gives you a brief and grateful glance."
+            "She gives you a brief but grateful glance."
             $ quiet += 1
             $ quinn_points += 5
             $ darcey_points += 5
             show quinn neutral
             show darcey happy
-            Darcey "Well that was a interesting side quest."
+            Darcey "I guess the forest thought a bush was too obvious of an ambush."
             show quinn happy 
-            Quinn "Just wait.{cps=4} {/cps}Next we'll be ambushed by a bush."
+            Quinn "Hmph."
     jump Uphill
 
 ######################
@@ -2372,9 +2376,9 @@ label FinalCheck:
     $ renpy.music.set_volume(0, 0, channel='music6')
     $ renpy.music.set_volume(0, 0, channel='music7')
     
-    Quinn "Of course, apologies Iris."
+    Quinn "Of course, apologies [player_name]."
 
-    "You head back over to the carriage,{cps=4} {/cps}seeing darcey and plo working together to free the wheels."
+    "You and [quinn_name] head back to the carriage.{cps=4} {/cps}To your surprise, [plo_name] and [darcey_name] are working together to free the wheels."
     
     window auto hide
     show plo angry at right:
@@ -2416,18 +2420,18 @@ label FinalCheck:
     $ renpy.music.set_volume(0.5, 0.1, 'music5')
     $ renpy.music.set_volume(0.2, 0.1, 'music6')
 
-    "The carriage jolts forward,{cps=4} {/cps}freeing it from the mud."
+    "The carriage lurches forward with the last coordinated thrust,{cps=4} {/cps}freeing it from the mud."
 
-    "The sudden momentum nearly sends Darcey stumbling forward,{cps=4} {/cps}but she steadies herself with a muttered curse."
+    "The sudden momentum sends [darcey_name] stumbling forward with a muttered curse,{cps=4} {/cps}but she manages to steady herself."
 
     show darcey angry
-    Darcey "Finally.{cps=4} {/cps}Couldn't have been {i}any{/i} gentler?"
+    Darcey "You couldn't have been gentler, [plo_name]?"
 
     show plo happy
-    Plo "We were getting it unstuck, not giving it a massage."
+    Plo "Bah. Gentle. We're not giving it a massage."
 
     show darcey neutral
-    Darcey "Whatever, get me back on this thing so I can fufill my duty."
+    Darcey "Whatever. et me back on this thing so I can fufill my duty."
     show darcey angry:
         subpixel True 
         xpos 0.98 
@@ -2435,7 +2439,10 @@ label FinalCheck:
     with Pause(0.40)
 
     show quinn sad
-    "Despite the small victory,{cps=4} {/cps}Quinn remains still,{cps=4} {/cps}his sharp gaze lingering on the treeline before getting on the carriage."
+    "[quinn_name] is the only one distracted from the small victory. His sharp gaze lingers on the treeline, where shadows shift amongst the trees."
+    
+    "Nevertheless, he gets in the carriage."
+    
     show iris neutral
     show quinn sad:
         subpixel True 
@@ -2450,15 +2457,15 @@ label FinalCheck:
     if inside_carriage == True:
         show plo neutral:
             flip
-        Plo "Alright,{cps=4} {/cps}everyone in?{cps=4} {/cps}Let's get moving before the road throws us another surprise."
+        Plo "Alright,{cps=4} {/cps}everyone in?{cps=4} {/cps}Let's get movin' before the road throws us another surprise."
     else:
         show plo neutral:
             flip
-        Plo "[player_name],{cps=4} {/cps}appreciated the company,{cps=4} {/cps}but you should ride inside this time."
+        Plo "[player_name], appreciated the company,{cps=4} {/cps}but you should ride inside this time."
         Plo "Humans and rain don't mix too well,{cps=4} {/cps}last I checked."
         Plo "Makes them all sick."
     show iris happy
-    Iris "Alright!{cps=4} {/cps}Then let's head out."
+    Iris "Will do."
 
     scene bg forest
     show carriage 
@@ -2476,29 +2483,31 @@ label FinalCheck:
     $ renpy.music.set_volume(0.6, 4, 'music5')
     $ renpy.music.set_volume(0.7, 0.2, 'music1')
 
-    "You settle into the carriage,{cps=4} {/cps}rain drips from your wet sleeve."
+    "You settle into the carriage. Rain drips from all three of you. It's nice to be inside."
 
     if get_serious == False:
         Iris "Remind me to thank the horse later.{cps=4} {/cps}If we survive this, it gets half my rations and a name."
 
         show darcey happy
         show quinn happy
-        Darcey "Better make it a title and a pension if it gets us all the way there with how bumpy Plo is driving."
+        Darcey "Better guarrentee a title and pension with how bumpy [plo_name] is driving."
 
         show quinn neutral
-        Quinn "It has maintained a consistent pace despite the mud and incline.{cps=4} {/cps}That's valuable."
+        Quinn "...Their pace is impressive."
 
-        "You laugh faintly,{cps=4} {/cps}but the tension creeps in as the wheels begin to grind harder,{cps=4} {/cps}the incline steeper now."
+        "You laugh faintly.
+
+        "Tension creeps in as the wheels begin to grind harder,{cps=4} {/cps}the incline steeper."
     else:
         """
         Time passes.
-        The journey feels longer now, the weight of what's ahead pressing down on you.
-        Quinn and Darcey's voices blend into the background, their words muffled by your thoughts as you stare out the window, lost in the passing landscape.
-        The uncertainty of what's to come lingers in the air, making the world outside feel distant and cold.
+        The weight of what's ahead gets to you. Time slows.
+        [quinn_name] and [darcey_name]'s voices blend into the background. Their words get muffle by your thoughts. You stare out the window, lost in the passing landscape.
+        Uncertainty of what's to come makes the world outside feel distant and cold.
         """
-    "The forest outside thins somewhat,{cps=4} {/cps}replaced by rocky outcrops and mud slick ridges."
+    "The forest outside morphs into rocky outcrops and mud slick ridges."
 
-    "Suddenly,{cps=4} {/cps}the carriage jolts."
+    "The carriage jolts."
 
     $ renpy.music.set_volume(0, 1, 'music1')
     $ renpy.music.set_volume(0, 1, 'music2')
@@ -2511,7 +2520,7 @@ label FinalCheck:
     show quinn shocked
     show darcey shocked
 
-    "A loud {i}crack{/i} rings out as one of the rear wheels slips,{cps=4} {/cps}dragging the carriage a foot to the left toward a narrow ravine."
+    "A loud {i}crack{/i} rings out as one of the rear wheels twists to the left.{cps=4} {/cps}The carriage heads toward a narrow ravine."
 
     window auto hide
     show quinn shocked:
@@ -2535,14 +2544,14 @@ label FinalCheck:
         xpos 0.59 
     with hpunch
 
-    Iris "Whoa—!"
+    Iris "Whoa!"
     
     show darcey angry
-    Darcey "Plo?!"
+    Darcey "[plo_name]?!"
     show quinn sad
-    Quinn "We're sliding—"
+    Quinn "We're sliding!"
 
-    "From outside,{cps=4} {/cps}Plo yells."
+    "[plo_name] yells from outside."
 
     $ renpy.music.set_volume(1, 1, 'music2')
 
@@ -2554,9 +2563,11 @@ label FinalCheck:
     $ renpy.music.set_volume(1, 1, 'music7')
     $ renpy.music.set_volume(1, 1, 'music3')
 
-    "You and the others throw your weight to the right side of the carriage.{cps=4} {/cps}The horses whinny in panic as Plo wrestles with the reins."
+    "You, [darcey_name], and [quinn_name] throw your weight to the right side of the carriage as [plo_name] wrestles with the reins.{cps=4} {/cps}The horses whine in panic."
 
-    "The carriage shudders{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} then steadies.{cps=4} {/cps}A few pebbles tumble off the edge below you,{cps=4} {/cps}disappearing into the fog."
+    "The carriage shudders{cps=4}.{/cps}{cps=4}.{/cps}{cps=4} {/cps} then steadies. Right on the edge of a cliff."
+    
+    "A few pebbles tumble off the edge below you into the fog."
 
     show quinn sad:
         subpixel True 
@@ -2576,21 +2587,21 @@ label FinalCheck:
     "A long silence follows."
 
     show darcey neutral
-    Darcey "{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}So, that counts as our one 'slip down a hill',{cps=4} {/cps}right?{cps=4} {/cps}Told you I wouldn't be the one to do it."
+    Darcey "{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} That counts as our one 'slip down a hill', right?"
 
     show quinn neutral
     Quinn "Technically, we didn't {cps=4}fall{/cps}."
     
-    Iris "Let's not test the odds on a second try."
+    Iris "Let's count it to avoid another one."
 
     $ renpy.music.set_volume(0.2, 4, 'music4')
 
     show quinn happy
     show darcey happy
 
-    "Laughter breaks the tension,{cps=4} {/cps}and for a moment,{cps=4} {/cps}the cabin feels warmer despite the damp."
+    "Laughter breaks the tension. {cps=4} {/cps}For a moment, the cabin feels warmer."
 
-    "Outside,{cps=4} {/cps}the rain begins to ease.{cps=4} {/cps}The trees thin further as the road evens out,{cps=4} {/cps}trading mud for coarse,{cps=4} {/cps}sandy ground."
+    "The rain begins to ease outside.{cps=4} {/cps}Trees lessen until disappearing altogether. The road evens out and trades mud for coarse, sandy ground."
 
     $ renpy.music.set_volume(0.8, 0.2, 'music1')
     $ renpy.music.set_volume(0.7, 4, 'music3')
@@ -2598,9 +2609,9 @@ label FinalCheck:
     $ renpy.music.set_volume(0, 8, 'music6')
 
     menu:
-        "Ask Darcey about her worst travel day.":
+        "Ask [darcey_name] about her worst travel day.":
             $ darcey_points += 5
-            Iris "Darcey.{cps=4} {/cps}What's the worst travel day you've ever had?"
+            Iris "[darcey_name],{cps=4} {/cps}what's the worst travel day you've ever had?"
 
             $ renpy.music.set_volume(0.7, 1, 'music2')
             $ renpy.music.set_volume(0, 4, 'music3')
@@ -2608,20 +2619,21 @@ label FinalCheck:
             $ renpy.music.set_volume(0.3, 4, 'music5')
 
             show darcey happy
-            Darcey "Oooh, good question. Not including today{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
+            Darcey "Good question! I assume today doesn't count."
             show darcey neutral
-            Darcey "One time I was escorting a food delivery load. The {cps=4}entire{/cps} cartload is raw fish, the sun was blazing down, and someone thought putting goat milk in glass jars was smart."
+            Darcey "One time, I was escorting a food delivery load. The {cps=4}entire{/cps} cartload was raw fish and goat milk in glass jars..."
+            Darcey "...during the blistering summer."
 
             show quinn worried
-            Quinn "I can almost remember the smell."
+            Quinn "I can almost imagine the smell."
 
             show darcey happy
             show quinn neutral
-            Darcey "By the end of the second day even the vultures gave up.{cps=4} {/cps}Took one sniff and ran for the hills."
+            Darcey "By the end of the second day, even vultures wouldn't come near.{cps=4} {/cps}Took one sniff and ran for the hills."
 
-        "Ask Quinn about his bow reflexes.":
+        "Ask [quinn_name] about his bow reflexes.":
             $ quinn_points += 5
-            Iris "Quinn,{cps=4} {/cps}you're incredibly precise with that bow.{cps=4} {/cps}How did you get so skilled?"
+            Iris "[quinn_name],{cps=4} {/cps} how did you get so skilled with your bow?"
 
             $ renpy.music.set_volume(0.7, 1, 'music2')
             $ renpy.music.set_volume(0, 4, 'music3')
@@ -2629,9 +2641,9 @@ label FinalCheck:
             $ renpy.music.set_volume(0.3, 4, 'music5')
 
             show quinn neutral
-            Quinn "Being half-elf has its advantages.{cps=4} {/cps}But precision with a bow comes from years of practice."
+            Quinn "Being half-elf has its advantages,{cps=4} {/cps}But that doesn't mean your naturally talented. Precision comes from years of practice."
             
-            Quinn "I've spent countless hours training,{cps=4} {/cps}honing my focus until it became second nature."
+            Quinn "I've spent countless hours training until it became second nature."
 
         "Stay quiet and listen to the rain.":
             $ quiet += 1
@@ -2642,57 +2654,57 @@ label FinalCheck:
             
             "You settle into the quiet moment,{cps=4} {/cps}letting the sound of soft rainfall and creaking wood lull your nerves."
 
-            "Darcey rests her head back,{cps=4} {/cps}staring up at the ceiling of the carriage."
+            "[darcey_name] rests her head back."
             show darcey neutral
             Darcey "Almost feels peaceful.{cps=4} {/cps}Almost."
 
             show quinn neutral
-            "Quinn closes his eyes briefly,{cps=4} {/cps}arms crossed,{cps=4} {/cps}but his hand never strays far from his bow."
+            "[quinn_name] closes his eyes briefly,{cps=4} {/cps}arms crossed,{cps=4} {/cps}hand always near his bow."
 
-            "The silence is broken only by the occasional sound of Darcey or Quinn shifting, and the faint hum of the carriage over uneven ground."
+            "Silence is broken only by the occasional sound of [darcey_name] or [quinn_name] shifting and the faint hum of the carriage over uneven ground."
 
             $ renpy.music.set_volume(0, 8, 'music2')
             $ renpy.music.set_volume(0, 8, 'music3')
             $ renpy.music.set_volume(0, 8, 'music7')
 
-            "As you listen to the rain,{cps=4} {/cps}a memory rises in your mind—one you haven't thought of in years."
+            "A memory rises in your mind--one you haven't thought of in years--as you listen to the rain."
 
             show black with Dissolve(1.5)
             #this could be a lot cooler and more lore dropping if expanded
-            "The day you were drafted into the war.{cps=4} {/cps}You were barely an adult, yet it was you or your elderly parents."
+            "The day you were drafted into the war.{cps=4} {/cps}You took your parents' place, barely an adult."
 
-            "It was a choice you would make again."
+            "It was a choice you don't regret."
 
             hide black with Dissolve(1.5)
 
     $ renpy.music.set_volume(0.7, 1, 'music2')
 
-    "A small jolt reminds you you're still on a rough road."
+    "A small bump in the road reminds you you're still on the rough road."
     with hpunch
 
     show darcey happy
-    Darcey "Alright,{cps=4} {/cps}bets on how long until we hit the next 'harmless little bump' in the road?"
+    Darcey "Bets on how long until we hit the next 'harmless little bump' in the road?"
 
     show quinn happy
-    Quinn "Do you count the time in minutes?"
+    Quinn "Do you count the time in minutes or seconds?"
 
-    Iris "I'm starting to think we're cursed.{cps=4} {/cps}Who angered a forest spirit recently?"
+    Iris "I'm starting to think we're cursed with all these bumps. Who cursed our trip?"
 
     show darcey angry
-    Darcey "Probably Plo.{cps=4} {/cps}He keeps cursing under his breath every time the carriage tilts."
+    Darcey "Probably [plo_name].{cps=4} {/cps}He keeps cursing under his breath at the carriage's every movement."
 
-    "Right on cue,{cps=4} {/cps}Plo's voice bellows through the canvas."
+    "[plo_name]'s voice bellows through the canvas."
 
     Plo "I HEARD THAT!" 
     #TODO: a text effect would be nice here
 
     show darcey happy
 
-    Darcey "{cps=4}You were meant to.{/cps}"
+    Darcey "Good!"
 
-    "Laughter spreads again as the trees begin to thin,{cps=4} {/cps}and the wheels finally stop groaning in the muck."
+    "The air grows drier.{cps=4} {/cps}The smell of the soggy forest floor gives way to the firmer, bristly smell of sandy terrain."
 
-    "The air grows drier.{cps=4} {/cps}The soggy forest floor gives way to firmer,{cps=4} {/cps}sandy terrain,{cps=4} {/cps}and the clouds begin to part."
+    "The sun comes out without plants to cover it. Cold is being replaced by the hotness of a desert."
 
     jump Uphill
 
@@ -2711,18 +2723,18 @@ label FinalCheck:
     $ renpy.music.stop(channel='music6', fadeout=10)
     $ renpy.music.stop(channel='music7', fadeout=10)
     
-    Plo "Not too long and we will be on the main merchant path."
+    Plo "We'll reach the main merchant path in not too long."
 
     show quinn neutral
 
-    Quinn "The sun is setting soon,{cps=4} {/cps}what would you like to do, [player_name]?"
+    Quinn "The sun will soon set.{cps=4} {/cps}What would you like to do, [player_name]?"
 
     Iris "Let's camp here for now."
     show darcey happy
 
-    Plo "About time.{cps=4} {/cps}I was starting to think we'd need a paddle instead of wheels."
+    Plo "About time.{cps=4} {/cps}I was starting to think we'd need to start carrying everythin'."
 
-    Plo "With the luck we have,{cps=4} {/cps}would be faster to just carry everything."
+    Plo "It's faster."
 
     scene sand
     with Dissolve(1.5)
@@ -2745,15 +2757,17 @@ label FinalCheck:
 
     "You exit the carriage to find a good spot to rest."
 
-    "As the sun dips lower behind the clouds,{cps=4} {/cps}a small outcropping of rock offers a natural break from the wind."
+    "You spot a small outcropping of rock offers a natural break from the wind. A great place to set up camp."
+    
+    "Your team gets there as night passes over the sunset."
 
     #TODO: add the tintshader
     show quinn happy
-    Quinn "This is as good a place as any to rest for the night."
+    Quinn "Well, this is as good a place as any for the night."
 
-    "The party sets up camp beneath the outcropping.{cps=4} {/cps}Plo unloads gear from the back while Quinn begins building a fire,{cps=4} {/cps}coaxing life from damp kindling with careful,{cps=4} {/cps}practiced hands."
+    "The party sets up camp beneath the outcropping.{cps=4} {/cps}[plo_name] unloads gear from the carriage, while [quinn_name] works on building a fire with careful, practiced hands."
 
-    "The fire crackles softly as evening settles in.{cps=4} {/cps}The clouds begin to part just enough for the faintest glow of moonlight to break through."
+    "The fire crackles softly as night settles.{cps=4} {/cps}The clouds part just enough for the faintest glow of moonlight to break through."
 
 ######################
 ## night
