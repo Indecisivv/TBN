@@ -1,3 +1,14 @@
+################################################################################
+#Weather
+################################################################################
+image rain1fast = Fixed(SnowBlossom("gui/rain1.png", 10, xspeed=(-1000, -900), yspeed=(2000, 1900), start=50, fast=True, horizontal=False))
+image rain2fast = Fixed(SnowBlossom("gui/rain2.png", 25, xspeed=(-1000, -900), yspeed=(2000, 1900), start=50, fast=True, horizontal=False))
+
+image rain1slow = Fixed(SnowBlossom("gui/rain1.png", 5, xspeed=(-1000, -900), yspeed=(2000, 1900), start=50, fast=True, horizontal=False))
+image rain2slow = Fixed(SnowBlossom("gui/rain2.png", 15, xspeed=(-1000, -900), yspeed=(2000, 1900), start=50, fast=True, horizontal=False))
+#endregion
+
+
 define xRotAnchor = 0
 define yRotAnchor = 0.5
 
