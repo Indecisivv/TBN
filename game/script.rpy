@@ -1,4 +1,4 @@
-#likability values
+﻿#likability values
 default max_points = 100
 default plo_points = 50
 default darcey_points = 30
@@ -107,26 +107,6 @@ label FinalCheck:
         "No":
             jump GenderQuestion
  
-    camera:
-        perspective True
-
-################################################################################
-##  ████   ███  █   █ █████   █████ █████  ███  ████  █████ 
-##  █     █   █ ██ ██ █       █       █   █   █ █   █   █   
-##  █  ██ █████ █ █ █ ████    █████   █   █████ ████    █   
-##  █   █ █   █ █   █ █           █   █   █   █ █   █   █   
-##   ███  █   █ █   █ █████   █████   █   █   █ █   █   █   
-################################################################################
-label start:
-    
-    # Name characterS
-    $ player_name = renpy.input("What would you like to name your character?", default="Iris", length=20).strip()
-
-    if player_name == "":
-        $ player_name = "Iris"
-
-    # jump DebugIntro
-
     camera:
         perspective True
 
@@ -1627,7 +1607,7 @@ label start:
     show quinn neutral
     Quinn "Fresh enough.{cps=4} {/cps}And not from our camp."
 
-     "A quiet moment passes, leaving the sound of the rain pattering against leaves.{cps=4} {/cps}They listen.{cps=4} {/cps}Nothing unusual presents itself."
+    "A quiet moment passes, leaving the sound of the rain pattering against leaves.{cps=4} {/cps}They listen.{cps=4} {/cps}Nothing unusual presents itself."
 
     show plo worried
     Plo "I don't like this."
