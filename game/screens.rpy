@@ -852,9 +852,9 @@ screen settings():
 
                 vbox:
 
-                    label _("Text Speed")
+                    #label _("Text Speed")
 
-                    bar value Preference("text speed")
+                    #sbar value Preference("text speed")
 
                     label _("Auto-Forward Time")
 
@@ -878,15 +878,9 @@ screen settings():
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
 
-
-                    if config.has_voice:
                         label _("Voice Volume")
-
                         hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                            bar value Preference("mixer voices volume")
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing
