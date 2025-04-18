@@ -17,11 +17,12 @@ default Cake = item("Cake", "A Hearty Pastry", 1, 1, 5, "R")
 #Should probably move all this to its own file
 default Item_Antidote = item("Antidote", "Cures Poison", 1, 1, 3, "R")
 default Item_Food = item("Food", "It's Food", 1, 1, 3, "R")
-default Item_Flute = item("Flute", "A Wind Instrument", 1, 1, 1, "R")
+default Item_Flute = item("Flute", "A Wind Instrument", 1, 1, 10, "R")
 default Item_Brand = item("Brand", "DEFAULT_DESCRIPTION", 1, 1, 10, "R")
 default Item_Knife = item("Knife", "Good for cutting things", 1, 1, 10, "R")
 default Item_Health = item("Health Potion", "Heals People", 1, 1, 10, "R")
 default Item_Gold = item("Brand", "Money can used to purchase goods and services", 1, 1, 10, "R")
+default Item_Water = item("Water", "Hydrating", 1, 1, 10, "R")
 
 
 #Drag objects with names that correspond to a specific item
@@ -32,6 +33,7 @@ default Drag_Brand = Drag(d = "brand.png", drag_name = "Brand", draggable = True
 default Drag_Knife = Drag(d = "knife.png", drag_name = "Knife", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.5))
 default Drag_Health = Drag(d = "health.png", drag_name = "Health Potion", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.6))
 default Drag_Gold = Drag(d = "gold.png", drag_name = "Knife", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.7))
+default Drag_Water = Drag(d = "water.png", drag_name = "Knife", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.8))
 
 
 
@@ -41,7 +43,7 @@ default pizza = Drag(d = Solid("#ff9811", xysize = (400, 400)), drag_name = "Piz
 default guitar = Drag(d = Solid("#522801", xysize = (600, 200)), drag_name = "Guitar", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.8))
 default testList = [biscuit, pizza, guitar, Drag_Flute]
 
-default DayOneItemList = [Drag_Antidote, Drag_Food, Drag_Flute, Drag_Brand, Drag_Knife, Drag_Health, Drag_Gold]
+default DayOneItemList = [Drag_Antidote, Drag_Food, Drag_Flute, Drag_Brand, Drag_Knife, Drag_Health, Drag_Gold, Drag_Water]
 
 
 default DayTwoItemList = [Drag_Antidote, Drag_Food, Drag_Flute, Drag_Brand, Drag_Knife, Drag_Health, Drag_Gold]
@@ -56,7 +58,8 @@ default ItemDictionary = {
     Drag_Brand: Item_Brand,
     Drag_Knife: Item_Knife,
     Drag_Health: Item_Health,
-    Drag_Gold: Item_Gold
+    Drag_Gold: Item_Gold,
+    Drag_Water: Item_Water
     }
 
 
@@ -114,4 +117,4 @@ default InventoryGroup = DragGroup(Space1, Space2, Space3, Space4,
 Space5, Space6, Space7, Space8,
 Space9, Space10, Space11, Space12,
 #biscuit, guitar, pizza, 
-Drag_Antidote, Drag_Food, Drag_Flute, Drag_Brand, Drag_Knife, Drag_Health, Drag_Gold)
+Drag_Antidote, Drag_Food, Drag_Flute, Drag_Brand, Drag_Knife, Drag_Health, Drag_Gold, Drag_Water)

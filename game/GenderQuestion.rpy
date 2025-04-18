@@ -79,6 +79,10 @@
 
 
 
+define their = Pronoun("their", "his", "her")
+
+define Their = Pronoun("Their", "His", "Her")
+
 define they = Pronoun("they", "he", "she")
 
 define theyre = Pronoun("they're", "he's", "she's")

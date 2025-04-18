@@ -87,7 +87,23 @@ init python:
                 x.draggable = False  
 
 
-    
+    def ShowDayOneShopItems():
+        DayOneItemList[0].set_child("antidote.png")
+        DayOneItemList[0].draggable = True
+        DayOneItemList[1].set_child("food.png")
+        DayOneItemList[1].draggable = True
+        DayOneItemList[2].set_child("flute.png")
+        DayOneItemList[2].draggable = True
+        DayOneItemList[3].set_child("brand.png")
+        DayOneItemList[3].draggable = True
+        DayOneItemList[4].set_child("knife.png")
+        DayOneItemList[4].draggable = True
+        DayOneItemList[5].set_child("health.png")
+        DayOneItemList[5].draggable = True
+        DayOneItemList[6].set_child("gold.png")
+        DayOneItemList[6].draggable = True
+        DayOneItemList[7].set_child("water.png")
+        DayOneItemList[7].draggable = True
 
     def ShowDayTwoShopItems():
         DayTwoItemList[0].set_child("antidote.png")
@@ -104,6 +120,8 @@ init python:
         DayTwoItemList[5].draggable = True
         DayTwoItemList[6].set_child("gold.png")
         DayTwoItemList[6].draggable = True
+        DayTwoItemList[7].set_child("water.png")
+        DayTwoItemList[7].draggable = True
         
 
 
