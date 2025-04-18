@@ -168,7 +168,7 @@ label DebugItemCheck:
     #else:
     #    "Failed To Add a Biscuit! That Space is already Occuppied"
 
-    show screen inventory_button
+    #show screen inventory_button
 
     if TestBool:
         "This is true"
@@ -186,6 +186,21 @@ label DebugItemCheck:
  
 
     "Here's the inventory"
+
+
+
+    """
+    Quietly you reach under the bunk to pull out your stuff.
+
+    """
+
+    show screen Inventory_Screen
+
+    show screen close_inventory_button
+
+    pause 0.5
+
+    $ HideAllNonInventoryItems()
 
     "1"
 

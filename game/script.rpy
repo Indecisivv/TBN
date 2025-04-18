@@ -44,6 +44,8 @@ transform unflip:
 ################################################################################
 label start:
 
+    jump DebugIntro
+
 label GenderQuestion:
     scene black with Dissolve(2.5)
     show m_iris neutral:
@@ -380,7 +382,7 @@ label FinalCheck:
             show quinn happy
             Captain "[darcey_name],{cps=4} {/cps}a fighter through and through.{cps=2} {/cps}Deadly for fights you want to pick and intelligent for fights you don't." 
             show darcey happy ##Pronoun Below
-            Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star messenger.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on their feet."
+            Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star messenger.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on [their] feet."
             show iris happy
             Captain "All excellent in your own rights."
             Captain "You four are the perfect team for this mission because{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
@@ -544,19 +546,25 @@ label FinalCheck:
     """
     hide map with Dissolve(1.5)
     show iris happy
-    """
 
+
+    """
     Quietly you reach under the bunk to pull out your stuff.
 
     """
 
-    ##TODO: show inventory packing here!!! ##
+    show screen Inventory_Screen
 
-    
+    show screen close_inventory_button
+
+    pause 0.5
+
 
     """
     You decide to sleep, getting what little rest you still can.
     """
+
+    $ HideAllNonInventoryItems()
 
     $ renpy.music.stop(channel='music1', fadeout=8)
     $ renpy.music.stop(channel='music2', fadeout=None)
@@ -2495,7 +2503,7 @@ label FinalCheck:
         show quinn neutral
         Quinn "...Their pace is impressive."
 
-        "You laugh faintly.
+        "You laugh faintly. "
 
         "Tension creeps in as the wheels begin to grind harder,{cps=4} {/cps}the incline steeper."
     else:
