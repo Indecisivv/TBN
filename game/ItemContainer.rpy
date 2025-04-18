@@ -87,20 +87,20 @@ default Row3Pos = RowStartPoint + RowParity + RowParity
 default SpaceAnchor = (0.0, 0.0)
 
 #Empty spaces that represent coordinates and locations that items can be placed on
-default Space1 = Drag(d = "blank.png", drag_name = "0.0", draggable = False, anchor = SpaceAnchor, pos = (Column1Pos, Row1Pos))
-default Space2 = Drag(d = "blank.png", drag_name = "0.1", draggable = False, anchor = SpaceAnchor, pos = (Column2Pos, Row1Pos))
-default Space3 = Drag(d = "blank.png", drag_name = "0.2", draggable = False, anchor = SpaceAnchor, pos = (Column3Pos, Row1Pos))
-default Space4 = Drag(d = "blank.png", drag_name = "0.3", draggable = False, anchor = SpaceAnchor, pos = (Column4Pos, Row1Pos))
+default Space1 = Drag(d = "gui/inventory slot.png", drag_name = "0.0", draggable = False, anchor = SpaceAnchor, pos = (Column1Pos, Row1Pos))
+default Space2 = Drag(d = "gui/inventory slot.png", drag_name = "0.1", draggable = False, anchor = SpaceAnchor, pos = (Column2Pos, Row1Pos))
+default Space3 = Drag(d = "gui/inventory slot.png", drag_name = "0.2", draggable = False, anchor = SpaceAnchor, pos = (Column3Pos, Row1Pos))
+default Space4 = Drag(d = "gui/inventory slot.png", drag_name = "0.3", draggable = False, anchor = SpaceAnchor, pos = (Column4Pos, Row1Pos))
 
-default Space5 = Drag(d = "blank.png", drag_name = "1.0", draggable = False, anchor = SpaceAnchor, pos = (Column1Pos, Row2Pos))
-default Space6 = Drag(d = "blank.png", drag_name = "1.1", draggable = False, anchor = SpaceAnchor, pos = (Column2Pos, Row2Pos))
-default Space7 = Drag(d = "blank.png", drag_name = "1.2", draggable = False, anchor = SpaceAnchor, pos = (Column3Pos, Row2Pos))
-default Space8 = Drag(d = "blank.png", drag_name = "1.3", draggable = False, anchor = SpaceAnchor, pos = (Column4Pos, Row2Pos))
+default Space5 = Drag(d = "gui/inventory slot.png", drag_name = "1.0", draggable = False, anchor = SpaceAnchor, pos = (Column1Pos, Row2Pos))
+default Space6 = Drag(d = "gui/inventory slot.png", drag_name = "1.1", draggable = False, anchor = SpaceAnchor, pos = (Column2Pos, Row2Pos))
+default Space7 = Drag(d = "gui/inventory slot.png", drag_name = "1.2", draggable = False, anchor = SpaceAnchor, pos = (Column3Pos, Row2Pos))
+default Space8 = Drag(d = "gui/inventory slot.png", drag_name = "1.3", draggable = False, anchor = SpaceAnchor, pos = (Column4Pos, Row2Pos))
 
-default Space9 = Drag(d = "blank.png", drag_name = "2.0", draggable = False, anchor = SpaceAnchor, pos = (Column1Pos, Row3Pos))
-default Space10 = Drag(d = "blank.png", drag_name = "2.1", draggable = False, anchor = SpaceAnchor, pos = (Column2Pos, Row3Pos))
-default Space11 = Drag(d = "blank.png", drag_name = "2.2", draggable = False, anchor = SpaceAnchor, pos = (Column3Pos, Row3Pos))
-default Space12 = Drag(d = "blank.png", drag_name = "2.3", draggable = False, anchor = SpaceAnchor, pos = (Column4Pos, Row3Pos))
+default Space9 = Drag(d = "gui/inventory slot.png", drag_name = "2.0", draggable = False, anchor = SpaceAnchor, pos = (Column1Pos, Row3Pos))
+default Space10 = Drag(d = "gui/inventory slot.png", drag_name = "2.1", draggable = False, anchor = SpaceAnchor, pos = (Column2Pos, Row3Pos))
+default Space11 = Drag(d = "gui/inventory slot.png", drag_name = "2.2", draggable = False, anchor = SpaceAnchor, pos = (Column3Pos, Row3Pos))
+default Space12 = Drag(d = "gui/inventory slot.png", drag_name = "2.3", draggable = False, anchor = SpaceAnchor, pos = (Column4Pos, Row3Pos))
 
 
 
@@ -113,5 +113,5 @@ default Space12 = Drag(d = "blank.png", drag_name = "2.3", draggable = False, an
 default InventoryGroup = DragGroup(Space1, Space2, Space3, Space4,
 Space5, Space6, Space7, Space8,
 Space9, Space10, Space11, Space12,
-biscuit, guitar, pizza, 
+#biscuit, guitar, pizza, 
 Drag_Antidote, Drag_Food, Drag_Flute, Drag_Brand, Drag_Knife, Drag_Health, Drag_Gold)

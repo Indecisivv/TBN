@@ -6,6 +6,8 @@
 
 image ninepatch paper tiled = Frame("ninepatch paper", 40, 40, 40, 40, tile=True)
 
+image InventoryBackground = Frame("gui/inventory bg.png")
+
 
 #These essentially declare custom functions that you can apply to drag variables such as 'dragged, 'dropped', 'clicked', etc.
 #When you try to drop an item on a droppable, check if the matching coordinate in the_inventory is occuppied
@@ -108,7 +110,11 @@ init python:
 screen Inventory_Screen:
     modal True   
 
-    
+    frame:
+        xalign 0.1
+        yalign 0.2
+        add "gui/inventory bg.png"
+
     add InventoryGroup
 
         #image Frame("ninepatch paper", 40, 40, 40, 40, tile=True):
@@ -122,19 +128,19 @@ transform ButtonPos:
 
 #Main button to display inventory
 screen inventory_button():
-    frame:
-        xalign 0.05
-        yalign 0.05
-        vbox:
-            textbutton "Show Inventory" action [Show("Inventory_Screen"), Hide("inventory_button"), Show("close_inventory_button")]
+    imagebutton:
+        xalign 1.0
+        yalign 0.0
+        auto "gui/inventory button_%s.png" action [Show("Inventory_Screen"), Hide("inventory_button"), Show("close_inventory_button")]
+
 
 
 screen close_inventory_button():
-    frame:
-        xalign 0.05
-        yalign 0.05
-        vbox:
-            textbutton "Hide Inventory" action [Hide("Inventory_Screen"), Show("inventory_button"), Hide("close_inventory_button")]
+    imagebutton:
+        xalign 1.0
+        yalign 0.0
+        auto "gui/inventory button active_%s.png" action [Hide("Inventory_Screen"), Show("inventory_button"), Hide("close_inventory_button")]
+
 
 
 
