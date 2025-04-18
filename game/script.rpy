@@ -44,8 +44,6 @@ transform unflip:
 ################################################################################
 label start:
 
-    jump DebugIntro
-
 label GenderQuestion:
     scene black with Dissolve(2.5)
     show m_iris neutral:
