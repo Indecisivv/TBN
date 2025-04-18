@@ -103,18 +103,18 @@ label FinalCheck:
     "Continue with those settings?"
     menu: 
         "Yes":
-            jump test4
+            jump intro
         "No":
             jump GenderQuestion
  
-    camera:
-        perspective True
-
 ################################################################################
 ## ▀█▀ █▄ █ ▀█▀ █▀█ █▀█ 
 ## ▄█▄ █ ▀█  █  █▀▄ █▄█ 
 ################################################################################
     label intro:
+    scene bg cave with Dissolve(1.5)
+    camera:
+        perspective True
     
     $ renpy.music.play("audio/music/01 Captains Tent Strings.ogg", channel='music1', loop=True, synchro_start=True, tight=True)
     $ renpy.music.play("audio/music/01 Captains Tent Brass.ogg", channel='music2', loop=True, synchro_start=True, tight=True)
@@ -124,7 +124,7 @@ label FinalCheck:
     """
     Deep within a vast cave system,{cps=4} {/cps}warmed by the geothermal currents of an underground aquifer,{cps=4} {/cps}lies your camp.
     """
-    scene bg cave with Dissolve(1.5)
+
     """
     Humidity and dirt clings to your skin as stalactites loom overhead with mineral-rich condensation.
 
@@ -172,9 +172,7 @@ label FinalCheck:
     Iris "Captain."
 
     Captain "[player_name],{cps=4} {/cps}wait there,{cps=4} {/cps}I have more people on their way."
-
     
-
     window auto hide
     show plo neutral with Dissolve(0.5)
     camera:
@@ -2462,7 +2460,8 @@ label FinalCheck:
     show iris happy
     Iris "Alright!{cps=4} {/cps}Then let's head out."
 
-    scene carriage 
+    scene bg forest
+    show carriage 
     show quinn neutral:
         left
         Close
