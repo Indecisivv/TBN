@@ -1,81 +1,81 @@
-label GenderQuestion:
-    show sylvie green normal at AnchorHalfBottom
-    show lucy happy at AnchorHalfBottom
-    show lucy happy at HalfLeft
-    show sylvie green normal at HalfRight
-    e "Select your portrait"
+# label GenderQuestion:
+#     show sylvie green normal at AnchorHalfBottom
+#     show lucy happy at AnchorHalfBottom
+#     show lucy happy at HalfLeft
+#     show sylvie green normal at HalfRight
+#     e "Select your portrait"
     
-    menu:
-        "Masculine":
-            jump Boy
-        "Feminine":
-            jump Girl
-    label Boy:
-        hide sylvie green
-        show lucy at MoveToMiddle
-        "Are you sure?"
-        menu:
-            "Yes.":
-                $ p.SetGender("male") #We might not actually need this, if we just set male/female as part of the image name below  
-                $ p.SetImage("lucy ") #Change this when final portraits are in
-                jump PronounQuestion
-            "No.":
-                jump GenderQuestion
-    label Girl:
-        hide lucy
-        show sylvie green at MoveToMiddle
-        "Are you sure?"
-        menu:
-            "Yes.":
-                $ p.SetGender("female") #We might not actually need this, if we just set male/female as part of the image name below  
-                $ p.SetImage("sylvie green ") #Change this when final portraits are in
-                jump PronounQuestion
-            "No.":
-                jump GenderQuestion
+#     menu:
+#         "Masculine":
+#             jump Boy
+#         "Feminine":
+#             jump Girl
+#     label Boy:
+#         hide sylvie green
+#         show lucy at MoveToMiddle
+#         "Are you sure?"
+#         menu:
+#             "Yes.":
+#                 $ p.SetGender("male") #We might not actually need this, if we just set male/female as part of the image name below  
+#                 $ p.SetImage("lucy ") #Change this when final portraits are in
+#                 jump PronounQuestion
+#             "No.":
+#                 jump GenderQuestion
+#     label Girl:
+#         hide lucy
+#         show sylvie green at MoveToMiddle
+#         "Are you sure?"
+#         menu:
+#             "Yes.":
+#                 $ p.SetGender("female") #We might not actually need this, if we just set male/female as part of the image name below  
+#                 $ p.SetImage("sylvie green ") #Change this when final portraits are in
+#                 jump PronounQuestion
+#             "No.":
+#                 jump GenderQuestion
 
-label PronounQuestion:
-    "Select Pronouns"
+# label PronounQuestion:
+#     "Select Pronouns"
 
-    menu: 
-        "She/Her":
-            $ pronouns = "She/Her"
-            jump NameQuestion
+#     menu: 
+#         "She/Her":
+#             $ pronouns = "She/Her"
+#             jump NameQuestion
 
-        "He/Him":
-            $ pronouns = "He/Him"
-            jump NameQuestion
+#         "He/Him":
+#             $ pronouns = "He/Him"
+#             jump NameQuestion
 
-        "They/Them":
-            $ pronouns = "They/Them"
-            jump NameQuestion
+#         "They/Them":
+#             $ pronouns = "They/Them"
+#             jump NameQuestion
 
-    label PronounCheck:
-        "Are you Sure?"
-        menu:
-            "Yes":
-                jump NameQuestion
-            "No":
-                jump PronounQuestion
+#     label PronounCheck:
+#         "Are you Sure?"
+#         menu:
+#             "Yes":
+#                 jump NameQuestion
+#             "No":
+#                 jump PronounQuestion
 
     
 
-label NameQuestion:
+# label NameQuestion:
 
 
-    $ p.SetName(renpy.input("What's Their Name?", default = "Iris"))
+#     $ p.SetName(renpy.input("What's Their Name?", default = "Iris"))
 
-    $ p.SetCharacter(Character(p.name))
+#     $ p.SetCharacter(Character(p.name))
 
 
-label FinalCheck:
-    $ p.c("My name is " + (p.name) + " and my pronouns are " + (pronouns))
+# label FinalCheck:
+#     $ p.c("My name is " + (p.name) + " and my pronouns are " + (pronouns))
 
-    "Are you sure about all that?"
-    menu: 
-        "Yes":
-            jump GenderTest
-        "No":
-            jump GenderQuestion
+#     "Are you sure about all that?"
+#     menu: 
+#         "Yes":
+#             jump GenderTest
+#         "No":
+#             jump GenderQuestion
 
 
 
