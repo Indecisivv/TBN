@@ -44,6 +44,7 @@ transform unflip:
 ################################################################################
 label start:
 
+
 label GenderQuestion:
     scene black with Dissolve(2.5)
     show m_iris neutral:
@@ -554,6 +555,8 @@ label FinalCheck:
     show screen Inventory_Screen
 
     show screen close_inventory_button
+
+    window hide
 
     pause 0.5
 

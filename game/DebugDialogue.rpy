@@ -198,6 +198,8 @@ label DebugItemCheck:
 
     show screen close_inventory_button
 
+    window hide
+
     pause 0.5
 
     $ HideAllNonInventoryItems()

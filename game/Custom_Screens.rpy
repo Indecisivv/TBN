@@ -129,7 +129,7 @@ screen Inventory_Screen:
     modal True   
 
     frame:
-        xalign 0.1
+        xalign 0.225
         yalign 0.2
         add "gui/inventory bg.png"
 
@@ -147,7 +147,7 @@ transform ButtonPos:
 #Main button to display inventory
 screen inventory_button():
     imagebutton:
-        xalign 1.0
+        xalign 0.0
         yalign 0.0
         auto "gui/inventory button_%s.png" action [Show("Inventory_Screen"), Hide("inventory_button"), Show("close_inventory_button")]
 
@@ -155,82 +155,9 @@ screen inventory_button():
 
 screen close_inventory_button():
     imagebutton:
-        xalign 1.0
+        xalign 0.0
         yalign 0.0
         auto "gui/inventory button active_%s.png" action [Hide("Inventory_Screen"), Show("inventory_button"), Hide("close_inventory_button")]
 
-
-
-
-
-
-#REFERENCE/TEST SCREEN RIPPED FROM TUTORIAL
-screen day_planner():
-
-    # This vbox organizes everything.
-    vbox:
-
-        spacing 5
-
-        # A frame containing all the stats.
-        frame:
-            style_prefix "stat"
-            xpadding 150
-            xfill True
-
-            vbox:
-
-                hbox:
-                    text _("Strength")
-                    bar value StaticValue(stat_strength, 100)
-
-                hbox:
-                    text _("Intelligence")
-                    bar value StaticValue(stat_strength, 100)
-
-                hbox:
-                    text _("Moxie")
-                    bar value StaticValue(stat_strength, 100)
-
-                hbox:
-                    text _("Chutzpah")
-                    bar value StaticValue(stat_strength, 100)
-
-
-        # A grid of three frames, one for each of the periods in the day.
-        grid 3 1:
-
-            spacing 5
-            xfill True
-
-            for p in day_periods:
-
-                frame:
-                    xfill True
-
-                    vbox:
-                        label p
-
-                        null height 5
-
-                        for i in day_choices:
-                            textbutton i action SetDict(day_plan, p, i)
-
-        # This is a grid containing two empty space and the done button,
-        # so everything lines up.
-        grid 3 1:
-            xfill True
-            spacing 5
-
-            null
-
-            frame:
-                textbutton _("Done"):
-                    action Return(True)
-                    xfill True
-
-                    text_xalign 0.5
-
-            null
 
 

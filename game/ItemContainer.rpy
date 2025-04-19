@@ -26,14 +26,14 @@ default Item_Water = item("Water", "Hydrating", 1, 1, 10, "R")
 
 
 #Drag objects with names that correspond to a specific item
-default Drag_Antidote = Drag(d = "antidote.png", drag_name = "Antidote", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.1))
-default Drag_Food = Drag(d = "food.png", drag_name = "Food", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.2))
-default Drag_Flute = Drag(d = "flute.png", drag_name = "Antidote", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.3))
-default Drag_Brand = Drag(d = "brand.png", drag_name = "Brand", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.4))
-default Drag_Knife = Drag(d = "knife.png", drag_name = "Knife", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.5))
-default Drag_Health = Drag(d = "health.png", drag_name = "Health Potion", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.6))
-default Drag_Gold = Drag(d = "gold.png", drag_name = "Knife", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.7))
-default Drag_Water = Drag(d = "water.png", drag_name = "Knife", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.7, 0.8))
+default Drag_Antidote = Drag(d = "antidote.png", drag_name = "Antidote", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.8, 0.1))
+default Drag_Food = Drag(d = "food.png", drag_name = "Food", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.8, 0.2))
+default Drag_Flute = Drag(d = "flute.png", drag_name = "Antidote", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.8, 0.3))
+default Drag_Brand = Drag(d = "brand.png", drag_name = "Brand", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.8, 0.4))
+default Drag_Knife = Drag(d = "knife.png", drag_name = "Knife", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.8, 0.5))
+default Drag_Health = Drag(d = "health.png", drag_name = "Health Potion", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.8, 0.6))
+default Drag_Gold = Drag(d = "gold.png", drag_name = "Knife", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.8, 0.7))
+default Drag_Water = Drag(d = "water.png", drag_name = "Knife", draggable = True, droppable = False, dragged = drag_placed, drag_raise = True, drag_offscreen = True, activated = OnActivate, alternate = OnRightClick, anchor = (0.0, 0.0), pos = (0.8, 0.8))
 
 
 
@@ -66,10 +66,10 @@ default ItemDictionary = {
 
 #All these numbers are subject to change
 #Distance between columns
-default ColumnParity = 0.125
+default ColumnParity = 0.15
 
 #At what vertical alignment does the inventory start?
-default ColumnStartPoint = 0.1
+default ColumnStartPoint = 0.125
 
 #Distance between rows
 default RowParity = 0.2
