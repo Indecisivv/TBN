@@ -113,6 +113,9 @@ label FinalCheck:
 ## ▄█▄ █ ▀█  █  █▀▄ █▄█ 
 ################################################################################
     label intro:
+
+    play amb1 cave_amb fadein 6 volume 0.7
+
     scene bg cave with Dissolve(1.5)
     camera:
         perspective True
@@ -139,9 +142,14 @@ label FinalCheck:
 
     You step in.
     """
+    stop amb1 fadeout 4
+    play amb2 captains_amb fadein 1 volume 0.3
+
+    play sfx1 tent_open volume 0.2
+
     #TODO: maybe like a step sfx here
     
-    $ renpy.music.set_volume(0.3, delay=8, channel='music1')
+    $ renpy.music.set_volume(0.4, delay=8, channel='music1')
 
     scene bg tent_captain_1 with Dissolve(1.5)
 
@@ -190,6 +198,7 @@ label FinalCheck:
         pos (1116, 828) 
         linear 0.30 pos (747, 378) 
     with Pause(0.40)
+    play sfx1 tent_close volume 0.2
     camera:
         pos (747, 378) 
     "His broad shell scraps the fabric on entrance."
@@ -209,7 +218,7 @@ label FinalCheck:
     camera:
         pos (0, 0) zoom 1.0 
 
-    $ renpy.music.set_volume(0.6, delay=4, channel='music1')
+    $ renpy.music.set_volume(0.7, delay=4, channel='music1')
     
     show plo angry at jumpAnim
     Plo "{i}Can't let this old man get his sleep after a hard days work?{/i}"
@@ -245,6 +254,8 @@ label FinalCheck:
     Plo "{i}Right{/i}."
 
     show plo neutral
+
+    play sfx1 tent_open volume 0.2
 
     "Only a second passes before the tent door flutters open once more."
 
@@ -297,6 +308,8 @@ label FinalCheck:
     show darcey neutral:
         xpos 0.23
         flip
+
+    play sfx1 tent_close volume 0.1
 
     window auto hide
     show quinn happy with Dissolve(1.5) 
@@ -454,6 +467,8 @@ label FinalCheck:
     show plo happy
     show iris happy
     Iris "Let's meet at the camp entrance in 5 hours."
+    stop amb2 fadeout 6
+    play amb1 cave_amb fadein 3 volume 0.5
     window auto hide
     show iris happy:
         unflip
@@ -470,6 +485,9 @@ label FinalCheck:
     It's an uncomfortable warmth that you've gotten used to. Thick with humidity. Exhaustion seems to stick to you in the same way as you walk.
     """ 
     $ renpy.music.set_volume(0, delay=8, channel='music2')
+    $ renpy.music.set_volume(0.7, delay=8, channel='music1')
+    stop amb1 fadeout 6
+    play amb2 soldier_tent_amb fadein 2 volume 0.5
 
     scene bg tent_1 
     with Dissolve(1.5)
@@ -569,6 +587,7 @@ label FinalCheck:
 
     $ renpy.music.stop(channel='music1', fadeout=8)
     $ renpy.music.stop(channel='music2', fadeout=None)
+    stop amb2 fadeout 8
     
 ################################################################################
 ## █▀▄ ▄▀▄ ▀▄▀   █▀█ █▄ █ █▀▀
