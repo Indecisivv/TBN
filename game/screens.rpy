@@ -617,7 +617,7 @@ screen about():
             label "Credits"
             text _("Art {a=https://revierr.itch.io/}Revierr{/a}")
             text _("Sound Designer {a=https://andrewshirey10.wixsite.com/wavesxandrew/portfolio}Andrew Shirey{/a}")
-            text _("Composer {a=https://a-sett.itch.io/}a_sett{/a}")
+            text _("Composer & Sound Designer {a=https://a-sett.itch.io/}a_sett{/a}")
             text _("Lead Programmer {a=https://william-rockwell.itch.io/}William Rockwell{/a}")
             text _("Editor {a=https://khaosphoenix.itch.io/}khaosphoenix{/a}")
             text _("Lead Writer {a=https://revierr.itch.io/}indecisiv{/a}\n")
