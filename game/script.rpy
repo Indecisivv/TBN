@@ -100,7 +100,7 @@ label GenderQuestion:
 
     label FinalCheck:
 
-        $ p.c("My name is " + (p.name) + " and my pronouns are " + (pronouns))
+        $ p.c("My name is " + [player_name] + " and my pronouns are " + (pronouns))
 
         "Continue with those settings?"
         menu: 
