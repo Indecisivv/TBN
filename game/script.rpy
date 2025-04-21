@@ -64,7 +64,7 @@ label GenderQuestion:
             $ sprite_image = "f_iris"
             jump PronounQuestion
    
-label PronounQuestion:
+    label PronounQuestion:
     "Select Pronouns"
 
     menu: 
@@ -98,15 +98,19 @@ label PronounQuestion:
     $ p.SetCharacter(Character(player_name))
     
 
-label FinalCheck:
-    $ p.c("My name is " + (p.name) + " and my pronouns are " + (pronouns))
+    label FinalCheck:
 
-    "Continue with those settings?"
-    menu: 
-        "Yes":
-            jump intro
-        "No":
-            jump GenderQuestion
+        $ p.c("My name is " + (p.name) + " and my pronouns are " + (pronouns))
+
+        "Continue with those settings?"
+        menu: 
+            "Yes":
+                jump intro
+            "No":
+                jump GenderQuestion
+
+    
+    
  
 ################################################################################
 ## ▀█▀ █▄ █ ▀█▀ █▀█ █▀█ 
@@ -146,14 +150,10 @@ label FinalCheck:
     play amb2 captains_amb fadein 1 volume 0.3
 
     play sfx1 tent_open volume 0.2
-
-    #TODO: maybe like a step sfx here
     
     $ renpy.music.set_volume(0.4, delay=8, channel='music1')
 
     scene bg tent_captain_1 with Dissolve(1.5)
-
-    #TODO: pan around captains chambers
 
     """
     The Captain's Chamber flaunts its roominess compared to the path it takes to get there. {cps=4} {/cps}Space must be made for the parchments.
@@ -232,9 +232,9 @@ label FinalCheck:
     show plo neutral
     Plo "Captain."
 
-    Captain "At ease,{cps=4} {/cps}I wouldn't drag you out this late without a good reason."  ##Removed "Plo" since the player hasn't named him yet.
-
     $ plo_name = "Plo"
+
+    Captain "At ease Plo,{cps=4} {/cps}I wouldn't drag you out this late without a good reason." 
 
     show plo happy
 
@@ -392,9 +392,16 @@ label FinalCheck:
             show plo happy
             Captain "[quinn_name],{cps=4} {/cps}a skilled navigator.{cps=2} {/cps}If there's a way through,{cps=4} {/cps}he'll find it."
             show quinn happy
-            Captain "[darcey_name],{cps=4} {/cps}a fighter through and through.{cps=2} {/cps}Deadly for fights you want to pick and intelligent for fights you don't." 
+            Captain "[darcey_name],{cps=4} {/cps}a fighter through and through.{cps=2} {/cps}Shes deadly for fights you want to pick and intelligent for fights you don't." 
             show darcey happy ##Pronoun Below
-            Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star messenger.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on [their] feet."
+            
+            if pronouns == "She/Her":
+                Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star courier.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on her feet."
+            elif pronouns == "He/Him":
+                Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star courier.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on his feet."
+            elif pronouns == "They/Them":
+                Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star courier.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on their feet."
+
             show iris happy
             Captain "All excellent in your own rights."
             Captain "You four are the perfect team for this mission because{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
@@ -492,7 +499,6 @@ label FinalCheck:
     scene bg tent_1 
     with Dissolve(1.5)
 
-    #TODO: pan around the tent bg
     """
     
     Inside the soldier's tent, a thick layer of grime made up of sweat and dirt sticks to the occupants.
@@ -545,12 +551,14 @@ label FinalCheck:
             jump continue3
     
     label continue3:
+    $ _skipping = False
 
     """
     
     After checking that no one is spying, You take a moment to look at the map the Captain entrusted to you.
 
     """
+    window auto hide
     show map with Dissolve(1.5)
 
     """
@@ -569,7 +577,7 @@ label FinalCheck:
     Quietly you reach under the bunk to pull out your stuff.
 
     """
-
+    window auto hide
     show screen Inventory_Screen
 
     show screen close_inventory_button
@@ -602,6 +610,7 @@ label FinalCheck:
     scene black with Dissolve(1.5)
    
     centered "Day 1"
+    $ _skipping = True
    
     """
     Sunrise hasn't hit yet as you make your way to the designated meeting spot.
@@ -665,12 +674,15 @@ label FinalCheck:
 
     Plo "I'll be driving that carriage even if it's blizzardin'."
 
+
+    window auto hide
     show darcey happy:
-        ypos 1.0
-        xpos 1.06
-        yanchor 1.0
         subpixel True 
-        linear 1.00 xpos 0.51 
+        xpos 0.99 
+        yanchor 1.0
+        ypos 1.0
+        linear 0.75 xpos 0.58 
+        linear 0.25 xpos 0.51 
     with Pause(1.10)
     show darcey happy:
         xpos 0.51 
@@ -1188,9 +1200,9 @@ label FinalCheck:
             Plo "Here,{cps=4} {/cps}take a look if you are so curious."
             "He takes his bag and tosses it onto your lap."
             ##the joke is that his inventory is filled with junk, ill make a graphic for this
-            show jokeinventory
+            show plo_inventory
             "..."
-            hide jokeinventory
+            hide plo_inventory
             menu:
                 "Praise his packing skills":
                     Iris "You... really thought of everything."
@@ -2740,7 +2752,6 @@ label FinalCheck:
 ## uphill
 ######################  
     label Uphill:
-    #TODO: rain stops
     #enviroment turns more hot and mixed with sand
 
     $ renpy.music.stop(channel='music1', fadeout=10)
@@ -2764,6 +2775,7 @@ label FinalCheck:
 
     Plo "It's faster."
 
+    #rain stops
     scene sand
     with Dissolve(1.5)
 
@@ -2838,7 +2850,18 @@ label FinalCheck:
 ################################################################################
 label bad_ending:
     scene black with Dissolve(1.5)
-    centered "Game Over"
+    if sprite_image == "f_iris":
+        show game_over_f
+        with Dissolve(1.5)
+    elif sprite_image == "m_iris":
+        show game_over_m
+        with Dissolve(1.5)
+
+    show text "{size=110}Game Over{/size}":
+        subpixel True ypos 0.12 
+    with Dissolve(1.5)
+    " "
+    window auto hide
     achieve badend
     jump end
 
