@@ -44,16 +44,16 @@ transform unflip:
 ################################################################################
 label start:
 
-scene black with Dissolve(2.5)
-show m_iris neutral:
-    right
-    flip
-show f_iris neutral:
-    left
-with Dissolve(2.5)
-label GenderQuestion:
-    show m_iris neutral
-    show f_iris neutral
+    scene black with Dissolve(2.5)
+    show m_iris neutral:
+        right
+        flip
+    show f_iris neutral:
+        left
+    with Dissolve(2.5)
+    label GenderQuestion:
+        show m_iris neutral
+        show f_iris neutral
 
     "Select your portrait"
     
@@ -125,15 +125,12 @@ label GenderQuestion:
                 jump intro
             "No":
                 jump GenderQuestion
-
-    
-    
  
 ################################################################################
 ## ▀█▀ █▄ █ ▀█▀ █▀█ █▀█ 
 ## ▄█▄ █ ▀█  █  █▀▄ █▄█ 
 ################################################################################
-    label intro:
+label intro:
 
     play amb1 cave_amb fadein 6 volume 0.7
 
@@ -252,7 +249,7 @@ label GenderQuestion:
 
     $ plo_name = "Plo"
 
-    Captain "At ease Plo,{cps=4} {/cps}I wouldn't drag you out this late without a good reason." 
+    Captain "At ease [plo_name],{cps=4} {/cps}I wouldn't drag you out this late without a good reason." 
 
     show plo happy
 
@@ -1743,7 +1740,7 @@ label GenderQuestion:
     $ renpy.music.set_volume(0, delay=0, channel='music4')
     $ renpy.music.set_volume(0, delay=0, channel='music5')
 
-    scene bg forest_Clearing
+    scene bg forest_clearing
     show rain1fast zorder 1
     show rain2fast zorder 0
     with Dissolve(1.5)
@@ -2960,6 +2957,152 @@ label GenderQuestion:
 ################################################################################
 ## Endings
 ################################################################################
+
+#Rolling Credits################################################################
+label finalcredits:
+    scene black
+    show screen creditscreen
+    pause 100 # or however long it takes to scroll through in a reasonable speed
+    pause
+    jump end
+
+screen creditscreen:
+    vbox:
+        xsize 1000 # horizontal size of the credits
+        ysize 2500 # how much vertical space your rolling credits take.
+        xalign 0.5
+        yalign 0.0
+        at transform:
+            subpixel True
+            easein 50: # or however long it takes to scroll through in a reasonable speed
+                yalign 1.0
+        vbox:
+            ysize 1000 # enter vertical resolution, so that it starts with an empty screen
+        add "images/logo w.png": # adding a picture in-between the text
+            zoom 0.75
+            xalign 0.5
+        text "Don't Shoot the Messenger":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 25
+            xalign 0.5
+        text "version [config.version]":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 25
+            xalign 0.5
+        vbox:
+            ysize 250 # some empty space in between
+        text "Sound Design":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 55
+            xalign 0.5
+        text "a_sett":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 35
+            xalign 0.5
+        text "Andrew Shirey":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 35
+            xalign 0.5
+        vbox:
+            ysize 150 # some empty space in between
+        text "Music":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 45
+            xalign 0.5
+        text "a_sett":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 35
+            xalign 0.5
+        vbox:
+            ysize 150 # some empty space in between
+        text "Programming":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 55
+            xalign 0.5
+        text "William Rockwell":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 35
+            xalign 0.5
+        text "indecisiv":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 35
+            xalign 0.5
+        vbox:
+            ysize 150 # some empty space in between
+        text "Art":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 55
+            xalign 0.5
+        text "Revierr":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 35
+            xalign 0.5
+        vbox:
+            ysize 150 # some empty space in between
+        text "Writing":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 55
+            xalign 0.5
+        text "indecisiv":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 35
+            xalign 0.5
+        text "KhaosPhoenix":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 35
+            xalign 0.5
+        vbox:
+            ysize 150 # some empty space in between
+        text "Special Thanks":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 55
+            xalign 0.5
+        vbox:
+            ysize 350 # some empty space in between
+        add "images/rp logo bw.png": # adding a picture in-between the text
+            zoom 0.55
+            xalign 0.5
+        text "Made with Ren'Py":
+            font "Bellefair-Regular.ttf"
+            #bold True
+            size 35
+            xalign 0.5
+        text "Version [renpy.version_only]":
+            font "Bellefair-Regular.ttf"
+            #bold True
+            size 25
+            xalign 0.5
+        vbox:
+            ysize 650 # some empty space in between
+        add "images/letter.png": # adding a picture in-between the text
+            zoom 2.0
+            xalign 0.5
+        text "The End":
+            font "Bellefair-Regular.ttf"
+            color "#7c3131"
+            bold True
+            size 100
+            xalign 0.5
+        vbox:
+            ysize 300 # some empty space in between
+
+#Bad Ending########################################################################
 label bad_ending:
     scene black with Dissolve(1.5)
     if sprite_image == "f_iris":
@@ -2975,8 +3118,8 @@ label bad_ending:
     " "
     window auto hide
     achieve badend
-    jump end
+    jump creditscreen
 
 
-#keep this the very last line of code
+#keep this the very last line of code##############################################
 label end:
