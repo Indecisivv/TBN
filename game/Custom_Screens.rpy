@@ -146,17 +146,18 @@ transform ButtonPos:
 
 #Main button to display inventory
 screen inventory_button():
+
     imagebutton:
-        xalign 0.0
-        yalign 0.0
+        xalign 0.94
+        yalign 0.94
         auto "gui/inventory button_%s.png" action [Show("Inventory_Screen"), Hide("inventory_button"), Show("close_inventory_button")]
 
 
 
 screen close_inventory_button():
     imagebutton:
-        xalign 0.0
-        yalign 0.0
+        xalign 0.94
+        yalign 0.94
         auto "gui/inventory button active_%s.png" action [Hide("Inventory_Screen"), Show("inventory_button"), Hide("close_inventory_button")]
 
 
