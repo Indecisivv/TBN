@@ -20,7 +20,25 @@ init python:
 ################################################################################
 ## Ambiance 
 ################################################################################
-#define audio.main = "audio/test2.ogg"
+
+init python:
+    renpy.music.register_channel("amb1", "sound", loop=True, stop_on_mute=False, tight=True, file_prefix='', file_suffix='', buffer_queue=True)
+    renpy.music.register_channel("amb2", "sound", loop=True, stop_on_mute=False, tight=True, file_prefix='', file_suffix='', buffer_queue=True)
+    renpy.music.register_channel("amb3", "sound", loop=True, stop_on_mute=False, tight=True, file_prefix='', file_suffix='', buffer_queue=True)
+
+define cave_amb = "audio/sound/Cave Amb.ogg"
+define captains_amb = "audio/sound/Captains Chambers Amb.ogg"
+define soldier_tent_amb = "audio/sound/Player Chamber Amb.ogg"
+
+define cave_rain_amb = "audio/sound/Cave Rain Amb.ogg"
+
+define drizzle_amb = "audio/sound/Rain Drizzle Amb.ogg"
+define drizzle_carriage_amb = "audio/sound/Rain Drizzle Carriage Amb.ogg"
+define rain_forest_amb = "audio/sound/Rain Forest Amb.ogg"
+define rain_amb = "audio/sound/Rain Amb.ogg"
+define rain_carriage_amb = "audio/sound/Rain Carriage Amb.ogg"
+
+define forest_amb = "audio/sound/Forest Amb.ogg"
 
 ## end ambiance ################################################################
 
@@ -28,9 +46,6 @@ init python:
 ## SFX 
 ################################################################################
 init python:
-    renpy.music.register_channel("amb1", "sound", loop=True, stop_on_mute=False, tight=True, file_prefix='', file_suffix='', buffer_queue=True)
-    renpy.music.register_channel("amb2", "sound", loop=True, stop_on_mute=False, tight=True, file_prefix='', file_suffix='', buffer_queue=True)
-    renpy.music.register_channel("amb3", "sound", loop=True, stop_on_mute=False, tight=True, file_prefix='', file_suffix='', buffer_queue=True)
     renpy.music.register_channel("sfx1", "sound", loop=False, stop_on_mute=False, tight=True, file_prefix='', file_suffix='', buffer_queue=True)
     renpy.music.register_channel("sfx2", "sound", loop=False, stop_on_mute=False, tight=True, file_prefix='', file_suffix='', buffer_queue=True)
     renpy.music.register_channel("sfx3", "sound", loop=False, stop_on_mute=False, tight=True, file_prefix='', file_suffix='', buffer_queue=True)
@@ -49,9 +64,8 @@ define knife_vine_3 = "audio/sound/Knife Cut Vine 3.ogg"
 define fireball = "audio/sound/Fireball.ogg"
 define fireball_vine = "audio/sound/Fireball Destroy Vine.ogg"
 
-define cave_amb = "audio/sound/Cave Amb.ogg"
-define captains_amb = "audio/sound/Captains Chambers Amb.ogg"
-define soldier_tent_amb = "audio/sound/Player Chamber Amb.ogg"
+define campfire_start = "audio/sound/Campfire Start 1.ogg"
+
 
 ## end sfx #####################################################################
 
