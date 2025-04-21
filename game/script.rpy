@@ -44,15 +44,16 @@ transform unflip:
 ################################################################################
 label start:
 
-
+scene black with Dissolve(2.5)
+show m_iris neutral:
+    right
+    flip
+show f_iris neutral:
+    left
+with Dissolve(2.5)
 label GenderQuestion:
-    scene black with Dissolve(2.5)
-    show m_iris neutral:
-        right
-        flip
-    show f_iris neutral:
-        left
-    with Dissolve(2.5)
+    show m_iris neutral
+    show f_iris neutral
 
     "Select your portrait"
     
@@ -99,8 +100,24 @@ label GenderQuestion:
     
 
     label FinalCheck:
-
-        $ p.c("My name is " + [player_name] + " and my pronouns are " + (pronouns))
+        if pronouns == "She/Her":
+            if sprite_image == "f_iris":
+                show f_iris happy
+            elif sprite_image == "m_iris":
+                show m_iris happy
+            Iris "My name is [player_name] and my pronouns are She/Her"
+        elif pronouns == "He/Him":
+            if sprite_image == "f_iris":
+                show f_iris happy
+            elif sprite_image == "m_iris":
+                show m_iris happy
+            Iris "My name is [player_name] and my pronouns are He/Him"
+        elif pronouns == "They/Them":
+            if sprite_image == "f_iris":
+                show f_iris happy
+            elif sprite_image == "m_iris":
+                show m_iris happy
+            Iris "My name is [player_name] and my pronouns are They/Them"
 
         "Continue with those settings?"
         menu: 
