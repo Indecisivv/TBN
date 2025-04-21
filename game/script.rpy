@@ -164,7 +164,7 @@ label GenderQuestion:
     You step in.
     """
     stop amb1 fadeout 4
-    play amb2 captains_amb fadein 1 volume 0.3
+    play amb2 captains_amb fadein 1 volume 0.2
 
     play sfx1 tent_open volume 0.2
     
@@ -635,6 +635,9 @@ label GenderQuestion:
 
     Soldiers move about groggily. The night shift returns for some needed sleep as{cps=4} {/cps}the day shift gets ready to work.
     """
+
+    play amb1 cave_rain_amb fadein 3 volume 0.3
+
     scene bg cave
     show iris happy:
         right
@@ -736,14 +739,6 @@ label GenderQuestion:
     show quinn neutral
     Darcey "You're supposed to have {i}my{/i} back here."
 
-    $ renpy.music.play("audio/music/02 Journey Harp.ogg", channel='music1', loop=True, synchro_start=True, tight=True)
-    $ renpy.music.play("audio/music/02 Journey Accomp.ogg", channel='music2', loop=True, synchro_start=True, tight=True)
-    $ renpy.music.play("audio/music/02 Journey Tamb.ogg", channel='music3', loop=True, synchro_start=True, tight=True)
-    $ renpy.music.play("audio/music/02 Journey Clar.ogg", channel='music4', loop=True, synchro_start=True, tight=True)
-    $ renpy.music.set_volume(0, 0, channel='music1')
-    $ renpy.music.set_volume(0, 0, channel='music2')
-    $ renpy.music.set_volume(0, 0, channel='music3')
-    $ renpy.music.set_volume(0, 0, channel='music4')
 
     menu:
         "Joke around":
@@ -753,10 +748,16 @@ label GenderQuestion:
             show plo shocked
             show darcey worried
             show quinn happy
-
-            $ renpy.music.set_volume(0.7, 1, channel='music1')
+            
+            $ renpy.music.play("audio/music/02 Journey Harp.ogg", channel='music1', loop=True, synchro_start=True, tight=True)
+            $ renpy.music.play("audio/music/02 Journey Accomp.ogg", channel='music2', loop=True, synchro_start=True, tight=True)
+            $ renpy.music.play("audio/music/02 Journey Tamb.ogg", channel='music3', loop=True, synchro_start=True, tight=True)
+            $ renpy.music.play("audio/music/02 Journey Clar.ogg", channel='music4', loop=True, synchro_start=True, tight=True)
+            $ renpy.music.set_volume(0.7, 0.1, channel='music1')
+            $ renpy.music.set_volume(0, 0, channel='music2')
             $ renpy.music.set_volume(0.2, 1, channel='music3')
-
+            $ renpy.music.set_volume(0, 0, channel='music4')
+            
             "[plo_name] blinks. [darcey_name] groans. [quinn_name] hides a smirk."
             show darcey worried
             Darcey "That was terrible."
@@ -840,7 +841,16 @@ label GenderQuestion:
     show iris neutral
     Quinn "We shouldn't waste any more time."
 
-    $ renpy.music.set_volume(1, 1, channel='music1')
+    $ renpy.music.play("audio/music/02 Journey Harp.ogg", channel='music1', loop=True, synchro_start=True, tight=True, if_changed=True)
+    $ renpy.music.play("audio/music/02 Journey Accomp.ogg", channel='music2', loop=True, synchro_start=True, tight=True, if_changed=True)
+    $ renpy.music.play("audio/music/02 Journey Tamb.ogg", channel='music3', loop=True, synchro_start=True, tight=True, if_changed=True)
+    $ renpy.music.play("audio/music/02 Journey Clar.ogg", channel='music4', loop=True, synchro_start=True, tight=True, if_changed=True)
+    $ renpy.music.set_volume(0.7, 0.1, channel='music1')
+    $ renpy.music.set_volume(0, 0, channel='music2')
+    $ renpy.music.set_volume(0.2, 1, channel='music3')
+    $ renpy.music.set_volume(0, 0, channel='music4')
+
+    
 
     show iris happy
     Iris "Alright,{cps=4} {/cps}everybody.{cps=2} {/cps}Let's get this letter on the road."
@@ -918,6 +928,10 @@ label GenderQuestion:
 ## inside carriage
 ######################
     label InsideCarriage:
+    
+    play amb2 drizzle_carriage_amb fadein 2 volume 0.5
+    stop amb1 fadeout 10
+    
 
     scene bg cave 
     show carriage
@@ -1106,6 +1120,8 @@ label GenderQuestion:
 
     "You,{cps=4} {/cps}[quinn_name],{cps=4} {/cps}and [darcey_name] make your way out of the carriage."
 
+    play amb1 drizzle_amb fadein 2 volume 0.7
+    stop amb2 fadeout 10
 
     scene bg forest 
     show carriage back:
@@ -1154,6 +1170,11 @@ label GenderQuestion:
 ## outside carriage
 ######################
     label OutsideCarriage:
+
+    play amb2 drizzle_amb fadein 2 volume 0.8
+    stop amb1 fadeout 10
+    
+    
 
     scene bg forest with Dissolve(1.5)
     show rain1fast zorder 1
@@ -1349,7 +1370,6 @@ label GenderQuestion:
 ######################    
     label WheelInMud:
 
-
     """
 
     The rain continues to patter against the leaves as the carriage is stuck on the muddy path.
@@ -1488,7 +1508,6 @@ label GenderQuestion:
             Iris "What's the matter?"
             jump continue9
            
-
     label continue9:    
     window auto hide
     show iris neutral:
@@ -1582,7 +1601,10 @@ label GenderQuestion:
 
     "You and [quinn_name] head back to the carriage.{cps=4} {/cps}To your surprise, [plo_name] and [darcey_name] are working together to free the wheels."
 
-    
+    play amb3 rain_amb fadein 8 volume 0.6
+    stop amb1 fadeout 20
+    stop amb2 fadeout 20
+
     window auto hide
     show plo angry at right:
         subpixel True 
@@ -1613,7 +1635,6 @@ label GenderQuestion:
     Plo "That's it!"
 
     Plo "Push!"
-
     
     show iris happy
     show plo neutral:
@@ -1706,7 +1727,22 @@ label GenderQuestion:
 
 ######################
 ## vine monster attack
-######################  
+######################
+
+    play amb1 rain_forest_amb fadein 3 volume 0.6
+    stop amb3 fadeout 20
+
+    $ renpy.music.play("audio/music/03 Tension Clar.ogg", channel='music1', loop=True, synchro_start=True, fadein=2, tight=True)
+    $ renpy.music.play("audio/music/03 Tension Accomp.ogg", channel='music2', loop=True, synchro_start=True, fadein=1, tight=True)
+    $ renpy.music.play("audio/music/03 Tension Trem.ogg", channel='music3', loop=True, synchro_start=True, fadein=1, tight=True)
+    $ renpy.music.play("audio/music/03 Tension Cello.ogg", channel='music4', loop=True, synchro_start=True, fadein=1, tight=True)
+    $ renpy.music.play("audio/music/03 Tension Low.ogg", channel='music5', loop=True, synchro_start=True, fadein=1, tight=True)
+    $ renpy.music.set_volume(0.8, delay=0.2, channel='music1')
+    $ renpy.music.set_volume(0, delay=0, channel='music2')
+    $ renpy.music.set_volume(0, delay=0, channel='music3')
+    $ renpy.music.set_volume(0, delay=0, channel='music4')
+    $ renpy.music.set_volume(0, delay=0, channel='music5')
+
     scene bg forest_Clearing
     show rain1fast zorder 1
     show rain2fast zorder 0
@@ -1723,6 +1759,8 @@ label GenderQuestion:
     with Dissolve(1.5)
 
     "The footprint tracks gradually turned from ordered to scattered. You and your team stop."
+
+    $ renpy.music.set_volume(0.5, delay=8, channel='music2')
 
     show darcey worried
     Darcey "Something doesn't feel right... These tracks have changed."
@@ -1741,6 +1779,13 @@ label GenderQuestion:
 
     "In the middle is a broken-down carriage."
 
+    $ renpy.music.set_volume(0, delay=20, channel='music1')
+    $ renpy.music.set_volume(0.9, delay=4, channel='music2')
+    $ renpy.music.set_volume(0.6, delay=6, channel='music3')
+    $ renpy.music.set_volume(0.7, delay=6, channel='music4')
+
+    $ renpy.music.set_volume(0.4, delay=20, channel='amb1')
+    
     "Its wooden frame is cracked as if it was struck with force. Pieces of torn cloth and scattered supplies litter the ground."
 
 
@@ -1756,6 +1801,12 @@ label GenderQuestion:
     show darcey neutral
     Quinn "Nothing left, but someone was here recently."
 
+    #$ renpy.music.set_volume(0, delay=20, channel='music2')
+    #$ renpy.music.set_volume(1, delay=4, channel='music3')
+    #$ renpy.music.set_volume(1, delay=6, channel='music4')
+    #$ renpy.music.set_volume(0.7, delay=4, channel='music5')
+    # kept for reference to copy into each menu choice
+
 
     "You crouch next to a deep gash made in the carriage's wood, running your fingers along it.{cps=4} {/cps}This wasn't made by weather damage; this was cut."
     show iris neutral
@@ -1764,6 +1815,11 @@ label GenderQuestion:
             "Carefully,{cps=4} {/cps}you step onto the cracked wooden frame to peer inside."
 
             "You see torn seats and papers and bags left in disarray.{cps=4} {/cps}A faint smear of blood stains the inside of the far door."
+
+            $ renpy.music.set_volume(0, delay=20, channel='music2')
+            $ renpy.music.set_volume(1, delay=4, channel='music3')
+            $ renpy.music.set_volume(1, delay=6, channel='music4')
+            $ renpy.music.set_volume(0.7, delay=4, channel='music5')
 
             show darcey neutral
             Darcey "How did they manage to get a carriage this far off the path?"
@@ -1775,10 +1831,13 @@ label GenderQuestion:
             "Carefully, you kneel next to the debris,{cps=4} {/cps}sifting through them."
             "You inspect a torn bag that's spilling rations,{cps=4} {/cps}a broken lantern,{cps=4} {/cps}and a necklace with a strange emblem carved into its gem."
 
-
             show iris shocked
             Iris "This symbol...{cps=4}{/cps} [quinn_name], does this look familiar?"
 
+            $ renpy.music.set_volume(0, delay=20, channel='music2')
+            $ renpy.music.set_volume(1, delay=4, channel='music3')
+            $ renpy.music.set_volume(1, delay=6, channel='music4')
+            $ renpy.music.set_volume(0.7, delay=4, channel='music5')
 
             show quinn shocked
             Quinn "It does."
@@ -1818,6 +1877,11 @@ label GenderQuestion:
     show darcey neutral
     "She pokes around it then, feeling dread growing inside her, stabs through one of its leaves with her spear."
 
+    stop music1 fadeout 1.0
+    stop music2 fadeout 1.0
+    stop music3 fadeout 1.0
+    stop music4 fadeout 1.0
+    stop music5 fadeout 1.0
 
     "Rustling sounds echo but not from the trees. In union, it grows louder and louder {cps=4} {/cps}followed by a sudden sharp {i}snap{/i}."
 
@@ -1896,6 +1960,8 @@ label GenderQuestion:
     hide vine1
     "[quinn_name] shoots his bow,{cps=4} {/cps} but the plant flings the arrow away."
 
+    play sfx1 knife_vine_1 volume 0.7
+
     show sword1 at CutIn
     with vpunch
     pause(0.5)
@@ -1930,6 +1996,8 @@ label GenderQuestion:
         "Use the dagger to cut her free.":
             "You lunge forward,{cps=4} {/cps}grabbing the nearest sharp object--a dagger made out of a shard of wood--to stab at the vine gripping [darcey_name]'s leg. You are desperate."
 
+            play sfx1 knife_vine_2 volume 0.7
+
             show sword1 at CutIn
             with vpunch
             pause(0.5)
@@ -1950,6 +2018,8 @@ label GenderQuestion:
             menu:
                 "Keep cutting anyway.":
                     "You grit your teeth and keep hacking as the vines writhe. One of them wraps around your wrist."
+
+                    play sfx1 knife_vine_3 volume 0.7
 
                     show sword2 at CutIn
                     with vpunch
@@ -2014,6 +2084,7 @@ label GenderQuestion:
 
                     "[quinn_name] catches it masterfully then quickly strikes his ready arrows aflame. Each one launches at the vine hydra in succession."
 
+                    play sfx1 fireball_vine volume 0.7
                     show fire at CutIn
                     with vpunch
                     pause(0.5)
@@ -2083,6 +2154,8 @@ label GenderQuestion:
 
             "The melody trembles at first in shaky adrenaline.{cps=4} {/cps}But it swiftly finds its tune, notes cutting through the fog like silver thread."
 
+            play sfx1 fireball volume 0.2
+
             show magic1 at CutIn
             with hpunch
             pause(0.5)
@@ -2120,6 +2193,8 @@ label GenderQuestion:
 
                     #TODO: music quick tune here
 
+                    play sfx1 fireball_vine volume 0.6
+                    
                     show magic2 at CutIn
                     with hpunch
                     pause(0.5)
@@ -2179,6 +2254,8 @@ label GenderQuestion:
                     show darcey shocked
 
                     #TODO: harsh flute sound here
+
+                    play sfx1 fireball volume 0.7
 
                     show magic3 at CutIn
                     with hpunch
@@ -2422,21 +2499,10 @@ label GenderQuestion:
 ## don't investigate
 ######################  
     label DontInvestigate:
-
-    $ renpy.music.play("audio/music/02 Journey Harp.ogg", channel='music1', loop=True, synchro_start=True, tight=True)
-    $ renpy.music.play("audio/music/02 Journey Clar.ogg", channel='music2', loop=True, synchro_start=True, tight=True)
-    $ renpy.music.play("audio/music/02 Journey Accomp.ogg", channel='music3', loop=True, synchro_start=True, tight=True)
-    $ renpy.music.play("audio/music/02 Journey Celli.ogg", channel='music4', loop=True, synchro_start=True, tight=True)
-    $ renpy.music.play("audio/music/02 Journey Tamb.ogg", channel='music5', loop=True, synchro_start=True, tight=True)
-    $ renpy.music.play("audio/music/02 Journey Bodhran.ogg", channel='music6', loop=True, synchro_start=True, tight=True)
-    $ renpy.music.play("audio/music/02 Journey Vln.ogg", channel='music7', loop=True, synchro_start=True, tight=True)
-    $ renpy.music.set_volume(0, 0, channel='music1')
-    $ renpy.music.set_volume(0, 0, channel='music2')
-    $ renpy.music.set_volume(0, 0, channel='music3')
-    $ renpy.music.set_volume(0, 0, channel='music4')
-    $ renpy.music.set_volume(0, 0, channel='music5')
-    $ renpy.music.set_volume(0, 0, channel='music6')
-    $ renpy.music.set_volume(0, 0, channel='music7')
+    
+    play amb3 rain_amb fadein 5 volume 0.5
+    stop amb1 fadeout 20
+    stop amb2 fadeout 20
     
     Quinn "Of course, apologies [player_name]."
 
@@ -2479,9 +2545,21 @@ label GenderQuestion:
     with Pause(0.18)
     with hpunch
 
+    $ renpy.music.play("audio/music/02 Journey Harp.ogg", channel='music1', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Clar.ogg", channel='music2', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Accomp.ogg", channel='music3', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Celli.ogg", channel='music4', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Tamb.ogg", channel='music5', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Bodhran.ogg", channel='music6', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.play("audio/music/02 Journey Vln.ogg", channel='music7', loop=True, synchro_start=True, tight=True)
+    $ renpy.music.set_volume(0, 0, channel='music1')
+    $ renpy.music.set_volume(0, 0, channel='music2')
+    $ renpy.music.set_volume(0, 0, channel='music3')
+    $ renpy.music.set_volume(0, 0, channel='music4')
     $ renpy.music.set_volume(0.5, 0.1, 'music5')
     $ renpy.music.set_volume(0.2, 0.1, 'music6')
-
+    $ renpy.music.set_volume(0, 0, channel='music7')
+    
     "The carriage lurches forward with the last coordinated thrust,{cps=4} {/cps}freeing it from the mud."
 
     "The sudden momentum sends [darcey_name] stumbling forward with a muttered curse,{cps=4} {/cps}but she manages to steady herself."
@@ -2528,6 +2606,9 @@ label GenderQuestion:
         Plo "Makes them all sick."
     show iris happy
     Iris "Will do."
+
+    stop amb3 fadeout 10
+    play amb1 rain_carriage_amb fadein 2 volume 0.8
 
     scene bg forest
     show carriage 
@@ -2661,6 +2742,9 @@ label GenderQuestion:
     show quinn happy
     show darcey happy
 
+    stop amb1 fadeout 20
+    play amb2 drizzle_carriage_amb fadein 5 volume 0.6
+
     "Laughter breaks the tension. {cps=4} {/cps}For a moment, the cabin feels warmer."
 
     "The rain begins to ease outside.{cps=4} {/cps}Trees lessen until disappearing altogether. The road evens out and trades mud for coarse, sandy ground."
@@ -2755,6 +2839,8 @@ label GenderQuestion:
     show darcey angry
     Darcey "Probably [plo_name].{cps=4} {/cps}He keeps cursing under his breath at the carriage's every movement."
 
+    stop amb2 fadeout 20
+
     "[plo_name]'s voice bellows through the canvas."
 
     Plo "I HEARD THAT!" 
@@ -2827,6 +2913,9 @@ label GenderQuestion:
     #TODO: add the tintshader
     show quinn happy
     Quinn "Well, this is as good a place as any for the night."
+
+    play sfx1 tent_place volume 0.3
+    queue sfx1 campfire_start volume 0.3
 
     "The party sets up camp beneath the outcropping.{cps=4} {/cps}[plo_name] unloads gear from the carriage, while [quinn_name] works on building a fire with careful, practiced hands."
 
