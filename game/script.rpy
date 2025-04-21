@@ -182,8 +182,9 @@ label GenderQuestion:
     Maps and smudged reports scatter in front of the tired man hunched over, staring down at them.{cps=4} {/cps}The Captain. 
     """
     
-    show iris worried at right
-    show iris at flip
+    show iris worried:
+        right
+        flip
     with Dissolve(1.5)
 
     """
@@ -200,6 +201,7 @@ label GenderQuestion:
     Captain "[player_name],{cps=4} {/cps}wait there,{cps=4} {/cps}I have more people on their way."
     
     window auto hide
+    play sfx1 tent_close volume 0.2
     show plo neutral with Dissolve(0.5)
     camera:
         subpixel True 
@@ -215,7 +217,6 @@ label GenderQuestion:
         pos (1116, 828) 
         linear 0.30 pos (747, 378) 
     with Pause(0.40)
-    play sfx1 tent_close volume 0.2
     camera:
         pos (747, 378) 
     "His broad shell scraps the fabric on entrance."
@@ -272,11 +273,11 @@ label GenderQuestion:
 
     show plo neutral
 
-    play sfx1 tent_open volume 0.2
 
     "Only a second passes before the tent door flutters open once more."
 
     window auto hide
+    play sfx1 tent_open volume 0.2
     show darcey neutral with Dissolve(1.5) 
     camera:
         subpixel True 
@@ -1107,6 +1108,8 @@ label GenderQuestion:
 
 
     scene bg forest 
+    show carriage back:
+        right
     show rain1fast zorder 1
     show rain2fast zorder 0
 
@@ -1216,12 +1219,13 @@ label GenderQuestion:
             show plo neutral
             Plo "Here,{cps=4} {/cps}take a look if you are so curious."
             "He takes his bag and tosses it onto your lap."
-            ##the joke is that his inventory is filled with junk, ill make a graphic for this
             show plo_inventory
-            "..."
-            hide plo_inventory
+            window hide
+            pause (2.0)
+            "{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
             menu:
                 "Praise his packing skills":
+                    hide plo_inventory
                     Iris "You... really thought of everything."
                     Iris "How did you even get all that to fit in there?"  
                     show plo blush
@@ -1233,6 +1237,7 @@ label GenderQuestion:
 
 
                 "Question his choices":
+                    hide plo_inventory
                     Iris "I'm not sure a lot of that is necessary..."
                     show plo angry
                     Plo "Hmph."
@@ -2801,7 +2806,8 @@ label GenderQuestion:
     
     show plo neutral at left:
         subpixel True xpos 0.11
-    show iris happy at right:
+    show iris happy:
+        right
         flip
     show quinn neutral at left:
         subpixel True xpos 0.04 
