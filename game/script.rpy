@@ -28,11 +28,6 @@ define player_name =  ""
 
 define sprite_image = "f_iris"
 
-#for spawning flipped
-transform flip:
-    xzoom -1.0
-transform unflip:
-    xzoom 1.0
 
 
 ################################################################################
@@ -168,6 +163,7 @@ label intro:
     $ renpy.music.set_volume(0.4, delay=8, channel='music1')
 
     scene bg tent_captain_1 with Dissolve(1.5)
+
 
     """
     The Captain's Chamber flaunts its roominess compared to the path it takes to get there. {cps=4} {/cps}Space must be made for the parchments.
@@ -2958,14 +2954,15 @@ label intro:
 ## Endings
 ################################################################################
 
-#Rolling Credits################################################################
+######################
+## Rolling Credits
+###################### 
 label finalcredits:
     scene black
     show screen creditscreen
     pause 100 # or however long it takes to scroll through in a reasonable speed
     pause
     jump end
-
 screen creditscreen:
     vbox:
         xsize 1000 # horizontal size of the credits
@@ -3073,6 +3070,16 @@ screen creditscreen:
             color "#ffffff"
             size 55
             xalign 0.5
+        text "Arimia":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 35
+            xalign 0.5
+        text "bobcgames":
+            font "Bellefair-Regular.ttf"
+            color "#ffffff"
+            size 35
+            xalign 0.5
         vbox:
             ysize 350 # some empty space in between
         add "images/rp logo bw.png": # adding a picture in-between the text
@@ -3102,7 +3109,9 @@ screen creditscreen:
         vbox:
             ysize 300 # some empty space in between
 
-#Bad Ending########################################################################
+######################
+## Bad Ending
+###################### 
 label bad_ending:
     scene black with Dissolve(1.5)
     if sprite_image == "f_iris":
@@ -3119,7 +3128,6 @@ label bad_ending:
     window auto hide
     achieve badend
     jump creditscreen
-
 
 #keep this the very last line of code##############################################
 label end:

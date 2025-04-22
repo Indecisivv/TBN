@@ -8,6 +8,12 @@ image rain1slow = Fixed(SnowBlossom("gui/rain1.png", 5, xspeed=(-1000, -900), ys
 image rain2slow = Fixed(SnowBlossom("gui/rain2.png", 15, xspeed=(-1000, -900), yspeed=(2000, 1900), start=50, fast=True, horizontal=False))
 #endregion
 
+#for spawning flipped
+transform flip:
+    xzoom -1.0
+transform unflip:
+    xzoom 1.0
+
 
 define xRotAnchor = 0
 define yRotAnchor = 0.5
@@ -313,6 +319,9 @@ transform TintShader:
 
 transform NormalTint:
     matrixcolor TintMatrix("#ffffff")
+
+transform LanternTint:
+    matrixcolor TintMatrix("#ffc78e")
 
 transform HueShader:
     matrixcolor HueMatrix(-150)
