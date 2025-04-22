@@ -61,6 +61,9 @@ define knife_vine_1 = "audio/sound/Knife Cut Vine.ogg"
 define knife_vine_2 = "audio/sound/Knife Cut Vine 2.ogg"
 define knife_vine_3 = "audio/sound/Knife Cut Vine 3.ogg"
 
+define arrow = "audio/sound/Bowshot.ogg"
+define arrow_deflect = "audio/sound/Arrow Deflect.ogg"
+
 define fireball = "audio/sound/Fireball.ogg"
 define fireball_vine = "audio/sound/Fireball Destroy Vine.ogg"
 

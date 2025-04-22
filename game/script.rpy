@@ -39,6 +39,8 @@ define sprite_image = "f_iris"
 ################################################################################
 label start:
 
+    stop music fadeout 8
+
     scene black with Dissolve(2.5)
     show m_iris neutral:
         right
@@ -1883,6 +1885,23 @@ label intro:
 
     show darcey shocked
     Darcey "What the—?!"
+
+    $ renpy.music.play("audio/music/04 Danger Winds.ogg", channel='music1', loop=True, synchro_start=True, fadein=1, tight=True)
+    $ renpy.music.play("audio/music/04 Danger Leads.ogg", channel='music2', loop=True, synchro_start=True, fadein=1, tight=True)
+    $ renpy.music.play("audio/music/04 Danger Str.ogg", channel='music3', loop=True, synchro_start=True, fadein=1, tight=True)
+    $ renpy.music.play("audio/music/04 Danger Brass.ogg", channel='music4', loop=True, synchro_start=True, fadein=1, tight=True)
+    $ renpy.music.play("audio/music/04 Danger Trom.ogg", channel='music5', loop=True, synchro_start=True, fadein=1, tight=True)
+    $ renpy.music.play("audio/music/04 Danger Perc.ogg", channel='music6', loop=True, synchro_start=True, fadein=1, tight=True)
+    $ renpy.music.play("audio/music/04 Danger Timp.ogg", channel='music7', loop=True, synchro_start=True, fadein=0.05, tight=True)
+
+    $ renpy.music.set_volume(0, delay=0, channel='music1') # Winds 1
+    $ renpy.music.set_volume(0, delay=0, channel='music2') # Leads 2
+    $ renpy.music.set_volume(0, delay=0, channel='music3') # Str 3
+    $ renpy.music.set_volume(1, delay=0, channel='music4') # Brass 4
+    $ renpy.music.set_volume(1, delay=0, channel='music5') # Trom 5
+    $ renpy.music.set_volume(0.7, delay=0, channel='music6') # Perc 6
+    $ renpy.music.set_volume(0.7, delay=0, channel='music7') # Timp 7
+
     show vine2 at CutIn
     pause(1.0)
     show vine2 at CutOut
@@ -1920,7 +1939,12 @@ label intro:
         unflip
     show quinn shocked
     
-
+    $ renpy.music.set_volume(0.3, delay=8, channel='music2') # Leads 2
+    $ renpy.music.set_volume(0.7, delay=4, channel='music3') # Str 3
+    $ renpy.music.set_volume(0, delay=4, channel='music4') # Brass 4
+    $ renpy.music.set_volume(0.7, delay=0, channel='music5') # Trom 5
+    $ renpy.music.set_volume(0.7, delay=0, channel='music6') # Perc 6
+    $ renpy.music.set_volume(0.7, delay=0, channel='music7') # Timp 7
 
 
     "Before anyone can react, thick, gnarled vines burst from the underbrush you entered through and wrapped around [darcey_name]'s leg. She is yanked off her feet within seconds."
@@ -1931,6 +1955,10 @@ label intro:
     Darcey "Son of a—!"  
     Darcey "Get this thing off me!"
 
+    $ renpy.music.set_volume(0.3, delay=8, channel='music1') # Winds 1
+    $ renpy.music.set_volume(0.5, delay=6, channel='music2') # Leads 2
+    $ renpy.music.set_volume(0, delay=2, channel='music5') # Trom 5
+    $ renpy.music.set_volume(0, delay=2, channel='music7') # Timp 7
 
     "The vine tightens as she protests, dragging her toward the dark mass of writhing roots forming.{cps=4} {/cps}The ground shifts. Something huge is moving beneath the mud."
 
@@ -1941,6 +1969,9 @@ label intro:
     show iris angry
     Iris "Hold on, {cps=4} {/cps}[darcey_name]!"
     show quinn angry
+
+    play sfx1 arrow volume 1
+
     show arrow1 at CutIn
     with vpunch
     pause(0.5)
@@ -1948,6 +1979,9 @@ label intro:
     pause(0.25)
     hide arrow1
     pause(0.25)
+
+    play sfx1 arrow_deflect volume 0.7
+
     show vine1 at CutIn
     with vpunch
     pause(0.5)
@@ -1956,7 +1990,7 @@ label intro:
     hide vine1
     "[quinn_name] shoots his bow,{cps=4} {/cps} but the plant flings the arrow away."
 
-    play sfx1 knife_vine_1 volume 0.7
+    play sfx1 knife_vine_1 volume 0.4
 
     show sword1 at CutIn
     with vpunch
@@ -1983,6 +2017,13 @@ label intro:
     with Pause(0.40)
 
     "[darcey_name] struggles to hack the vine with her knife. Her blade barely cuts through the thick, pulsing roots. {cps=4} {/cps}Its coils tighten."
+
+    $ renpy.music.set_volume(0, delay=10, channel='music1') # Winds 1
+    $ renpy.music.set_volume(0, delay=6, channel='music2') # Leads 2
+    $ renpy.music.set_volume(0, delay=6, channel='music3') # Str 3
+    $ renpy.music.set_volume(0.5, delay=6, channel='music4') # Brass 4
+    $ renpy.music.set_volume(0.8, delay=2, channel='music7') # Timp 7
+
 
     show iris worried
     Iris "I have to do something!"
@@ -2036,11 +2077,17 @@ label intro:
                     jump bad_ending
 
                 "Call for help instead.":
+                    $ renpy.music.set_volume(0.3, delay=6, channel='music2') # Leads 2
+                    $ renpy.music.set_volume(0, delay=10, channel='music4') # Brass 4
+                    $ renpy.music.set_volume(0.5, delay=2, channel='music6') # Perc 6
+                    $ renpy.music.set_volume(0.5, delay=2, channel='music7') # Timp 7
                     "You back off then shout for [quinn_name]."
 
                     Iris "It keeps regenerating!"
 
                     "[quinn_name]'s second arrow is already flying through the air at that shout. The vines twist in midair in coordinated response to use [darcey_name] as a shield."
+
+                    play sfx1 arrow volume 0.7
 
                     show arrow1 at CutIn
                     with vpunch
@@ -2080,7 +2127,10 @@ label intro:
 
                     "[quinn_name] catches it masterfully then quickly strikes his ready arrows aflame. Each one launches at the vine hydra in succession."
 
-                    play sfx1 fireball_vine volume 0.7
+                    play sfx1 arrow volume 0.7
+                    play sfx2 ["<silence 0.15>", arrow] volume 0.5
+                    play sfx3 ["<silence 0.3>", fireball_vine] volume 0.5
+                    
                     show fire at CutIn
                     with vpunch
                     pause(0.5)
@@ -2090,6 +2140,11 @@ label intro:
                     pause(0.25)
 
                     "The plant withers in pain as they hit. A horrifying screech echoes throughout the forest. [darcey_name] gets dropped in the process."
+
+                    $ renpy.music.set_volume(0, delay=4, channel='music2') # Leads 2
+                    $ renpy.music.set_volume(0.5, delay=4, channel='music3') # Str 3
+                    $ renpy.music.set_volume(0, delay=2, channel='music6') # Perc 6
+                    $ renpy.music.set_volume(0, delay=2, channel='music7') # Timp 7
 
                     
                     window auto hide
@@ -2107,6 +2162,7 @@ label intro:
 
                     Darcey "Ouch..."
 
+                    play sfx1 arrow volume 0.4
                     show arrow1 at CutIn
                     with vpunch
                     pause(0.5)
@@ -2127,7 +2183,15 @@ label intro:
                     show quinn angry:
                         xpos 0.47 
 
-                    $ darcey_tired = True             
+                    $ darcey_tired = True
+
+                    stop music1 fadeout 10
+                    stop music2 fadeout 10
+                    stop music3 fadeout 10
+                    stop music4 fadeout 10
+                    stop music5 fadeout 10
+                    stop music6 fadeout 10
+                    stop music7 fadeout 10        
 
                     jump aftermath
 
@@ -2141,16 +2205,42 @@ label intro:
 
                     jump bad_ending
         #TODO: locked choice ONLY IF U HAVE FLUTE!
-        "Try to use magic.": 
+        "Try to use magic.":
+            
+            stop music1 fadeout 5
+            stop music2 fadeout 5
+            stop music3 fadeout 5
+            stop music4 fadeout 5
+            stop music5 fadeout 5
+            stop music6 fadeout 5
+
+            $ renpy.music.set_volume(0.5, delay=6, channel='music7') # Timp 7
+
             $ magic_score += 1
             
             "You reach into your pack,{cps=4} {/cps}hands trembling,{cps=4} {/cps}and pull out your carved flute."
 
             show iris worried
 
+            $ renpy.music.play("audio/music/05 Magic Shaky.ogg", channel='music1', loop=True, synchro_start=True, fadein=1, tight=True)
+            $ renpy.music.play("audio/music/05 Magic Flute.ogg", channel='music2', loop=True, synchro_start=True, fadein=1, tight=True)
+            $ renpy.music.play("audio/music/05 Magic Winds.ogg", channel='music3', loop=True, synchro_start=True, fadein=1, tight=True)
+            $ renpy.music.play("audio/music/05 Magic High.ogg", channel='music4', loop=True, synchro_start=True, fadein=1, tight=True)
+            $ renpy.music.play("audio/music/05 Magic Cello.ogg", channel='music5', loop=True, synchro_start=True, fadein=1, tight=True)
+            $ renpy.music.play("audio/music/05 Magic Str.ogg", channel='music5', loop=True, synchro_start=True, fadein=1, tight=True)
+
+            $ renpy.music.set_volume(0.6, delay=0, channel='music1') # Shaky 1
+            $ renpy.music.set_volume(0, delay=0, channel='music2') # Flute 2
+            $ renpy.music.set_volume(0, delay=0, channel='music3') # Winds 3
+            $ renpy.music.set_volume(0, delay=0, channel='music4') # High 4
+            $ renpy.music.set_volume(0, delay=0, channel='music5') # Cello 5
+            $ renpy.music.set_volume(0, delay=0, channel='music6') # Str 6
+            stop music7 fadeout 20
+            
+
             "The melody trembles at first in shaky adrenaline.{cps=4} {/cps}But it swiftly finds its tune, notes cutting through the fog like silver thread."
 
-            play sfx1 fireball volume 0.2
+            play sfx1 fireball volume 0.5
 
             show magic1 at CutIn
             with hpunch
@@ -2158,6 +2248,8 @@ label intro:
             show magic1 at CutOut
             pause(0.25)
             hide magic1
+
+            $ renpy.music.set_volume(0.3, delay=3, channel='music4') # High 4
 
             "Magic stirs around you,{cps=4} {/cps}drawn to the song."
             "The plant coils tighter at the sight."
@@ -2183,8 +2275,16 @@ label intro:
             show iris sad
             show quinn sad
 
+            $ renpy.music.set_volume(0, delay=4, channel='music1') # Shaky 1
+            $ renpy.music.set_volume(0.8, delay=3, channel='music2') # Flute 2
+
             menu:
                 "Aim carefully and cast what you have.":
+
+                    $ renpy.music.set_volume(0.5, delay=4, channel='music4') # High 4
+                    $ renpy.music.set_volume(0.3, delay=6, channel='music5') # Cello 5
+                    $ renpy.music.set_volume(0.3, delay=6, channel='music6') # Str 6
+
                     "With your flute in hand, you steady your breath to focus."
 
                     #TODO: music quick tune here
@@ -2202,6 +2302,10 @@ label intro:
 
                     "The vines shriek and shrivel when struck. The burning parts turn to ash right before your eyes."
 
+                    $ renpy.music.set_volume(0.5, delay=8, channel='music2') # Flute 2
+                    $ renpy.music.set_volume(0.4, delay=4, channel='music3') # Winds 3
+                    $ renpy.music.set_volume(1, delay=4, channel='music6') # Str 6
+
                     window auto hide
                     show darcey angry:
                         subpixel True 
@@ -2215,6 +2319,8 @@ label intro:
                     "[darcey_name] drops to the ground with a gasp,{cps=4} {/cps}coughing."
 
                     Darcey "Ouch..."
+
+                    play sfx1 arrow volume 0.4
 
                     show arrow1 at CutIn
                     with vpunch
@@ -2241,6 +2347,11 @@ label intro:
                     jump aftermath
 
                 "Push more power into the spell.":
+
+                    $ renpy.music.set_volume(1, delay=2, channel='music1') # Shaky 1
+                    $ renpy.music.set_volume(0, delay=4, channel='music2') # Flute 2
+                    
+
                     show iris 
                     "You shut your eyes. All your fear and desperation swell into the spell. It's unmanageable."
 
@@ -2250,6 +2361,13 @@ label intro:
                     show darcey shocked
 
                     #TODO: harsh flute sound here
+
+                    stop music1 fadeout 1
+                    stop music2 fadeout 1
+                    stop music3 fadeout 1
+                    stop music4 fadeout 1
+                    stop music5 fadeout 1
+                    stop music6 fadeout 1
 
                     play sfx1 fireball volume 0.7
 
@@ -2273,7 +2391,12 @@ label intro:
                     jump bad_ending
 
     label aftermath:
-
+    
+    $ renpy.music.set_volume(0, delay=2, channel='music2') # Flute 2
+    #$ renpy.music.set_volume(0, delay=0, channel='music3') # Winds 3
+    $ renpy.music.set_volume(0.1, delay=6, channel='music4') # High 4
+    $ renpy.music.set_volume(0.5, delay=6, channel='music5') # Cello 5
+    #$ renpy.music.set_volume(0, delay=0, channel='music6') # Str 6
     
     window auto hide
     show iris worried:
@@ -2355,6 +2478,14 @@ label intro:
     with Dissolve(1.5)
     pause(1.5)
 
+    $ renpy.music.set_volume(0, delay=2, channel='music3') # Winds 3
+    $ renpy.music.set_volume(0.3, delay=6, channel='music4') # High 4
+    $ renpy.music.set_volume(0.3, delay=6, channel='music5') # Cello 5
+    $ renpy.music.set_volume(0.3, delay=6, channel='music6') # Str 6
+
+    stop amb1 fadeout 8
+    play amb2 rain_amb fadein 4 volume 0.5
+
     scene bg forest
     show rain1slow zorder 1
     show rain2slow zorder 0
@@ -2404,6 +2535,8 @@ label intro:
     show darcey neutral
     Darcey "I'll live."
 
+    $ renpy.music.set_volume(0, delay=10, channel='music4') # High 4
+
     "[plo_name] nods; his grin becoming forced.{cps=4} {/cps}He steps forward and guides her toward the carriage with an unspoken gentleness."
 
     show plo neutral
@@ -2440,7 +2573,13 @@ label intro:
 
         Plo "Keep an eye on [darcey_name], will ya?{cps=4} {/cps}She looks shaken up."
 
+    $ renpy.music.set_volume(0, delay=10, channel='music5') # Cello 5
+    $ renpy.music.set_volume(0, delay=10, channel='music6') # Str 6
+
     Iris "Let's get out of here."
+
+    stop amb2 fadeout 6
+    play amb3 rain_carriage_amb fadein 3 volume 0.8
 
     scene carriage 
     show quinn sad:
@@ -2489,6 +2628,8 @@ label intro:
             Darcey "I guess the forest thought a bush was too obvious of an ambush."
             show quinn happy 
             Quinn "Hmph."
+    
+    stop amb3 fadeout 10
     jump Uphill
 
 ######################
@@ -2858,13 +2999,13 @@ label intro:
     label Uphill:
     #enviroment turns more hot and mixed with sand
 
-    $ renpy.music.stop(channel='music1', fadeout=10)
-    $ renpy.music.stop(channel='music2', fadeout=10)
-    $ renpy.music.stop(channel='music3', fadeout=10)
-    $ renpy.music.stop(channel='music4', fadeout=10)
-    $ renpy.music.stop(channel='music5', fadeout=10)
-    $ renpy.music.stop(channel='music6', fadeout=10)
-    $ renpy.music.stop(channel='music7', fadeout=10)
+    stop music1 fadeout 10
+    stop music2 fadeout 10
+    stop music3 fadeout 10
+    stop music4 fadeout 10
+    stop music5 fadeout 10
+    stop music6 fadeout 10
+    stop music7 fadeout 10
     
     Plo "We'll reach the main merchant path in not too long."
 
@@ -3116,6 +3257,19 @@ screen creditscreen:
 ## Bad Ending
 ###################### 
 label bad_ending:
+
+    stop amb1 fadeout 6
+    stop amb2 fadeout 6
+    stop amb3 fadeout 6
+
+    stop music1 fadeout 10
+    stop music2 fadeout 10
+    stop music3 fadeout 10
+    stop music4 fadeout 10
+    stop music5 fadeout 10
+    stop music6 fadeout 10
+    stop music7 fadeout 10
+
     scene black with Dissolve(1.5)
     if sprite_image == "f_iris":
         show game_over_f
