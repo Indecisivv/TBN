@@ -115,6 +115,13 @@ screen say(who, what):
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 
+    if renpy.get_screen("say"):
+        if ShowingInventoryButton == True:
+            $ ShowInventoryButton()
+        
+    else:
+        $ HideInventoryButton()
+
 
 ## Make the namebox available for styling through the Character object.
 init python:
@@ -1520,6 +1527,8 @@ screen bubble(who, what):
 
         text what:
             id "what"
+
+
 
 style bubble_window is empty
 style bubble_namebox is empty

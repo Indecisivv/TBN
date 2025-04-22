@@ -588,6 +588,7 @@ label intro:
     Quietly you reach under the bunk to pull out your stuff.
 
     """
+
     window auto hide
     show screen Inventory_Screen
 
@@ -603,6 +604,8 @@ label intro:
     """
 
     $ HideAllNonInventoryItems()
+
+    $ ShowingInventoryButton = True
 
     $ renpy.music.stop(channel='music1', fadeout=8)
     $ renpy.music.stop(channel='music2', fadeout=None)

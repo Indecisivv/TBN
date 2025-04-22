@@ -4,10 +4,13 @@
 #This would also be more work though, and would be a pain
 
 
+
 image ninepatch paper tiled = Frame("ninepatch paper", 40, 40, 40, 40, tile=True)
 
 image InventoryBackground = Frame("gui/inventory bg.png")
 
+
+default ShowingInventoryButton = False
 
 #These essentially declare custom functions that you can apply to drag variables such as 'dragged, 'dropped', 'clicked', etc.
 #When you try to drop an item on a droppable, check if the matching coordinate in the_inventory is occuppied
@@ -55,6 +58,16 @@ init python:
         print("Screen Height: " + str(config.screen_height))
         print("Screen Width: " + str(config.screen_width))
 
+    def HideScreen():
+        renpy.hide_screen("inventory_button")
+        Hide("window")
+
+
+    def HideInventoryButton():
+        renpy.hide_screen("inventory_button")
+
+    def ShowInventoryButton():
+        renpy.show_screen("inventory_button", _layer="overlay")
 
     #The hide/show functions below are expected to be one-and-done calls tied to player progression
     #For example, calling HideDayOneItems will hide the items not taken after the player has finished choosing items and moved on

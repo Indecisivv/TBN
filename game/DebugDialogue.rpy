@@ -198,6 +198,8 @@ label DebugItemCheck:
 
     show screen close_inventory_button
 
+    $ ShowingInventoryButton = True
+
     window hide
 
     pause 0.5
@@ -207,6 +209,10 @@ label DebugItemCheck:
     "1"
 
     "2"
+
+    window auto hide
+
+    pause 0.5
 
     "3"
 
