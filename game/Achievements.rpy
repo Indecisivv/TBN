@@ -21,9 +21,12 @@
 #   (This does not currently support progress stats.)
 define BOBCACHIEVEMENT_LIST = (
 
-    ("start", _("•First Steps"), _("'They told us you were chosen.\nWe didn't even get to say proper goodbye.\nPlease, Iris... stay safe out there. —Father'\nYou started the game.")),
+    ("start", _("•War's Dying Flame"), _("Your adventure has begun.")),
     ("bonds", _("•Unbreakable Bonds"), _("You unlocked every character CG")),
-    ("badend", _("•The Weight of Choice"), _("'We left as four.\nWe returned as less.\nBoth beings and in numbers.'\nYou got a bad ending.")),
+    ("badend", _("•End of the Line"), _("You've encountered a bad ending.")),
+    ("hot", _("•Bush Barbeque"), _("Incinerate the vines.")),
+    ("boom", _("•That One Gets 5 Big Booms"), _("Boom! Boom! Boom! Boom! Boom!")),
+
 
     )
 
