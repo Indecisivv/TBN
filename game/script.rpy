@@ -147,16 +147,17 @@ label intro:
     """
     Humidity and dirt clings to your skin as stalactites loom overhead with mineral-rich condensation.
 
-    You are called urgently to the Captain's Chamber, a large tent, by a fellow soldier.{cps=2} {/cps}At this hour in the night? Strange. {cps=2} {/cps}Nervousness creeps into your quick steps.
+    You are called urgently to the Captain's Chamber,{cps=4} {/cps}a large tent,{cps=4} {/cps}by a fellow soldier.{cps=4} {/cps}At this hour in the night?{cps=4} {/cps}Strange.{cps=4} {/cps}Nervousness creeps into your quick steps.
 
-    Through winding tunnels, you follow the jagged walls with your torchlight.
+    Through winding tunnels,{cps=4} {/cps}you follow the jagged walls with your torchlight.
     
     Heated water hisses from the fissures above.
     
-    The air is thickest outside the Captain's Chamber. It carries the scent of damp rock.
+    The air is thickest outside the Captain's Chamber.{cps=4} {/cps}It carries the scent of damp rock.
 
     You step in.
     """
+    achieve start
     stop amb1 fadeout 4
     play amb2 captains_amb fadein 1 volume 0.2
 
@@ -172,9 +173,9 @@ label intro:
 
     The scent of ink,{cps=4} {/cps}sweat,{cps=4} {/cps}and something vaguely metallic immediately catches your nose. 
 
-    You warm up from the burning oil lamps around, and walk forward to the sturdy wooden desk.
+    You warm up from the burning oil lamps around,{cps=4} {/cps}and walk forward to the sturdy wooden desk.
     
-    Maps and smudged reports scatter in front of the tired man hunched over, staring down at them.{cps=4} {/cps}The Captain. 
+    Maps and smudged reports scatter in front of the tired man hunched over,{cps=4} {/cps}staring down at them.{cps=4} {/cps}The Captain. 
     """
     
     show iris worried:
@@ -183,7 +184,7 @@ label intro:
     with Dissolve(1.5)
 
     """
-    On closer inspection, you notice the Captain's dark circles under his bloodshot eyes.{cps=4} {/cps}Who knows when he last moved.
+    On closer inspection,{cps=4} {/cps}you notice the Captain's dark circles under his bloodshot eyes.{cps=4} {/cps}Who knows when he last moved.
     
     He barely reacted to your approach.
 
@@ -222,7 +223,7 @@ label intro:
     with Pause(0.40)
     camera:
         pos (1404, 63) 
-    "The figure's weathered brown skin was hardened by time. The oil lamps revealed its deep grooves and ridges."
+    "The figure's weathered brown skin was hardened by time.{cps=4} {/cps}The oil lamps revealed its deep grooves and ridges."
     camera:
         subpixel True 
         pos (1404, 63) zoom 2.24 
@@ -239,7 +240,7 @@ label intro:
     """
     His heavy-lidded eyes scan the room as if routine then approaches. 
     
-    He straightens his thick frame and gives the captain a curt salute.
+    He straightens his thick frame and gives the Captain a curt salute.
     """
 
     show plo neutral
@@ -282,7 +283,7 @@ label intro:
     camera:
         pos (1278, 1611) zoom 2.79 
     window auto show
-    "A short,{cps=4} {/cps}red-skinned tiefling strides in next.{cps=4} {/cps}You swore you feel the air stop at her presence, afraid to move disrespectfully."
+    "A short,{cps=4} {/cps}red-skinned tiefling strides in next.{cps=4} {/cps}You swore you feel the air stop at her presence,{cps=4} {/cps}afraid to move disrespectfully."
     camera:
         subpixel True 
         pos (1278, 1611) 
@@ -298,7 +299,7 @@ label intro:
     with Pause(0.40)
     camera:
         pos (2061, 386) 
-    "Her dark eyes flick over the assembled group,{cps=4} {/cps}assessing,{cps=4} {/cps}before settling on the captain with a crisp salute."
+    "Her dark eyes flick over the assembled group,{cps=4} {/cps}assessing,{cps=4} {/cps}before settling on the Captain with a crisp salute."
     camera:
         subpixel True 
         pos (2061, 386) zoom 2.79 
@@ -342,7 +343,7 @@ label intro:
     with Pause(0.40)
     camera:
         pos (2205, 1026) 
-    "Glancing between the others,{cps=4} {/cps}he only pauses on the tiefling with a nod of acknowledgment{cps=4} {/cps}before facing the captain."
+    "Glancing between the others,{cps=4} {/cps}he only pauses on the tiefling with a nod of acknowledgment{cps=4} {/cps}before facing the Captain."
     camera:
         subpixel True 
         pos (2205, 1026) 
@@ -362,9 +363,9 @@ label intro:
     $ renpy.music.set_volume(1, delay=8, channel='music2')
 
     show quinn shocked
-    Quinn "Captain. Something urgent,{cps=4} {/cps}I assume?"
+    Quinn "Captain.{cps=4} {/cps}Something urgent,{cps=4} {/cps}I assume?"
 
-    "The captain waves the three guests forward."
+    "The Captain waves the three guests forward."
     Captain "Come in,{cps=4} {/cps}Come in."
 
     $ darcey_name = "Darcey"
@@ -388,7 +389,7 @@ label intro:
     He grins,{cps=4} {/cps}a rare grin.
     """
 
-    Captain "This is a very important message that I need delivered.{cps=2} {/cps}You four will be the ones delivering it."
+    Captain "This is a very important message that I need delivered.{cps=4} {/cps}You four will be the ones delivering it."
 
     show plo happy at jumpAnim
     
@@ -401,19 +402,19 @@ label intro:
             jump continue1
 
         "Why choose us?":
-            Captain "[plo_name],{cps=4} {/cps}the best carriage driver we've got.{cps=2} {/cps}He knows how to handle rough terrain—and rougher company."
+            Captain "[plo_name],{cps=4} {/cps}the best carriage driver we've got.{cps=4} {/cps}He knows how to handle rough terrain—and rougher company."
             show plo happy
-            Captain "[quinn_name],{cps=4} {/cps}a skilled navigator.{cps=2} {/cps}If there's a way through,{cps=4} {/cps}he'll find it."
+            Captain "[quinn_name],{cps=4} {/cps}a skilled navigator.{cps=4} {/cps}If there's a way through,{cps=4} {/cps}he'll find it."
             show quinn happy
-            Captain "[darcey_name],{cps=4} {/cps}a fighter through and through.{cps=2} {/cps}Shes deadly for fights you want to pick and intelligent for fights you don't." 
+            Captain "[darcey_name],{cps=4} {/cps}a fighter through and through.{cps=4} {/cps}She's deadly for fights you want to pick and intelligent for fights you don't." 
             show darcey happy ##Pronoun Below
             
             if pronouns == "She/Her":
-                Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star courier.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on her feet."
+                Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star courier.{cps=4} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on her feet."
             elif pronouns == "He/Him":
-                Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star courier.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on his feet."
+                Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star courier.{cps=4} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on his feet."
             elif pronouns == "They/Them":
-                Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star courier.{cps=2} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on their feet."
+                Captain "And of course,{cps=4} {/cps}[player_name],{cps=4} {/cps}the rising star courier.{cps=4} {/cps}Fast,{cps=4} {/cps}reliable,{cps=4} {/cps}and able to think on their feet."
 
             show iris happy
             Captain "All excellent in your own rights."
@@ -457,25 +458,25 @@ label intro:
 
     Captain "There's still work to be done here,{cps=4} {/cps}but what matters now is to send word to the capital.{cps=4} {/cps}Immediately."
 
-    Captain "That is why i'm entrusting this mission to you,{cps=4} {/cps}[player_name]."
+    Captain "That is why I'm entrusting this mission to you,{cps=4} {/cps}[player_name]."
 
     menu:
         "Yes,{cps=4} {/cps}Captain!":
             show iris happy
-            Captain "Good.{cps=2} {/cps}You all are dismissed.{cps=2} {/cps}The others will wake up to good news."
+            Captain "Good.{cps=4} {/cps}You all are dismissed.{cps=4} {/cps}The others will wake up to good news."
             jump continue2
         
         "Stay Quiet":
             show iris worried
-            Captain "......{cps=4} {/cps}Well, get going then!{cps=4} {/cps}I want you all out of here before morning."
+            Captain "......{cps=4} {/cps}Well,{cps=4} {/cps}get going then!{cps=4} {/cps}I want you all out of here before morning."
             jump continue2
     
     label continue2:
 
-    Iris "Understood,{cps=4} {/cps}captain."
+    Iris "Understood,{cps=4} {/cps}Captain."
 
     """
-    You turn to your new team, who stare at you with anticipation.
+    You turn to your new team,{cps=4} {/cps}who stare at you with anticipation.
 
     """
     show darcey happy:
@@ -502,7 +503,7 @@ label intro:
     """
     You make your way back to your home tent.
     
-    It's an uncomfortable warmth that you've gotten used to. Thick with humidity. Exhaustion seems to stick to you in the same way as you walk.
+    It's an uncomfortable warmth that you've gotten used to.{cps=4} {/cps}Thick with humidity.{cps=4} {/cps}Exhaustion seems to stick to you in the same way as you walk.
     """ 
     $ renpy.music.set_volume(0, delay=8, channel='music2')
     $ renpy.music.set_volume(0.7, delay=8, channel='music1')
@@ -514,7 +515,7 @@ label intro:
 
     """
     
-    Inside the soldier's tent, a thick layer of grime made up of sweat and dirt sticks to the occupants.
+    Inside the soldier's tent,{cps=4} {/cps}a thick layer of grime made up of sweat and dirt sticks to the occupants.
 
     Half a dozen exhausted soldiers lay cramped like sardines in haphazardly built bunk beds.
     
@@ -530,7 +531,7 @@ label intro:
 
     show iris neutral at Close
 
-    Bunkmate "What was that about? You get in trouble?"
+    Bunkmate "What was that about?{cps=4} {/cps}You get in trouble?"
 
     "Your bunkmate above you shifts to eye you inquisitively."
 
@@ -538,19 +539,19 @@ label intro:
         "Be honest":
             show iris happy at happyAnim
             Iris "Actually,{cps=4} {/cps}I have great news!"
-            "You lean in,{cps=4} {/cps}lowering your voice so as not to wake anyone."
+            "You lean in,{cps=4} {/cps}lowering your voice so as to not wake anyone."
             show iris happy at VeryClose
             Iris "The Captain will announce the end of the war in the morning."
             "They nearly shout before clapping both hands over their mouth."
             Iris "Shh,{cps=4} {/cps}I have to pack.{cps=4} {/cps}I'm leaving before sunrise"
             show iris blush at Close
-            Bunkmate "I can't believe it will be over; THIS will be over.{cps=4} {/cps}I'm not going to be able to sleep tonight."
+            Bunkmate "I can't believe it will be over;{cps=4} {/cps}THIS will be over.{cps=4} {/cps}I'm not going to be able to sleep tonight."
             jump continue3
 
         "Joke around":
             show iris sad
             Iris "3 days night shift duty for me."
-            Bunkmate "Man, that sucks."
+            Bunkmate "Man,{cps=4} {/cps}that sucks."
             "You chuckle."
             show iris happy
             Iris "Joking."
@@ -559,7 +560,7 @@ label intro:
             jump continue3
         
         "Be evasive":
-            Iris "I got assigned a mission.{cps=2} {/cps} I leave before sunrise."
+            Iris "I got assigned a mission.{cps=4} {/cps} I leave before sunrise."
             Bunkmate "Hmph{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}Guess I'll wait."
             jump continue3
     
@@ -568,7 +569,7 @@ label intro:
 
     """
     
-    After checking that no one is spying, You take a moment to look at the map the Captain entrusted to you.
+    After checking that no one is spying,{cps=4} {/cps}You take a moment to look at the map the Captain entrusted to you.
 
     """
     window auto hide
@@ -580,7 +581,7 @@ label intro:
 
     Three days,{cps=4} {/cps}maybe less if you're quick.
 
-    We'd need to pack enough food and supplies for at least twice that. For four people.
+    We'd need to pack enough food and supplies for at least twice that.{cps=4} {/cps}For four people.
     """
     hide map with Dissolve(1.5)
     show iris happy
@@ -602,7 +603,7 @@ label intro:
 
 
     """
-    You decide to sleep, getting what little rest you still can.
+    You decide to sleep,{cps=4} {/cps}getting what little rest you still can.
     """
 
     $ HideAllNonInventoryItems()
@@ -631,7 +632,7 @@ label intro:
     """
     Sunrise hasn't hit yet as you make your way to the designated meeting spot.
 
-    Soldiers move about groggily. The night shift returns for some needed sleep as{cps=4} {/cps}the day shift gets ready to work.
+    Soldiers move about groggily.{cps=4} {/cps}The night shift returns for some much needed sleep as{cps=4} {/cps}the day shift gets ready to work.
     """
 
     play amb1 cave_rain_amb fadein 3 volume 0.3
@@ -649,7 +650,7 @@ label intro:
     You meet your party near the supply tent{cps=4} {/cps}where a wooden carriage{cps=4} {/cps}tied to a sturdy draft horse{cps=4} {/cps}stands ready.
 
 
-    A cold chill blows into the cave,{cps=4} {/cps}bringing the smell of rain and mud. You wish nature was more merciful.
+    A cold chill blows into the cave,{cps=4} {/cps}bringing the smell of rain and mud.{cps=4} {/cps}You wish nature was more merciful.
 
 
     [plo_name] secures the last of the crates onto the back of the carriage.
@@ -663,7 +664,7 @@ label intro:
     show plo happy:
         xpos 0.06 
    
-    Plo "Cart's packed and ready.{cps=2} {/cps}Not much,{cps=4} {/cps}but it'll get us there."
+    Plo "Cart's packed and ready.{cps=4} {/cps}Not much,{cps=4} {/cps}but it'll get us there."
 
     show quinn neutral at left:
         subpixel True 
@@ -673,14 +674,14 @@ label intro:
     show quinn neutral:
         xpos -0.04 
 
-    Quinn "The rain looks intense."
+    Quinn "Looks like a rainy day."
 
 
     show quinn sad
     show iris neutral
 
 
-    Quinn "At this rate, our journey might be hindered by the mud."
+    Quinn "At this rate,{cps=4} {/cps}our journey might be hindered by the mud."
 
 
     show plo happy at jumpAnim
@@ -729,9 +730,9 @@ label intro:
     Darcey "Hey,{cps=4} {/cps}I'd have us halfway there already if I was in charge."
 
     
-    show quinn happy at happyAnim
+    show quinn happy
 
-    Quinn "Halfway down a ravine maybe,{cps=4} {/cps}I don't seem to recall you ever driving a carriage before..."
+    Quinn "Halfway down a ravine maybe,{cps=4} {/cps}I don't seem to recall you ever driving a carriage before{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
 
     show darcey neutral
     show quinn neutral
@@ -756,7 +757,7 @@ label intro:
             $ renpy.music.set_volume(0.2, 1, channel='music3')
             $ renpy.music.set_volume(0, 0, channel='music4')
             
-            "[plo_name] blinks. [darcey_name] groans. [quinn_name] hides a smirk."
+            "[plo_name] blinks.{cps=4} {/cps}[darcey_name] groans.{cps=4} {/cps}[quinn_name] hides a smirk."
             show darcey worried
             Darcey "That was terrible."
             Iris "You're just jealous you didn't think of it first."
@@ -789,7 +790,7 @@ label intro:
             Darcey "Apologies,{cps=4} {/cps}[player_name]."
             "[darcey_name] looks embarrassed of her unknightly behavior."
             show plo worried
-            Plo "I'm just going to finish packing then..."
+            Plo "I'm just going to finish packing then{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
             show plo worried at flip
             $ quinn_points += 3
             show plo neutral:
@@ -809,7 +810,7 @@ label intro:
             show iris neutral
             $ quiet += 1
             show plo neutral
-            Plo "I'm just going to finish packing then..."
+            Plo "I'm just going to finish packing then{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
             show plo worried at flip
             $ quinn_points += 3
             show plo neutral:
@@ -837,7 +838,7 @@ label intro:
 
     show quinn neutral
     show iris neutral
-    Quinn "We shouldn't waste any more time."
+    Quinn "I recommend leaving through the rain as is."
 
     $ renpy.music.play("audio/music/02 Journey Harp.ogg", channel='music1', loop=True, synchro_start=True, tight=True, if_changed=True)
     $ renpy.music.play("audio/music/02 Journey Accomp.ogg", channel='music2', loop=True, synchro_start=True, tight=True, if_changed=True)
@@ -851,7 +852,7 @@ label intro:
     
 
     show iris happy
-    Iris "Alright,{cps=4} {/cps}everybody.{cps=2} {/cps}Let's get this letter on the road."
+    Iris "Alright,{cps=4} {/cps}everybody.{cps=4} {/cps}Let's get this letter on the road."
 
     Iris "Mount up."
 
@@ -861,7 +862,7 @@ label intro:
 
     [darcey_name] and [quinn_name] enter the carriage.
     """
-
+    window auto hide
     show darcey neutral:
         subpixel True 
         xpos 0.49 
@@ -889,7 +890,7 @@ label intro:
 
     menu:
         "Sit inside":
-            Iris "Thank you, [quinn_name]."
+            Iris "Thank you,{cps=4} {/cps}[quinn_name]."
             window auto hide
             show iris happy:
                 subpixel True 
@@ -947,7 +948,7 @@ label intro:
     $ renpy.music.set_volume(0.8, 6, 'music2')
     $ renpy.music.set_volume(1, 6, 'music4')
     
-
+    window auto hide
     show quinn neutral:
         left
         Close
@@ -1113,7 +1114,7 @@ label intro:
 
     Darcey "Damnit,{cps=4} {/cps}I knew he would."
    
-    Iris "That does not sound good..."
+    Iris "That does not sound good{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
 
 
     "You,{cps=4} {/cps}[quinn_name],{cps=4} {/cps}and [darcey_name] make your way out of the carriage."
@@ -1184,7 +1185,7 @@ label intro:
     The steady patter of rain against the carriage's canopy mingles with the sound of the horse's hooves stomping through the wet mud.
 
 
-    Moisture from the air sticks to you; the rain helps it drip down your collar.
+    Moisture from the air sticks to you;{cps=4} {/cps}the rain helps it drip down your collar.
     """
 
     show plo neutral at left:
@@ -1221,10 +1222,10 @@ label intro:
             "[plo_name] flashes you a smile before focusing back on the road."  
             Iris "And here I thought you were going to be miserable out here."  
             show plo neutral
-            Plo "Eh, only if it were sunny. It's the heat that's the problem."  
+            Plo "Eh, only if it were .{cps=4} {/cps}It's the heat that's the problem."  
             "A second of silence passes before Plo's face scrunches."
             show plo angry
-            Plo "That... and sand."  
+            Plo "That{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} and sand."  
             Iris "Sand?"  
             show plo neutral
             Plo "It gets {i}everywhere{/i}."  
@@ -1245,7 +1246,7 @@ label intro:
             menu:
                 "Praise his packing skills":
                     hide plo_inventory
-                    Iris "You... really thought of everything."
+                    Iris "You{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} really thought of everything."
                     Iris "How did you even get all that to fit in there?"  
                     show plo blush
                     Plo "The amount of supply runs i've gone on you pick up some things."
@@ -1257,11 +1258,12 @@ label intro:
 
                 "Question his choices":
                     hide plo_inventory
-                    Iris "I'm not sure a lot of that is necessary..."
+                    Iris "I'm not sure a lot of that is necessary{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
                     show plo angry
                     Plo "Hmph."
                     show plo neutral
                     Plo "What would a human know about packing anyway."
+                    Plo "Of course I gotta bring my childhood basking rock."
                     $ plo_points -= 3
                     jump continue8
 
@@ -1295,7 +1297,7 @@ label intro:
     $ renpy.music.stop(channel='music4', fadeout=1)
 
     """
-    The carriage lurches forward, almost knocking you out of the seat before stopping just as quickly.
+    The carriage lurches forward,{cps=4} {/cps}almost knocking you out of the seat before stopping just as quickly.
 
 
     The horse strapped to the vehicle lets out an annoyed whine while stomping its feet.
@@ -1308,7 +1310,7 @@ label intro:
     show plo angry
 
 
-    Plo "Great. Just great."  
+    Plo "Great.{cps=4} {/cps}Just great."  
    
     "You hear a muffled voice from inside the carriage"
 
@@ -1373,7 +1375,7 @@ label intro:
     The rain continues to patter against the leaves as the carriage is stuck on the muddy path.
 
 
-    The party finds themselves past a winding road, precariously close to a steep drop.
+    The party finds themselves past a winding road,{cps=4} {/cps}precariously close to a steep drop.
     """
 
 
@@ -1399,42 +1401,43 @@ label intro:
 
     if get_serious == False:
         show darcey angry
-        Darcey "If you had things under control, it wouldn't have gotten stuck!"
+        Darcey "If you had things under control,{cps=4} {/cps}it wouldn't have gotten stuck!"
         show plo angry
-        Plo "I didn't magick us to leave in the deludge!"
+        Plo "I can't control the weather!"
         show darcey neutral
-        Darcey "You could have planned to keep us on the road!"
+        Darcey "You could have at least planned to keep us on the road!"
         show plo neutral:
             jumpAnim
-        Plo "Excuse me if the storm makes it hard for comfort. I'm a turtle not a rain bug!"
+        Plo "What am I gonna do, fly over it?{cps=4} {/cps}I'm a turtle not a bird!"
         show plo angry
         "[plo_name] points at the cliffs edge without losing [darcey_name]'s eye contact."
-        Plo "If you had the reins, we'd be down the ravine!"
+        Plo "If you had the reins,{cps=4} {/cps}we'd be down the ravine!"
         show iris shocked:
             jumpAnim
         Iris "Guys,{cps=4} {/cps}enough{cps=4}!"
         show iris happy
-        Iris "This situation isn't ideal, but arguing and placing blame won't unstick the wheel. Besides, think of this as a chance to bond."
+        Iris "This situation isn't ideal,{cps=4} {/cps}but arguing and placing blame won't unstick the wheel.{cps=4} {/cps}Besides,{cps=4} {/cps}think of this as a chance to bond."
         show quinn happy
         show plo neutral
-        Plo "Bond, eh?"
+        Plo "Bond,{cps=4} {/cps}eh?"
         "[plo_name] looks back at [darcey_name]."
         show plo happy
-        "You should go push the stuck wheel out from the mud. It'll help our bond."
+        Plo "You should go push the stuck wheel out from the mud.{cps=4} {/cps}It'll help our {i}bond{/i}."
         show darcey happy
-        Darcey "Sure, we wouldn't want the senior to pull something."
+        Darcey "Sure,{cps=4} {/cps}we wouldn't want the senior to pull something."
         show iris neutral
-        "[player_name] calls for [darcey_name] from behind the carriage."
+        Iris "And no fighting!"
         show quinn neutral
         show darcey neutral
         Darcey "As you wish,{cps=4} {/cps}[player_name]."
         show darcey angry
-        "As [darcey_name] turns to go, she gives [plo_name] one last dirty look. He's too busy grinning."
+        show plo happy
+        "As [darcey_name] turns to go,{cps=4} {/cps}she gives [plo_name] one last dirty look.{cps=4} {/cps}He's too busy grinning."
         show darcey neutral
     else:
-        Iris "[darcey_name], let's get behind and help push."
+        Iris "[darcey_name],{cps=4} {/cps}let's get behind and help push."
         show darcey angry
-        "[darcey_name]'s anger, though strong, only appears for a brief second before being subdued."
+        "[darcey_name]'s anger,{cps=4} {/cps}though strong,{cps=4} {/cps}only appears for a brief second before being subdued."
         show darcey neutral
         Darcey "As you wish,{cps=4} {/cps}[player_name]."
         show darcey neutral
@@ -1467,11 +1470,11 @@ label intro:
         "Stay and help [plo_name].":
             $ plo_points += 5
             show iris neutral
-            Iris "I'm sorry, [quinn_name], but we have pressing matters here."
+            Iris "I'm sorry,{cps=4} {/cps}[quinn_name],{cps=4} {/cps}but we have pressing matters here."
             Quinn "I understand."
             "[quinn_name] nods then heads off towards the forest line."
-            "[player_name] approaches [plo_name] ready to help in the front. [plo_name]'s hand stops her."
-            Plo "We are fine,{cps=4} {/cps}[player_name]. Go see what the kid needs."
+            "[player_name] approaches [plo_name] ready to help in the front.{cps=4} {/cps}[plo_name]'s hand stops her."
+            Plo "We are fine,{cps=4} {/cps}[player_name].{cps=4} {/cps}Go see what the kid needs."
             show plo happy
             Plo "[darcey_name] and I have this handled."
             
@@ -1482,16 +1485,16 @@ label intro:
             with Pause(0.40)
             show plo angry:
                 xpos 1.47 
-            "With [plo_name]'s reassurance, you make your way over to the forest where [quinn_name] waits."
+            "With [plo_name]'s reassurance,{cps=4} {/cps}you make your way over to the forest where [quinn_name] waits."
             jump continue9
 
 
         "Go and see what [quinn_name] wants at the perimeter.":
             $ quinn_points += 3
             "The look on [quinn_name]'s face worries you."
-            Iris "[plo_name], [darcey_name], work on getting this carriage free while [quinn_name] and I check the perimeter."
+            Iris "[plo_name],{cps=4} {/cps}[darcey_name],{cps=4} {/cps}work on getting this carriage free while [quinn_name] and I check the perimeter."
             show plo happy
-            Plo "Roger, [player_name]."
+            Plo "Roger,{cps=4} {/cps}[player_name]."
             show plo neutral:
                 subpixel True 
                 xpos 1.0 
@@ -1529,7 +1532,7 @@ label intro:
         xpos -0.0 
 
     show quinn neutral
-    Quinn "As I was securing the area, I found these."
+    Quinn "As I was securing the area,{cps=4} {/cps}I found these."
     show quinn sad
     
     "Quinn points at the mud below."
@@ -1537,23 +1540,23 @@ label intro:
     show footprints with Dissolve(1.5)
     pause(3.0)
     """
-    A series of deep footprints press into the mud. They remain distinct despite the rain.
+    A series of deep footprints press into the mud.{cps=4} {/cps}They remain distinct despite the rain.
    
     Their unevenness suggests that the owner of the prints was moving quickly.
     """
 
-    Quinn "Fresh. I have never seen any footprint pattern like this from our camp."
+    Quinn "Fresh.{cps=4} {/cps}I have never seen any footprint pattern like this from our camp."
     hide footprints with Dissolve(1.5)
 
-    "You take a sharp breath. [plo_name] and [darcey_name]'s distant bickering muffles in the rain."
+    "You take a sharp breath.{cps=4} {/cps}[plo_name] and [darcey_name]'s distant bickering muffles in the rain."
 
     show iris worried
-    Iris "This can't be right... Nothing should be out here for miles. We're still close to the base."
+    Iris "This can't be right{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} Nothing should be out here for miles.{cps=4} {/cps}We're still close to the base."
 
     menu:
         "We should investigate.":
             show iris worried
-            Iris "We need to investigate. Enemy soldiers have never been this close to base before."
+            Iris "We need to investigate.{cps=4} {/cps}Enemy soldiers have never been this close to base before."
             Iris "Something isn't right."
             $ quinn_points += 10
             jump Investigate
@@ -1561,10 +1564,10 @@ label intro:
 
         "We can't stray from our given task.":
             show iris worried
-            Iris "It is concerning but..."
+            Iris "It is concerning but{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
             show iris neutral
-            Iris "We don't know how far the enemy went or what direction. Getting the letter to the castle is more important than a wild goose chase."
-            Iris "Right now, we need to get the carriage back on the road."
+            Iris "We don't know how far the enemy went or what direction.{cps=4} {/cps}Getting the letter to the castle is more important than a wild goose chase."
+            Iris "Right now we need to get the carriage back on the road."
             jump DontInvestigate
 
 
@@ -1580,24 +1583,24 @@ label intro:
     menu:
         "They could be hostile.":
             show iris sad
-            Iris "We should find them quickly. Last thing we need is more trouble."
+            Iris "We should find them quickly.{cps=4} {/cps}Last thing we need is more trouble."
             show iris neutral
             jump continue11
 
 
         "They could be in trouble.":
             show iris sad
-            Iris "We should see if they need our help. It would be shameful not to consider that."
+            Iris "We should see if they need our help.{cps=4} {/cps}It would be shameful not to consider that."
             show iris neutral
             show quinn worried
-            Quinn "Okay, be we need to be careful.{cps=4} {/cps}If these tracks belong to an enemy scout, we can't afford to be ambushed."
+            Quinn "Okay,{cps=4} {/cps}be we need to be careful.{cps=4} {/cps}If these tracks belong to an enemy scout,{cps=4} {/cps}we can't afford to be ambushed."
             show quinn neutral
             jump continue11
 
 
     label continue11:
 
-    "You and [quinn_name] head back to the carriage.{cps=4} {/cps}To your surprise, [plo_name] and [darcey_name] are working together to free the wheels."
+    "You and [quinn_name] head back to the carriage.{cps=4} {/cps}To your surprise,{cps=4} {/cps}[plo_name] and [darcey_name] are working together to free the wheels."
 
     play amb3 rain_amb fadein 8 volume 0.6
     stop amb1 fadeout 20
@@ -1655,13 +1658,13 @@ label intro:
     Iris "See? Teamwork."
 
     show darcey angry
-    Darcey "You couldn't have been gentler, [plo_name]?"
+    Darcey "You couldn't have been gentler,{cps=4} {/cps}[plo_name]?"
 
     show plo happy
-    Plo "Bah. Gentle. We're not giving it a massage."
+    Plo "Bah.{cps=4} {/cps}Gentle.{cps=4} {/cps}We're not giving it a massage."
 
     show quinn sad
-    "[quinn_name] is the only one distracted from the small victory. His sharp gaze lingers on the treeline, where shadows shift amongst the trees."
+    "[quinn_name] is the only one distracted from the small victory.{cps=4} {/cps}His sharp gaze lingers on the treeline,{cps=4} {/cps}where shadows shift amongst the trees."
 
     show iris neutral
     "[player_name] follows his line of sight."
@@ -1675,7 +1678,7 @@ label intro:
         xpos 0.98 
         linear 0.30 xpos 0.86 
     with Pause(0.40)
-    "[darcey_name]'s expression shifted to stoic seriousness. Her eyes follow [quinn_name]'s to the darkened forest."
+    "[darcey_name]'s expression shifted to stoic seriousness.{cps=4} {/cps}Her eyes follow [quinn_name]'s to the darkened forest."
 
     Darcey "Footprints?{cps=4} {/cps}Out here?{cps=4} {/cps}We're supposed to be the only ones stupid enough to take this route."
 
@@ -1686,13 +1689,13 @@ label intro:
     show quinn neutral
     Quinn "Fresh enough.{cps=4} {/cps}And not from our camp."
 
-    "A quiet moment passes, leaving the sound of the rain pattering against leaves.{cps=4} {/cps}They listen.{cps=4} {/cps}Nothing unusual presents itself."
+    "A quiet moment passes,{cps=4} {/cps}leaving the sound of the rain pattering against leaves.{cps=4} {/cps}They listen.{cps=4} {/cps}Nothing unusual presents itself."
 
     show plo worried
     Plo "I don't like this."
 
     show iris worried
-    Iris "The sooner we move, the sooner we get answers."
+    Iris "The sooner we move,{cps=4} {/cps}the sooner we get answers."
 
     show quinn sad
     Quinn "The rain's picking up.{cps=4} {/cps}If we're going to follow those tracks,{cps=4} {/cps}we need to move now before they are washed away."
@@ -1701,9 +1704,9 @@ label intro:
     Iris "Right.{cps=4} {/cps}Everyone stay alert."
 
     show plo 
-    Plo "I'll stay back. Someone has to keep watch of all our stuff."
+    Plo "I'll stay back.{cps=4} {/cps}Someone has to keep watch of all our stuff."
 
-    Iris "Alright, stay safe [plo_name]."
+    Iris "Alright,{cps=4} {/cps}stay safe [plo_name]."
 
     
     window auto hide
@@ -1747,8 +1750,8 @@ label intro:
     with Dissolve(1.5)
 
     "The forest is thick with mist with only the scent of damp wood in the air." 
-    "You, [darcey_name], and [quinn_name] follow the footprints between trees, further from the main road."
-    "The air gets heavier with every step. The group proceeds in silence."
+    "You,{cps=4} {/cps}[darcey_name],{cps=4} {/cps}and [quinn_name] follow the footprints between trees,{cps=4} {/cps}further from the main road."
+    "The air gets heavier with every step.{cps=4} {/cps}The group proceeds in silence."
 
     show darcey neutral at right 
     show quinn neutral at left
@@ -1756,26 +1759,26 @@ label intro:
         subpixel True xpos 0.73 
     with Dissolve(1.5)
 
-    "The footprint tracks gradually turned from ordered to scattered. You and your team stop."
+    "The footprint tracks gradually turned from ordered to scattered.{cps=4} {/cps}You and your team stop."
 
     $ renpy.music.set_volume(0.5, delay=8, channel='music2')
 
     show darcey worried
-    Darcey "Something doesn't feel right... These tracks have changed."
+    Darcey "Something doesn't feel right{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} These tracks have changed."
 
     show quinn sad
     Quinn "It appears that whoever we're tracking started running without direction."
 
 
     show iris worried
-    Iris "Injured? Or maybe running from something?"
+    Iris "Injured?{cps=4} {/cps}Or maybe running from something?"
 
     "Your team continues onward."
     
-    "A wind gust traveling through the forest hits them off guard. You manage to keep on your feet until it passes, arms crossed in front of you as a shield. You turn to check on everyone else. [darcey_name] keeps her ground. [quinn_name] is knocked over but not hurt."
-    "You notice somethig else. An underbrush shuddered, revealing nothing behind it. The path through opens into a small clearing."
-
-    "In the middle is a broken-down carriage."
+    "A wind gust traveling through the forest hits them off guard.{cps=4} {/cps}You manage to keep on your feet until it passes,{cps=4} {/cps}arms crossed in front of you as a shield."
+    "You turn to check on everyone else.{cps=4} {/cps}[darcey_name] keeps her ground.{cps=4} {/cps}[quinn_name] is knocked over but not hurt."
+    "You notice somethig else.{cps=4} {/cps}An underbrush shuddered,{cps=4} {/cps}revealing nothing behind it."
+    "The path through opens into a small clearing.{cps=4} {/cps}In the middle is a broken-down carriage."
 
     $ renpy.music.set_volume(0, delay=20, channel='music1')
     $ renpy.music.set_volume(0.9, delay=4, channel='music2')
@@ -1784,7 +1787,7 @@ label intro:
 
     $ renpy.music.set_volume(0.4, delay=20, channel='amb1')
     
-    "Its wooden frame is cracked as if it was struck with force. Pieces of torn cloth and scattered supplies litter the ground."
+    "Its wooden frame is cracked as if it was struck with force.{cps=4} {/cps}Pieces of torn cloth and scattered supplies litter the ground."
 
 
     show iris shocked
@@ -1797,7 +1800,7 @@ label intro:
 
     show quinn neutral
     show darcey neutral
-    Quinn "Nothing left, but someone was here recently."
+    Quinn "Nothing left,{cps=4} {/cps}but someone was here recently."
 
     #$ renpy.music.set_volume(0, delay=20, channel='music2')
     #$ renpy.music.set_volume(1, delay=4, channel='music3')
@@ -1806,7 +1809,7 @@ label intro:
     # kept for reference to copy into each menu choice
 
 
-    "You crouch next to a deep gash made in the carriage's wood, running your fingers along it.{cps=4} {/cps}This wasn't made by weather damage; this was cut."
+    "You crouch next to a deep gash made in the carriage's wood,{cps=4} {/cps}running your fingers along it.{cps=4} {/cps}This wasn't made by weather damage;{cps=4} {/cps}this was cut."
     show iris neutral
     menu:
         "Check inside the carriage.":
@@ -1826,11 +1829,11 @@ label intro:
 
 
         "Search the scattered supplies outside.":
-            "Carefully, you kneel next to the debris,{cps=4} {/cps}sifting through them."
+            "Carefully,{cps=4} {/cps}you kneel next to the debris,{cps=4} {/cps}sifting through them."
             "You inspect a torn bag that's spilling rations,{cps=4} {/cps}a broken lantern,{cps=4} {/cps}and a necklace with a strange emblem carved into its gem."
 
             show iris shocked
-            Iris "This symbol...{cps=4}{/cps} [quinn_name], does this look familiar?"
+            Iris "This symbol{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} [quinn_name],{cps=4} {/cps} does this look familiar?"
 
             $ renpy.music.set_volume(0, delay=20, channel='music2')
             $ renpy.music.set_volume(1, delay=4, channel='music3')
@@ -1848,12 +1851,12 @@ label intro:
                     "Maybe this could be of use if I have room in my bag."
                     #TODO: something here to get the item
                 "Leave the necklace":
-                    "It's best not to steal from them. The war is ending."
+                    "It's best not to steal from them.{cps=4} {/cps}The war is ending."
             jump inspect
    
     label inspect:
 
-    "You expand your inspection of the surrounding area for more clues, but keep [darcey_name] and [quinn_name] in sight."
+    "You expand your inspection of the surrounding area for more clues,{cps=4} {/cps}but keep [darcey_name] and [quinn_name] in sight."
 
     show quinn worried
 
@@ -1865,15 +1868,15 @@ label intro:
     show darcey shocked:
         subpixel True 
         xpos 1.0 
-        linear 0.13 xpos 0.52 
-    with Pause(0.23)
+        linear 0.80 xpos 0.52 
+    with Pause(0.85)
 
     show darcey worried
 
     Darcey "I thought there wasn't a single blade of grass you couldn't identify this side of the mountain."
 
     show darcey neutral
-    "She pokes around it then, feeling dread growing inside her, stabs through one of its leaves with her spear."
+    "She pokes around it then,{cps=4} {/cps}feeling dread growing inside her,{cps=4} {/cps}stabs through one of its leaves with her spear."
 
     stop music1 fadeout 1.0
     stop music2 fadeout 1.0
@@ -1881,10 +1884,10 @@ label intro:
     stop music4 fadeout 1.0
     stop music5 fadeout 1.0
 
-    "Rustling sounds echo but not from the trees. In union, it grows louder and louder {cps=4} {/cps}followed by a sudden sharp {i}snap{/i}."
+    "Rustling sounds echo but not from the trees.{cps=4} {/cps}In union,{cps=4} {/cps}it grows louder and louder {cps=4} {/cps}followed by a sudden sharp {i}snap{/i}."
 
     show darcey shocked
-    Darcey "What the—?!"
+    Darcey "What the{cps=4}-{/cps}{cps=4}!{/cps}{cps=4}?{/cps}"
 
     $ renpy.music.play("audio/music/04 Danger Winds.ogg", channel='music1', loop=True, synchro_start=True, fadein=1, tight=True)
     $ renpy.music.play("audio/music/04 Danger Leads.ogg", channel='music2', loop=True, synchro_start=True, fadein=1, tight=True)
@@ -1947,7 +1950,7 @@ label intro:
     $ renpy.music.set_volume(0.7, delay=0, channel='music7') # Timp 7
 
 
-    "Before anyone can react, thick, gnarled vines burst from the underbrush you entered through and wrapped around [darcey_name]'s leg. She is yanked off her feet within seconds."
+    "Before anyone can react,{cps=4} {/cps}thick,{cps=4} {/cps}gnarled vines burst from the underbrush you entered through and wrapped around [darcey_name]'s leg.{cps=4} {/cps}She is yanked off her feet within seconds."
 
 
  
@@ -1960,14 +1963,14 @@ label intro:
     $ renpy.music.set_volume(0, delay=2, channel='music5') # Trom 5
     $ renpy.music.set_volume(0, delay=2, channel='music7') # Timp 7
 
-    "The vine tightens as she protests, dragging her toward the dark mass of writhing roots forming.{cps=4} {/cps}The ground shifts. Something huge is moving beneath the mud."
+    "The vine tightens as she protests,{cps=4} {/cps}dragging her toward the dark mass of writhing roots forming.{cps=4} {/cps}The ground shifts.{cps=4} {/cps}Something huge is moving beneath the mud."
 
 
     show quinn sad at jumpAnim
-    Quinn "[darcey_name]! {cps=4} {/cps}It's a Hydra Vine!"
+    Quinn "[darcey_name]!{cps=4} {/cps}It's a Hydra Vine!"
 
     show iris angry
-    Iris "Hold on, {cps=4} {/cps}[darcey_name]!"
+    Iris "Hold on,{cps=4} {/cps}[darcey_name]!"
     show quinn angry
 
     play sfx1 arrow volume 1
@@ -1988,7 +1991,7 @@ label intro:
     show vine1 at CutOut
     pause(0.25)
     hide vine1
-    "[quinn_name] shoots his bow,{cps=4} {/cps} but the plant flings the arrow away."
+    "[quinn_name] shoots his bow,{cps=4} {/cps}but the plant flings the arrow away."
 
     play sfx1 knife_vine_1 volume 0.4
 
@@ -2016,7 +2019,7 @@ label intro:
             linear 0.10 rotate -180.0 
     with Pause(0.40)
 
-    "[darcey_name] struggles to hack the vine with her knife. Her blade barely cuts through the thick, pulsing roots. {cps=4} {/cps}Its coils tighten."
+    "[darcey_name] struggles to hack the vine with her knife.{cps=4} {/cps}Her blade barely cuts through the thick,{cps=4} {/cps}pulsing roots.{cps=4} {/cps}Its coils tighten."
 
     $ renpy.music.set_volume(0, delay=10, channel='music1') # Winds 1
     $ renpy.music.set_volume(0, delay=6, channel='music2') # Leads 2
@@ -2031,7 +2034,7 @@ label intro:
 
     menu:
         "Use the dagger to cut her free.":
-            "You lunge forward,{cps=4} {/cps}grabbing the nearest sharp object--a dagger made out of a shard of wood--to stab at the vine gripping [darcey_name]'s leg. You are desperate."
+            "You lunge forward,{cps=4} {/cps}grabbing the nearest sharp object{cps=4}-{/cps}{cps=4}-{/cps}a dagger made out of a shard of wood--to stab at the vine gripping [darcey_name]'s leg.{cps=4} {/cps}You are desperate."
 
             play sfx1 knife_vine_2 volume 0.7
 
@@ -2042,7 +2045,7 @@ label intro:
             pause(0.25)
             hide sword1
 
-            "The plant lets out a horrible, guttural {i}scream{/i} as sap sprays from the wound. {cps=4} {/cps}But the vine doesn't loosen."
+            "The plant lets out a horrible,{cps=4} {/cps}guttural {i}scream{/i} as sap sprays from the wound.{cps=4} {/cps}But the vine doesn't loosen."
 
             show vine2 at CutIn
             with vpunch
@@ -2054,7 +2057,7 @@ label intro:
 
             menu:
                 "Keep cutting anyway.":
-                    "You grit your teeth and keep hacking as the vines writhe. One of them wraps around your wrist."
+                    "You grit your teeth and keep hacking as the vines writhe.{cps=4} {/cps}One of them wraps around your wrist."
 
                     play sfx1 knife_vine_3 volume 0.7
 
@@ -2065,12 +2068,12 @@ label intro:
                     pause(0.25)
                     hide sword2
 
-                    "Acidic sap oozes onto your skin. A scream couldn't encapsulate the pain you jolt in."
+                    "Acidic sap oozes onto your skin.{cps=4} {/cps}A scream couldn't encapsulate the pain you jolt in."
 
-                    "[darcey_name] screams as she's yanked deeper, {cps=4} {/cps}halfway inside the plant's writhing mass."
+                    "[darcey_name] screams as she's yanked deeper,{cps=4} {/cps}halfway inside the plant's writhing mass."
 
                     show iris shocked
-                    "You try to focus on her. The mission. [quinn_name] and [plo_name]. Anything. Your vision fades."
+                    "You try to focus on her.{cps=4} {/cps}The mission.{cps=4} {/cps}[quinn_name] and [plo_name].{cps=4} {/cps}Anything.{cps=4} {/cps}Your vision fades."
 
                     "[quinn_name] is too late rushing in as the vines constrict with a sickening {i}snap{/i}."
 
@@ -2085,7 +2088,7 @@ label intro:
 
                     Iris "It keeps regenerating!"
 
-                    "[quinn_name]'s second arrow is already flying through the air at that shout. The vines twist in midair in coordinated response to use [darcey_name] as a shield."
+                    "[quinn_name]'s second arrow is already flying through the air at that shout.{cps=4} {/cps}The vines twist in midair in coordinated response to use [darcey_name] as a shield."
 
                     play sfx1 arrow volume 0.7
 
@@ -2114,18 +2117,18 @@ label intro:
                             linear 0.10 rotate -180.0 
                     with Pause(0.40)
 
-                    "[quinn_name] steps back to clear his head. He yells toward [player_name]."
+                    "[quinn_name] steps back to clear his head.{cps=4} {/cps}He yells toward [player_name]."
 
-                    Quinn "Since we can't pierce the vines, our only option is fire!"
+                    Quinn "Since we can't pierce the vines,{cps=4} {/cps}our only option is fire!"
 
                     #if
                     #you have fire starter good 
 
-                    "You remember packing a fire starter in your bag when you set off,{cps=4} {/cps}you take it out and toss it to [quinn_name]."
+                    "You remember seeing a fire starter in the remainds of the carriage earlier,{cps=4} {/cps}quickly you sprint over and shuffle through the grass to find it."
 
                     Iris "[quinn_name]!"
 
-                    "[quinn_name] catches it masterfully then quickly strikes his ready arrows aflame. Each one launches at the vine hydra in succession."
+                    "Without a word [quinn_name] catches it masterfully then quickly strikes his ready arrows aflame.{cps=4} {/cps}Each one launches at the vine hydra in succession."
 
                     play sfx1 arrow volume 0.7
                     play sfx2 ["<silence 0.15>", arrow] volume 0.5
@@ -2139,7 +2142,9 @@ label intro:
                     hide fire
                     pause(0.25)
 
-                    "The plant withers in pain as they hit. A horrifying screech echoes throughout the forest. [darcey_name] gets dropped in the process."
+                    "The plant withers in pain as they hit.{cps=4} {/cps}A horrifying screech echoes throughout the forest.{cps=4} {/cps}[darcey_name] gets dropped in the process."
+
+                    achieve hot
 
                     $ renpy.music.set_volume(0, delay=4, channel='music2') # Leads 2
                     $ renpy.music.set_volume(0.5, delay=4, channel='music3') # Str 3
@@ -2160,7 +2165,7 @@ label intro:
 
                     "[darcey_name] drops to the ground with a gasp,{cps=4} {/cps}coughing."
 
-                    Darcey "Ouch..."
+                    Darcey "Ouch{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
 
                     play sfx1 arrow volume 0.4
                     show arrow1 at CutIn
@@ -2171,7 +2176,7 @@ label intro:
                     hide arrow1
                     pause(0.25)
 
-                    "[quinn_name]'s last shot fells the viny creature, dead. He runs to Darcey."
+                    "[quinn_name]'s last shot fells the viny creature,{cps=4} {/cps}dead.{cps=4} {/cps}He runs to Darcey."
 
                     
                     window auto hide
@@ -2199,7 +2204,7 @@ label intro:
                     "[darcey_name] screams as she's yanked deeper,{cps=4} {/cps}halfway inside the plant's writhing mass."
 
                     show iris shocked
-                    Iris "No, no, no!"
+                    Iris "No,{cps=4} {/cps}no,{cps=4} {/cps}no!"
 
                     "[quinn_name] is too late rushing in as the vines constrict with a sickening {i}snap{/i}."
 
@@ -2238,7 +2243,7 @@ label intro:
             stop music7 fadeout 20
             
 
-            "The melody trembles at first in shaky adrenaline.{cps=4} {/cps}But it swiftly finds its tune, notes cutting through the fog like silver thread."
+            "The melody trembles at first in shaky adrenaline.{cps=4} {/cps}But it swiftly finds its tune,{cps=4} {/cps}notes cutting through the fog like silver thread."
 
             play sfx1 fireball volume 0.5
 
@@ -2285,9 +2290,7 @@ label intro:
                     $ renpy.music.set_volume(0.3, delay=6, channel='music5') # Cello 5
                     $ renpy.music.set_volume(0.3, delay=6, channel='music6') # Str 6
 
-                    "With your flute in hand, you steady your breath to focus."
-
-                    #TODO: music quick tune here
+                    "With your flute in hand,{cps=4} {/cps}you steady your breath to focus."
 
                     play sfx1 fireball_vine volume 0.6
                     
@@ -2298,9 +2301,9 @@ label intro:
                     pause(0.25)
                     hide magic2
 
-                    "The magic surges ferociously,{cps=4} {/cps}but, this time, it finds its mark."
+                    "The magic surges ferociously,{cps=4} {/cps}but,{cps=4} {/cps}this time,{cps=4} {/cps}it finds its mark."
 
-                    "The vines shriek and shrivel when struck. The burning parts turn to ash right before your eyes."
+                    "The vines shriek and shrivel when struck.{cps=4} {/cps}The burning parts turn to ash right before your eyes."
 
                     $ renpy.music.set_volume(0.5, delay=8, channel='music2') # Flute 2
                     $ renpy.music.set_volume(0.4, delay=4, channel='music3') # Winds 3
@@ -2318,7 +2321,7 @@ label intro:
 
                     "[darcey_name] drops to the ground with a gasp,{cps=4} {/cps}coughing."
 
-                    Darcey "Ouch..."
+                    Darcey "Ouch{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
 
                     play sfx1 arrow volume 0.4
 
@@ -2353,14 +2356,12 @@ label intro:
                     
 
                     show iris 
-                    "You shut your eyes. All your fear and desperation swell into the spell. It's unmanageable."
+                    "You shut your eyes.{cps=4} {/cps}All your fear and desperation swell into the spell.{cps=4} {/cps}It's unmanageable."
 
                     "It explodes from you."
                     show iris shocked
                     show quinn shocked
                     show darcey shocked
-
-                    #TODO: harsh flute sound here
 
                     stop music1 fadeout 1
                     stop music2 fadeout 1
@@ -2380,11 +2381,13 @@ label intro:
                     with vpunch
                     with hpunch
 
-                    "It isn't just the vines that disintegrates. The trees, nature, enemy's carriage. It's all gone to soot."
+                    "It isn't just the vines that disintegrates.{cps=4} {/cps}The trees,{cps=4} {/cps}nature,{cps=4} {/cps}enemy's carriage.{cps=4} {/cps}It's all gone to soot."
 
-                    "[quinn_name] and [darcey_name] are displaced. They lay unconscious meters from where they once were."
+                    "[quinn_name] and [darcey_name] are displaced.{cps=4} {/cps}They lay unconscious meters from where they once were."
 
-                    "Your last surge of raw mana detonates at your feet, hurling you hard to the ground. Everything starts to go black."
+                    "Your last surge of raw mana detonates at your feet,{cps=4} {/cps}hurling you hard to the ground.{cps=4} {/cps}Everything starts to go black."
+
+                    achieve boom
 
                     "The last thing you hear is rain."
 
@@ -2421,7 +2424,7 @@ label intro:
 
 
 
-    "[darcey_name] carefully dusts herself off. She winces when she rolls her red and sore ankle.{cps=4} {/cps}It still had the imprint of the vines."
+    "[darcey_name] carefully dusts herself off.{cps=4} {/cps}She winces when she rolls her red and sore ankle.{cps=4} {/cps}It still had the imprint of the vines."
 
     show darcey sad
     Darcey "Next time,{cps=4} {/cps}let's not follow the creepy footprints {i}directly into a monster's trap{/i}."
@@ -2432,16 +2435,16 @@ label intro:
     show iris neutral
     Quinn "What matters right now is that you're okay."
 
-    "The adrenaline still shivers down your spine as you glance back at the abandoned enemy carriage. You shack your head."
+    "The adrenaline still shivers down your spine as you glance back at the abandoned enemy carriage.{cps=4} {/cps}You shack your head."
 
     show iris angry
-    Iris "We need to get back to our carriage now, back on our mission."
+    Iris "We need to get back to our carriage now,{cps=4} {/cps}back on our mission."
 
-    "No one says anything after that.{cps=4} {/cps}You notice that the forest feels heavier {cps=4} {/cps}like something is still watching."
+    "No one says anything after that.{cps=4} {/cps}You notice that the forest feels heavier{cps=4} {/cps}like something is still watching."
     show iris neutral
     show darcey neutral
 
-    "[darcey_name] leans on you for support as she limps forward. You carefully help her navigate the drenched ground." 
+    "[darcey_name] leans on you for support as she limps forward.{cps=4} {/cps}You carefully help her navigate the drenched ground." 
 
 
     "[quinn_name] trails close behind with bow ready."
@@ -2496,7 +2499,7 @@ label intro:
 
     "The carriage comes back into view,{cps=4} {/cps}comforting your team after the chaos."
     
-    "[plo_name] got it back on the road. The sound of freefall rain combines with the sound of it pattering on the carriage's canvas roof."
+    "[plo_name] got it back on the road.{cps=4} {/cps}The sound of freefall rain combines with the sound of it pattering on the carriage's canvas roof."
 
     
     window auto hide
@@ -2525,7 +2528,7 @@ label intro:
     Plo "What happened out there?"
 
     show darcey sad
-    Darcey "Just encountered a clingy plant..."
+    Darcey "Just encountered a clingy plant{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
 
     "The exhaustion in [darcey_name]'s voice is clear as it trails off."
 
@@ -2559,9 +2562,9 @@ label intro:
     if inside_carriage == True:
         Plo "Come on,{cps=4} {/cps}everyone in.{cps=4} {/cps}Storytime will have to wait until we're free from this place's surprise."
     else:
-        Plo "[player_name],{cps=4} {/cps}appreciate the company, but you should ride inside this time."
+        Plo "[player_name],{cps=4} {/cps}appreciate the company,{cps=4} {/cps}but you should ride inside this time."
         Plo "Humans and rain don't mix too well,{cps=4} {/cps}last I checked."
-        "With a softer voice, he leans down."
+        "With a softer voice,{cps=4} {/cps}he leans down."
         show plo neutral:
             subpixel True 
             pos (1.0, 1.18) xrotate 0.0 rotate 0.0 
@@ -2571,7 +2574,7 @@ label intro:
             pos (0.99, 1.16) xrotate 0.0 rotate -9.0 
 
 
-        Plo "Keep an eye on [darcey_name], will ya?{cps=4} {/cps}She looks shaken up."
+        Plo "Keep an eye on [darcey_name],{cps=4} {/cps}will ya?{cps=4} {/cps}She looks shaken up."
 
     $ renpy.music.set_volume(0, delay=10, channel='music5') # Cello 5
     $ renpy.music.set_volume(0, delay=10, channel='music6') # Str 6
@@ -2593,23 +2596,23 @@ label intro:
     with Dissolve(1.5)
     pause(2.0)
 
-    Iris "[darcey_name]...{cps=4} {/cps} Are you sure you're okay?"
+    Iris "[darcey_name]{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} Are you sure you're okay?"
 
     show darcey sad
-    Darcey "Yeah, just sore.{cps=4} {/cps}I've had worse.{cps=4} {/cps}Probably."
+    Darcey "Yeah,{cps=4} {/cps}just sore.{cps=4} {/cps}I've had worse.{cps=4} {/cps}Probably."
 
     menu:
         "Crack a joke to lighten the mood.":
-            Iris "Personally, I don't think man-eating vines were the best welcome from the local flora."
+            Iris "Personally,{cps=4} {/cps}I don't think man-eating vines were the best welcome from the local flora."
             show darcey happy
-            Darcey "Who knows, this could be top service from enchanted forests. I'm flattered."
+            Darcey "Who knows,{cps=4} {/cps}this could be top service from enchanted forests.{cps=4} {/cps}I'm flattered."
             show quinn happy
-            Quinn "...I'll write a strongly-worded letter."
+            Quinn "{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}I'll write a strongly-worded letter."
             $ quinn_points += 10
             $ darcey_points += 5
 
         "Offer to keep an eye on [darcey_name].":
-            Iris "Rest. I'll keep watch until you're recovered.{cps=4} {/cps}You've done enough today."
+            Iris "Rest.{cps=4} {/cps}I'll keep watch until you're recovered.{cps=4} {/cps}You've done enough today."
             $ quinn_points += 10
             $ darcey_points += 5
             show darcey happy
@@ -2641,9 +2644,9 @@ label intro:
     stop amb1 fadeout 20
     stop amb2 fadeout 20
     
-    Quinn "Of course, apologies [player_name]."
+    Quinn "Of course,{cps=4} {/cps}apologies [player_name]."
 
-    "You and [quinn_name] head back to the carriage.{cps=4} {/cps}To your surprise, [plo_name] and [darcey_name] are working together to free the wheels."
+    "You and [quinn_name] head back to the carriage.{cps=4} {/cps}To your surprise,{cps=4} {/cps}[plo_name] and [darcey_name] are working together to free the wheels."
     
     window auto hide
     show plo angry at right:
@@ -2702,13 +2705,13 @@ label intro:
     "The sudden momentum sends [darcey_name] stumbling forward with a muttered curse,{cps=4} {/cps}but she manages to steady herself."
 
     show darcey angry
-    Darcey "You couldn't have been gentler, [plo_name]?"
+    Darcey "You couldn't have been gentler,{cps=4} {/cps}[plo_name]?"
 
     show plo happy
-    Plo "Bah. Gentle. We're not giving it a massage."
+    Plo "Bah.{cps=4} {/cps}Gentle.{cps=4} {/cps}We're not giving it a massage."
 
     show darcey neutral
-    Darcey "Whatever. et me back on this thing so I can fufill my duty."
+    Darcey "Whatever.{cps=4} {/cps}Let me back on this thing so I can fufill the mission."
     show darcey angry:
         subpixel True 
         xpos 0.98 
@@ -2716,9 +2719,9 @@ label intro:
     with Pause(0.40)
 
     show quinn sad
-    "[quinn_name] is the only one distracted from the small victory. His sharp gaze lingers on the treeline, where shadows shift amongst the trees."
+    "[quinn_name] is the only one distracted from the small victory.{cps=4} {/cps}His sharp gaze lingers on the treeline,{cps=4} {/cps}where shadows shift amongst the trees."
     
-    "Nevertheless, he gets in the carriage."
+    "Nevertheless,{cps=4} {/cps}he gets in the carriage."
     
     show iris neutral
     show quinn sad:
@@ -2738,7 +2741,7 @@ label intro:
     else:
         show plo neutral:
             flip
-        Plo "[player_name], appreciated the company,{cps=4} {/cps}but you should ride inside this time."
+        Plo "[player_name],{cps=4} {/cps}appreciated the company,{cps=4} {/cps}but you should ride inside this time."
         Plo "Humans and rain don't mix too well,{cps=4} {/cps}last I checked."
         Plo "Makes them all sick."
     show iris happy
@@ -2763,17 +2766,17 @@ label intro:
     $ renpy.music.set_volume(0.6, 4, 'music5')
     $ renpy.music.set_volume(0.7, 0.2, 'music1')
 
-    "You settle into the carriage. Rain drips from all three of you. It's nice to be inside."
+    "You settle into the carriage.{cps=4} {/cps}Rain drips from all three of you.{cps=4} {/cps}It's nice to be inside."
 
     if get_serious == False:
-        Iris "Remind me to thank the horse later.{cps=4} {/cps}If we survive this, it gets half my rations and a name."
+        Iris "Remind me to thank the horse later.{cps=4} {/cps}If we survive this,{cps=4} {/cps}it gets half my rations and a name."
 
         show darcey happy
         show quinn happy
-        Darcey "Better guarrentee a title and pension with how bumpy [plo_name] is driving."
+        Darcey "Better guarantee a title and pension with how bumpy [plo_name] is driving."
 
         show quinn neutral
-        Quinn "...Their pace is impressive."
+        Quinn "{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}Their pace is impressive."
 
         "You laugh faintly. "
 
@@ -2781,8 +2784,8 @@ label intro:
     else:
         """
         Time passes.
-        The weight of what's ahead gets to you. Time slows.
-        [quinn_name] and [darcey_name]'s voices blend into the background. Their words get muffle by your thoughts. You stare out the window, lost in the passing landscape.
+        The weight of what's ahead gets to you.{cps=4} {/cps}Time slows.
+        [quinn_name] and [darcey_name]'s voices blend into the background.{cps=4} {/cps}Their words get muffle by your thoughts.{cps=4} {/cps}You stare out the window,{cps=4} {/cps}lost in the passing landscape.
         Uncertainty of what's to come makes the world outside feel distant and cold.
         """
     "The forest outside morphs into rocky outcrops and mud slick ridges."
@@ -2843,9 +2846,9 @@ label intro:
     $ renpy.music.set_volume(1, 1, 'music7')
     $ renpy.music.set_volume(1, 1, 'music3')
 
-    "You, [darcey_name], and [quinn_name] throw your weight to the right side of the carriage as [plo_name] wrestles with the reins.{cps=4} {/cps}The horses whine in panic."
+    "You,{cps=4} {/cps}[darcey_name],{cps=4} {/cps}and [quinn_name] throw your weight to the right side of the carriage as [plo_name] wrestles with the reins.{cps=4} {/cps}The horses whine in panic."
 
-    "The carriage shudders{cps=4}.{/cps}{cps=4}.{/cps}{cps=4} {/cps} then steadies. Right on the edge of a cliff."
+    "The carriage shudders{cps=4}.{/cps}{cps=4}.{/cps}{cps=4} {/cps} then steadies.{cps=4} {/cps}Right on the edge of a cliff."
     
     "A few pebbles tumble off the edge below you into the fog."
 
@@ -2867,10 +2870,10 @@ label intro:
     "A long silence follows."
 
     show darcey neutral
-    Darcey "{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} That counts as our one 'slip down a hill', right?"
+    Darcey "{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps} That counts as our one 'slip down a hill',{cps=4} {/cps}right?"
 
     show quinn neutral
-    Quinn "Technically, we didn't {cps=4}fall{/cps}."
+    Quinn "Technically,{cps=4} {/cps}we didn't {cps=4}fall{/cps}."
     
     Iris "Let's count it to avoid another one."
 
@@ -2882,9 +2885,9 @@ label intro:
     stop amb1 fadeout 20
     play amb2 drizzle_carriage_amb fadein 5 volume 0.6
 
-    "Laughter breaks the tension. {cps=4} {/cps}For a moment, the cabin feels warmer."
+    "Laughter breaks the tension.{cps=4} {/cps}For a moment,{cps=4} {/cps}the cabin feels warmer."
 
-    "The rain begins to ease outside.{cps=4} {/cps}Trees lessen until disappearing altogether. The road evens out and trades mud for coarse, sandy ground."
+    "The rain begins to ease outside.{cps=4} {/cps}Trees lessen until disappearing altogether.{cps=4} {/cps}The road evens out and trades mud for coarse,{cps=4} {/cps}sandy ground."
 
     $ renpy.music.set_volume(0.8, 0.2, 'music1')
     $ renpy.music.set_volume(0.7, 4, 'music3')
@@ -2902,9 +2905,9 @@ label intro:
             $ renpy.music.set_volume(0.3, 4, 'music5')
 
             show darcey happy
-            Darcey "Good question! I assume today doesn't count."
+            Darcey "Good question!{cps=4} {/cps}I assume today doesn't count."
             show darcey neutral
-            Darcey "One time, I was escorting a food delivery load. The {cps=4}entire{/cps} cartload was raw fish and goat milk in glass jars..."
+            Darcey "One time,{cps=4} {/cps}I was escorting a food delivery load.{cps=4} {/cps}The {i}entire{/i} cartload was raw fish and goat milk in glass jars{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
             Darcey "...during the blistering summer."
 
             show quinn worried
@@ -2912,11 +2915,11 @@ label intro:
 
             show darcey happy
             show quinn neutral
-            Darcey "By the end of the second day, even vultures wouldn't come near.{cps=4} {/cps}Took one sniff and ran for the hills."
+            Darcey "By the end of the second day,{cps=4} {/cps}even vultures wouldn't come near.{cps=4} {/cps}Took one sniff and ran for the hills."
 
         "Ask [quinn_name] about his bow reflexes.":
             $ quinn_points += 5
-            Iris "[quinn_name],{cps=4} {/cps} how did you get so skilled with your bow?"
+            Iris "[quinn_name],{cps=4} {/cps}how did you get so skilled with your bow?"
 
             $ renpy.music.set_volume(0.7, 1, 'music2')
             $ renpy.music.set_volume(0, 4, 'music3')
@@ -2924,7 +2927,7 @@ label intro:
             $ renpy.music.set_volume(0.3, 4, 'music5')
 
             show quinn neutral
-            Quinn "Being half-elf has its advantages,{cps=4} {/cps}But that doesn't mean your naturally talented. Precision comes from years of practice."
+            Quinn "Being half-elf has its advantages,{cps=4} {/cps}But that doesn't mean your naturally talented.{cps=4} {/cps}Precision comes from years of practice."
             
             Quinn "I've spent countless hours training until it became second nature."
 
@@ -2950,13 +2953,28 @@ label intro:
             $ renpy.music.set_volume(0, 8, 'music3')
             $ renpy.music.set_volume(0, 8, 'music7')
 
-            "A memory rises in your mind--one you haven't thought of in years--as you listen to the rain."
+            "A memory rises in your mind{cps=4}-{/cps}{cps=4}-{/cps}one you haven't thought of in years{cps=4}-{/cps}{cps=4}-{/cps}as you listen to the rain."
 
             show black with Dissolve(1.5)
-            #this could be a lot cooler and more lore dropping if expanded
-            "The day you were drafted into the war.{cps=4} {/cps}You took your parents' place, barely an adult."
+            """
+            Ever since you were a child something about magic has always fascinated you,{cps=4} {/cps}but it always alluded you.
 
-            "It was a choice you don't regret."
+            Your father was a mage,{cps=4} {/cps}he left his tomes open at night and you'd always sneak in when he slept to study the sigils.
+
+            He always described to you the wonder of magic,{cps=4} {/cps}how he could feel it as he casted each spell. 
+            
+            Each one was like a spark of his own soul,{cps=4} {/cps}something so connected and dear to him. 
+
+            It was a wonderful thought to you.
+
+            Just a thought. 
+
+            No matter how hard you tried there was nothing that could stir up a feeling so wholly pure as that. 
+
+            It's a miracle you learned the basics.
+
+            You never minded being drafted in the end if it meant sparing your parents.
+            """
 
             hide black with Dissolve(1.5)
 
@@ -2971,7 +2989,7 @@ label intro:
     show quinn happy
     Quinn "Do you count the time in minutes or seconds?"
 
-    Iris "I'm starting to think we're cursed with all these bumps. Who cursed our trip?"
+    Iris "I'm starting to think we're jinxed with all these bumps.{cps=4} {/cps}Who cursed our trip?"
 
     show darcey angry
     Darcey "Probably [plo_name].{cps=4} {/cps}He keeps cursing under his breath at the carriage's every movement."
@@ -2987,9 +3005,9 @@ label intro:
 
     Darcey "Good!"
 
-    "The air grows drier.{cps=4} {/cps}The smell of the soggy forest floor gives way to the firmer, bristly smell of sandy terrain."
+    "The air grows drier.{cps=4} {/cps}The smell of the soggy forest floor gives way to the firmer,{cps=4} {/cps}bristly smell of sandy terrain."
 
-    "The sun comes out without plants to cover it. Cold is being replaced by the hotness of a desert."
+    "The sun comes out without plants to cover it.{cps=4} {/cps}Cold is being replaced by the hotness of a desert."
 
     jump Uphill
 
@@ -3011,7 +3029,7 @@ label intro:
 
     show quinn neutral
 
-    Quinn "The sun will soon set.{cps=4} {/cps}What would you like to do, [player_name]?"
+    Quinn "The sun will soon set.{cps=4} {/cps}What would you like to do,{cps=4} {/cps}[player_name]?"
 
     Iris "Let's camp here for now."
     show darcey happy
@@ -3025,7 +3043,6 @@ label intro:
     with Dissolve(1.5)
 
     pause(1.5)
-
     
     show plo neutral at left:
         subpixel True xpos 0.11
@@ -3043,20 +3060,24 @@ label intro:
 
     "You exit the carriage to find a good spot to rest."
 
-    "You spot a small outcropping of rock offers a natural break from the wind. A great place to set up camp."
+    "You spot a small outcropping of rock offers a natural break from the wind.{cps=4} {/cps}A great place to set up camp."
     
     "Your team gets there as night passes over the sunset."
 
     #TODO: add the tintshader
     show quinn happy
-    Quinn "Well, this is as good a place as any for the night."
+    Quinn "Well,{cps=4} {/cps}this is as good a place as any for the night."
 
     play sfx1 tent_place volume 0.3
     queue sfx1 campfire_start volume 0.3
 
-    "The party sets up camp beneath the outcropping.{cps=4} {/cps}[plo_name] unloads gear from the carriage, while [quinn_name] works on building a fire with careful, practiced hands."
+    "The party sets up camp beneath the outcropping.{cps=4} {/cps}[plo_name] unloads gear from the carriage,{cps=4} {/cps}while [quinn_name] works on building a fire with careful,{cps=4} {/cps}practiced hands."
 
     "The fire crackles softly as night settles.{cps=4} {/cps}The clouds part just enough for the faintest glow of moonlight to break through."
+
+    scene black with Dissolve (2.0)
+    "You have reached the end of the Day 1.{cps=4} {/cps}Look forward to new chapters soon!"
+    jump end
 
 ######################
 ## night
@@ -3284,7 +3305,7 @@ label bad_ending:
     " "
     window auto hide
     achieve badend
-    jump creditscreen
+    jump end
 
 #keep this the very last line of code##############################################
 label end:
