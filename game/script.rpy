@@ -1848,7 +1848,7 @@ label intro:
 
             menu:
                 "Pick up the necklace":
-                    "Maybe this could be of use if I have room in my bag."
+                    "You put the necklace into your pocket for now."
                     #TODO: something here to get the item
                 "Leave the necklace":
                     "It's best not to steal from them.{cps=4} {/cps}The war is ending."
