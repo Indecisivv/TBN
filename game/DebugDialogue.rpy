@@ -188,6 +188,9 @@ label DebugItemCheck:
     "Here's the inventory"
 
 
+    #show screen ItemTextScreen("TESTName", "TESTDescription")
+
+
 
     """
     Quietly you reach under the bunk to pull out your stuff.
@@ -195,6 +198,8 @@ label DebugItemCheck:
     """
 
     show screen Inventory_Screen
+
+    #show screen ItemTextScreen("", "")
 
     show screen close_inventory_button
 

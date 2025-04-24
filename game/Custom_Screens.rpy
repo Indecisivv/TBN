@@ -12,11 +12,16 @@ image InventoryBackground = Frame("gui/inventory bg.png")
 
 default ShowingInventoryButton = False
 
+default HoveredItemName = "DefautltName"
+default HoveredItemDesc = "DefaultDesc"
+
 #These essentially declare custom functions that you can apply to drag variables such as 'dragged, 'dropped', 'clicked', etc.
 #When you try to drop an item on a droppable, check if the matching coordinate in the_inventory is occuppied
 #Parse the droppables coordinate from either its location or name
 #https://www.renpy.org/doc/html/drag_drop.html
 init python:
+
+
     #Overloads dragged
     #Dragged is called when you release an item after dragging (when you have dropped a drag after dragging it)
     def drag_placed(dragged_items, dropped_on):
@@ -43,10 +48,16 @@ init python:
     #Remove item from the inventory when clicked if in the inventory
     def OnActivate(dragged_items):
         print("Activated!")
-        if (the_inventory.has_item(ItemDictionary[dragged_items[0]])):
+
+        #renpy.hide_screen("ItemTextScreen")
+
+        renpy.show_screen("ItemTextScreen",  name = ItemDictionary[dragged_items[0]].name, desc = ItemDictionary[dragged_items[0]].description)
+
+        renpy.restart_interaction()
+
+
+        if (the_inventory.has_item(ItemDictionary[dragged_items[0]])): 
             the_inventory.move_item(ItemDictionary[dragged_items[0]])
-
-
         else:
             print("FAILED TO REMOVE")
             return
@@ -57,6 +68,10 @@ init python:
     def OnRightClick():
         print("Screen Height: " + str(config.screen_height))
         print("Screen Width: " + str(config.screen_width))
+
+
+
+
 
     def HideScreen():
         renpy.hide_screen("inventory_button")
@@ -137,9 +152,21 @@ init python:
         DayTwoItemList[7].draggable = True
         
 
+screen ItemTextScreen(name, desc):
+
+    frame:
+        xalign 0.5 ypos 0.1
+        vbox: 
+            text "[name]"
+            text "[desc]"
+
+
+
+
 
 screen Inventory_Screen:
     modal True   
+
 
     frame:
         xalign 0.225
@@ -171,7 +198,7 @@ screen close_inventory_button():
     imagebutton:
         xalign 0.94
         yalign 0.94
-        auto "gui/inventory button active_%s.png" action [Hide("Inventory_Screen"), Show("inventory_button"), Hide("close_inventory_button")]
+        auto "gui/inventory button active_%s.png" action [Hide("Inventory_Screen"), Hide("ItemTextScreen"), Show("inventory_button"), Hide("close_inventory_button")]
 
 
 

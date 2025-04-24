@@ -18,10 +18,10 @@ default Cake = item("Cake", "A Hearty Pastry", 1, 1, 5, "R")
 default Item_Antidote = item("Antidote", "Cures Poison", 1, 1, 3, "R")
 default Item_Food = item("Food", "It's Food", 1, 1, 3, "R")
 default Item_Flute = item("Flute", "A Wind Instrument", 1, 1, 10, "R")
-default Item_Brand = item("Brand", "DEFAULT_DESCRIPTION", 1, 1, 10, "R")
+default Item_Brand = item("Brand", "Symbolic", 1, 1, 10, "R")
 default Item_Knife = item("Knife", "Good for cutting things", 1, 1, 10, "R")
 default Item_Health = item("Health Potion", "Heals People", 1, 1, 10, "R")
-default Item_Gold = item("Brand", "Money can used to purchase goods and services", 1, 1, 10, "R")
+default Item_Gold = item("Gold", "Money can used to purchase goods and services", 1, 1, 10, "R")
 default Item_Water = item("Water", "Hydrating", 1, 1, 10, "R")
 
 
