@@ -26,6 +26,7 @@ define Quinn = Character("[quinn_name]", who_color="#bca6eb")
 define Officer = Character("Officer", color="#ffffff")
 define Captain = Character("Captain", color="#ffffff")
 define Bunkmate = Character("Bunkmate", color="#ffffff")
+define Kobold = Character("Kobold", color="#ffffff")
 
 ################################################################################
 ##  Player Definition

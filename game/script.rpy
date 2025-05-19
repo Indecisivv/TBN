@@ -3076,13 +3076,93 @@ label intro:
     "The fire crackles softly as night settles.{cps=4} {/cps}The clouds part just enough for the faintest glow of moonlight to break through."
 
     scene black with Dissolve (2.0)
-    "You have reached the end of the Day 1.{cps=4} {/cps}Look forward to new chapters soon!"
-    jump end
+    #"You have reached the end of the Day 1.{cps=4} {/cps}Look forward to new chapters soon!"
+    #jump end
+
+    "Everyone finishes their meals and settles into the evening routine."
+
+    scene sand
+
+    "The desert wind has cooled now, but the sand still holds onto the day's warmth beneath your feet."
+
+    Quinn "The temperature is dropping fast. It will be cold by midnight."
+    Plo "I'm just glad we're not walking another hour in that heat."
+
+    "Everyone sits close around the fire. The occasional crack of embers and the soft rustle of someone shifting their cloak."
+
+    Iris "We'll take turns watching tonight. I'll go first."
+
+    Darcey "You sure? You could make Plo do it, he hasn't done much but sit around all day."
+
+    Plo "Bah!"
+
+    Iris "I've got enough in me to last a while still."
+
+    "The others nod and begin rolling out their tents beneath the natural stone overhang. You adjust your posture and settle in by the fire, watching the flicker of flame dance against the dark horizon."
+
+    "The stars blink to life, one by one."
 
 ######################
-## night
+## night 1
 ######################  
-    label night:
+    label night_1:
+
+    #TODO: how to make this feel like a long time in between? idk
+    "Your eyes get tired."
+    "Eventually, it's time to wake someone for second shift."
+
+    menu:
+        "Wake Darcey":
+            $ second_watch = "darcey"
+
+            if darcey_tired == True:
+                $ darcey_points -= 5
+                "You gently nudge Darcey awake."
+                Darcey "The only thing worse than being attacked by a living plant... night shift."
+                Darcey "Fine, but I'm going to hold this against you forever. Or until breakfast."
+                jump watch_tired
+            elif darcey_tired == False:
+                $ darcey_points += 5
+                "You gently nudge Darcey awake."
+                Darcey "Ugh... yeah, yeah, I'm up." 
+                Darcey "Go to sleep, I'll take night watch."
+                jump catch_thief
+
+        "Wake Plo":
+            $ second_watch = "plo"
+
+            if plo_tired == True:
+                $ plo_points -= 5
+                "You gently nudge Plo awake."
+                Plo "{i}ZzzZZzz{/i}"
+                "You nudge Plo again."
+                Plo "Mmm, it's in the carriage."
+                "You nudge Plo... again."
+                Plo "...[player_name]?"
+                "He rubs his eyes."
+                Plo "Mmm, I can take night watch."
+                jump watch_tired
+            elif plo_tired == False:
+                "You gently nudge Plo awake."
+                Plo "...Nope. I'm asleep. This is a dream."
+                "You nudge Plo again."
+                Plo "Fine, fine! I'm up [player_name]! I'm getting up."
+                Plo "Get some shut eye."
+                jump catch_thief
+                
+        "Wake Quinn":
+            $ second_watch = "quinn"
+
+            if quinn_tired == True:
+                "You gently nudge Quinn, he rubs his eyes and sits up."
+                Quinn "[player_name]?"
+                Quinn "It's alright. I'll manage. Get some rest."
+                jump watch_tired
+            elif quinn_tired == False:
+                $ quinn_points += 5
+                "You gently nudge Quinn, he sits up and immediately understands."
+                Quinn "I will keep watch. Sleep well, [player_name]."
+                jump catch_thief
 
 ################################################################################
 ## █▀▄ ▄▀▄ ▀▄▀   ▀█▀ █ █ █ █▀█ 
@@ -3090,20 +3170,116 @@ label intro:
 ################################################################################
 
 ######################
-## early morning
+## catch thief
 ######################  
+    label catch_thief:
+
+    scene black with Dissolve(1.5)
+    pause 1.0
+
+    "You drift into sleep, the sounds of the night slipping away..."
+
+    centered "Day 2"
+
+    "You wake to the sound of frantic footsteps and the startled voices of your companions."
+
+    "You run out to see what the commotion is."
+
+    Iris "What is going on?"
+
+    if second_watch == "quinn":
+        "While you were still asleep I caught sight of a thief going through our carriage."
+    elif second_watch == "plo":
+        "Perfect timing, [player_name]. Found this little sucker helping themself to our things!"
+    elif second_watch == "darcey":
+        "I caught this thief red handed!"
+
+    Kobold "P-please, don't hurt me! I only meant-"
+
+    "A small, trembling kobold clutches a carriage wheel, eyes flicking between the angry faces surrounding him."
+
+    "He is backed against a tree with Darcey pointing her spear, pinning him in."
+
+    Darcey "Save it! Who would trust a thief?"
+
+    Iris "Explain yourself. Why do you have our wheel?"
+
+    Kobold "I—I'm sorry! My clan… we're starving." 
+    
+    Kobold "I thought... I thought if I took just one wheel, I could trade it for food."
+
+    Quinn "You could have asked. You know there are other ways—"
+
+    Plo "Ask? In the middle of the desert at midnight? You'd be lucky if we handed you a loaf of stale bread."
+
+    Darcey "Save your excuses. You're lucky I didn't spear you where you stood."
+
+    Kobold "No spear, please! I'm truly sorry! I'll make it right—"
+
+    "He bows his head and trembles. For a moment, it seems the tension might ease."
+
+    menu:
+        "Trade food for the wheel back":
+            $ quinn_points += 3
+            Iris "We can give you some rations, just hand the wheel over."
+            Kobold "Rations? Really? Thank you! Thank you—"
+            "Darcey steps forward, fishing a few pieces of jerky from her pack."
+            Darcey "What? Why would we do that?"
+            Iris "Darcey."
+            Darcey "Here. Take this. But promise you won't come near us again."
+            kobold "I promise! Thank you!"
+            "As Darcey turns to hand over the food, the kobold's eyes flick to the wheel. He scoops it up and bolts without a word."
+            Darcey "HEY!"
+            "You shout after him, but he's already halfway down a sandy slope."
+            #TODO: animation here, make it feel engaging
+            "The kobold trips over a rock, and the wheel tumbles from his arms."
+            "You hear the sickening snap as the wheel splinters."
+            Kobold "Gah!"
+            Plo "OUR WHEEL!"
+            "Quinn aims his bow at the fleeing kobold, hesitating and lowering it."
+            Quinn "No use, capturing him won't un-break the wheel."
+            "The kobold, tearful and frantic, scrambles to his feet and scurries off into the darkness."
+            Darcey "That little liar! I knew we couldn't trust a thief!"
+
+        "Intimidate him into giving it back":
+            $ darcey_points += 3
+            $ plo_points += 3
+            Iris "Drop it and speak quickly, or you'll regret being caught."
+            Kobold "Y-yes! Yes, I'll drop it—please!"
+            "He drops the wheel and steps back, nearly tripping over his own feet."
+            #TODO: animation, him backing away
+            "As he turns to flee, the weight of the wheel sends him tumbling."
+            "You hear the wheel splintering as it lands on a stone."
+            Kobold "No! My wheel—"
+            Plo "{i}OUR{/i} wheel!"
+            Darcey "Get back here!"
+            "Quinn aims his bow at the fleeing kobold, hesitating and lowering it."
+            Quinn "No use, capturing him won't un-break the wheel."
+            "The kobold, tearful and frantic, scrambles to his feet and scurries off into the darkness."
+            
+
+    "Dawn breaks over the sand, and the party gathers around the shattered wheel."
+
+    #TODO: Show the wheel cg
+
+    Quinn "That wheel... it's completely shattered."
+
+    Plo "We have to do something, no way am I walking in that {i}sand{/i}."
+
+    Darcey "We'll make it work. We've faced worse."
+
+    "As the sun climbs higher, the group packs up camp, ready to face the long day ahead."
+    "The kobold's fate unknown, but their own journey must continue."
+
+        
 
 ######################
-## head out by foot
-###################### 
+## slept in
+######################  
+    #label watch_tired:
 
-######################
-## traveling merchant
-###################### 
 
-######################
-## arrive in town
-###################### 
+
 
 
 
@@ -3122,190 +3298,190 @@ label intro:
 ######################
 ## Rolling Credits
 ###################### 
-label finalcredits:
-    scene black
-    show screen creditscreen
-    pause 100 # or however long it takes to scroll through in a reasonable speed
-    pause
-    jump end
-screen creditscreen:
-    vbox:
-        xsize 1000 # horizontal size of the credits
-        ysize 2500 # how much vertical space your rolling credits take.
-        xalign 0.5
-        yalign 0.0
-        at transform:
-            subpixel True
-            easein 50: # or however long it takes to scroll through in a reasonable speed
-                yalign 1.0
+    label finalcredits:
+        scene black
+        show screen creditscreen
+        pause 100 # or however long it takes to scroll through in a reasonable speed
+        pause
+        jump end
+    screen creditscreen:
         vbox:
-            ysize 1000 # enter vertical resolution, so that it starts with an empty screen
-        add "images/logo w.png": # adding a picture in-between the text
-            zoom 0.75
+            xsize 1000 # horizontal size of the credits
+            ysize 2500 # how much vertical space your rolling credits take.
             xalign 0.5
-        text "Don't Shoot the Messenger":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 25
-            xalign 0.5
-        text "version [config.version]":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 25
-            xalign 0.5
-        vbox:
-            ysize 250 # some empty space in between
-        text "Sound Design":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 55
-            xalign 0.5
-        text "a_sett":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 35
-            xalign 0.5
-        text "Andrew Shirey":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 35
-            xalign 0.5
-        vbox:
-            ysize 150 # some empty space in between
-        text "Music":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 45
-            xalign 0.5
-        text "a_sett":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 35
-            xalign 0.5
-        vbox:
-            ysize 150 # some empty space in between
-        text "Programming":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 55
-            xalign 0.5
-        text "William Rockwell":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 35
-            xalign 0.5
-        text "indecisiv":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 35
-            xalign 0.5
-        vbox:
-            ysize 150 # some empty space in between
-        text "Art":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 55
-            xalign 0.5
-        text "Revierr":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 35
-            xalign 0.5
-        vbox:
-            ysize 150 # some empty space in between
-        text "Writing":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 55
-            xalign 0.5
-        text "indecisiv":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 35
-            xalign 0.5
-        text "KhaosPhoenix":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 35
-            xalign 0.5
-        vbox:
-            ysize 150 # some empty space in between
-        text "Special Thanks":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 55
-            xalign 0.5
-        text "Arimia":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 35
-            xalign 0.5
-        text "bobcgames":
-            font "Bellefair-Regular.ttf"
-            color "#ffffff"
-            size 35
-            xalign 0.5
-        vbox:
-            ysize 350 # some empty space in between
-        add "images/rp logo bw.png": # adding a picture in-between the text
-            zoom 0.55
-            xalign 0.5
-        text "Made with Ren'Py":
-            font "Bellefair-Regular.ttf"
-            #bold True
-            size 35
-            xalign 0.5
-        text "Version [renpy.version_only]":
-            font "Bellefair-Regular.ttf"
-            #bold True
-            size 25
-            xalign 0.5
-        vbox:
-            ysize 650 # some empty space in between
-        add "images/letter.png": # adding a picture in-between the text
-            zoom 2.0
-            xalign 0.5
-        text "The End":
-            font "Bellefair-Regular.ttf"
-            color "#7c3131"
-            bold True
-            size 100
-            xalign 0.5
-        vbox:
-            ysize 300 # some empty space in between
+            yalign 0.0
+            at transform:
+                subpixel True
+                easein 50: # or however long it takes to scroll through in a reasonable speed
+                    yalign 1.0
+            vbox:
+                ysize 1000 # enter vertical resolution, so that it starts with an empty screen
+            add "images/logo w.png": # adding a picture in-between the text
+                zoom 0.75
+                xalign 0.5
+            text "Don't Shoot the Messenger":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 25
+                xalign 0.5
+            text "version [config.version]":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 25
+                xalign 0.5
+            vbox:
+                ysize 250 # some empty space in between
+            text "Sound Design":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 55
+                xalign 0.5
+            text "a_sett":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 35
+                xalign 0.5
+            text "Andrew Shirey":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 35
+                xalign 0.5
+            vbox:
+                ysize 150 # some empty space in between
+            text "Music":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 45
+                xalign 0.5
+            text "a_sett":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 35
+                xalign 0.5
+            vbox:
+                ysize 150 # some empty space in between
+            text "Programming":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 55
+                xalign 0.5
+            text "William Rockwell":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 35
+                xalign 0.5
+            text "indecisiv":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 35
+                xalign 0.5
+            vbox:
+                ysize 150 # some empty space in between
+            text "Art":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 55
+                xalign 0.5
+            text "Revierr":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 35
+                xalign 0.5
+            vbox:
+                ysize 150 # some empty space in between
+            text "Writing":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 55
+                xalign 0.5
+            text "indecisiv":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 35
+                xalign 0.5
+            text "KhaosPhoenix":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 35
+                xalign 0.5
+            vbox:
+                ysize 150 # some empty space in between
+            text "Special Thanks":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 55
+                xalign 0.5
+            text "Arimia":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 35
+                xalign 0.5
+            text "bobcgames":
+                font "Bellefair-Regular.ttf"
+                color "#ffffff"
+                size 35
+                xalign 0.5
+            vbox:
+                ysize 350 # some empty space in between
+            add "images/rp logo bw.png": # adding a picture in-between the text
+                zoom 0.55
+                xalign 0.5
+            text "Made with Ren'Py":
+                font "Bellefair-Regular.ttf"
+                #bold True
+                size 35
+                xalign 0.5
+            text "Version [renpy.version_only]":
+                font "Bellefair-Regular.ttf"
+                #bold True
+                size 25
+                xalign 0.5
+            vbox:
+                ysize 650 # some empty space in between
+            add "images/letter.png": # adding a picture in-between the text
+                zoom 2.0
+                xalign 0.5
+            text "The End":
+                font "Bellefair-Regular.ttf"
+                color "#7c3131"
+                bold True
+                size 100
+                xalign 0.5
+            vbox:
+                ysize 300 # some empty space in between
 
 ######################
 ## Bad Ending
 ###################### 
-label bad_ending:
+    label bad_ending:
 
-    stop amb1 fadeout 6
-    stop amb2 fadeout 6
-    stop amb3 fadeout 6
+        stop amb1 fadeout 6
+        stop amb2 fadeout 6
+        stop amb3 fadeout 6
 
-    stop music1 fadeout 10
-    stop music2 fadeout 10
-    stop music3 fadeout 10
-    stop music4 fadeout 10
-    stop music5 fadeout 10
-    stop music6 fadeout 10
-    stop music7 fadeout 10
+        stop music1 fadeout 10
+        stop music2 fadeout 10
+        stop music3 fadeout 10
+        stop music4 fadeout 10
+        stop music5 fadeout 10
+        stop music6 fadeout 10
+        stop music7 fadeout 10
 
-    scene black with Dissolve(1.5)
-    if sprite_image == "f_iris":
-        show game_over_f
+        scene black with Dissolve(1.5)
+        if sprite_image == "f_iris":
+            show game_over_f
+            with Dissolve(1.5)
+        elif sprite_image == "m_iris":
+            show game_over_m
+            with Dissolve(1.5)
+
+        show text "{size=110}Game Over{/size}":
+            subpixel True ypos 0.12 
         with Dissolve(1.5)
-    elif sprite_image == "m_iris":
-        show game_over_m
-        with Dissolve(1.5)
-
-    show text "{size=110}Game Over{/size}":
-        subpixel True ypos 0.12 
-    with Dissolve(1.5)
-    " "
-    window auto hide
-    achieve badend
-    jump end
+        " "
+        window auto hide
+        achieve badend
+        jump end
 
 #keep this the very last line of code##############################################
 label end:
