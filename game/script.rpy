@@ -3079,28 +3079,29 @@ label intro:
     #"You have reached the end of the Day 1.{cps=4} {/cps}Look forward to new chapters soon!"
     #jump end
 
-    "Everyone finishes their meals and settles into the evening routine."
+    "After finishing their meals, everyone settles into their evening routine."
 
     scene sand
 
-    "The desert wind has cooled now, but the sand still holds onto the day's warmth beneath your feet."
+    "The desert wind has cooled with hints of the day's warmth beneath your feet."
 
     Quinn "The temperature is dropping fast. It will be cold by midnight."
-    Plo "I'm just glad we're not walking another hour in that heat."
+    Plo "Finally, a break from the heat."
 
-    "Everyone sits close around the fire. The occasional crack of embers and the soft rustle of someone shifting their cloak."
+    "You join the team around the fire. There's an occasional crack of embers and soft rustle of someone's shifting cloak."
 
-    Iris "We'll take turns watching tonight. I'll go first."
+    Iris "We'll take turns on watch tonight. I'll go first."
 
-    Darcey "You sure? You could make Plo do it, he hasn't done much but sit around all day."
+    Darcey "You sure? [plo_name] could do it. He hasn't done much but sit around all day."
 
     Plo "Bah!"
 
-    Iris "I've got enough in me to last a while still."
+    Iris "I'm sure. I've got enough energy left in me."
 
-    "The others nod and begin rolling out their tents beneath the natural stone overhang. You adjust your posture and settle in by the fire, watching the flicker of flame dance against the dark horizon."
+    "The others, after deciding not to argue, settle in their ready-made tents beneath the natural stone overhang." 
+    "You adjust your posture by the fire. The flickers of flame dance against the dark horizon."
 
-    "The stars blink to life, one by one."
+    "You watch the stars blink to life, one by one."
 
 ######################
 ## night 1
@@ -3108,8 +3109,8 @@ label intro:
     label night_1:
 
     #TODO: how to make this feel like a long time in between? idk
-    "Your eyes get tired."
-    "Eventually, it's time to wake someone for second shift."
+    "Your eyes start to droop."
+    "Eventually, it's time to wake someone for the second shift."
 
     menu:
         "Wake Darcey":
@@ -3117,15 +3118,18 @@ label intro:
 
             if darcey_tired == True:
                 $ darcey_points -= 5
-                "You gently nudge Darcey awake."
-                Darcey "The only thing worse than being attacked by a living plant... night shift."
+                "You gently nudge [darcey_name] awake."
+                Iris "Second shift. You're next."
                 Darcey "Fine, but I'm going to hold this against you forever. Or until breakfast."
+                "[darcey_name] sighs."
+                Darcey "The only thing worse than being attacked by a living plant... night shift."
                 jump watch_tired
             elif darcey_tired == False:
                 $ darcey_points += 5
-                "You gently nudge Darcey awake."
-                Darcey "Ugh... yeah, yeah, I'm up." 
-                Darcey "Go to sleep, I'll take night watch."
+                "You gently nudge [darcey_name] awake."
+                Iris "Second shift. You're next."
+                Darcey "Yeah, yeah, I'm up." 
+                Darcey "Leave it to me. Get some rest, [player_name]."
                 jump catch_thief
 
         "Wake Plo":
@@ -3133,35 +3137,38 @@ label intro:
 
             if plo_tired == True:
                 $ plo_points -= 5
-                "You gently nudge Plo awake."
+                "You gently nudge [plo_name] awake."
                 Plo "{i}ZzzZZzz{/i}"
-                "You nudge Plo again."
+                "You nudge [plo_name] again."
                 Plo "Mmm, it's in the carriage."
-                "You nudge Plo... again."
+                "You nudge [plo_name]... again."
                 Plo "...[player_name]?"
                 "He rubs his eyes."
-                Plo "Mmm, I can take night watch."
+                Iris "Second shift. You're next."
+                Plo "Mmm, can do. Can do."
                 jump watch_tired
             elif plo_tired == False:
-                "You gently nudge Plo awake."
+                "You gently nudge [plo_name] awake."
                 Plo "...Nope. I'm asleep. This is a dream."
-                "You nudge Plo again."
+                "You nudge [plo_name] again."
                 Plo "Fine, fine! I'm up [player_name]! I'm getting up."
-                Plo "Get some shut eye."
+                Iris "Second shift. You're next."
+                Plo "Yeah, yeah. Get some shut eye for me."
                 jump catch_thief
                 
         "Wake Quinn":
             $ second_watch = "quinn"
 
             if quinn_tired == True:
-                "You gently nudge Quinn, he rubs his eyes and sits up."
+                "You gently nudge [quinn_name]. He rubs his eyes and sits up."
                 Quinn "[player_name]?"
-                Quinn "It's alright. I'll manage. Get some rest."
+                Iris "Second shift. You're next."
+                Quinn "I can manage that. Sleep well."
                 jump watch_tired
             elif quinn_tired == False:
                 $ quinn_points += 5
-                "You gently nudge Quinn, he sits up and immediately understands."
-                Quinn "I will keep watch. Sleep well, [player_name]."
+                "You gently nudge [quinn_name]. He sits up and immediately understands."
+                Quinn "I'll keep watch. Sleep well, [player_name]."
                 jump catch_thief
 
 ################################################################################
@@ -3177,18 +3184,18 @@ label intro:
     scene black with Dissolve(1.5)
     pause 1.0
 
-    "You drift into sleep, the sounds of the night slipping away..."
+    "You drift off to sleep. The sounds of the night slip away..."
 
     centered "Day 2"
 
-    "You wake to the sound of frantic footsteps and the startled voices of your companions."
+    "Frantic footsteps and the startled voices of your companions wake you up."
 
-    "You run out to see what the commotion is."
+    "You run out to see what happened."
 
     Iris "What is going on?"
 
     if second_watch == "quinn":
-        "While you were still asleep I caught sight of a thief going through our carriage."
+        "While you were asleep, I found a thief going through our carriage!"
     elif second_watch == "plo":
         "Perfect timing, [player_name]. Found this little sucker helping themself to our things!"
     elif second_watch == "darcey":
@@ -3196,80 +3203,81 @@ label intro:
 
     Kobold "P-please, don't hurt me! I only meant-"
 
-    "A small, trembling kobold clutches a carriage wheel, eyes flicking between the angry faces surrounding him."
+    "A small, trembling kobold clutches a carriage wheel, your carriage's wheel, eyes flicking between the angry faces surrounding him."
 
-    "He is backed against a tree with Darcey pointing her spear, pinning him in."
+    "[darcey_name] is pointing her spear at him, pinning him against a tree."
 
     Darcey "Save it! Who would trust a thief?"
 
     Iris "Explain yourself. Why do you have our wheel?"
 
-    Kobold "I—I'm sorry! My clan… we're starving." 
+    Kobold "I—I'm sorry! My clan- we're starving!" 
     
-    Kobold "I thought... I thought if I took just one wheel, I could trade it for food."
+    Kobold "I thought... I thought, if I took just one wheel, I could trade it for food."
 
-    Quinn "You could have asked. You know there are other ways—"
+    Quinn "There are other ways besides stealing. Asking for example."
 
-    Plo "Ask? In the middle of the desert at midnight? You'd be lucky if we handed you a loaf of stale bread."
+    Plo "In the middle of the desert at midnight? Hah, you'd be lucky if we handed you a loaf of stale bread."
 
     Darcey "Save your excuses. You're lucky I didn't spear you where you stood."
 
     Kobold "No spear, please! I'm truly sorry! I'll make it right—"
 
-    "He bows his head and trembles. For a moment, it seems the tension might ease."
+    "The kobold bows his head and trembles. For a moment, it seems the tension might ease."
 
     menu:
         "Trade food for the wheel back":
             $ quinn_points += 3
             Iris "We can give you some rations, just hand the wheel over."
             Kobold "Rations? Really? Thank you! Thank you—"
-            "Darcey steps forward, fishing a few pieces of jerky from her pack."
             Darcey "What? Why would we do that?"
-            Iris "Darcey."
+            Iris "[darcey_name]."
+            "[darcey_name] steps forward towards the kobold, fishing a few pieces of jerky from her pack."
             Darcey "Here. Take this. But promise you won't come near us again."
             kobold "I promise! Thank you!"
-            "As Darcey turns to hand over the food, the kobold's eyes flick to the wheel. He scoops it up and bolts without a word."
+            "[darcey_name] hands over the food and reaches for the wheel. 
+            "The kobold has other plans. He quickly scoops up the wheel once he has the food secured and bolts without a word."
             Darcey "HEY!"
             "You shout after him, but he's already halfway down a sandy slope."
             #TODO: animation here, make it feel engaging
-            "The kobold trips over a rock, and the wheel tumbles from his arms."
-            "You hear the sickening snap as the wheel splinters."
+            "The kobold trips over a rock. The wheel tumbles from his arms."
+            "You hear the sickening snap as the wheel splinters against a nearby stone."
             Kobold "Gah!"
             Plo "OUR WHEEL!"
-            "Quinn aims his bow at the fleeing kobold, hesitating and lowering it."
-            Quinn "No use, capturing him won't un-break the wheel."
-            "The kobold, tearful and frantic, scrambles to his feet and scurries off into the darkness."
+            "[quinn_name] aims his bow at the fleeing kobold, hesitates, then lowers it."
+            "The kobold disappears into the darkness."
+            Quinn "No use. Capturing him won't un-break the wheel."
             Darcey "That little liar! I knew we couldn't trust a thief!"
 
         "Intimidate him into giving it back":
             $ darcey_points += 3
             $ plo_points += 3
             Iris "Drop it and speak quickly, or you'll regret being caught."
-            Kobold "Y-yes! Yes, I'll drop it—please!"
-            "He drops the wheel and steps back, nearly tripping over his own feet."
+            Kobold "Y-yes! Yes, I'll drop it! Please!"
+            "He steps back as if to find a suitable distance to lay down the wheel."
             #TODO: animation, him backing away
-            "As he turns to flee, the weight of the wheel sends him tumbling."
+            "The kobold has other plans. As he turns to flee, the weight of the wheel sends him tumbling and escapes his grip."
             "You hear the wheel splintering as it lands on a stone."
             Kobold "No! My wheel—"
             Plo "{i}OUR{/i} wheel!"
             Darcey "Get back here!"
-            "Quinn aims his bow at the fleeing kobold, hesitating and lowering it."
-            Quinn "No use, capturing him won't un-break the wheel."
-            "The kobold, tearful and frantic, scrambles to his feet and scurries off into the darkness."
+            "[quinn_name] aims his bow at the fleeing kobold, hesitates, then lowers it."
+            Quinn "No use. Capturing him won't un-break the wheel."
+            "The kobold disappears into the darkness."
             
 
-    "Dawn breaks over the sand, and the party gathers around the shattered wheel."
+    "Dawn breaks over the sand as the party gathers around the shattered wheel."
 
     #TODO: Show the wheel cg
 
-    Quinn "That wheel... it's completely shattered."
+    Quinn "The wheel... it's completely shattered."
 
-    Plo "We have to do something, no way am I walking in that {i}sand{/i}."
+    Plo "Is there a way to fix? No way am I walking all the way in that {i}sand{/i}."
 
     Darcey "We'll make it work. We've faced worse."
 
-    "As the sun climbs higher, the group packs up camp, ready to face the long day ahead."
-    "The kobold's fate unknown, but their own journey must continue."
+    "The group packs up camp as the sun climbs higher, ready to face the long day ahead."
+    "The kobold's fate is unknown, but their own journey must continue."
 
         
 
