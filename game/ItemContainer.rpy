@@ -15,14 +15,14 @@ default Cake = item("Cake", "A Hearty Pastry", 1, 1, 5, "R")
 
 #Use Default to define items, not Define, since items can change
 #Should probably move all this to its own file
-default Item_Antidote = item("Antidote", "Cures Poison", 1, 1, 3, "R")
-default Item_Food = item("Food", "It's Food", 1, 1, 3, "R")
-default Item_Flute = item("Flute", "A Wind Instrument", 1, 1, 10, "R")
-default Item_Brand = item("Brand", "Symbolic", 1, 1, 10, "R")
-default Item_Knife = item("Knife", "Good for cutting things", 1, 1, 10, "R")
-default Item_Health = item("Health Potion", "Heals People", 1, 1, 10, "R")
-default Item_Gold = item("Gold", "Money can used to purchase goods and services", 1, 1, 10, "R")
-default Item_Water = item("Water", "Hydrating", 1, 1, 10, "R")
+default Item_Antidote = item("Antidote", "Poison antidote. You never know what you'll get into, might need it.", 1, 1, 3, "R")
+default Item_Food = item("Food", "It's Food. Nothing fancy but it's enough to keep you going.", 1, 1, 3, "R")
+default Item_Flute = item("Flute", "Your most trusted item. A vessel capable of channeling magical power... that of which you have little of.", 1, 1, 10, "R")
+default Item_Brand = item("Brand", "A brand that carries the mark of the army, you use it to stamp letters.", 1, 1, 10, "R")
+default Item_Knife = item("Knife", "A knife. Good for cutting things.", 1, 1, 10, "R")
+default Item_Health = item("Health Potion", "Health potion. Can bring someone back from the brink.", 1, 1, 10, "R")
+default Item_Gold = item("Gold", "Gold. Makes the world go round.", 1, 1, 10, "R")
+default Item_Water = item("Water", "Just water.", 1, 1, 10, "R")
 
 
 #Drag objects with names that correspond to a specific item
