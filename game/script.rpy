@@ -19,6 +19,9 @@ default get_serious = False
 default quiet = 0
 default inside_carriage = False
 default magic_score = 0
+default seen_plo_inventory = False
+default first_watch_failed = False
+default solo_watch = True
 
 #character name values
 default plo_name = "???"
@@ -38,7 +41,7 @@ define sprite_image = "f_iris"
 ##   ███  █   █ █   █ █████   █████   █   █   █ █   █   █   
 ################################################################################
 label start:
-    jump test1
+    #jump test1
     
     stop music fadeout 8
 
@@ -1241,6 +1244,7 @@ label intro:
             Plo "Here,{cps=4} {/cps}take a look if you are so curious."
             "He takes his bag and tosses it onto your lap."
             show plo_inventory
+            $ seen_plo_inventory = True
             window hide
             pause (2.0)
             "{cps=4}.{/cps}{cps=4}.{/cps}{cps=4}.{/cps}"
@@ -3104,70 +3108,4 @@ label intro:
 
     "You watch the stars blink to life, one by one."
 
-######################
-## night 1
-######################  
-    label night_1:
-
-    #TODO: how to make this feel like a long time in between? idk
-    "Your eyes start to droop."
-    "Eventually, it's time to wake someone for the second shift."
-
-    menu:
-        "Wake Darcey":
-            $ second_watch = "darcey"
-
-            if darcey_tired == True:
-                $ darcey_points -= 5
-                "You gently nudge [darcey_name] awake."
-                Iris "Second shift. You're next."
-                Darcey "Fine, but I'm going to hold this against you forever. Or until breakfast."
-                "[darcey_name] sighs."
-                Darcey "The only thing worse than being attacked by a living plant... night shift."
-                jump watch_tired
-            elif darcey_tired == False:
-                $ darcey_points += 5
-                "You gently nudge [darcey_name] awake."
-                Iris "Second shift. You're next."
-                Darcey "Yeah, yeah, I'm up." 
-                Darcey "Leave it to me. Get some rest, [player_name]."
-                jump catch_thief
-
-        "Wake Plo":
-            $ second_watch = "plo"
-
-            if plo_tired == True:
-                $ plo_points -= 5
-                "You gently nudge [plo_name] awake."
-                Plo "{i}ZzzZZzz{/i}"
-                "You nudge [plo_name] again."
-                Plo "Mmm, it's in the carriage."
-                "You nudge [plo_name]... again."
-                Plo "...[player_name]?"
-                "He rubs his eyes."
-                Iris "Second shift. You're next."
-                Plo "Mmm, can do. Can do."
-                jump watch_tired
-            elif plo_tired == False:
-                "You gently nudge [plo_name] awake."
-                Plo "...Nope. I'm asleep. This is a dream."
-                "You nudge [plo_name] again."
-                Plo "Fine, fine! I'm up [player_name]! I'm getting up."
-                Iris "Second shift. You're next."
-                Plo "Yeah, yeah. Get some shut eye for me."
-                jump catch_thief
-                
-        "Wake Quinn":
-            $ second_watch = "quinn"
-
-            if quinn_tired == True:
-                "You gently nudge [quinn_name]. He rubs his eyes and sits up."
-                Quinn "[player_name]?"
-                Iris "Second shift. You're next."
-                Quinn "I can manage that. Sleep well."
-                jump watch_tired
-            elif quinn_tired == False:
-                $ quinn_points += 5
-                "You gently nudge [quinn_name]. He sits up and immediately understands."
-                Quinn "I'll keep watch. Sleep well, [player_name]."
-                jump catch_thief
+    jump night_1
