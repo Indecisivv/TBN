@@ -24,8 +24,13 @@ Don't Shoot The Messenger is a fantasy adventure visual novel made for Road Trip
 ### The Team
 
 [a_sett](https://a-sett.itch.io/ "a_sett") – Composer,  Lead Sound Designer
+
 [Indecisiv](https://indecisiv.itch.io/ "Indecisiv") – Project Manager
+
 [KhaosPhoenix](https://khaosphoenix.itch.io/ "KhaosPhoenix") – Writing Editor
+
 [Revierr](https://revierr.carrd.co/ "Revierr") – Lead Artist 
+
 [William Rockwell](https://willwrock.neocities.org/ "William Rockwell") – Lead Programmer
+
 [Andrew Shirey](https://andrewshirey10.wixsite.com/wavesxandrew/portfolio "Andrew Shirey") – Additional Sound Design
