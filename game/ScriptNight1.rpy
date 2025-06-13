@@ -70,70 +70,62 @@ label night_1:
 
 
 # # Flags to prevent replays
-# default event_night1_played = False
-# default event_night2_played = False
+default event_night1_played = False
+default event_night2_played = False
 
-# label night_event_check:
-
-#     $ night_event_queue = []
-
-#     python:
-#         # build the queue of eligible events
-#         night_events = [
-#             {
-#                 "name": "event_night1",
-#                 "played_flag": "event_night1_played",
-#                 "condition": (
-#                     plo_points < 50 and 
-#                     darcey_points < 50 and 
-#                     quinn_points < 50 and 
-#                     not event_night1_played
-#                 )
-#             },
-#             {
-#                 "name": "event_night2",
-#                 "played_flag": "event_night2_played",
-#                 "condition": (
-#                     plo_tired and darcey_tired and quinn_tired and 
-#                     not event_night2_played
-#                 )
-#             },
-#             # TODO: more events here
-#         ]
-
-
-#         # add valid events to the queue
-#         for event in night_events:
-#             if event["condition"]:
-#                 night_event_queue.append(event["name"])
-
-#     # call each event from the queue in order
-#     while night_event_queue:
-#         $ current_event = night_event_queue.pop(0)
-#         call expression current_event
-
-#     return
+label night_event_check:
+    $ night_event_queue = []
+    python:
+        # build the queue of eligible events
+        night_events = [
+            {
+                "name": "event_night1",
+                "played_flag": "event_night1_played",
+                "condition": (
+                    plo_points < 50 and 
+                    darcey_points < 50 and 
+                    quinn_points < 50 and 
+                    not event_night1_played
+                )
+            },
+            {
+                "name": "event_night2",
+                "played_flag": "event_night2_played",
+                "condition": (
+                    plo_tired and darcey_tired and quinn_tired and 
+                    not event_night2_played
+                )
+            },
+            # TODO: more events here
+        ]
+        # add valid events to the queue
+        for event in night_events:
+            if event["condition"]:
+                night_event_queue.append(event["name"])
+    # call each event from the queue in order
+    while night_event_queue:
+        $ current_event = night_event_queue.pop(0)
+        call expression current_event
+    return
 
 
-# label event_night1:
-#     "this is event 1"
-#     $ event_night1_played = True
-#     return
-
-# label event_night2:
-#     "this is event 2"
-#     $ event_night2_played = True
-#     return
+label event_night1:
+    "this is event 1"
+    $ event_night1_played = True
+    return
+label event_night2:
+    "this is event 2"
+    $ event_night2_played = True
+    return
     
 
-# label test1:
-#     "this is a test"
-#     $ quinn_points -= 50
-#     $ darcey_points -= 50
-#     $ plo_points -= 50
-
-#     $ plo_tired = True
-#     $ darcey_tired = True
-#     $ quinn_tired = True
-#     call night_event_check
-#     "end of test"
+label test1:
+    "this is a test"
+    $ quinn_points -= 50
+    $ darcey_points -= 50
+    $ plo_points -= 50
+    $ plo_tired = True
+    $ darcey_tired = True
+    $ quinn_tired = True
+    call night_event_check
+    "end of test"

@@ -123,18 +123,18 @@ label watch_tired:
 
     "A sharp voice from outside your tent cuts through the early morning haze."
     menu:
-    "Investigate the noise":
-        "Throwing the blanket off yourself, you quickly make your way outside."
-        jump investigate_outside
-    "Sleep in a bit longer":
-        "You pull the blanket over your head to drown out the noise, but, a moment later, a voice comes from outside."
-        if second_watch == "[plo_name]":
-            Quinn "[player_name], we need you outside the tent. We have a situation."
-        else:
-            Plo "[player_name]! Wake up! We've got a problem!"
-        "You reluctancy throw the blanket off and follow it outside."
-        $ quiet += 1
-        jump investigate_outside
+        "Investigate the noise":
+            "Throwing the blanket off yourself, you quickly make your way outside."
+            jump investigate_outside
+        "Sleep in a bit longer":
+            "You pull the blanket over your head to drown out the noise, but, a moment later, a voice comes from outside."
+            if second_watch == "[plo_name]":
+                Quinn "[player_name], we need you outside the tent. We have a situation."
+            else:
+                Plo "[player_name]! Wake up! We've got a problem!"
+            "You reluctancy throw the blanket off and follow it outside."
+            $ quiet += 1
+            jump investigate_outside
 
 
     label investigate_outside:
@@ -286,7 +286,7 @@ label watch_tired:
 
     menu:
         "No more solo watches.":
-            Iris "We need a better system. 
+            Iris "We need a better system. "
             Iris "From now on, we'll rotate in pairs."
             $ solo_watch == False
         "Make our watches shorter.":
