@@ -622,11 +622,11 @@ screen about():
         vbox:
 
             label "Credits"
-            text _("Art {a=https://revierr.itch.io/}Revierr{/a}")
-            text _("Lead Sound Designer {a=https://a-sett.itch.io/}a_sett{/a}")
-            text _("Lead Programmer {a=https://william-rockwell.itch.io/}William Rockwell{/a}")
-            text _("Editor {a=https://khaosphoenix.itch.io/}khaosphoenix{/a}")
-            text _("Lead Writer {a=https://revierr.itch.io/}indecisiv{/a}\n")
+            text _("Art {a=https://revierr.carrd.co/}Revierr{/a}")
+            text _("Composer, Lead Sound Designer {a=https://a-sett.itch.io/}a_sett{/a}")
+            text _("Lead Programmer {a=https://willwrock.neocities.org/}William Rockwell{/a}")
+            text _("Writing Editor {a=https://khaosphoenix.itch.io/}khaosphoenix{/a}")
+            text _("Project Manager, Writer {a=https://revierr.itch.io/}indecisiv{/a}\n")
             text _("Additional Sound Design {a=https://andrewshirey10.wixsite.com/wavesxandrew/portfolio}Andrew Shirey{/a}")
 
             label "Special Thanks"
