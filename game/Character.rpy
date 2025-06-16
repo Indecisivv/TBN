@@ -27,6 +27,11 @@ define Officer = Character("Officer", color="#ffffff")
 define Captain = Character("Captain", color="#ffffff")
 define Bunkmate = Character("Bunkmate", color="#ffffff")
 define Kobold = Character("Kobold", color="#ffffff")
+define Merchant = Character("Kobold", color="#ffffff")
+define Sandman = Character("[sandman_name]", who_color="#ffffff")
+default sandman_name = "???"
+define Innkeeper = Character("[innkeeper_name]", who_color="#ffffff")
+default innkeeper_name = "Innkeeper"
 
 ################################################################################
 ##  Player Definition
