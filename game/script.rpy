@@ -22,6 +22,7 @@ default magic_score = 0
 default seen_plo_inventory = False
 default first_watch_failed = False
 default solo_watch = True
+default bit = False
 
 #character name values
 default plo_name = "???"
@@ -2193,7 +2194,6 @@ label intro:
                     show quinn angry:
                         xpos 0.47 
 
-                    $ darcey_tired = True
 
                     stop music1 fadeout 10
                     stop music2 fadeout 10
@@ -2350,8 +2350,6 @@ label intro:
                     show quinn angry:
                         xpos 0.47 
 
-                    $ darcey_tired = True
-
                     jump aftermath
 
                 "Push more power into the spell.":
@@ -2399,6 +2397,9 @@ label intro:
                     jump bad_ending
 
     label aftermath:
+
+    $ darcey_tired = True
+    $ quinn_tired = True
     
     $ renpy.music.set_volume(0, delay=2, channel='music2') # Flute 2
     #$ renpy.music.set_volume(0, delay=0, channel='music3') # Winds 3
@@ -2881,6 +2882,9 @@ label intro:
     Quinn "Technically,{cps=4} {/cps}we didn't {cps=4}fall{/cps}."
     
     Iris "Let's count it to avoid another one."
+
+    $ plo_tired = True
+
 
     $ renpy.music.set_volume(0.2, 4, 'music4')
 
