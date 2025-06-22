@@ -384,102 +384,102 @@ label proceedSand:
         Darcey "Back on the road together again~"
 
     """
-    As the path rises and curves, the heat haze lifts to reveal a wonderful sight: streaks of rose, gold, indigo, and silver paint the ridges of towering sand dunes. 
+    As the path rises and curves, the heat haze lifts to reveal a wonderful sight: streaks of rose, gold, indigo, and silver painting the ridges of towering sand dunes. 
 
     """
-    Darcey "Whoa... that's... actually beautiful."
+    Darcey "Whoa... that's... beautiful."
 
-    Plo "Bah, nothing but fancy colored sand. Hurts my feet all the same."
+    Plo "Bah, nothing but fancy-colored sand. Hurts my feet all the same."
 
-    "Quinn narrows his eyes, studying the lines." 
-    Quinn "These are mineral strata built over millennia. Iron, copper, and manganese compressed and crystallized." 
+    "[quinn_name] narrows his eyes, studying the lines." 
+    Quinn "These are mineral strata built over millennia. Iron, copper, and manganese; compressed and crystallized." 
     Quinn "If you look closely, the red bands indicate high concentrations of oxidized layers that absorb heat differently."
 
-    Darcey "I'll take it as you think it's beautiful too."
+    Darcey "I'll take that as you think it's beautiful too."
     
 
     show quinn blush
 
     menu:
-        "Tease Quinn a little.":
-            Iris "You know quite a lot about the mountains."
-            Iris "Or did you memorize that to impress us?"
+        "Tease [quinn_name].":
+            Iris "Did you memorize those facts to impress us, [quinn_name]?"
             Quinn "It's common sense, really."
-        "Thank Quinn for the info.":
+        "Thank [quinn_name] for the info.":
             $ quinn_points += 8
-            Iris "That's actually fascinating. Thank you."
-            "Quinn approaches bashfully, saying in a softer voice."
+            Iris "That's fascinating, [quinn_name]. Thank you."
+            "[quinn_name] blushes and his voice softens."
             Quinn "There is also the dry basin downwind." 
-            Quinn "Those Rainbow Mountains block all moisture from forming clouds, even though the southern sea is just beyond the ridge." 
-            Quinn "The rain never gets past here."
+            Quinn "Those Rainbow Mountains block all moisture from forming clouds, even though the Southern Sea is just beyond the ridge." 
+            Quinn "Rain never passes them."
 
     """
-    Step by step you make your way through this endless desert.
+    Step by step, you and your team make your way through this endless desert.
 
-    The air is dry and the desert sand sticks to the sweat on your skin.
+    The air is dry and desert sand sticks to the sweat on your skin.
 
-    You can't see anything but sand and vegetation as far as you look.
+    All there's to see is sand and desert vegetation.
     """
 
     menu:
-        "Talk to Plo":
-            "You fall into step beside Plo."
+        "Talk to [plo_name]":
+            "You fall into step beside [plo_name]."
             Iris "Ever miss your old transport routes?"
-            Plo "Miss? Sure. They had roads. Less sand."
-            Plo "I would never miss work."
+            Plo "Miss? I would never miss work."
+            Plo "I do miss the roads... and no sand."
             if not inside_carriage:
-                Plo "But you chose the ride outside yesterday. Bet you won't miss that route."
+                Plo "You chose the ride outside yesterday. Bet you miss that option today."
             Iris "But you stuck around."
-            Plo "Bah. Someone's gotta haul the future around, huh?"
+            Plo "Someone's gotta haul the future around, huh?"
             if plo_points >= 60:
                 "He pats your head."
                 Plo "Just focus walking before you trip."
             $ plo_points += 3
 
-        "Talk to Darcey":
-            "You slow your steps to find your way at the back with Darcey."
+        "Talk to [darcey_name]":
+            "You slow your steps to find your way at the back with [darcey_name]."
             Iris "You ever think about life after the war?"
             if darcey_points >= 50:
-                Darcey "Knighthood isn't a job. It's a calling. But maybe... maybe I'll plant something." 
+                Darcey "Knighthood is my life. It's a calling afterall. But maybe... maybe I'll plant something." 
                 Darcey "A tree, a garden—something with roots."
                 if darcey_tired == True: #if she got attacked by the plant
-                    Darcey "Maybe raise something that doesn't fight back. ideally."
+                    Darcey "Something that doesn't fight back that is."
             else:
                 Darcey "After the war? Hah, one battle at a time." 
                 Darcey "Thinking too far ahead just gets you hurt out here."
             $ darcey_points += 3
 
-        "Talk to Quinn":
-            "You speed up your steps to find your way at the front with Quinn."
+        "Talk to [quinn_name]":
+            "You speed up your steps to find your way at the front with [quinn_name]."
             Iris "You ever think about life after the war?"
-            Quinn "Sometimes. I think everyone does, even if they don't admit it."
+            Quinn "I think everyone does, even if they don't admit it. It's healthy."
             if quinn_points >= 70:
                 Quinn "I want a quiet life, regardless of where that takes me."
-                "His eyes glance around at everyone."
+                "His eyes glance behind him at [plo_name] and [darcey_name]."
                 Quinn "Surrounded by my companions if possible."
                 Quinn "You could visit, if you'd like."
             else:
-                Quinn "Hard to picture it, honestly. Feels like the war's been my whole life."
-                Quinn "I would like to think I'd be a great researcher after this."
-                Quinn "Maybe an author."
-                Quinn "What about you?"
+                Quinn "Hard to picture it for me. Feels like this war's been my whole life."
+                Quinn "I like to think I'd be a great researcher after this."
+                Quinn "Maybe an author?"
+                Quinn "A professor?"
+                Quinn "It's difficult to choose."
             $ quinn_points += 3
 
         "Stay quiet.":
             """
-            You breathe in the vastness of the landscape, saying nothing.
+            You breathe in the vastness of the landscape without a word. There's no need for them.
 
-            The wind brushes across the dunes, stirring the sand in gentle spirals—restless.
+            Sand stirs across the dunes as the wind guides it in gentle spirals. Restless.
 
-            You watch the way the horizon blurs into the sky, both tinted with the same golden red dust. 
+            You watch the horizon blur into the sky, both tinted with the same golden red dust. 
             
             There's something humbling about how small you are out here.
 
-            You think about the mountainscape in the distance, how many lifetimes it must've taken for them to form.
+            You think about the mountainscape in the distance, about how many lifetimes it must've taken for them to form,
             
-            How your life is a measly fraction of that time.
+            about how your life is a measly fraction of that time.
 
-            You close your eyes for a second and take it all in.
+            You close your eyes and take it all in.
             """
             #TODO: background black
             """
@@ -492,46 +492,44 @@ label proceedSand:
 
     
     """
-    The wind shifts again, carrying with it the distant murmur of voices—your companions ahead, pressing on through the sand.
+    The wind shifts again, carrying with it the distant murmur of your companions ahead as you press through the sand.
 
     """
 
-    "You hear Plo grunt in pain."
+    "[plo_name] grunts in pain."
 
-    Plo "My feet really do hurt, I'm telling you it's this sand."
+    Plo "My feet really do hurt. I'm telling you it's this sand."
 
     "He limps slightly, trying to adjust his gait."
 
     Darcey "Stop for a second."
 
-    "Plo blinks, surprised, as Darcey kneels down and pulls a length of cloth from her pack."
+    "[plo_name] blinks, surprised, as [darcey_name] kneels down while pulling a length of cloth from her pack."
 
-    Darcey "Here. It's a wrap I used back in training, an old habit from long marches."
+    Darcey "Here, it's a wrap. An old habit to keep one from long marches during training."
     
     Darcey "Tie it around your feet. Won't fix everything, but it'll help with the friction."
 
-    Plo "Wait, seriously?"
+    Plo "Wait, you're seriously helping?"
 
-    Darcey "Don't make it weird. I don't want to listen to you whine the rest of the way."
+    Darcey "Don't make it weird. I'd rather not listen to you whine the rest of the way."
 
-    "She smirks, but her hands are gentle as she wraps the fabric around one of his feet."
+    "She smirks. Her hands are gentle as she wraps the fabric around one of his feet."
     
-    "Plo watches her for a beat, clearly touched."
+    "[plo_name] watches her for a beat, clearly touched."
 
-    Plo "...Thanks, Darce."
+    Plo "...Thanks, [darcey_name]." #removed the nickname since the player can choose the character's names but not nicknames
 
     Darcey "Keep moving slow and steady. Or I'm stealing it back."
-    Darcey "And don't call me that!"
 
     menu:
         "Let's keep moving.":
             Iris "All patched up? Let's keep going."
-            Plo "Ready as i'll ever be."
+            Plo "Ready as I'll ever be."
             $ plo_points += 2
-        "Plo, are you okay?":
+        "[plo_name], are you okay?":
             Iris "Is everything okay now?"
-            Plo "It's not a fix, more like a s
-            tall."
+            Plo "It's not a cure, more like a quick fix."
             Plo "Good enough to keep going."
             $ plo_points += 3
             $ quinn_points += 2
@@ -547,38 +545,38 @@ label proceedSand:
 ######################  
 label snake:
     """
-    You continue walking but you hear something in the distance.
+    As you walk, you hear something in the distance.
 
     A rustling. 
 
-    A thin green viper slithers past Quinn's foot. 
+    Then a thin, green viper slithers onto Quinn's foot. 
 
     Everyone freezes. 
 
-    The desert air suddenly feels sharper, as if holding its breath alongside your team.
+    The desert air holds its breath alongside your team.
     """
     Quinn "A desert viper. Venomous. Unlikely to bite unless startled."
 
-    "Darcey's hand pauses at her spear hilt."
+    "[darcey_name]'s hand pauses at her spear hilt."
 
     Darcey "Don't move."
 
-    "Plo struggles to stay still, whisper-shouting his complaints."
+    "[plo_name] struggles to stay still, choosing to whisper-shout his complaints."
 
-    Plo "Sand AND snakes?! This day just keeps getting better and better, huh?."
+    Plo "Sand AND snakes?! This day just keeps getting better and better..."
 
     menu:
         "Stay still.":
             """
-            You hold still, trusting Quinn's read of the creature. 
+            You hold still. You trust [quinn_name]'s read of the creature. 
 
             ...
             
-            Seconds drag out like hours. 
+            Seconds feel like hours. 
 
             ....
 
-            Plo lets out a soft grunt, barely audible.
+            [plo_name] lets out a barely-audible grunt.
             """
 
 
@@ -588,9 +586,9 @@ label snake:
 
             Plo "Not sure how much longer I can hold still like this."
 
-            "You can see a drop of sweat hit the sand from his forehead."
+            "You can see a drop of sand-mixed sweat drip from his forehead."
 
-            "You glance just enough to see Quinn's eyes tracking the creature's slow movement—every muscle in his frame braced"
+            "You glance just enough to see Quinn's eyes tracking the creature's slow movement; every muscle in his body braced."
 
             menu:
                 "Keep waiting.":
@@ -611,7 +609,7 @@ label snake:
             
             You swear it looks right at you.
             
-            Your knees are starting to ache from standing still this long.
+            Your knees start to ache from standing still this long.
 
             There's a tremble in your fingers. You will them still.
 
@@ -621,27 +619,27 @@ label snake:
 
             Plo "This is getting ridiculous."
 
-            "Quinn doesn't respond. He's focused."
+            "[quinn_name] doesn't respond. He's focused."
 
             Darcey "Just stand still! Big baby."
 
             "One beat. Then another."
 
-            "Quinn murmurs softly."
+            "[quinn_name] murmurs softly."
 
-            Quinn "We're doing fine. It knows we're not a threat. That's good."
+            Quinn "We're doing fine. It knows we're not a threat."
 
             """
 
-            The snake slithers a little to the left, dragging its heavy body through the dirt, unbothered by your presence but still lingering.
+            The snake slithers a little to the left. Its heavy body drags through the dirt, unbothered by your presence but still lingering.
 
-            Plo shifts again. A pebble rolls from beneath his boot.
+            [plo_name] shifts again. A pebble rolls from beneath his boot.
 
-            The creature halts.
+            The creature stops.
 
             Every hair on your body stands on end.
 
-            Quinn shoots a sharp look at Plo, who immediately freezes again.
+            [quinn_name] shoots a sharp look at [plo_name], who immediately freezes again.
             """
             menu:
                 "Keep waiting.":
@@ -657,13 +655,13 @@ label snake:
             label keep_waiting2:
 
             """
-            For a minute it feels like no one breathes.
+            For a minute, it feels like no one breathes.
             
             Then the snake flicks its tongue once more... and glides away into the brush.
 
             ...
 
-            Quinn doesn't relax until the rustle of the creature fades into the distance.
+            You and your team don't relax until the rustle of the creature fades into the distance.
             """
 
             $ quinn_points += 5
@@ -671,21 +669,21 @@ label snake:
 
         "Throw a rock at the snake.":
             label throw:
-            "You reach crouch down to sift your hands through the sand, looking for something big enough to throw."
+            "You slowly crouch down to sift your hands through the sand, looking for something big enough to throw."
+
+            "[darcey_name] and [quinn_name] stare at you with eyes begging you to stay still."
 
             Plo "What are you doing?!"
 
-            Darcey "[player_name]??"
-
-            "The snake flinches at the shout, taking a coiled up defensive posture towards Plo."
+            "The snake flinches at [plo_name]'s shout. It takes a coiled up defensive posture towards him."
 
             Plo "It's looking at me..."
             
-            "You weigh a stone in your palm before lobbing it towards the snake." 
+            "You find a stone. It's weight shifts in your palm before you lob it at snake." 
             
-            "It grazes the snake as it recoils before slithers away, disappearing into the brush."
+            "The snake recoils before the stone lands. With a hiss, it slithers away, disappearing into the brush."
 
-            Quinn "Not quite what I had in mind but no one got hurt."
+            Quinn "Not quite what I had in mind, but no one got hurt."
 
             jump snake_gone
 
@@ -693,17 +691,19 @@ label snake:
         "Stomp to scare it off.":
             label stomp:
             """
-            Your foot slams the ground.
+            Slowly, you lift up one foot then slam it to the ground with a reverberating thud.
             
-            The viper recoils, then strikes.
+            The viper recoils, then strikes. Chaos ensues.
             
-            Pain flares. 
+            Sand kicks up 
             
             Someone yells. 
-            
-            Blood and panic.
 
-            In the panic the snake flees to nearby brush.
+            Pain flares
+            
+            A mixture of blood and panic.
+
+            The snake manages to flee to a nearby brush and, eventually, out of sight.
             """
 
             Darcey "Why would you do that?!"
@@ -711,7 +711,7 @@ label snake:
             Plo "Of all the dumb moves—"
 
             if get_serious:
-                Quinn "...I expected better from someone who preaches caution."
+                Quinn "...I expected better from someone who was chosen to lead us."
             
             $ plo_points -= 5
             $ quinn_points -= 15
@@ -723,7 +723,7 @@ label snake:
         #if has_antidote:
             #TODO: this has to be coded to work!!!!!!!
             # use antidote to recover
-            "The pain from the bite travels along your veins, making your body feel like its on fire."
+            "The pain from the bite travels through your veins, making your body burn like its on fire."
             menu:
                 "Endure the pain.":
                     "You grit your teeth and bear it. Speaking won't help now."
@@ -731,9 +731,9 @@ label snake:
                 "Apologize for the mistake.":
                     Iris "I misjudged. I'm sorry."
                     Darcey "Just don't get yourself killed."
-                    Plo "It was dumb but let's focus treating it now."
+                    Plo "It sure was dumb, but you need treatment now. Lecture later."
 
-            "You fumble for the antidote in your bag. With Quinn's help, you drink the entire vial."
+            "[quinn_name] fumbles in your bag for an antidote, refusing your attempt to help. You drink the entire vial."
             Quinn "That was reckless."
             "The pain dulls slowly."
             Quinn "Timely. You'll live."
@@ -750,19 +750,21 @@ label snake:
             """
             scene black with Dissolve(1.5)
             """
-            The others shout.
+            The others shout at once.
             
-            Darcey grabs your hand, Plo is shaking you, Quinn is already reaching for a vial of who knows what—but it's too late.
+            [darcey_name] grabs your hand. [plo_name] shakes you. [quinn_name] is already searching for a vial of some sort."
+
+            "You can't seem to focus. It's too late.
             """
             jump bad_ending
 
     label snake_gone:
 
-        "The tension in the air finally breaks, like a string pulled too tight and suddenly released."
+        "The tension in the air breaks, like a string pulled too tight and suddenly released."
 
-        "You feel the sweat cooling on your skin, your legs still stiff from standing so long."
+        "You feel sweat cooling on your skin; your legs stiff from staying still."
 
-        "Plo wipes the back of his hand across his forehead, scowling at the ground where the snake vanished."
+        "[plo_name] wipes the back of his hand across his forehead. He scowls at the ground where the snake used to be."
 
         Plo "That thing stared right into my soul."
 
@@ -770,11 +772,11 @@ label snake:
 
         Plo "Then what was it looking at?"
 
-        "Darcey snorts, low and relieved, though her hand is still hovering near her weapon."
+        "[darcey_name] snorts, low and relieved, though her hand is still hovers near her sword."
 
-        Plo "Let's just keep moving."
+        Plo "Let's keep moving."
 
-        "Darcey watches you for a beat longer, her grip still tight on her weapon."
+        "[darcey_name] looks at you for a beat before heading on. You catch that her hand stays near her sword."
 
 
 
@@ -783,13 +785,11 @@ label snake:
 ######################  
 label mirage:
     """
-    You walk in silence for a while.
-
-    The sand crunches underfoot. 
+    You walk in silence for a while. The only sound being sand crunching underfoot. 
     
-    Every step sinks a little, dragging your pace slower.
+    Your pace slowes. Every step seems to sink further. 
 
-    Time becomes strange in the desert. Distance stretches. The horizon wavers.
+    Time becomes strange in the desert. Distance stretches; the horizon wavers.
 
     You notice a glimmering in the distant horizon.
 
@@ -802,7 +802,7 @@ label mirage:
             Iris "I see water up ahead."
         "Check your map."
             #TODO: show map
-            "Pulling out your map shows there is no bodies of water in the entire path before the town."
+            "Pulling out your map shows there are no bodies of water nearby. There are none before reaching town."
             Iris "Strange, it almost looks like there is water up ahead."
             #TODO: hide map
 
@@ -814,19 +814,21 @@ label mirage:
 
     Quinn "It's just the refraction of distant light through hot air layers. A mirage."
 
-    Darcey "Ugh... just what I needed as this armor's starting to feel like it's cooking me from the inside out."
+    Darcey "What if it isn't? My armor's starting to feel like it's cooking me from the inside out."
 
     menu:
         "Encourage moving on":
-            Iris "Let's keep moving. Maybe the real thing's waiting somewhere out there."
+            Iris "Let's keep moving. Maybe [darcey_name]'s on to something."
             $ quinn_points += 2
-        "Silent disappointment.":
-            "You say nothing, but the letdown hits all the same."
+        "Stay silent.":
+            "You say nothing as [quinn_name]'s words settle in. What a letdown."
             $ quiet += 1
 
-    "Slowly, as you ascend a sandy hill, the illusion fades."
+    "As you ascend a sandy hill, the illusion fades."
 
-    Darcey "Sigh. Hope the next one doesn't vanish on us."
+    "[darcey_name] groans in disappointment and anger."
+
+    Darcey "I hope the next one doesn't vanish on us."
 ######################
 ## merchant
 ######################  
@@ -839,42 +841,42 @@ label merchant:
     Plo "I'm seeing one right now, on the horizon."
 
     """
-    The wind shifts as the party pass a dune, and the distant jingle of chimes can be heard.
+    The wind shifts as the party passes a dune. A distant jingle of chimes can be heard.
 
-    The path becomes more defined, a clear trail of pressed down sand of frequent traffic lead right to it.
+    The path shifts beneath you into a clear trail of pressed down sand from frequent traffic.
 
-    A colorful carriage appears against the dunes, its canopy striped in faded reds and golds.
+    A colorful carriage with a canopy striped in faded reds and golds comes into view.
 
-    Crates stacked in stacks next to it. 
+    Crates are stacked next to it. 
 
     A merchant sits on a pile of rugs, lazily fanning himself.
 
-    When he sees your party he stands to welcome them.
+    When he sees your party, he stands to welcome them.
     
     """  
 
-    Merchant "Travelers! Come, feel free to fan yourselves and browse."
+    Merchant "Travelers! Come, feel free to fan yourselves and browse!"
 
     Plo "You would't happen to trade carriage wheels, do you?"
 
     Merchant "Heh, I have never gotten that request before."
     Merchant "Unfortunately not."
 
-    Plo "Bah, let's just move on [player_name], nothing here but scams."
+    Plo "Bah! Let's just move on [player_name]. Nothing here but scams."
 
     Darcey "No one normal is waiting in the middle of a desert for customers."
 
-    Merchant "Well hold on there, I assure you I only carry quality products."
+    Merchant "Hold on there! I assure you I only carry quality products."
 
     if first_watch_failed == True: #all the supplies stolen
         "You bring out your bag to look through to see what you have left."
-        Darcey "But... We do need supplies. Anything that can help us reach the capital faster."
-        Quinn "We lost more than we could afford. We need to focus on the important things."
-        Quinn "Especially water. Won't last the rest of the journey without any."
+        Darcey "But... we do need supplies. Anything that can help us reach the capital faster."
+        Quinn "We lost more than we could afford. If we're going to buy, I suggest we focus on the important things."
+        Quinn "Especially water. We won't last the rest of the journey without any."
         if second_watch == "darcey":
             Darcey "I'm sorry to ask when it's my fault [player_name], but we should probably stock while we have the chance..."
         elif second_watch = "quinn":
-            Quinn "[player_name], this is all I have left but take it to spend on necessities."
+            Quinn "[player_name], this is all I have left but take it."
             "Quinn hands you 5 gold."
         elif second_watch = "plo":
             Plo "I messed up today, that's true. But there are better places to get supplies than a scam artist."
@@ -902,12 +904,12 @@ default shop_deal = False
                 $ darcey_points += 3
                 $ quinn_points += 3
                 Merchant "What else can I say except there is a bunch of sand."
-                Darcey "What use this guy is..."
-                Plo "Don't skimp out on potential customers, give us a landmark or something."
-                Merchant "Ah, now that you mention it, you will know you are close to town when you pass beggar's hole."
-                Iris "Beggar's hole?"
-                Merchant "It's just where a bunch of beggars wait outside town for rich travelers to steal from."
-                Merchant "Anymore info and i'm going to start asking for payment."
+                Darcey "This guy is useless..."
+                Plo "Don't skimp out on potential customers; give us a landmark or something."
+                Merchant "Ah, now that you mention it, you passing Beggar's Hole means you're close to the next town."
+                Iris "Beggar's Hole?"
+                Merchant "A place where a bunch of beggars wait for rich travelers to steal from as they head to town."
+                Merchant "Anymore info and I'm going to start asking for payment."
                 Quinn "That is good to know."
                 Darcey "I'd like to see them try to steal from me. {i}Tsk.{/i}"
                 jump shop_loop
@@ -916,20 +918,20 @@ default shop_deal = False
                 $ shop_buy_food = True
                 #TODO: remove gold!
                 #if you have enough
-                Merchant "I pity the man who doesn't even have water in this sweltering desert."
+                Merchant "I pity fools who don't have water in this sweltering desert."
                 jump shop_loop
                 #if you dont have enough
-                Merchant "Good choice, the finest water straight from the finest desert oasis."
+                Merchant "Good choice! The finest water straight from the finest oasis."
                 jump shop_loop
 
             "5G Buy Water" if not shop_buy_water:
                 $ shop_buy_water = True
                 #TODO: remove gold!
                 #if you have enough
-                Merchant "I pity the man who doesn't even have water in this sweltering desert."
+                Merchant "I pity fools who don't have water in this sweltering desert."
                 jump shop_loop
                 #if you dont have enough
-                Merchant "Good choice, the finest water straight from the finest desert oasis."
+                Merchant "Good choice! The finest water straight from the finest oasis."
                 jump shop_loop
 
             "5G Buy Special Charm" if shop_buy_food and shop_buy_water and not shop_deal:
@@ -938,7 +940,7 @@ default shop_deal = False
                 #TODO: remove gold!
                 #if you have enough
                 Merchant "Great! You will not regret this purchase!"
-                Quinn "What does the charm do?"
+                Quinn "What does this charm do?"
                 Quinn "[player_name], why would you buy that without asking first?"
                 Merchant "Great question, "
                 if pronouns == "She/Her":
@@ -950,24 +952,24 @@ default shop_deal = False
                 Plo "More importantly, I need some of that water you just bought."
                 jump shop_loop
                 #if you don't have enough
-                Merchant "How unfortunate you don't have enough left for it. Could have come in handy."
+                Merchant "How unfortunate that you can't afford the charm. Could have come in handy."
                 jump shop_loop
 
             "15G Buy Mystery Potion" if not shop_trade_food:
                 $ shop_trade_food = true
                 #TODO: remove gold!
                 #if you have enough
-                Merchant "My finest item, I hope it is of use for you."
-                "All three look at you in confusion."
+                Merchant "My finest item! I hope it is of use for you."
+                "All three companions look at you in confusion."
                 if first_watch_failed == True: #all the supplies stolen
-                    Quinn "I don't recall anyone in need of this expensive potion..."
+                    Quinn "I don't recall anyone in need of an expensive potion..."
                     Plo "What the heck, [player_name]? I thought we were going to get food and water."
-                    Darcey "Yeah, whats the deal?"
+                    Darcey "Whats the deal, [player_name]?"
                     if darcey_points >= 50:
                         Darcey "Don't blame me if i'm too hungry to do my job later then."
                     else:
                         if bit == True:
-                            Darcey "First you get bit and now this? What is up with you today."
+                            Darcey "First you get bit and now this? What's up with you and potions today?"
                             $ darcey_points -= 2
                         Darcey "Why would you buy that over food and water??"
                         Darcey "Don't forget about our mission."
@@ -979,7 +981,7 @@ default shop_deal = False
                     Quinn "A strange purchase, but I don't control what you spend your gold on..."
                     jump shop_loop
                 #if you dont have enough
-                Merchant "Quality means cost, and it doesn't look like you can afford this quality."
+                Merchant "Quality requires a matching price, and it doesn't look like you can afford this quality."
                 jump shop_loop
 
             "Leave":
@@ -989,7 +991,7 @@ label shop_done:
     """
     After leaving the merchant behind, the dunes roll on endlessly. 
     
-    You follow the darker sand, a desire path formed by many feet over a long time.
+    You follow the darker sand along a path formed by many travelers over the years.
     """
     
 ######################
@@ -997,7 +999,7 @@ label shop_done:
 ######################  
 label sand_man:
     """
-    As you crest a low hill, the sight of a figure sprawled across the sand halts your step.
+    As you reach the top of a low hill, the sight of a figure sprawled across the sand halts your step.
 
     The heat rising from the ground shimmers around his crumpled form like a ghostly veil.
     """
@@ -1006,28 +1008,28 @@ label sand_man:
 
     His robes are in disarray, sand sticks to his face, and his breathing shallow.
 
-    Quinn kneels beside the man.
+    [quinn_name] kneels beside him.
 
     """
     $ sandman_name == "test"
 
-    Quinn "Signs of heatstroke. Dehydration. His lips are cracked. Pulse is weak... but there."
+    Quinn "He has signs of heatstroke and dehydration. His lips are cracked. Pulse is weak... but there."
 
-    "Plo squints under the harsh sun, whispering so only the group heard."
+    "[plo_name] squints under the harsh sun, whispering so only the group hears."
     Plo "This guy looks like a walking corpse."
 
     $ if first_watch_failed == True: #all the supplies stolen
-        Plo "And not to be insensitive but we need our supplies..."
+        Plo "Not to be insensitive, but we need our supplies..."
     $ if shop_buy_food == True or shop_buy_water == True:
-        Plo "And didn't we {i}just{/i} use the rest of our gold to buy more."
+        Plo "Didn't we {i}just{/i} use the rest of our gold to buy more supplies?"
 
     $ if shop_ask_path == True:
-        Darcey "It's probably a beggar like the merchant told us about."
+        Darcey "It's probably a beggar like the merchant talked about."
 
     Quinn "Regardless, we can't just leave someone here to die."
 
     if quiet >= 5: #quinn will start leading if you are always quiet
-        "Quinn takes the little water he has left from his personal bag and gives it to the man."
+        "[quinn_name] takes the little water he has left from his personal bag and gives it to the man."
         Quinn "It's not much but it will help."
         "The man drinks shakily, life returning to his eyes one slow blink at a time."
 
@@ -1043,18 +1045,18 @@ label sand_man:
             $ plo_points += 2
             Iris "Here... drink slowly."
             "His hand trembles as he accepts the canteen."
-            "He gulps, coughs, then drinks slower. The color slowly comes back to her face."
+            "He gulps, coughs, then drinks slower. Color slowly comes back to his face."
             Sandman "Mercy... gods above... T-thank you, thank you!"
             Sandman "I waved down so many... no one even slowed."
             Sandman "No one else stopped for me, you are the only ones."
             $ sandman_name == "Henry"
-            Sandman "My name is Henry, I thought the sun had claimed me."
-            "He lets out a shaky laugh that quickly collapses one more in relief."
-            Quinn "He must still be tired, it will take him a while to recover from the extreme heat."
+            Sandman "My name is [sandman_name], I thought the sun had claimed me."
+            "He lets out a shaky laugh that quickly collapses into a series of coughs."
+            Quinn "He must still be tired. It will take him a while to recover from the extreme heat."
             "As you stand to leave, a sudden grip catches your wrist."
-            Sandman "Please take this as a token of my gratitude."
-            "He places a pendant into your hand."
-            "You open your hand: a small pendant, shaped like a crescent moon, its surface etched with faded symbols worn smooth by sand."
+            Sandman "Please, take this as a token of my gratitude."
+            "[sandman_name] places a pendant into your hand."
+            "You examine it: a small pendant, shaped like a crescent moon. Its surface is etched with faded symbols worn smooth by sand."
             Iris "I hope you feel better soon."
             #TODO: get the pendant
             #TODO: lose a water
@@ -1098,13 +1100,13 @@ label sand_man:
     label sandman_after:
 
     """
-    The man fades into the distance behind you as the top of buildings peak over the sand dunes.
+    The man fades into the distance behind you. The top of buildings peak over the sand dunes as you journey on.
 
     The sun is now directly overhead, the hottest time of the day.
 
-    It's merciless and Plo is visibly wilting in the rays.
+    It's merciless. [plo_name] is visibly wilting in the rays.
 
-    Plo stumbles. He catches himself on a knee.
+    He stumbles, but catches himself on a knee.
     """
 
 ######################
@@ -1118,47 +1120,47 @@ label sand_tired:
 
     Plo "I need a minute before I end up like that guy back there."
 
-    "Plo sits down onto a dune, eyes squinting beneath the harsh glare."
+    "[plo_name] sits down onto a dune, eyes squinting beneath the harsh glare."
 
-    "Quinn is by his side examining him."
+    "[quinn_name] kneels by his side, examining him."
 
-    Quinn "His pulse is elevated, I'm worried about possible heat stroke soon."
+    Quinn "His pulse is elevated. I'm worried about possible heat stroke soon."
 
-    "Plo wipes sweat from his brow, muttering."
+    "[plo_name] wipes sweat from his brow, muttering."
 
     Plo "Don't suppose a miracle's just over that hill..."
 
  
     $ if ignore1 == True:
-        Plo "Hopefully if I end up dying here no one ignores my plight."
+        Plo "Hopefully, if I end up dying here, no one will forget me."
 
     menu:
         "Crack a joke":
             $ plo_points += 3
-            Iris "You look like a sand sculpture with all that sand over you now."
+            Iris "We'll use the sand to make you into a true sculpture to gawk at."
             Plo "Would love to be one with a moat around it... Too much sand."
-            "Plo pushes himself up, unsteady but motivated to continue on."
-        "Offer Plo a break":
+            "[plo_name] pushes himself up, unsteady but motivated to continue on."
+        "Offer [plo_name] a break":
             $ plo_points += 5
             Iris "Take a minute. I'll keep watch."
-            "Plo relaxes onto a shaded rock with a grateful grunt."
+            "[plo_name] relaxes onto a shaded rock with a grateful grunt."
             "The sun crawls overhead. Somewhere, a dry wind howls."
-            "Darcey fiddles with her spear, quietly sharpening it."
-            "Quinn scans the horizon, eyes narrow beneath his bangs."
             "You stand guard, one hand on your weapon, eyes trained on the dunes."
-            "Darcey snorts."
-            Darcey "Don't forget to blink sometime [quinn_name]."
-            "Quinn doesn't respond, but his shoulders loosen just slightly."
-            "After a while, Plo pushes himself up, a little steadier now."
-            Plo "Okay. Legs like boiled noodles, but I can move. Thanks, Iris."
+            "[darcey_name] gently sharpens her spear."
+            "[quinn_name] scans the horizon with focused eyes searching for irregularities."
+            "[darcey_name] snorts."
+            Darcey "Don't forget to blink, [quinn_name]."
+            "[quinn_name] doesn't respond, but his shoulders relax just slightly."
+            "After a while, [plo_name] pushes himself up with more steadiness in his feet."
+            Plo "Okay. Legs like boiled noodles, but I can move. Thanks, [player_name]."
         "Push forward":
             $ plo_points -= 3
-            Iris "We've got to stay on schedule."
+            Iris "I'm sorry, [plo_name]. We've got to stay on schedule."
             "He looks reluctant to continue forward."
             Darcey "Don't make me have to take my wrap back."
             Plo "Alright, alright."
             Plo "Bah, I'm getting up."
-            "Plo pushes himself up, unsteady but ready to continue on."
+            "[plo_name] pushes himself up, unsteady but ready to continue on."
 
 ######################
 ## arrived inn
